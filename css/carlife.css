@@ -1,0 +1,140 @@
+/* カーライフソリューションページのキービジュアル画像 */
+.kv {
+  background-image: url("../images/service/kv_carlife.jpg");
+}
+
+/* お近くのサービスステーション */
+.search {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(100% * (80 / 1080));
+}
+
+.search__item {
+  background-color: #fff;
+  border: 1px solid #808080;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  padding: 2.4em;
+  display: flex;
+  flex-direction: column;
+}
+
+.search__title {
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 700;
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.search__title::before {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 4px;
+}
+
+.search__title--area::before {
+  background-image: url("../images/service/icon_01.png");
+}
+
+.search__title--word::before {
+  background-image: url("../images/service/icon_02.png");
+}
+
+.search__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.search__list-item {
+  width: min(70%, 250px);
+  margin: 0 auto;
+  color: #fff;
+  background-color: #076fb3;
+  padding: 5px 0;
+  border-radius: 50px;
+  font-size: clamp(16px, 2vw, 24px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.search__box {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 2em;
+}
+
+.search__box-form {
+}
+
+.search__box-form--input {
+  margin: 0 auto;
+  width: 100%;
+  padding: 1em;
+  font-size: 16px;
+  border: 1px solid #076fb3;
+  border-radius: 5px;
+}
+
+.search__item-button {
+  background-color: #076fb3;
+  color: #fff;
+  width: fit-content;
+  padding: 5px 3em;
+  text-align: center;
+  font-size: clamp(16px, 2vw, 24px);
+  border: none;
+  cursor: pointer;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* サントーコー取り扱い商品 */
+.grid-banner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.grid-banner__item--full {
+  grid-column: 1 / -1;
+}
+
+@media screen and (max-width: 768px) {
+  .kv {
+    background-position: 70% center;
+  }
+  .search {
+    gap: 30px;
+    grid-template-columns: 1fr;
+  }
+
+  .search__box-form--input {
+    padding: 10px;
+  }
+
+  .search__item-button {
+    margin-top: 2em;
+  }
+
+  .grid-banner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid-banner {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
