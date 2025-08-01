@@ -1,0 +1,265 @@
+body {
+  font-family: "Noto Sans JP", "Yu Gothic", "YuGothic", "ヒラギノ角ゴ ProN",
+    "Hiragino Kaku Gothic ProN", sans-serif;
+
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+main {
+  background-color: #fff;
+  padding-bottom: 60px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* ヘッダー */
+.header {
+  background-color: #fff;
+  width: 100%;
+}
+
+.header__inner {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header__logo {
+  display: block;
+  width: 40%;
+  cursor: pointer;
+}
+
+.header__nav {
+  display: flex;
+  gap: 40px;
+}
+
+.header__nav-item {
+  position: relative;
+}
+
+.header__nav-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 1.2em;
+  background-color: #1a1a1a;
+}
+
+.header__nav-link {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+.header__nav-link:hover {
+  color: #0071bc;
+}
+
+/* ハンバーガーメニュー */
+.header__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header__toggle-bar {
+  display: block;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.header__toggle.is-active .header__toggle-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.header__toggle.is-active .header__toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.header__toggle.is-active .header__toggle-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ヘッダー980px以下 */
+@media (max-width: 980px) {
+  .header__inner {
+    padding: 20px;
+  }
+
+  .header__logo {
+    width: 60%;
+    max-width: 400px;
+  }
+
+  .header__nav-wrapper {
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    background: #fff;
+    width: 70%;
+    max-width: 340px;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.95);
+    transform-origin: top right;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .header__nav-wrapper.is-active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+
+  .header__nav {
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+  }
+
+  .header__nav-item {
+    margin-bottom: 12px;
+  }
+
+  .header__nav-item::after {
+    display: none;
+  }
+
+  .header__toggle {
+    display: flex;
+  }
+}
+
+/* フッター */
+
+.footer {
+  width: 100%;
+  background-color: #076fb3;
+  color: #fff;
+  padding: 80px 0 40px;
+}
+
+.footer__inner {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.footer__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 60px;
+}
+
+.footer__logo {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 30px;
+  text-decoration: none;
+}
+
+.footer__address {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 40px;
+}
+
+.footer__nav-item {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.footer__nav-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 1.2em;
+  background-color: #fff;
+}
+
+.footer__nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer__copyright {
+  font-size: 16px;
+  text-align: center;
+}
+
+/* フッター980px以下 */
+@media screen and (max-width: 980px) {
+  .footer__box {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer__address {
+    text-align: center;
+  }
+
+  .footer__box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .footer__nav-item::after {
+    display: none;
+  }
+}
