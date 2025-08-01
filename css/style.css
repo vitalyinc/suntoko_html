@@ -263,3 +263,237 @@ img {
     display: none;
   }
 }
+
+/* キービジュアル */
+.kv {
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  height: 80vh;
+}
+
+.kv__inner {
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.kv__content {
+  padding-top: 24vh;
+}
+
+.kv__title {
+  font-size: clamp(48px, 7.4vw, 112px);
+  line-height: 1;
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.kv__subtitle {
+  font-size: clamp(20px, 2.4vw, 32px);
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+/* パンくずリスト */
+
+.breadcrumb {
+  width: 100%;
+}
+
+.breadcrumb__nav {
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 1.2em 2em;
+}
+
+.breadcrumb__list {
+  display: flex;
+  gap: 20px;
+}
+
+.breadcrumb__item:not(:last-child)::after {
+  content: ">";
+  margin-left: 10px;
+}
+
+.breadcrumb__item {
+  font-size: 16px;
+}
+
+.breadcrumb__item--link:hover {
+  color: #076fb3;
+  text-decoration: underline;
+}
+
+/* セクション・タイトル */
+
+.section {
+  width: 100%;
+  padding: 100px 0;
+}
+
+.section__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 100px;
+}
+
+.section__title {
+  font-size: clamp(18px, 3.4vw, 40px);
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.section__line {
+  width: 100%;
+  height: 3px;
+  background-color: #e6e6e6;
+  margin-bottom: 4em;
+}
+
+.section__line-white {
+  background-color: #fff;
+}
+
+.section__line::before {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background-color: #076fb3;
+}
+
+.section-gray {
+  background-color: #ebebeb;
+}
+
+/* サービス概要 */
+
+.introduction {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.introduction__text {
+  font-size: clamp(16px, 2.2vw, 20px);
+  line-height: 1.7;
+}
+
+.introduction__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* サービスの強み */
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.feature__item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #dbeef8;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.feature__left {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.feature__number {
+  font-size: clamp(32px, 5.4vw, 64px);
+  font-weight: 200;
+  color: #076fb3;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.feature__text {
+  font-size: clamp(16px, 2vw, 28px);
+  font-weight: bold;
+  padding-left: 2em;
+}
+
+.feature__right {
+  position: relative;
+  display: inline-block;
+}
+
+.feature__right::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.feature__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 2;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 768px以下 */
+@media screen and (max-width: 768px) {
+  .breadcrumb__item {
+    font-size: 14px;
+  }
+  .section {
+    width: 100%;
+    padding: 60px 0;
+  }
+
+  .section__inner {
+    padding: 0 20px;
+  }
+
+  .section__line {
+    margin-bottom: 2em;
+  }
+
+  .introduction {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+
+  .introduction__text {
+    font-size: 16px;
+  }
+
+  .feature__item {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .feature__left {
+    padding: 2em 1em;
+    justify-content: center;
+  }
+
+  .feature__number {
+    padding: 0.25em;
+  }
+
+  .feature__text {
+    padding: 0;
+    text-align: center;
+  }
+}
