@@ -388,6 +388,36 @@ img {
   object-position: center;
 }
 
+.introduction__img--large {
+  aspect-ratio: 7 / 8;
+  object-position: center bottom;
+}
+
+.introduction__lead {
+  font-weight: bold;
+  font-size: clamp(18px, 2.2vw, 20px);
+  margin-bottom: 2em;
+}
+
+.introduction__wrap {
+  margin-bottom: 2em;
+}
+
+.introduction__title {
+  font-size: clamp(16px, 2.2vw, 20px);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.introduction__title::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #1a1a1a;
+  margin-right: 10px;
+}
+
 /* サービスの強み */
 .feature {
   display: flex;
@@ -516,6 +546,7 @@ img {
     margin-bottom: 2em;
   }
 
+  /* サービス概要 */
   .introduction {
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;

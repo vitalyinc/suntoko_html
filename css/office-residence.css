@@ -1,0 +1,5 @@
+/* キービジュアル */
+.kv {
+  background-image: url("../images/service/kv_office.jpg");
+  background-position: center;
+}
