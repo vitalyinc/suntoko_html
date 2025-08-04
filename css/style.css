@@ -8,7 +8,7 @@ body {
 
 main {
   background-color: #fff;
-  padding-bottom: 60px;
+  padding-bottom: 120px;
 }
 
 h1,
@@ -298,7 +298,6 @@ img {
 }
 
 /* パンくずリスト */
-
 .breadcrumb {
   width: 100%;
 }
@@ -329,7 +328,6 @@ img {
 }
 
 /* セクション・タイトル */
-
 .section {
   width: 100%;
   padding: 100px 0;
@@ -371,7 +369,6 @@ img {
 }
 
 /* サービス概要 */
-
 .introduction {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -392,7 +389,6 @@ img {
 }
 
 /* サービスの強み */
-
 .feature {
   display: flex;
   flex-direction: column;
@@ -425,7 +421,7 @@ img {
 
 .feature__text {
   font-size: clamp(16px, 2vw, 28px);
-  font-weight: bold;
+  font-weight: 500;
   padding-left: 2em;
 }
 
@@ -447,17 +443,66 @@ img {
 .feature__img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   aspect-ratio: 5 / 2;
   object-fit: cover;
   object-position: center;
 }
 
+/* お問い合わせ先 */
+.contact-area {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: calc(100% * (80 / 1080));
+}
+
+.contact-area__item {
+  display: block;
+  position: relative;
+  font-size: clamp(18px, 2.6vw, 28px);
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #1a1a1a;
+  padding-left: 20px;
+  line-height: 1;
+}
+
+.contact-area__item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #076fb3;
+}
+
+.contact-area__item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  background-image: url(/images/service/icon_11.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 /* 768px以下 */
 @media screen and (max-width: 768px) {
+  /* 最下部のパディング */
+  main {
+    padding-bottom: 60px;
+  }
+  /* パンくずリスト */
   .breadcrumb__item {
     font-size: 14px;
   }
+
+  /* セクションタイトル */
   .section {
     width: 100%;
     padding: 60px 0;
@@ -480,6 +525,7 @@ img {
     font-size: 16px;
   }
 
+  /* サービスの強み */
   .feature__item {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -495,5 +541,19 @@ img {
   .feature__text {
     padding: 0;
     text-align: center;
+  }
+}
+
+/* 480px以下 */
+@media screen and (max-width: 480px) {
+  /* お問い合わせ先 */
+  .contact-area {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  .contact-area__item::after {
+    width: 20px;
+    height: 20px;
   }
 }
