@@ -343,6 +343,10 @@ img {
   padding: 100px 0;
 }
 
+.section--nav {
+  padding: 60px 0;
+}
+
 .section__inner {
   max-width: 1280px;
   margin: 0 auto;
@@ -353,6 +357,10 @@ img {
   font-size: clamp(18px, 3.4vw, 40px);
   font-weight: 400;
   margin-bottom: 10px;
+}
+
+.section__title--post {
+  font-size: clamp(18px, 2.8vw, 32px);
 }
 
 .section__line {
@@ -426,6 +434,13 @@ img {
   height: 20px;
   background-color: #1a1a1a;
   margin-right: 10px;
+}
+
+.introduction__date {
+  display: block;
+  font-size: 14px;
+  color: #808080;
+  margin-bottom: 1em;
 }
 
 /* サービスの強み */
