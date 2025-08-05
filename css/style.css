@@ -272,6 +272,7 @@ img {
   background-size: cover;
   color: #fff;
   height: 80vh;
+  min-height: 500px;
 }
 
 .kv__inner {
@@ -285,7 +286,7 @@ img {
 }
 
 .kv__title {
-  font-size: clamp(48px, 7.4vw, 112px);
+  font-size: clamp(36px, 7.4vw, 112px);
   line-height: 1;
   font-weight: 400;
   opacity: 0.5;
@@ -295,6 +296,15 @@ img {
   font-size: clamp(20px, 2.4vw, 32px);
   font-weight: 500;
   margin-bottom: 40px;
+}
+
+/* 下層ページキービジュアル */
+.kv__subpage {
+  height: 40vh;
+  min-height: 350px;
+}
+.kv__content--sub {
+  padding-top: 10vh;
 }
 
 /* パンくずリスト */
@@ -527,7 +537,29 @@ img {
   main {
     padding-bottom: 60px;
   }
+
+  /* キービジュアル */
+  .kv {
+    min-height: 350px;
+  }
+  .kv__inner {
+    padding: 80px 20px;
+  }
   /* パンくずリスト */
+  .breadcrumb__nav {
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 1.2em 0.75em;
+  }
+
+  .breadcrumb__list {
+    gap: 0.5em;
+  }
+
+  .breadcrumb__item:not(:last-child)::after {
+    content: ">";
+    margin-left: 5px;
+  }
   .breadcrumb__item {
     font-size: 14px;
   }
