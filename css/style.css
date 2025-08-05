@@ -556,6 +556,11 @@ img {
     font-size: 16px;
   }
 
+  .introduction__title::before {
+    width: 16px;
+    height: 16px;
+  }
+
   /* サービスの強み */
   .feature__item {
     grid-template-columns: repeat(1, 1fr);

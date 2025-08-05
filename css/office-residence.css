@@ -1,5 +1,116 @@
 /* キービジュアル */
 .kv {
   background-image: url("../images/service/kv_office.jpg");
-  background-position: center;
+  background-position: center 80%;
+}
+
+/* 所在地 */
+.map__link {
+  display: block;
+  margin-top: 10px;
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+.map__iframe {
+  width: 100%;
+  height: 550px;
+}
+
+/* 建物概要 */
+.building-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.building-table__inner {
+  min-width: 600px;
+}
+
+.building-table__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.building-table__th,
+.building-table__td {
+  border: 1px solid #808080;
+  padding: 0.75em;
+}
+
+.building-table__th {
+  background-color: #b5d4e8;
+  font-weight: bold;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.building-table__td {
+  background-color: #fff;
+  text-align: left;
+  padding-left: 3em;
+}
+
+.building-table__scroll {
+  display: none;
+}
+
+/* 取り扱い物件 */
+.property {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* 768px以下 */
+@media screen and (max-width: 768px) {
+  /* 所在地 */
+  .map__iframe {
+    height: 350px;
+  }
+
+  /* 建物概要 */
+  .building-table__inner {
+    min-width: 500px;
+  }
+  .building-table__td {
+    padding-left: 1.5em;
+  }
+
+  /* 取り扱い物件 */
+  .property {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+/* 480px以下 */
+@media screen and (max-width: 480px) {
+  .building-table__scroll {
+    display: block;
+    width: 100%;
+    padding: 0 1em;
+    margin-bottom: 10px;
+    text-align: right;
+  }
+
+  .building-table__arrow {
+    display: inline-block;
+    animation: arrowMove 2s ease-in-out infinite;
+  }
+}
+
+/* 建物概要セクションのアニメーション設定 */
+@keyframes arrowMove {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
