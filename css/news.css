@@ -36,7 +36,7 @@
   text-decoration: underline;
 }
 
-/* 768px以下で日付が上、タイトルが下になる */
+/* 768px以下 */
 @media screen and (max-width: 768px) {
   .news-list__item {
     flex-direction: column;
@@ -45,9 +45,5 @@
 
   .news-list__date {
     min-width: auto;
-  }
-
-  .news-list__title {
-    font-size: 15px;
   }
 }
