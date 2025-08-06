@@ -1,0 +1,161 @@
+.kv__subpage {
+  background-image: url("../images/subpage/kv_contact.png");
+  background-position: 30% center;
+}
+
+/* お問い合わせ */
+
+.text-wrap {
+  margin-bottom: 120px;
+}
+
+.text-wrap__content {
+  margin-bottom: 1em;
+}
+
+.text-wrap__align-right {
+  text-align: right;
+}
+
+.text-wrap__align-right--required {
+  color: #ed1c24;
+}
+
+/* フォーム */
+.contact-form {
+  color: #1a1a1a;
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.5em;
+  align-items: start;
+  margin-bottom: 2em;
+}
+
+.contact-form__label {
+  font-size: 16px;
+  padding-top: 0.5em;
+  box-sizing: border-box;
+}
+
+.contact-form__required {
+  color: red;
+  margin-left: 0.3em;
+}
+
+.contact-form__input,
+.contact-form__select,
+.contact-form__textarea {
+  padding: 0.5em;
+  font-size: 1em;
+  box-sizing: border-box;
+  border: none;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+  box-shadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form__select {
+  border: 1px solid #999;
+  width: 60%;
+}
+
+.contact-form__textarea {
+  resize: vertical;
+  margin-bottom: 4em;
+}
+
+.contact-form__button-wrap {
+  text-align: center;
+}
+
+.contact-form__button {
+  background-color: #076fb3;
+  color: #fff;
+  border: none;
+  padding: 0.6em 8em;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 0 #000;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form__button:hover {
+  opacity: 0.8;
+}
+
+/* お問い合わせの内容について */
+
+.form-confirm {
+  color: #1a1a1a;
+  font-size: 1em;
+}
+
+.form-confirm__check {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.form-confirm__note {
+  margin-top: 0.5em;
+}
+
+.form-confirm__alert {
+  color: #ed1c24;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 5em;
+}
+
+.form-confirm__notice {
+  border: 1px solid #999;
+  padding: 1.5em;
+  font-size: 16px;
+  line-height: 1.8;
+  border-radius: 4px;
+}
+
+.form-confirm__notice ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.form-confirm__notice li {
+  list-style: disc;
+  margin-bottom: 0.75em;
+}
+
+@media screen and (max-width: 768px) {
+  /* お問い合わせ */
+  .contact-form__row {
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+  }
+
+  .contact-form__select {
+    width: 100%;
+  }
+
+  .contact-form__label {
+    padding-top: 0;
+    margin-bottom: 0.5em;
+  }
+
+  .contact-form__button {
+    padding: 0.6em 6em;
+  }
+
+  /* お問い合わせ内容について */
+  .form-confirm__notice {
+    padding: 0.5em;
+  }
+
+  .form-confirm__notice ul {
+    padding-left: 1em;
+  }
+}

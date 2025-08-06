@@ -32,6 +32,15 @@ img {
   height: auto;
 }
 
+.pc {
+  display: block;
+}
+@media screen and (max-width: 480px) {
+  .pc {
+    display: none;
+  }
+}
+
 /* ヘッダー */
 .header {
   background-color: #fff;
