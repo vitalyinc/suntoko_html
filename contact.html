@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>株式会社サントーコー</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Maru+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/sanitize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <!-- TODO: リンク設定 -->
+        <a class="header__logo" href="/">
+          <img
+            src="images/logo/logo.png"
+            alt="株式会社サントーコーENEOSグループ"
+            class="site-header__logo"
+          />
+        </a>
+        <button class="header__toggle" aria-label="メニューを開閉">
+          <span class="header__toggle-bar"></span>
+          <span class="header__toggle-bar"></span>
+          <span class="header__toggle-bar"></span>
+        </button>
+        <nav class="header__nav-wrapper">
+          <ul class="header__nav">
+            <li class="header__nav-item">
+              <!-- TODO: リンク設定 -->
+              <a class="header__nav-link" href="#">トップページ</a>
+            </li>
+            <li class="header__nav-item">
+              <!-- TODO: リンク設定 -->
+              <a class="header__nav-link" href="#">事業内容</a>
+            </li>
+            <li class="header__nav-item">
+              <!-- TODO: リンク設定 -->
+              <a class="header__nav-link" href="#">会社情報</a>
+            </li>
+            <li class="header__nav-item">
+              <!-- TODO: リンク設定 -->
+              <a class="header__nav-link" href="#">事業所一覧</a>
+            </li>
+            <li class="header__nav-item">
+              <!-- TODO: リンク設定 -->
+              <a class="header__nav-link" href="#">採用情報</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="main carlife">
+      <section class="kv kv__subpage">
+        <div class="kv__inner">
+          <div class="kv__content--sub">
+            <h1 class="kv__title">Contact</h1>
+            <p class="kv__subtitle">お問い合わせ</p>
+          </div>
+        </div>
+      </section>
+      <div class="breadcrumb">
+        <nav class="breadcrumb__nav">
+          <ul class="breadcrumb__list">
+            <li class="breadcrumb__item">
+              <!-- TODO: リンク設定 -->
+              <a class="breadcrumb__item--link" href="/">TOP</a>
+            </li>
+            <li class="breadcrumb__item">
+              <!-- TODO: リンク設定 -->
+              <a class="breadcrumb__item--link" href="/">お問い合わせ</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <section class="section section-gray">
+        <div class="section__inner">
+          <h2 class="section__title">お問い合わせ</h2>
+          <div class="section__line section__line-white"></div>
+          <div class="text-wrap">
+            <p class="text-wrap__content">
+              株式会社サントーコーホームページをご愛顧いただきましてありがとうございます。<br />
+              疑問、ご質問、その他お気づきの点がございましたら、下記のお問い合わせフォームにてお気軽にお問い合わせください。
+            </p>
+            <div class="text-wrap__align-right">
+              <span
+                ><span class="text-wrap__align-right--required">＊</span
+                >必須項目</span
+              >
+            </div>
+          </div>
+          <form class="contact-form">
+            <div class="contact-form__row">
+              <!-- TODO:label設定 -->
+              <label class="contact-form__label" for="name"
+                >・お名前<span class="contact-form__required">*</span></label
+              >
+              <input
+                class="contact-form__input"
+                type="text"
+                id="name"
+                name="name"
+                required
+              />
+            </div>
+
+            <div class="contact-form__row">
+              <!-- TODO:label設定 -->
+              <label class="contact-form__label" for="email"
+                >・メールアドレス<span class="contact-form__required"
+                  >*</span
+                ></label
+              >
+              <input
+                class="contact-form__input"
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
+            </div>
+
+            <div class="contact-form__row">
+              <!-- TODO:label設定 -->
+              <label class="contact-form__label" for="subject"
+                >・お問い合わせ項目</label
+              >
+              <select class="contact-form__select" id="subject" name="subject">
+                <option>Webサイトについて</option>
+                <option>サービスについて</option>
+                <option>その他</option>
+              </select>
+            </div>
+            <!-- TODO:label設定 -->
+            <div class="contact-form__row">
+              <label class="contact-form__label" for="message"
+                >・お問い合わせ内容</label
+              >
+              <textarea
+                class="contact-form__textarea"
+                id="message"
+                name="message"
+                rows="12"
+              ></textarea>
+            </div>
+            <div class="contact-form__button-wrap">
+              <button type="submit" class="contact-form__button">送　信</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section__inner">
+          <div class="form-confirm">
+            <div class="form-confirm__check">
+              <label>
+                <input type="checkbox" name="confirm" required />
+                お問い合わせの内容について
+              </label>
+              <p class="form-confirm__note">
+                お間違いなければチェックを入れて送信してください。
+              </p>
+            </div>
+
+            <p class="form-confirm__alert">
+              送信ボタンを押すと直ちに送信されますので<br class="pc" />
+              内容をよくご確認の上送信ボタンを押してください。
+            </p>
+
+            <div class="form-confirm__notice">
+              <ul>
+                <li>
+                  いただいたお問い合わせ・ご意見につきましては、速やかに回答するよう努めておりますが、調査が必要なお問い合わせや専門的な技術に関するお問い合わせ等、内容によってはお時間をいただく場合がございます。
+                </li>
+                <li>
+                  お問い合わせフォームにご入力いただいた情報は、弊社からの回答およびウェブサービス向上のために使用させていただきます。
+                </li>
+                <li>
+                  ホームページからのお問い合わせにつきましては、Eメールでの返信を原則とさせていただいておりますので、回答をご希望される場合、返信先のEメールアドレスを正確に入力いただきますよう、お願いいたします。
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__box">
+          <div class="footer__left">
+            <!-- TODO: リンク設定 -->
+            <a class="footer__logo" href="#">株式会社サントーコー</a>
+            <div class="footer__address">
+              <p>〒221-0835</p>
+              <p>神奈川県横浜市神奈川区鶴屋町 ニ丁目21-1</p>
+              <p>TEL：045-323-5500</p>
+            </div>
+            <div class="footer__address">
+              <p>【プロパンガスの問い合わせ先】</p>
+              <p>〒252-0003</p>
+              <p>神奈川県座間市ひばりが丘 5-11-9</p>
+              <p>TEL：046-266-5550</p>
+            </div>
+          </div>
+          <div class="footer__right">
+            <div>
+              <nav>
+                <ul class="footer__nav">
+                  <li class="footer__nav-item">
+                    <!-- TODO: リンク設定 -->
+                    <a class="footer__nav-link" href="#">トップページ</a>
+                  </li>
+                  <li class="footer__nav-item">
+                    <!-- TODO: リンク設定 -->
+                    <a class="footer__nav-link" href="#">事業内容</a>
+                  </li>
+                  <li class="footer__nav-item">
+                    <!-- TODO: リンク設定 -->
+                    <a class="footer__nav-link" href="#">会社情報</a>
+                  </li>
+                  <li class="footer__nav-item">
+                    <!-- TODO: リンク設定 -->
+                    <a class="footer__nav-link" href="#">事業所一覧</a>
+                  </li>
+                  <li class="footer__nav-item">
+                    <!-- TODO: リンク設定 -->
+                    <a class="footer__nav-link" href="#">採用情報</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div>
+              <nav>
+                <ul class="footer__nav">
+                  <li class="footer__nav-item">
+                    <!-- TODO: リンク設定 -->
+                    <a class="footer__nav-link" href="#">ご利用にあたって</a>
+                  </li>
+                  <li class="footer__nav-item">
+                    <!-- TODO: リンク設定 -->
+                    <a class="footer__nav-link" href="#"
+                      >プライバシーポリシー</a
+                    >
+                  </li>
+                  <li class="footer__nav-item">
+                    <!-- TODO: リンク設定 -->
+                    <a class="footer__nav-link" href="#">サイトマップ</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="footer__copyright">
+          <p>&copy; 株式会社サントーコー All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
