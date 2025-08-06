@@ -248,9 +248,16 @@ img {
 
 /* フッター980px以下 */
 @media screen and (max-width: 980px) {
+  .footer__inner {
+    padding: 0 20px;
+  }
   .footer__box {
     flex-direction: column;
     justify-content: center;
+  }
+  .footer__logo {
+    font-size: 20px;
+    text-align: center;
   }
 
   .footer__address {
