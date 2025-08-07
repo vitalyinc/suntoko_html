@@ -27,6 +27,11 @@ a {
   cursor: pointer;
 }
 
+a:hover {
+  color: #076fb3;
+  text-decoration: underline;
+}
+
 img {
   width: 100%;
   height: auto;
@@ -553,6 +558,33 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+
+/* SP時のテーブルスクロール */
+.table__scroll {
+  display: none;
+  width: 100%;
+  padding: 0 1em;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.table__arrow {
+  display: none;
+  animation: arrowMove 2s ease-in-out infinite;
+}
+
+/* テーブルスクロールのアニメーション設定 */
+@keyframes arrowMove {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* 768px以下 */

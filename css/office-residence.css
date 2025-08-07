@@ -52,10 +52,6 @@
   padding-left: 3em;
 }
 
-.building-table__scroll {
-  display: none;
-}
-
 /* 取り扱い物件 */
 .property {
   display: grid;
@@ -88,29 +84,11 @@
 
 /* 480px以下 */
 @media screen and (max-width: 480px) {
-  .building-table__scroll {
+  .table__scroll {
     display: block;
-    width: 100%;
-    padding: 0 1em;
-    margin-bottom: 10px;
-    text-align: right;
   }
 
-  .building-table__arrow {
+  .table__arrow {
     display: inline-block;
-    animation: arrowMove 2s ease-in-out infinite;
-  }
-}
-
-/* 建物概要セクションのアニメーション設定 */
-@keyframes arrowMove {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-  100% {
-    transform: translateX(0);
   }
 }
