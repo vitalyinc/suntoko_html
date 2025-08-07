@@ -2,3 +2,85 @@
   background-image: url("../images/subpage/kv_office-list.png");
   background-position: bottom center;
 }
+
+/* 事業所一覧 */
+.office-head {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.office-table-wrapper {
+  overflow-x: auto;
+}
+
+.office-table {
+  border-collapse: collapse;
+  min-width: 900px;
+  width: 100%;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+
+.office-table tbody {
+  background-color: #fff;
+}
+
+.office-table__th,
+.office-table__td {
+  padding: 0.75em 1em;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.office-table__th {
+  background-color: #076fb3;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+}
+
+.office-table__th::after {
+  content: "";
+  height: 100%;
+  width: 2px;
+  background-color: #fff;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
+.office-table__td--blue,
+.office-table__td--light-blue {
+  font-weight: bold;
+  writing-mode: vertical-rl;
+  width: 50px;
+  vertical-align: middle;
+  text-align: center;
+  border-bottom: 1px solid #999;
+}
+
+.office-table__td--blue {
+  background-color: #9cc5e1;
+}
+
+.office-table__td--light-blue {
+  background-color: #cde2f0;
+}
+
+.office-table__td {
+  border-bottom: 1px solid #999;
+}
+
+.office-table__th:last-child::after {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .table__scroll {
+    display: block;
+  }
+
+  .table__arrow {
+    display: inline-block;
+  }
+}
