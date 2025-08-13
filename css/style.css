@@ -300,10 +300,15 @@ img {
   max-width: 1700px;
   margin: 0 auto;
   padding: 0 60px;
+  height: 100%;
 }
 
 .kv__content {
   padding-top: 24vh;
+}
+
+.kv__content--top {
+  display: flex;
 }
 
 .kv__title {

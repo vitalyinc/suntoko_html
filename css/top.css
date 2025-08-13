@@ -1,0 +1,223 @@
+/* カーライフソリューションページのキービジュアル画像 */
+.kv {
+  background-image: url("../images/service/kv_carlife.jpg");
+}
+
+/* ヘッダー */
+.header--top {
+  background-color: transparent;
+  position: fixed;
+}
+
+.header__nav-link--top {
+  color: #fff;
+}
+
+/* kv */
+.kv--top {
+  height: 100vh;
+  min-height: 500px;
+}
+
+.kv__inner--top {
+  padding-bottom: 100px;
+}
+
+.kv__content--top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 30vh;
+  height: 100%;
+}
+
+.kv__title-wrap {
+}
+
+.kv__title--top {
+  font-size: clamp(28px, 7.4vw, 56px);
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho",
+    "MS Mincho", serif;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.kv__btn {
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.kv__btn:hover {
+  color: #fff;
+}
+
+.kv__btn::after {
+  content: "";
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  background-image: url(/images/common/arrow-icon.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.kv__lead-foot {
+  font-size: 20px;
+  letter-spacing: 0.1em;
+}
+
+/* トップセクションの基本スタイル */
+.section__head {
+  width: 42%;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+}
+
+.section__head::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: -45px;
+  background-color: #fff;
+  width: 50px;
+  height: 80px;
+  clip-path: polygon(0 0, 0 0, 75% 100%, 0% 100%);
+}
+
+.section__body {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0 20px 0 0;
+  padding: 0 80px 0;
+}
+
+.section__inner--top {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.section__title--top {
+  font-weight: 500;
+  font-size: clamp(20px, 3.6vw, 40px);
+}
+
+/* News & Topics */
+.section-news {
+  width: 100%;
+  background-color: #ebebeb;
+  padding-top: 100px;
+}
+.top-news {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10%;
+  padding: 2em 0 8em;
+}
+
+.top-news__list {
+  margin: 0;
+  flex: 0 0 250px;
+}
+
+.top-news__right {
+  flex: 1;
+}
+
+.top-news__item {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5em;
+  border-bottom: 1px solid#b3b3b3;
+  padding: 2em 0 2em 1em;
+}
+
+.top-news__date {
+  color: #808080;
+}
+
+.top-news__button {
+  border: 1px solid #076fb3;
+  border-radius: 50px;
+  padding: 10px 1.6em;
+  color: #076fb3;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.top-news__button::after {
+  content: "";
+  display: inline-block;
+  width: 1.6em;
+  height: 1.6em;
+  background-image: url(/images/common/arrow-icon02.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 980px以下 */
+@media screen and (max-width: 980px) {
+  /* news & Topics */
+  .top-news {
+    flex-direction: column-reverse;
+    gap: 2em;
+  }
+
+  .top-news__list,
+  .top-news__right {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* 768px以下 */
+@media screen and (max-width: 768px) {
+  /* kv */
+  .kv {
+    background-position: 70% center;
+  }
+  .top-kv {
+    min-height: auto;
+  }
+  .kv__inner {
+    padding: 60px 20px;
+  }
+  .kv__title-wrap {
+    margin-bottom: 120px;
+  }
+  .kv__btn {
+    font-size: 16px;
+  }
+  .kv__lead-foot {
+    font-size: 16px;
+  }
+
+  /* section */
+  .section__body {
+    padding: 0 20px 0;
+  }
+  .section__head {
+    height: 40px;
+  }
+  .section__head::before {
+    height: 40px;
+  }
+
+  /* News & Topics */
+  .top-news__item,
+  .top-news__list {
+    padding-left: 0;
+  }
+}
