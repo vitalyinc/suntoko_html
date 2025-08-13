@@ -1,5 +1,5 @@
 /* カーライフソリューションページのキービジュアル画像 */
-.kv {
+.kv--carlife {
   background-image: url("../images/service/kv_carlife.jpg");
 }
 
@@ -108,6 +108,13 @@
   font-size: clamp(20px, 3.6vw, 40px);
 }
 
+/* 採用情報 */
+.kv--recruit {
+  background-image: url("../images/top/kv_recruit.png");
+  height: 100vh;
+  min-height: 500px;
+}
+
 /* News & Topics */
 .section-news {
   width: 100%;
@@ -185,7 +192,7 @@
 /* 768px以下 */
 @media screen and (max-width: 768px) {
   /* kv */
-  .kv {
+  .kv--carlife {
     background-position: 70% center;
   }
   .top-kv {
@@ -213,6 +220,15 @@
   }
   .section__head::before {
     height: 40px;
+  }
+
+  /* 採用情報 */
+  .kv--recruit {
+    background-position: 20% center;
+    height: 600px;
+  }
+  .kv__content--recruit {
+    padding-top: 100px;
   }
 
   /* News & Topics */
