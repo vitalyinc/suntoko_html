@@ -3,38 +3,99 @@
   background-image: url("../images/service/kv_carlife.jpg");
 }
 
-/* ヘッダー */
+/* ヘッダー トップは背景を透明に設定 */
 .header--top {
   background-color: transparent;
   position: fixed;
+  z-index: 10;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .header__nav-link--top {
   color: #fff;
 }
 
-/* kv */
-.kv--top {
+/* 300px超えたら白背景、colorをブラックに変更 */
+.header--top.is-solid {
+  background-color: #fff;
+}
+.header--top.is-solid .header__nav-link--top {
+  color: #333;
+}
+.header--top.is-solid .header__nav-link--top:hover {
+  color: #0071bc;
+}
+.header--top.is-solid .header__nav-item--top:not(:last-child)::after {
+  background-color: #1a1a1a;
+}
+
+/* kv トップ */
+.kv-top {
+  position: relative;
   height: 100vh;
-  min-height: 500px;
+  overflow: hidden;
 }
 
-.kv__inner--top {
-  padding-bottom: 100px;
+/* kv スライダーのアウター */
+.slider {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+  will-change: transform;
 }
 
-.kv__content--top {
+/* 各スライド */
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+/* kv背景 カーライフソリューション */
+.slide__carlife {
+  background-image: url(../images/service/kv_carlife.jpg);
+}
+/* kv背景 リビングライフソリューション */
+.slide__livinglife {
+  background-image: url(../images/service/kv_livinglife.jpg);
+}
+/* kv背景 リスクコンサルティング */
+.slide__risk-consulting {
+  background-image: url(../images/service/kv_consulting.jpg);
+}
+/* kv背景 オフィス&レジデンス */
+.slide__office-residence {
+  background-image: url(../images/service/kv_office.jpg);
+}
+.slide__inner {
+  width: 100%;
+  max-width: 1700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+  padding: 0 80px;
+}
+
+.slide__content {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 30vh;
   height: 100%;
+  padding-top: 30vh;
+  padding-bottom: 100px;
 }
 
-.kv__title-wrap {
-}
-
-.kv__title--top {
+.slide__title {
   font-size: clamp(28px, 7.4vw, 56px);
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho",
     "MS Mincho", serif;
@@ -43,7 +104,8 @@
   margin-bottom: 40px;
 }
 
-.kv__btn {
+/* スライド タイトル下のリンク */
+.slide__btn {
   color: #fff;
   font-size: 20px;
   display: flex;
@@ -51,11 +113,7 @@
   gap: 0.3em;
 }
 
-.kv__btn:hover {
-  color: #fff;
-}
-
-.kv__btn::after {
+.slide__btn::after {
   content: "";
   display: block;
   width: 1.4em;
@@ -66,9 +124,88 @@
   background-size: contain;
 }
 
-.kv__lead-foot {
+.slide__btn:hover {
+  color: #fff;
+}
+
+/* テキスト「Live well,feel good」 */
+.slide__bottom-text {
   font-size: 20px;
   letter-spacing: 0.1em;
+}
+
+/* スライド 右側のボタン */
+.slide__btn--main {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid #fff;
+  color: #fff;
+  writing-mode: vertical-rl;
+  padding: 5em 1em;
+  z-index: 10;
+}
+
+.slide__btn--main:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* ドット */
+.indicator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.indicator button {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #b3b3b3;
+  border: none;
+  cursor: pointer;
+}
+.indicator button[aria-current="true"] {
+  background: #fff;
+}
+
+/* kv タイトルの初回アニメーション */
+@keyframes kvTitleIntro {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 初回ロード時のみアニメーション */
+.slide__title.title-intro {
+  opacity: 0;
+  transform: translateY(100px);
+  animation: kvTitleIntro 700ms ease-out forwards;
+  animation-delay: 300ms;
+}
+
+/* 2枚目以降とループ後の1枚目にはアニメーションを付与しない */
+@media (prefers-reduced-motion: reduce) {
+  .slide__title.title-intro {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* トップセクションの基本スタイル */
@@ -98,6 +235,13 @@
   padding: 0 80px 0;
 }
 
+.section__body--gray {
+  background-color: #ebebeb;
+}
+.section__body--gray::before {
+  background-color: #ebebeb;
+}
+
 .section__inner--top {
   max-width: 1700px;
   margin: 0 auto;
@@ -108,11 +252,45 @@
   font-size: clamp(20px, 3.6vw, 40px);
 }
 
+/* 事業内容 */
+.section--solution {
+  background-color: #fff;
+  padding-top: 150px;
+}
+
+.solutions {
+  background-color: #ebebeb;
+  padding-top: 120px;
+}
+
 /* 採用情報 */
-.kv--recruit {
+.recruit {
+  background-color: #ebebeb;
+  padding: 100px 0;
+}
+.recruit__inner {
   background-image: url("../images/top/kv_recruit.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 100px 80px;
   height: 100vh;
   min-height: 500px;
+}
+
+.recruit__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+}
+
+.recruit__lead-foot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 /* News & Topics */
@@ -151,11 +329,11 @@
   color: #808080;
 }
 
-.top-news__button {
-  border: 1px solid #076fb3;
+/* トップページのボタン */
+
+.top-button {
   border-radius: 50px;
   padding: 10px 1.6em;
-  color: #076fb3;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -163,15 +341,143 @@
   gap: 1em;
 }
 
-.top-news__button::after {
+.top-button::after {
   content: "";
   display: inline-block;
   width: 1.6em;
   height: 1.6em;
-  background-image: url(/images/common/arrow-icon02.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.top-button--blue {
+  border: 1px solid #076fb3;
+  color: #076fb3;
+}
+
+.top-button--blue::after {
+  background-image: url(/images/common/arrow-icon02.png);
+}
+
+.top-button--white {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.top-button--white::after {
+  background-image: url(/images/common/arrow-icon03.png);
+}
+
+.top-button--panel {
+  width: 36%;
+  min-width: 200px;
+  margin-top: 2em;
+}
+
+.top-button--panel:hover {
+  color: #fff;
+}
+
+/* 事業内容 */
+.solutions {
+}
+
+.panels {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  position: relative;
+}
+
+.panel {
+  background-color: #fff;
+  border-radius: 2em;
+  padding: 0 80px;
+  transition: margin-top 0.3s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.panel__inner {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.panel__head {
+  color: #b5d4e8;
+  font-weight: 400;
+  font-size: clamp(18px, 8.4vw, 88px);
+  line-height: 1;
+}
+
+.panel__title {
+  color: #076fb3;
+  font-weight: 500;
+  font-size: clamp(18px, 3.4vw, 32px);
+  margin-top: 10px;
+  line-height: 1;
+  margin-bottom: 2em;
+}
+
+.panel__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.panel__wrap {
+  display: flex;
+  gap: 3em;
+  padding-bottom: 80px;
+}
+
+.panel__left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.panel__right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.panel + .panel {
+  margin-top: -10px;
+  z-index: 3;
+}
+
+.solutions__panel .panel:not(:first-child) {
+  margin-top: -30px; /* 上に重ねるためマイナス値 */
+}
+
+.panel.panel-active {
+  background-color: #076fb3;
+  color: #fff;
+}
+
+.panel.panel-active .panel__title {
+  color: #fff;
+}
+
+.panel.panel-active .panel__head {
+  color: #fff;
+}
+.panel.panel-active {
+  z-index: 2;
+}
+
+/* 3番目だけ背景色変更 */
+.panels .panel:nth-of-type(3) {
+  background-color: #ebebeb;
+}
+
+/* active時は常に以下を優先 */
+.panels .panel.panel-active {
+  background-color: #076fb3;
+  color: #fff;
 }
 
 /* 980px以下 */
@@ -192,23 +498,15 @@
 /* 768px以下 */
 @media screen and (max-width: 768px) {
   /* kv */
-  .kv--carlife {
+  .slide__carlife {
     background-position: 70% center;
   }
-  .top-kv {
-    min-height: auto;
-  }
-  .kv__inner {
-    padding: 60px 20px;
-  }
-  .kv__title-wrap {
-    margin-bottom: 120px;
-  }
-  .kv__btn {
+  .slide__btn {
     font-size: 16px;
   }
-  .kv__lead-foot {
-    font-size: 16px;
+
+  .slide__inner {
+    padding: 0 20px;
   }
 
   /* section */
@@ -222,13 +520,22 @@
     height: 40px;
   }
 
-  /* 採用情報 */
-  .kv--recruit {
-    background-position: 20% center;
-    height: 600px;
+  /* 事業内容 */
+  .panel {
+    padding: 0 20px;
   }
-  .kv__content--recruit {
-    padding-top: 100px;
+
+  .panel__wrap {
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  /* 採用情報 */
+  .recruit__inner {
+    background-position: 20% center;
+  }
+  .recruit__inner {
+    padding: 100px 20px;
   }
 
   /* News & Topics */
@@ -236,4 +543,74 @@
   .top-news__list {
     padding-left: 0;
   }
+}
+
+/* card 以下テスト用 */
+
+.text-wrap {
+  background-color: #ebebeb;
+}
+.cards {
+  position: relative;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+}
+.cards .card:nth-of-type(3) {
+  background-color: #ebebeb;
+}
+.card__header {
+}
+.card__inner {
+  padding: 0 80px;
+}
+.card__head {
+  font-size: 64px;
+  line-height: 1;
+  color: #ebebeb;
+  margin-bottom: 10px;
+}
+.card__title {
+  font-size: 28px;
+}
+.card__content {
+  padding: 60px 0;
+}
+.card__content {
+  transition: max-height 400ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+.card__wrap {
+  display: flex;
+  gap: 50px;
+}
+.card__left {
+  flex: 1;
+}
+.card__right {
+  flex: 1;
+}
+.card__text {
+}
+.card__btn {
+}
+
+/* 30px上のcardに重ねる */
+card + card {
+  margin-top: -30px;
+}
+
+/* is-active付与時のスタイル */
+
+.card.is-active {
+  background-color: #076fb3;
+  color: #fff;
+}
+.cards .card:nth-of-type(3).is-active {
+  background-color: #076fb3; /* 念のためピンポイントでも上書き */
 }
