@@ -310,10 +310,6 @@ img {
   padding-top: 24vh;
 }
 
-.kv__content--top {
-  display: flex;
-}
-
 .kv__title {
   font-size: clamp(36px, 7.4vw, 112px);
   line-height: 1;
