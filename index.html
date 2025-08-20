@@ -21,8 +21,9 @@
         <a class="header__logo header__logo--top" href="/">
           <img
             src="images/logo/logo-white.png"
+            data-src-white="/images/logo/logo-white.png"
+            data-src-color="/images/logo/logo.png"
             alt="株式会社サントーコーENEOSグループ"
-            class="site-header__logo"
           />
         </a>
         <button class="header__toggle" aria-label="メニューを開閉">
@@ -67,40 +68,259 @@
       </div>
     </header>
     <main>
-      <section class="kv kv--top kv--carlife">
-        <div class="kv__inner kv__inner--top">
-          <div class="kv__content--top">
+      <section class="kv-top">
+        <div class="slider" id="slider">
+          <!-- カーライフソリューション -->
+          <article class="slide slide__carlife">
+            <a href="#" class="slide__btn--main">お問い合わせ</a>
+            <div class="slide__inner">
+              <div class="slide__content">
+                <div class="slide__wrap">
+                  <h1 class="slide__title">
+                    くらしを支える、<br />サントーコー
+                  </h1>
+                  <!-- リンク設定 -->
+                  <a class="slide__btn" href="#">
+                    <span class="slide__btn-text"
+                      >カーライフソリューション</span
+                    >
+                    <div class="slide__btn-icon"></div>
+                  </a>
+                </div>
+                <div>
+                  <span class="slide__bottom-text">Live well,feel good</span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- リビングライフソリューション -->
+          <article class="slide slide__livinglife">
+            <a href="#" class="slide__btn--main">お問い合わせ</a>
+            <div class="slide__inner">
+              <div class="slide__content">
+                <div class="slide__wrap">
+                  <h1 class="slide__title">
+                    くらしを支える、<br />サントーコー
+                  </h1>
+                  <!-- リンク設定 -->
+                  <a class="slide__btn" href="#">
+                    <span class="slide__btn-text"
+                      >リビングライフソリューション</span
+                    >
+                    <div class="slide__btn-icon"></div>
+                  </a>
+                </div>
+                <div>
+                  <span class="slide__bottom-text">Live well,feel good</span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- リスクコンサルティング -->
+          <article class="slide slide__risk-consulting">
+            <a href="#" class="slide__btn--main">お問い合わせ</a>
+            <div class="slide__inner">
+              <div class="slide__content">
+                <div class="slide__wrap">
+                  <h1 class="slide__title">
+                    くらしを支える、<br />サントーコー
+                  </h1>
+                  <!-- リンク設定 -->
+                  <a class="slide__btn" href="#">
+                    <span class="slide__btn-text">リスクコンサルティング</span>
+                    <div class="slide__btn-icon"></div>
+                  </a>
+                </div>
+                <div>
+                  <span class="slide__bottom-text">Live well,feel good</span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- オフィス&レジデンス -->
+          <article class="slide slide__office-residence">
+            <a href="#" class="slide__btn--main">お問い合わせ</a>
+            <div class="slide__inner">
+              <div class="slide__content">
+                <div class="slide__wrap">
+                  <h1 class="slide__title">
+                    くらしを支える、<br />サントーコー
+                  </h1>
+                  <!-- リンク設定 -->
+                  <a class="slide__btn" href="#">
+                    <span class="slide__btn-text">オフィス & レジデンス</span>
+                    <div class="slide__btn-icon"></div>
+                  </a>
+                </div>
+                <div>
+                  <span class="slide__bottom-text">Live well,feel good</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <ul class="indicator" id="indicator"></ul>
+      </section>
+
+      <section class="section--solution">
+        <div class="section__head section__body--gray"></div>
+        <div class="section__body section__body--gray">
+          <div class="section__inner--top">
+            <h2 class="section__title--top">事業内容</h2>
+          </div>
+        </div>
+        <div class="solutions">
+          <div class="panels">
+            <article class="panel">
+              <div class="panel__header">
+                <div class="panel__inner">
+                  <span class="panel__head">Carlife Solution</span>
+                  <h3 class="panel__title">カーライフソリューション</h3>
+                </div>
+              </div>
+              <div class="panel__content">
+                <div class="panel__inner">
+                  <div class="panel__wrap">
+                    <div class="panel__left">
+                      <img src="images/service/kv_carlife.jpg" alt="" />
+                    </div>
+                    <div class="panel__right">
+                      <p class="panel__text">
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                      </p>
+                      <a
+                        class="top-button top-button--white top-button--panel"
+                        href="#"
+                        >詳しく見る</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="panel">
+              <div class="panel__header">
+                <div class="panel__inner">
+                  <span class="panel__head">Livinglife Solution</span>
+                  <h3 class="panel__title">リビングライフソリューション</h3>
+                </div>
+              </div>
+              <div class="panel__content">
+                <div class="panel__inner">
+                  <div class="panel__wrap">
+                    <div class="panel__left">
+                      <img src="images/service/kv_livinglife.jpg" alt="" />
+                    </div>
+                    <div class="panel__right">
+                      <p class="panel__text">
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                      </p>
+                      <a
+                        class="top-button top-button--white top-button--panel"
+                        href="#"
+                        >詳しく見る</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="panel">
+              <div class="panel__header">
+                <div class="panel__inner">
+                  <span class="panel__head">Risk & Consulting</span>
+                  <h3 class="panel__title">リスクコンサルティング</h3>
+                </div>
+              </div>
+              <div class="panel__content">
+                <div class="panel__inner">
+                  <div class="panel__wrap">
+                    <div class="panel__left">
+                      <img src="images/service/kv_consulting.jpg" alt="" />
+                    </div>
+                    <div class="panel__right">
+                      <p class="panel__text">
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                      </p>
+                      <a
+                        class="top-button top-button--white top-button--panel"
+                        href="#"
+                        >詳しく見る</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="panel">
+              <div class="panel__header">
+                <div class="panel__inner">
+                  <span class="panel__head">Office & Residence</span>
+                  <h3 class="panel__title">オフィス&レジデンス</h3>
+                </div>
+              </div>
+              <div class="panel__content">
+                <div class="panel__inner">
+                  <div class="panel__wrap">
+                    <div class="panel__left">
+                      <img src="images/service/kv_office.jpg" alt="" />
+                    </div>
+                    <div class="panel__right">
+                      <p class="panel__text">
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                      </p>
+                      <a
+                        class="top-button top-button--white top-button--panel"
+                        href="#"
+                        >詳しく見る</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="recruit">
+        <article class="recruit__inner">
+          <div class="recruit__content">
+            <div>
+              <h1 class="slide__title">くらしを支える、<br />サントーコー</h1>
+              <!-- リンク設定 -->
+              <a class="slide__btn" href="#">
+                <span class="slide__btn-text">採用情報</span>
+                <div class="slide__btn-icon"></div>
+              </a>
+            </div>
+            <div>
+              <span class="slide__bottom-text recruit__lead-foot"
+                >Live well,feel good</span
+              >
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="section section-gray">
+        <div class="kv recruit">
+          <div class="recruit__inner">
             <div class="kv__title-wrap">
               <h1 class="kv__title--top">くらしを支える、<br />サントーコー</h1>
               <!-- TODO: リンク設定 -->
               <a class="kv__btn" href="#">
-                <span class="kv__btn-text">カーライフソリューション</span>
+                <span class="kv__btn-text">採用情報</span>
                 <div class="kv__btn-icon"></div>
               </a>
             </div>
             <div>
-              <span class="kv__lead-foot">Live well,feel good</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="section section-gray">
-        <div class="kv kv--recruit">
-          <div class="kv__inner kv__inner--top">
-            <div class="kv__content--top kv__content--recruit">
-              <div class="kv__title-wrap">
-                <h1 class="kv__title--top">
-                  くらしを支える、<br />サントーコー
-                </h1>
-                <!-- TODO: リンク設定 -->
-                <a class="kv__btn" href="#">
-                  <span class="kv__btn-text">採用情報</span>
-                  <div class="kv__btn-icon"></div>
-                </a>
-              </div>
-              <div>
-                <span class="kv__lead-foot">Live well,feel good</span>
-              </div>
+              <span class="kv__lead-foot recruit__lead-foot"
+                >Live well,feel good</span
+              >
             </div>
           </div>
         </div>
@@ -113,7 +333,9 @@
             <div class="top-news">
               <div class="top-news__left">
                 <!-- TODO: リンク設定 -->
-                <a class="top-news__button" href="#">News & Topic一覧</a>
+                <a class="top-button top-button--blue" href="#"
+                  >News & Topic一覧</a
+                >
               </div>
               <div class="top-news__right">
                 <ul class="top-news__list">
@@ -141,6 +363,125 @@
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <main class="text-wrap">
+      <section class="cards-stage" id="cards-stage">
+        <!-- ビューポートに張り付くピン要素 -->
+        <div class="cards-pin">
+          <div class="cards">
+            <article class="card is-active">
+              <div class="card__header">
+                <div class="card__inner">
+                  <span class="card__head">Carlife Solution</span>
+                  <h3 class="card__title">カーライフソリューション</h3>
+                </div>
+              </div>
+              <div class="card__content">
+                <div class="card__inner">
+                  <div class="card__wrap">
+                    <div class="card__left">
+                      <img src="images/service/kv_carlife.jpg" alt="" />
+                    </div>
+                    <div class="card__right">
+                      <p class="card__text">
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                      </p>
+                      <a
+                        class="top-button top-button--white top-button--panel"
+                        href="#"
+                        >詳しく見る</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <div class="card__inner">
+                  <span class="card__head">Livinglife Solution</span>
+                  <h3 class="card__title">リビングライフソリューション</h3>
+                </div>
+              </div>
+              <div class="card__content">
+                <div class="card__inner">
+                  <div class="card__wrap">
+                    <div class="card__left">
+                      <img src="images/service/kv_livinglife.jpg" alt="" />
+                    </div>
+                    <div class="card__right">
+                      <p class="card__text">
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                      </p>
+                      <a
+                        class="top-button top-button--white top-button--panel"
+                        href="#"
+                        >詳しく見る</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <div class="card__inner">
+                  <span class="card__head">Risk & Consulting</span>
+                  <h3 class="card__title">リスクコンサルティング</h3>
+                </div>
+              </div>
+              <div class="card__content">
+                <div class="card__inner">
+                  <div class="card__wrap">
+                    <div class="card__left">
+                      <img src="images/service/kv_consulting.jpg" alt="" />
+                    </div>
+                    <div class="card__right">
+                      <p class="card__text">
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                      </p>
+                      <a
+                        class="top-button top-button--white top-button--panel"
+                        href="#"
+                        >詳しく見る</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <div class="card__inner">
+                  <span class="card__head">Office & Residence</span>
+                  <h3 class="card__title">オフィス&レジデンス</h3>
+                </div>
+              </div>
+              <div class="card__content">
+                <div class="card__inner">
+                  <div class="card__wrap">
+                    <div class="card__left">
+                      <img src="images/service/kv_office.jpg" alt="" />
+                    </div>
+                    <div class="card__right">
+                      <p class="card__text">
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                      </p>
+                      <a class="top-button top-button--white card__btn" href="#"
+                        >詳しく見る</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
