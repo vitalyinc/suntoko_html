@@ -11,6 +11,22 @@
   transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
+.header--top:hover {
+  background-color: #fff;
+}
+
+.header--top:hover .header__nav-link--top {
+  color: #1a1a1a;
+}
+
+.header--top:hover .header__nav-link--top:hover {
+  color: #076fb3;
+}
+
+.header--top:hover .header__nav-link--top {
+  color: #1a1a1a;
+}
+
 .header__nav-link--top {
   color: #fff;
 }
@@ -21,9 +37,6 @@
 }
 .header--top.is-solid .header__nav-link--top {
   color: #333;
-}
-.header--top.is-solid .header__nav-link--top:hover {
-  color: #0071bc;
 }
 .header--top.is-solid .header__nav-item--top:not(:last-child)::after {
   background-color: #1a1a1a;
@@ -351,6 +364,18 @@
   background-position: center;
 }
 
+.top-button:hover {
+  color: #fff;
+  background-color: #076fb3;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.top-button--blue:hover::after {
+  transition: all 0.3s ease;
+  background-image: url(/images/common/arrow-icon03.png);
+}
+
 .top-button--blue {
   border: 1px solid #076fb3;
   color: #076fb3;
@@ -364,6 +389,17 @@
   border: 1px solid #fff;
   color: #fff;
 }
+.top-button--white:hover {
+  color: #076fb3;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.top-button--white:hover::after {
+  transition: all 0.3s ease;
+  background-image: url(/images/common/arrow-icon02.png);
+}
 
 .top-button--white::after {
   background-image: url(/images/common/arrow-icon03.png);
@@ -373,10 +409,6 @@
   width: 36%;
   min-width: 200px;
   margin-top: 2em;
-}
-
-.top-button--panel:hover {
-  color: #fff;
 }
 
 /* 事業内容 */
@@ -543,74 +575,4 @@
   .top-news__list {
     padding-left: 0;
   }
-}
-
-/* card 以下テスト用 */
-
-.text-wrap {
-  background-color: #ebebeb;
-}
-.cards {
-  position: relative;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 20px;
-  background-color: #fff;
-  position: sticky;
-  top: 0;
-}
-.cards .card:nth-of-type(3) {
-  background-color: #ebebeb;
-}
-.card__header {
-}
-.card__inner {
-  padding: 0 80px;
-}
-.card__head {
-  font-size: 64px;
-  line-height: 1;
-  color: #ebebeb;
-  margin-bottom: 10px;
-}
-.card__title {
-  font-size: 28px;
-}
-.card__content {
-  padding: 60px 0;
-}
-.card__content {
-  transition: max-height 400ms cubic-bezier(0.25, 1, 0.5, 1);
-}
-.card__wrap {
-  display: flex;
-  gap: 50px;
-}
-.card__left {
-  flex: 1;
-}
-.card__right {
-  flex: 1;
-}
-.card__text {
-}
-.card__btn {
-}
-
-/* 30px上のcardに重ねる */
-card + card {
-  margin-top: -30px;
-}
-
-/* is-active付与時のスタイル */
-
-.card.is-active {
-  background-color: #076fb3;
-  color: #fff;
-}
-.cards .card:nth-of-type(3).is-active {
-  background-color: #076fb3; /* 念のためピンポイントでも上書き */
 }

@@ -52,6 +52,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
+  // ヘッダーhover時のロゴ切り替え
+  header.addEventListener("mouseenter", () => {
+    setLogo(true); // カラーロゴに切り替え
+  });
+
+  header.addEventListener("mouseleave", () => {
+    // スクロール位置に応じて元の状態に戻す
+    const solid = window.scrollY >= THRESHOLD;
+    setLogo(solid);
+  });
+
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll, { passive: true });
   window.addEventListener("load", onScroll);
