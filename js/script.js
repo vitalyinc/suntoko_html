@@ -52,137 +52,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
+  // ヘッダーhover時のロゴ切り替え
+  header.addEventListener("mouseenter", () => {
+    setLogo(true); // カラーロゴに切り替え
+  });
+
+  header.addEventListener("mouseleave", () => {
+    // スクロール位置に応じて元の状態に戻す
+    const solid = window.scrollY >= THRESHOLD;
+    setLogo(solid);
+  });
+
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll, { passive: true });
   window.addEventListener("load", onScroll);
-})();
-
-// kvスライダー ============================================
-(() => {
-  const container = document.querySelector(".kv-top");
-  const track = document.getElementById("slider");
-  const indicator = document.getElementById("indicator");
-
-  // スライド要素取得＆無限ループ用クローン
-  let slides = Array.from(track.children);
-  const count = slides.length;
-  const firstClone = slides[0].cloneNode(true);
-  const lastClone = slides[count - 1].cloneNode(true);
-  track.appendChild(firstClone);
-  track.insertBefore(lastClone, slides[0]);
-  slides = Array.from(track.children); // [lastClone, ...real, firstClone]
-
-  // 状態
-  let index = 1; // 実スライドの先頭位置（クローンを考慮）
-  let itemSize = container.clientHeight;
-  let timer = null;
-  const interval = 5000;
-
-  // ドット生成
-  const dotButtons = [];
-  for (let i = 0; i < count; i++) {
-    const li = document.createElement("li");
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.setAttribute("aria-label", `Go to slide ${i + 1}`);
-    btn.addEventListener("click", () => {
-      stop(); // 自動一旦止める（必要なら外してOK）
-      goTo(i + 1, true);
-      start();
-    });
-    li.appendChild(btn);
-    indicator.appendChild(li);
-    dotButtons.push(btn);
-  }
-
-  // 位置反映
-  function applyTransform(animate) {
-    track.style.transition = animate ? "transform .5s ease" : "none";
-    track.style.transform = `translateY(${-(index * itemSize)}px)`;
-  }
-
-  // インジケータ更新
-  function updateDots() {
-    const active = (index - 1 + count) % count; // 0..count-1
-    dotButtons.forEach((b, i) =>
-      b.setAttribute("aria-current", i === active ? "true" : "false")
-    );
-  }
-
-  function goTo(newIndex, animate = true) {
-    index = newIndex;
-    applyTransform(animate);
-    updateDots();
-  }
-
-  // 初期配置（クローン分1枚下げる）
-  goTo(1, false);
-
-  // ループ処理（遷移完了後にジャンプを無アニメで調整）
-  track.addEventListener("transitionend", () => {
-    if (index === 0) {
-      // 先頭の前（=lastClone）→ 実末尾へ
-      index = count;
-      applyTransform(false);
-    } else if (index === count + 1) {
-      // 末尾の次（=firstClone）→ 実先頭へ
-      index = 1;
-      applyTransform(false);
-    }
-  });
-
-  // 自動再生
-  function next() {
-    goTo(index + 1, true);
-  }
-  function start() {
-    if (timer) return;
-    timer = setInterval(() => {
-      // クローンを含む範囲で1つ進める
-      if (index >= count + 1) {
-        // 念のため整合
-        index = 1;
-        applyTransform(false);
-      }
-      next();
-    }, interval);
-  }
-  function stop() {
-    clearInterval(timer);
-    timer = null;
-  }
-
-  // リサイズ対応
-  window.addEventListener("resize", () => {
-    const prevHeight = itemSize;
-    itemSize = container.clientHeight;
-    if (itemSize !== prevHeight) applyTransform(false);
-  });
-  start();
-})();
-
-// ロード後のタイトルを初回アニメーションさせる
-(() => {
-  const track = document.getElementById("slider");
-  if (!track) return;
-
-  // クローン後の構造: [lastClone, ...real(0..n-1), firstClone]
-  const slides = Array.from(track.children);
-  if (slides.length < 3) return; // クローンが無いケース除外
-
-  const firstReal = slides[1]; // 実スライド1枚目
-  const title = firstReal.querySelector(".slide__title");
-  if (!title) return;
-
-  // クラス付与でアニメ発火 → 終わったら外して“1回きり”
-  title.classList.add("title-intro");
-  title.addEventListener(
-    "animationend",
-    () => {
-      title.classList.remove("title-intro");
-    },
-    { once: true }
-  );
 })();
 
 // 事業内容 アコーディオンのアニメーション
@@ -277,4 +160,201 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 })();
 
-// card
+// main-kv--------------------------------------
+
+// 要素取得
+const mainArea = document.getElementById("main-area");
+const mainWrap = document.getElementById("main-wrap");
+const slides = document.querySelectorAll(".hero");
+const dots = document.querySelectorAll(".kv-indicator__dot");
+
+let currentIndex = 0;
+let sum = 0;
+let isAnimating = false;
+let lastWheelTime = 0;
+
+const MOVE_THRESHOLD = 20;
+const GESTURE_GAP = 10;
+const MAX = slides.length - 1;
+
+// ----------------------------------
+// IntersectionObserver: 100%見えたらロック、外れたら解除
+// ----------------------------------
+const observer = new IntersectionObserver(onIntersect, {
+  root: null,
+  threshold: 1,
+});
+observer.observe(mainArea);
+
+function onIntersect(entries) {
+  if (!entries[0]) return;
+
+  if (entries[0].isIntersecting) {
+    // 見えているスライド位置を transform から復元して同期
+    syncIndexFromTransform();
+    // 状態初期化
+    sum = 0;
+    isAnimating = false;
+    lastWheelTime = 0;
+
+    // 外スクロール禁止 + 入力監視開始
+    document.body.style.overflow = "hidden";
+    window.addEventListener("wheel", onWheel, { passive: false });
+  } else {
+    // 外スクロール許可 + 入力監視停止
+    document.body.style.overflow = "auto";
+    window.removeEventListener("wheel", onWheel);
+  }
+}
+
+// ----------------------------------
+// ホイール入力（1ジェスチャー=必ず1枚）
+// ----------------------------------
+function onWheel(e) {
+  e.preventDefault();
+  if (isAnimating) return;
+
+  const now = e.timeStamp || performance.now();
+
+  // ジェスチャーが切れたら累積をゼロに
+  if (now - lastWheelTime > GESTURE_GAP) {
+    sum = 0;
+  }
+  lastWheelTime = now;
+
+  // 累積（サチュレートして多段進行を防ぐ）
+  sum += e.deltaY;
+  if (sum > MOVE_THRESHOLD) sum = MOVE_THRESHOLD;
+  if (sum < -MOVE_THRESHOLD) sum = -MOVE_THRESHOLD;
+
+  // 下方向（+）
+  if (sum === MOVE_THRESHOLD) {
+    if (currentIndex < MAX) {
+      currentIndex++;
+      moveSlide();
+    } else {
+      // 最終スライドでさらに下 → ロック解除して外へ
+      unlockFromSection();
+    }
+    sum = 0; // 都度リセット
+    return;
+  }
+
+  // 上方向（-）
+  if (sum === -MOVE_THRESHOLD) {
+    if (currentIndex > 0) {
+      currentIndex--;
+      moveSlide();
+    }
+    // 先頭でさらに上は今回は解除しない
+    sum = 0;
+  }
+}
+
+// ----------------------------------
+// スライド移動（100vh単位）
+// ----------------------------------
+function moveSlide() {
+  isAnimating = true; // アニメ中ガード
+  sum = 0; // 念のためリセット
+
+  // アニメ設定と移動
+  mainWrap.style.transition = "transform 0.6s ease";
+  mainWrap.style.transform = `translateY(${-100 * currentIndex}vh)`;
+
+  // インジケーターも同期
+  updateIndicator(currentIndex);
+  animateTitle(currentIndex);
+}
+
+// アニメ完了で入力再開
+mainWrap.addEventListener("transitionend", () => {
+  isAnimating = false;
+  sum = 0;
+});
+
+// ----------------------------------
+// 解除（外へスクロール可能に戻す）
+// ----------------------------------
+function unlockFromSection() {
+  isAnimating = false;
+  sum = 0;
+  document.body.style.overflow = "auto";
+  window.removeEventListener("wheel", onWheel);
+
+  // 少しだけ押し出してIOが「領域外」を認識しやすく（任意）
+  requestAnimationFrame(() => window.scrollBy(0, 1));
+}
+
+// ----------------------------------
+// transform から currentIndex を復元（再入場時）
+// ----------------------------------
+function syncIndexFromTransform() {
+  const tf = getComputedStyle(mainWrap).transform;
+  if (tf === "none") {
+    currentIndex = 0;
+    updateIndicator(currentIndex);
+    animateTitle(currentIndex);
+    return;
+  }
+  const m = new DOMMatrixReadOnly(tf);
+  const ty = m.m42; // translateY(px)
+  const vh = window.innerHeight; // 100vh の px 値
+  currentIndex = Math.max(0, Math.min(MAX, Math.round(-ty / vh)));
+  updateIndicator(currentIndex);
+  animateTitle(currentIndex);
+}
+
+// ----------------------------------
+// インジケーター（クリックで移動 + 表示同期）
+// ----------------------------------
+function updateIndicator(i) {
+  dots.forEach((dot, idx) => {
+    dot.classList.toggle("is-active", idx === i);
+  });
+}
+
+dots.forEach((dot) => {
+  dot.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (isAnimating) return;
+
+    const i = Number(dot.dataset.index);
+    if (!Number.isFinite(i) || i === currentIndex) return;
+
+    currentIndex = Math.max(0, Math.min(MAX, i));
+    moveSlide();
+  });
+});
+
+// ----------------------------------
+// 初期表示：インジケーターだけ同期しておく（任意）
+// ----------------------------------
+requestAnimationFrame(() => {
+  updateIndicator(currentIndex);
+});
+
+// ------------------------------
+// h1 フェードイン用の関数
+// ------------------------------
+function animateTitle(index) {
+  // すべての h1 から fade-in を外す（リセット）
+  slides.forEach((slide) => {
+    const title = slide.querySelector(".hero__title");
+    if (title) title.classList.remove("fade-in");
+  });
+
+  // 対象スライドの h1 に fade-in を付与
+  const currentSlide = slides[index];
+  const title = currentSlide.querySelector(".hero__title");
+  if (title) {
+    // 一度リフローさせてから付け直すと確実に発火する
+    void title.offsetWidth;
+    title.classList.add("fade-in");
+  }
+}
+
+// ページロード時に最初のタイトルをアニメーション
+window.addEventListener("load", () => {
+  animateTitle(currentIndex);
+});
