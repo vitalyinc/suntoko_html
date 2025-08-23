@@ -49,6 +49,8 @@ img {
 .header {
   background-color: #fff;
   width: 100%;
+  position: relative;
+  z-index: 100;
 }
 
 .header__inner {
@@ -426,7 +428,7 @@ img {
 }
 
 .section-gray {
-  background-color: #ebebeb;
+  background-color: #dbeef8;
 }
 
 /* サービス概要 */

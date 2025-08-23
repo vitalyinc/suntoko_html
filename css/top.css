@@ -7,7 +7,6 @@
 .header--top {
   background-color: transparent;
   position: fixed;
-  z-index: 10;
   transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -49,6 +48,8 @@
   background-color: #fff;
   border-radius: 20px 20px 0 0;
   position: relative;
+  z-index: 10;
+  box-shadow: 0px -3px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 .section__head::before {
@@ -67,13 +68,14 @@
   background-color: #fff;
   border-radius: 0 20px 0 0;
   padding: 0 80px 0;
+  box-shadow: 0px -3px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 .section__body--gray {
-  background-color: #ebebeb;
+  background-color: #b5d4e8;
 }
 .section__body--gray::before {
-  background-color: #ebebeb;
+  background-color: #b5d4e8;
 }
 
 .section__inner--top {
@@ -93,13 +95,119 @@
 }
 
 .solutions {
-  background-color: #ebebeb;
+  background-color: #b5d4e8;
   padding-top: 120px;
+}
+
+.panels {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  position: relative;
+}
+
+.panel {
+  background-color: #fff;
+  border-radius: 2em;
+  padding: 0 80px;
+  transition: margin-top 0.3s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.panel__inner {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.panel__head {
+  color: #b5d4e8;
+  font-weight: 400;
+  font-size: clamp(18px, 6.4vw, 64px);
+  line-height: 1;
+  margin-top: 10px;
+}
+
+.panel__title {
+  color: #076fb3;
+  font-weight: 500;
+  font-size: clamp(18px, 2.8vw, 28px);
+  margin-top: 5px;
+  line-height: 1;
+  margin-bottom: 0.8em;
+}
+
+.panel__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.panel__wrap {
+  display: flex;
+  gap: 3em;
+  padding-bottom: 80px;
+}
+
+.panel__left {
+  flex: 1;
+  min-width: 300px;
+  max-height: 350px;
+}
+
+.panel__left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.panel__right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.panel + .panel {
+  margin-top: -10px;
+  z-index: 3;
+}
+
+.solutions__panel .panel:not(:first-child) {
+  margin-top: -30px; /* 上に重ねるためマイナス値 */
+}
+
+.panel.panel-active {
+  background-color: #076fb3;
+  color: #fff;
+}
+
+.panel.panel-active .panel__title {
+  color: #fff;
+}
+
+.panel.panel-active .panel__head {
+  color: #fff;
+}
+.panel.panel-active {
+  z-index: 2;
+}
+
+/* 3番目だけ背景色変更 */
+.panels .panel:nth-of-type(3) {
+  background-color: #ebebeb;
+}
+
+/* active時は常に以下を優先 */
+.panels .panel.panel-active {
+  background-color: #076fb3;
+  color: #fff;
 }
 
 /* 採用情報 */
 .recruit {
-  background-color: #ebebeb;
+  background-color: #b5d4e8;
   padding: 100px 0;
 }
 .recruit__inner {
@@ -130,7 +238,7 @@
 /* News & Topics */
 .section-news {
   width: 100%;
-  background-color: #ebebeb;
+  background-color: #b5d4e8;
   padding-top: 100px;
 }
 .top-news {
@@ -230,107 +338,6 @@
   width: 36%;
   min-width: 200px;
   margin-top: 2em;
-}
-
-/* 事業内容 */
-.solutions {
-}
-
-.panels {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  width: 100%;
-  position: relative;
-}
-
-.panel {
-  background-color: #fff;
-  border-radius: 2em;
-  padding: 0 80px;
-  transition: margin-top 0.3s ease, background-color 0.2s ease, color 0.2s ease;
-}
-
-.panel__inner {
-  max-width: 1700px;
-  margin: 0 auto;
-}
-
-.panel__head {
-  color: #b5d4e8;
-  font-weight: 400;
-  font-size: clamp(18px, 8.4vw, 88px);
-  line-height: 1;
-}
-
-.panel__title {
-  color: #076fb3;
-  font-weight: 500;
-  font-size: clamp(18px, 3.4vw, 32px);
-  margin-top: 10px;
-  line-height: 1;
-  margin-bottom: 2em;
-}
-
-.panel__content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-}
-
-.panel__wrap {
-  display: flex;
-  gap: 3em;
-  padding-bottom: 80px;
-}
-
-.panel__left {
-  flex: 1;
-  min-width: 300px;
-}
-
-.panel__right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.panel + .panel {
-  margin-top: -10px;
-  z-index: 3;
-}
-
-.solutions__panel .panel:not(:first-child) {
-  margin-top: -30px; /* 上に重ねるためマイナス値 */
-}
-
-.panel.panel-active {
-  background-color: #076fb3;
-  color: #fff;
-}
-
-.panel.panel-active .panel__title {
-  color: #fff;
-}
-
-.panel.panel-active .panel__head {
-  color: #fff;
-}
-.panel.panel-active {
-  z-index: 2;
-}
-
-/* 3番目だけ背景色変更 */
-.panels .panel:nth-of-type(3) {
-  background-color: #ebebeb;
-}
-
-/* active時は常に以下を優先 */
-.panels .panel.panel-active {
-  background-color: #076fb3;
-  color: #fff;
 }
 
 /* 980px以下 */
