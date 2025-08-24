@@ -69,96 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
 })();
 
 // 事業内容 アコーディオンのアニメーション
-(() => {
-  const panels = Array.from(document.querySelectorAll(".panel"));
-  if (!panels.length) return;
-
-  const LINE_DOWN = 700; // 下方向にスクロールしている時のライン
-  const LINE_UP = 200; // 上方向にスクロールしている時のライン
-
-  // 開閉
-  const openOnly = (target) => {
-    panels.forEach((panel) => {
-      const content = panel.querySelector(".panel__content");
-      if (!content) return;
-      if (panel === target) {
-        panel.classList.add("panel-active");
-        content.style.maxHeight = content.scrollHeight + "px";
-      } else {
-        panel.classList.remove("panel-active");
-        // auto→0 一度現在の高さ(px)を確定してから0へ
-        if (getComputedStyle(content).maxHeight === "none") {
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-        // 次フレームで 0 に落とすとトランジションが確実に走る
-        requestAnimationFrame(() => {
-          content.style.maxHeight = 0;
-        });
-      }
-    });
-  };
-
-  // 初期状態：一番上を開く
-  openOnly(panels[0]);
-  let current = panels[0];
-
-  // 前回のスクロール位置と方向を保持
-  let lastY = window.scrollY;
-  let lastDirDown = true; // 直近方向（resizeなど差分0のときに参照）
-  let ticking = false;
-
-  const pickCardOnLine = (line) => {
-    // ラインが「カードの矩形内」にあるものを選ぶ（上端<=line<下端）
-    return (
-      panels.find((panel) => {
-        const r = panel.getBoundingClientRect();
-        return r.top <= line && r.bottom > line;
-      }) || current
-    );
-  };
-
-  const onScrollResize = () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      const y = window.scrollY;
-
-      // スクロール方向を判定
-      let dirDown;
-      if (y === lastY) {
-        // resize など差分なしの場合は直近の方向を流用
-        dirDown = lastDirDown;
-      } else {
-        dirDown = y > lastY;
-        lastDirDown = dirDown;
-      }
-
-      const line = dirDown ? LINE_DOWN : LINE_UP;
-
-      const target = pickCardOnLine(line);
-      if (target !== current) {
-        current = target;
-        openOnly(current);
-      } else {
-        // 開き途中に中身の高さが変わる（画像読み込み等）対策
-        const c = current.querySelector(".panel__content");
-        if (c) c.style.maxHeight = c.scrollHeight + "px";
-      }
-
-      lastY = y;
-      ticking = false;
-    });
-  };
-
-  window.addEventListener("scroll", onScrollResize, { passive: true });
-  window.addEventListener("resize", onScrollResize, { passive: true });
-  window.addEventListener("load", () => {
-    // 画像などで高さが増えたら追随
-    const c = current.querySelector(".panel__content");
-    if (c) c.style.maxHeight = c.scrollHeight + "px";
-    onScrollResize();
-  });
-})();
 
 // main-kv--------------------------------------
 
@@ -358,3 +268,8 @@ function animateTitle(index) {
 window.addEventListener("load", () => {
   animateTitle(currentIndex);
 });
+
+// ------------------------------
+// ------------------------------
+// 事業内容
+// ------------------------------
