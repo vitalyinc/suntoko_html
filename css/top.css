@@ -37,9 +37,6 @@
 .header--top.is-solid .header__nav-link--top {
   color: #333;
 }
-.header--top.is-solid .header__nav-item--top:not(:last-child)::after {
-  background-color: #1a1a1a;
-}
 
 /* トップセクションの基本スタイル */
 .section__head {
@@ -422,6 +419,10 @@
   transition: all 0.3s ease;
 }
 
+.main__btn:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .main-area {
   height: 100vh;
   min-height: 680px;
@@ -505,13 +506,14 @@
 }
 
 .hero__btn {
+  display: inline-flex;
   color: #fff;
   font-size: 20px;
-  display: flex;
   align-items: center;
   gap: 0.3em;
   text-decoration: none;
   transition: color 0.3s ease;
+  position: relative;
 }
 
 .hero__btn::after {
@@ -523,6 +525,23 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.hero__btn::before {
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  bottom: -10px;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.3s;
+}
+
+.hero__btn:hover::before {
+  transform: scale(1, 1);
 }
 
 /* インジケーター */
