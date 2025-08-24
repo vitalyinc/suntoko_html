@@ -166,15 +166,6 @@
   align-items: flex-end;
 }
 
-.panel + .panel {
-  margin-top: -10px;
-  z-index: 3;
-}
-
-.solutions__panel .panel:not(:first-child) {
-  margin-top: -30px; /* 上に重ねるためマイナス値 */
-}
-
 .panel.panel-active {
   background-color: #076fb3;
   color: #fff;
@@ -189,6 +180,30 @@
 }
 .panel.panel-active {
   z-index: 2;
+}
+
+/* 事業内容 */
+.panel {
+  padding: 0 20px;
+}
+
+.panel__wrap {
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+/* 採用情報 */
+.recruit__inner {
+  background-position: 20% center;
+}
+.recruit__inner {
+  padding: 100px 20px;
+}
+
+/* News & Topics */
+.top-news__item,
+.top-news__list {
+  padding-left: 0;
 }
 
 /* 3番目だけ背景色変更 */
@@ -224,6 +239,54 @@
   justify-content: center;
   color: #fff;
   position: relative;
+}
+
+.recruit__title {
+  font-size: clamp(28px, 7.4vw, 56px);
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho",
+    "MS Mincho", serif;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.recruit__btn {
+  display: inline-flex;
+  color: #fff;
+  font-size: 20px;
+  align-items: center;
+  gap: 0.3em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.recruit__btn::after {
+  content: "";
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  background-image: url(/images/common/arrow-icon.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.recruit__btn::before {
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  bottom: -10px;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.3s;
+}
+
+.recruit__btn:hover::before {
+  transform: scale(1, 1);
 }
 
 .recruit__lead-foot {
