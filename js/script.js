@@ -69,96 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
 })();
 
 // 事業内容 アコーディオンのアニメーション
-(() => {
-  const panels = Array.from(document.querySelectorAll(".panel"));
-  if (!panels.length) return;
-
-  const LINE_DOWN = 700; // 下方向にスクロールしている時のライン
-  const LINE_UP = 200; // 上方向にスクロールしている時のライン
-
-  // 開閉
-  const openOnly = (target) => {
-    panels.forEach((panel) => {
-      const content = panel.querySelector(".panel__content");
-      if (!content) return;
-      if (panel === target) {
-        panel.classList.add("panel-active");
-        content.style.maxHeight = content.scrollHeight + "px";
-      } else {
-        panel.classList.remove("panel-active");
-        // auto→0 一度現在の高さ(px)を確定してから0へ
-        if (getComputedStyle(content).maxHeight === "none") {
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-        // 次フレームで 0 に落とすとトランジションが確実に走る
-        requestAnimationFrame(() => {
-          content.style.maxHeight = 0;
-        });
-      }
-    });
-  };
-
-  // 初期状態：一番上を開く
-  openOnly(panels[0]);
-  let current = panels[0];
-
-  // 前回のスクロール位置と方向を保持
-  let lastY = window.scrollY;
-  let lastDirDown = true; // 直近方向（resizeなど差分0のときに参照）
-  let ticking = false;
-
-  const pickCardOnLine = (line) => {
-    // ラインが「カードの矩形内」にあるものを選ぶ（上端<=line<下端）
-    return (
-      panels.find((panel) => {
-        const r = panel.getBoundingClientRect();
-        return r.top <= line && r.bottom > line;
-      }) || current
-    );
-  };
-
-  const onScrollResize = () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      const y = window.scrollY;
-
-      // スクロール方向を判定
-      let dirDown;
-      if (y === lastY) {
-        // resize など差分なしの場合は直近の方向を流用
-        dirDown = lastDirDown;
-      } else {
-        dirDown = y > lastY;
-        lastDirDown = dirDown;
-      }
-
-      const line = dirDown ? LINE_DOWN : LINE_UP;
-
-      const target = pickCardOnLine(line);
-      if (target !== current) {
-        current = target;
-        openOnly(current);
-      } else {
-        // 開き途中に中身の高さが変わる（画像読み込み等）対策
-        const c = current.querySelector(".panel__content");
-        if (c) c.style.maxHeight = c.scrollHeight + "px";
-      }
-
-      lastY = y;
-      ticking = false;
-    });
-  };
-
-  window.addEventListener("scroll", onScrollResize, { passive: true });
-  window.addEventListener("resize", onScrollResize, { passive: true });
-  window.addEventListener("load", () => {
-    // 画像などで高さが増えたら追随
-    const c = current.querySelector(".panel__content");
-    if (c) c.style.maxHeight = c.scrollHeight + "px";
-    onScrollResize();
-  });
-})();
 
 // main-kv--------------------------------------
 
@@ -173,8 +83,8 @@ let sum = 0;
 let isAnimating = false;
 let lastWheelTime = 0;
 
-const MOVE_THRESHOLD = 20;
-const GESTURE_GAP = 10;
+const MOVE_THRESHOLD = 12;
+const GESTURE_GAP = 1;
 const MAX = slides.length - 1;
 
 // ----------------------------------
@@ -358,3 +268,163 @@ function animateTitle(index) {
 window.addEventListener("load", () => {
   animateTitle(currentIndex);
 });
+
+// ------------------------------
+// ------------------------------
+// 事業内容
+// ------------------------------
+
+(() => {
+  const panels = Array.from(document.querySelectorAll(".panel"));
+  if (!panels.length) return;
+
+  // 現在のアクティブを決定（無ければ先頭に付与）
+  let currentIndex = panels.findIndex((p) =>
+    p.classList.contains("panel-active")
+  );
+  if (currentIndex === -1) {
+    currentIndex = 0;
+    panels[0].classList.add("panel-active");
+  }
+
+  // ---- スクロールロック制御 ----
+  let isLocked = false;
+  let sum = 0; // 1ジェスチャー内のスクロール蓄積
+  const MOVE_THRESHOLD = 250; // 250pxで1枚だけ切替
+
+  // ---- 連続切替防止（1.5s クールダウン）----
+  let isCooling = false;
+  let coolTimer = null;
+  const COOLDOWN = 1500; // 1.5秒
+
+  function startCooldown() {
+    isCooling = true;
+    sum = 0; // 蓄積もリセットして多段進行防止
+    clearTimeout(coolTimer);
+    coolTimer = setTimeout(() => {
+      isCooling = false;
+      sum = 0; // 再開時もクリーンに
+    }, COOLDOWN);
+  }
+
+  function wheel(e) {
+    if (!isLocked) return;
+    e.preventDefault();
+
+    // クールダウン中は一切切替えない
+    if (isCooling) return;
+
+    sum += e.deltaY;
+
+    // ===== 下方向（次のパネルへ） =====
+    if (sum >= MOVE_THRESHOLD) {
+      if (currentIndex < panels.length - 1) {
+        setActive(currentIndex + 1); // 1つ下をアクティブ
+        startCooldown(); // ★ 切替直後にクールダウン開始
+      } else {
+        // 末尾でさらに下 → アクティブはそのまま、ロック解除
+        unlockScroll();
+      }
+      sum = 0;
+      return;
+    }
+
+    // ===== 上方向（前のパネルへ） =====
+    if (sum <= -MOVE_THRESHOLD) {
+      if (currentIndex > 0) {
+        setActive(currentIndex - 1); // 1つ上をアクティブ
+        startCooldown(); // ★ 切替直後にクールダウン開始
+      } else {
+        // 先頭でさらに上 → アクティブはそのまま、ロック解除
+        unlockScroll();
+      }
+      sum = 0;
+      return;
+    }
+  }
+
+  function lockScroll() {
+    if (isLocked) return;
+    isLocked = true;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("wheel", wheel, { passive: false });
+  }
+
+  function unlockScroll() {
+    if (!isLocked) return;
+    isLocked = false;
+    document.body.style.overflow = "auto";
+    window.removeEventListener("wheel", wheel);
+    sum = 0;
+    // 解除時にクールダウンは不要（必要なら startCooldown() を呼んでもOK）
+  }
+
+  // ---- アクティブ付け替え（IOの監視対象も付け替え）----
+  let io = null;
+  let observedTarget = null;
+
+  function setActive(nextIndex) {
+    if (nextIndex === currentIndex) return;
+
+    // 監視対象を外す
+    if (io && observedTarget) io.unobserve(observedTarget);
+
+    panels[currentIndex].classList.remove("panel-active");
+    panels[nextIndex].classList.add("panel-active");
+    currentIndex = nextIndex;
+
+    // 新しい .panel-active を監視
+    observedTarget = panels[currentIndex];
+    if (io) io.observe(observedTarget);
+  }
+
+  // ---- IntersectionObserver（必須設定）----
+  const ioOptions = {
+    root: null,
+    threshold: 0.9,
+    rootMargin: "-150px 0px",
+  };
+
+  io = new IntersectionObserver((entries) => {
+    const entry = entries[0];
+    if (!entry) return;
+
+    if (entry.isIntersecting) {
+      // .panel-active が（rootMargin適用の）領域に100%入ったらロック
+      lockScroll();
+    } else {
+      // 外れたら解除
+      unlockScroll();
+    }
+  }, ioOptions);
+
+  // 初期監視スタート
+  observedTarget = panels[currentIndex];
+  io.observe(observedTarget);
+
+  // ---- 保険：.panel-active が別処理で変わった時も監視先を追従（任意）----
+  const mo = new MutationObserver((muts) => {
+    let changed = false;
+    for (const m of muts) {
+      if (m.type === "attributes" && m.attributeName === "class") {
+        changed = true;
+        break;
+      }
+    }
+    if (!changed) return;
+
+    const idx = panels.findIndex((p) => p.classList.contains("panel-active"));
+    if (idx !== -1 && idx !== currentIndex) {
+      if (io && observedTarget) io.unobserve(observedTarget);
+      currentIndex = idx;
+      observedTarget = panels[currentIndex];
+      if (io) io.observe(observedTarget);
+      sum = 0;
+      // クールダウンをここで入れたい場合は以下を有効化
+      // startCooldown();
+    }
+  });
+  panels.forEach((p) =>
+    mo.observe(p, { attributes: true, attributeFilter: ["class"] })
+  );
+})();
