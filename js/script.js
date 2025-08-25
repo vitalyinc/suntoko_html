@@ -381,8 +381,8 @@ window.addEventListener("load", () => {
   // ---- IntersectionObserver（必須設定）----
   const ioOptions = {
     root: null,
-    threshold: 1,
-    rootMargin: "-100px 0px",
+    threshold: 0.9,
+    rootMargin: "-150px 0px",
   };
 
   io = new IntersectionObserver((entries) => {
