@@ -78,6 +78,11 @@ const mainWrap = document.getElementById("main-wrap");
 const slides = document.querySelectorAll(".hero");
 const dots = document.querySelectorAll(".kv-indicator__dot");
 
+// スライド数に応じてmain-wrapの高さを動的設定
+if (mainWrap && slides.length > 0) {
+  mainWrap.style.height = `${slides.length * 100}vh`;
+}
+
 let currentIndex = 0;
 let sum = 0;
 let isAnimating = false;
@@ -85,7 +90,7 @@ let lastWheelTime = 0;
 
 const MOVE_THRESHOLD = 12;
 const GESTURE_GAP = 1;
-const MAX = slides.length - 1;
+const MAX = slides.length - 1; // スライド数に応じて動的設定
 
 // ----------------------------------
 // IntersectionObserver: 100%見えたらロック、外れたら解除
@@ -276,6 +281,7 @@ window.addEventListener("load", () => {
 
 (() => {
   const panels = Array.from(document.querySelectorAll(".panel"));
+  console.log("Found panels:", panels.length); // デバッグ用
   if (!panels.length) return;
 
   // 現在のアクティブを決定（無ければ先頭に付与）
@@ -286,16 +292,17 @@ window.addEventListener("load", () => {
     currentIndex = 0;
     panels[0].classList.add("panel-active");
   }
+  console.log("Initial currentIndex:", currentIndex); // デバッグ用
 
   // ---- スクロールロック制御 ----
   let isLocked = false;
   let sum = 0; // 1ジェスチャー内のスクロール蓄積
-  const MOVE_THRESHOLD = 250; // 250pxで1枚だけ切替
+  const MOVE_THRESHOLD = 150; // 150pxで1枚だけ切替
 
   // ---- 連続切替防止（1.5s クールダウン）----
   let isCooling = false;
   let coolTimer = null;
-  const COOLDOWN = 1500; // 1.5秒
+  const COOLDOWN = 500; // 0.5秒に短縮
 
   function startCooldown() {
     isCooling = true;
@@ -318,11 +325,13 @@ window.addEventListener("load", () => {
 
     // ===== 下方向（次のパネルへ） =====
     if (sum >= MOVE_THRESHOLD) {
+      console.log("Down scroll - currentIndex:", currentIndex, "max:", panels.length - 1); // デバッグ用
       if (currentIndex < panels.length - 1) {
         setActive(currentIndex + 1); // 1つ下をアクティブ
         startCooldown(); // ★ 切替直後にクールダウン開始
       } else {
         // 末尾でさらに下 → アクティブはそのまま、ロック解除
+        console.log("Reached end, unlocking scroll"); // デバッグ用
         unlockScroll();
       }
       sum = 0;
@@ -369,7 +378,10 @@ window.addEventListener("load", () => {
     // 監視対象を外す
     if (io && observedTarget) io.unobserve(observedTarget);
 
-    panels[currentIndex].classList.remove("panel-active");
+    // すべてのパネルからactive状態を削除
+    panels.forEach(panel => panel.classList.remove("panel-active"));
+    
+    // 指定されたパネルをアクティブに
     panels[nextIndex].classList.add("panel-active");
     currentIndex = nextIndex;
 
@@ -381,8 +393,8 @@ window.addEventListener("load", () => {
   // ---- IntersectionObserver（必須設定）----
   const ioOptions = {
     root: null,
-    threshold: 0.9,
-    rootMargin: "-150px 0px",
+    threshold: 0.8,
+    rootMargin: "-100px 0px -100px 0px",
   };
 
   io = new IntersectionObserver((entries) => {
@@ -398,7 +410,7 @@ window.addEventListener("load", () => {
     }
   }, ioOptions);
 
-  // 初期監視スタート
+  // 初期監視スタート - 最初のアクティブパネルを監視
   observedTarget = panels[currentIndex];
   io.observe(observedTarget);
 

@@ -181,8 +181,8 @@
 }
 
 .panel.panel-active .panel__content {
-  overflow: visible;
-  max-height: 1000px; /* 十分な高さを指定 */
+  overflow: hidden;
+  max-height: 500px; /* 適切な高さを指定 */
   opacity: 1;
   padding: 0;
 }
