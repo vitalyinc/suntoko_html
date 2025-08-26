@@ -68,8 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("load", onScroll);
 })();
 
-// 事業内容 アコーディオンのアニメーション
-
 // main-kv--------------------------------------
 
 // 要素取得
@@ -276,167 +274,31 @@ window.addEventListener("load", () => {
 
 // ------------------------------
 // ------------------------------
-// 事業内容
+// 事業内容 - ホバーで開く機能
 // ------------------------------
 
 (() => {
   const panels = Array.from(document.querySelectorAll(".panel"));
-  console.log("Found panels:", panels.length); // デバッグ用
   if (!panels.length) return;
 
-  // 現在のアクティブを決定（無ければ先頭に付与）
-  let currentIndex = panels.findIndex((p) =>
-    p.classList.contains("panel-active")
-  );
-  if (currentIndex === -1) {
-    currentIndex = 0;
-    panels[0].classList.add("panel-active");
-  }
-  console.log("Initial currentIndex:", currentIndex); // デバッグ用
-
-  // ---- スクロールロック制御 ----
-  let isLocked = false;
-  let sum = 0; // 1ジェスチャー内のスクロール蓄積
-  const MOVE_THRESHOLD = 150; // 150pxで1枚だけ切替
-
-  // ---- 連続切替防止（1.5s クールダウン）----
-  let isCooling = false;
-  let coolTimer = null;
-  const COOLDOWN = 500; // 0.5秒に短縮
-
-  function startCooldown() {
-    isCooling = true;
-    sum = 0; // 蓄積もリセットして多段進行防止
-    clearTimeout(coolTimer);
-    coolTimer = setTimeout(() => {
-      isCooling = false;
-      sum = 0; // 再開時もクリーンに
-    }, COOLDOWN);
-  }
-
-  function wheel(e) {
-    if (!isLocked) return;
-    e.preventDefault();
-
-    // クールダウン中は一切切替えない
-    if (isCooling) return;
-
-    sum += e.deltaY;
-
-    // ===== 下方向（次のパネルへ） =====
-    if (sum >= MOVE_THRESHOLD) {
-      console.log("Down scroll - currentIndex:", currentIndex, "max:", panels.length - 1); // デバッグ用
-      if (currentIndex < panels.length - 1) {
-        setActive(currentIndex + 1); // 1つ下をアクティブ
-        startCooldown(); // ★ 切替直後にクールダウン開始
-      } else {
-        // 末尾でさらに下 → アクティブはそのまま、ロック解除
-        console.log("Reached end, unlocking scroll"); // デバッグ用
-        unlockScroll();
-      }
-      sum = 0;
-      return;
-    }
-
-    // ===== 上方向（前のパネルへ） =====
-    if (sum <= -MOVE_THRESHOLD) {
-      if (currentIndex > 0) {
-        setActive(currentIndex - 1); // 1つ上をアクティブ
-        startCooldown(); // ★ 切替直後にクールダウン開始
-      } else {
-        // 先頭でさらに上 → アクティブはそのまま、ロック解除
-        unlockScroll();
-      }
-      sum = 0;
-      return;
-    }
-  }
-
-  function lockScroll() {
-    if (isLocked) return;
-    isLocked = true;
-    document.body.style.overflow = "hidden";
-    window.addEventListener("wheel", wheel, { passive: false });
-  }
-
-  function unlockScroll() {
-    if (!isLocked) return;
-    isLocked = false;
-    document.body.style.overflow = "auto";
-    window.removeEventListener("wheel", wheel);
-    sum = 0;
-    // 解除時にクールダウンは不要（必要なら startCooldown() を呼んでもOK）
-  }
-
-  // ---- アクティブ付け替え（IOの監視対象も付け替え）----
-  let io = null;
-  let observedTarget = null;
-
-  function setActive(nextIndex) {
-    if (nextIndex === currentIndex) return;
-
-    // 監視対象を外す
-    if (io && observedTarget) io.unobserve(observedTarget);
-
-    // すべてのパネルからactive状態を削除
-    panels.forEach(panel => panel.classList.remove("panel-active"));
-    
-    // 指定されたパネルをアクティブに
-    panels[nextIndex].classList.add("panel-active");
-    currentIndex = nextIndex;
-
-    // 新しい .panel-active を監視
-    observedTarget = panels[currentIndex];
-    if (io) io.observe(observedTarget);
-  }
-
-  // ---- IntersectionObserver（必須設定）----
-  const ioOptions = {
-    root: null,
-    threshold: 0.8,
-    rootMargin: "-100px 0px -100px 0px",
-  };
-
-  io = new IntersectionObserver((entries) => {
-    const entry = entries[0];
-    if (!entry) return;
-
-    if (entry.isIntersecting) {
-      // .panel-active が（rootMargin適用の）領域に100%入ったらロック
-      lockScroll();
+  // デフォルトで最初のパネルをアクティブに
+  panels.forEach((panel, index) => {
+    if (index === 0) {
+      panel.classList.add("panel-active");
     } else {
-      // 外れたら解除
-      unlockScroll();
-    }
-  }, ioOptions);
-
-  // 初期監視スタート - 最初のアクティブパネルを監視
-  observedTarget = panels[currentIndex];
-  io.observe(observedTarget);
-
-  // ---- 保険：.panel-active が別処理で変わった時も監視先を追従（任意）----
-  const mo = new MutationObserver((muts) => {
-    let changed = false;
-    for (const m of muts) {
-      if (m.type === "attributes" && m.attributeName === "class") {
-        changed = true;
-        break;
-      }
-    }
-    if (!changed) return;
-
-    const idx = panels.findIndex((p) => p.classList.contains("panel-active"));
-    if (idx !== -1 && idx !== currentIndex) {
-      if (io && observedTarget) io.unobserve(observedTarget);
-      currentIndex = idx;
-      observedTarget = panels[currentIndex];
-      if (io) io.observe(observedTarget);
-      sum = 0;
-      // クールダウンをここで入れたい場合は以下を有効化
-      // startCooldown();
+      panel.classList.remove("panel-active");
     }
   });
-  panels.forEach((p) =>
-    mo.observe(p, { attributes: true, attributeFilter: ["class"] })
-  );
+
+  // 各パネルのヘッダーにホバーイベントを追加
+  panels.forEach((panel, index) => {
+    const header = panel.querySelector('.panel__header');
+    if (!header) return;
+
+    // マウスホバーでアクティブに
+    header.addEventListener('mouseenter', () => {
+      panels.forEach(p => p.classList.remove('panel-active'));
+      panel.classList.add('panel-active');
+    });
+  });
 })();
