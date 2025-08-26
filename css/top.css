@@ -431,71 +431,6 @@
   margin-top: 2em;
 }
 
-/* 980px以下 */
-@media screen and (max-width: 980px) {
-  /* news & Topics */
-  .top-news {
-    flex-direction: column-reverse;
-    gap: 2em;
-  }
-
-  .top-news__list,
-  .top-news__right {
-    flex: none;
-    width: 100%;
-  }
-}
-
-/* 768px以下 */
-@media screen and (max-width: 768px) {
-  /* kv */
-  .slide__carlife {
-    background-position: 70% center;
-  }
-  .slide__btn {
-    font-size: 16px;
-  }
-
-  .slide__inner {
-    padding: 0 20px;
-  }
-
-  /* section */
-  .section__body {
-    padding: 0 20px 0;
-  }
-  .section__head {
-    height: 40px;
-  }
-  .section__head::before {
-    height: 40px;
-  }
-
-  /* 事業内容 */
-  .panel {
-    padding: 0 20px;
-  }
-
-  .panel__wrap {
-    flex-direction: column;
-    gap: 1.5em;
-  }
-
-  /* 採用情報 */
-  .recruit__inner {
-    background-position: 20% center;
-  }
-  .recruit__inner {
-    padding: 100px 20px;
-  }
-
-  /* News & Topics */
-  .top-news__item,
-  .top-news__list {
-    padding-left: 0;
-  }
-}
-
 /* 新hero */
 
 .main__btn {
@@ -672,4 +607,77 @@
 
 .kv-indicator__dot.is-active {
   background: #fff;
+}
+
+/* 980px以下 */
+@media screen and (max-width: 980px) {
+  /* news & Topics */
+  .top-news {
+    flex-direction: column-reverse;
+    gap: 2em;
+  }
+
+  .top-news__list,
+  .top-news__right {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* 768px以下 */
+@media screen and (max-width: 768px) {
+  /* kv */
+  .hero__carlife {
+    background-position: 70% center;
+  }
+  .hero__btn {
+    font-size: 16px;
+  }
+
+  .hero__inner {
+    padding: 200px 20px 100px;
+  }
+  .hero__bottom-text {
+    font-size: 16px;
+  }
+
+  /* section */
+  .section__body {
+    padding: 0 20px 0;
+  }
+  .section__head {
+    height: 40px;
+  }
+  .section__head::before {
+    height: 40px;
+  }
+
+  /* 事業内容 */
+  .panel {
+    padding: 0 20px;
+  }
+
+  .panel__wrap {
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  /* 採用情報 */
+  .recruit__inner {
+    background-position: 20% center;
+  }
+  .recruit__inner {
+    padding: 100px 20px;
+  }
+
+  /* News & Topics */
+  .top-news__item,
+  .top-news__list {
+    padding-left: 0;
+  }
+
+  /* ボタン */
+  .top-button {
+    font-size: 16px;
+  }
 }
