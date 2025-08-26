@@ -4,6 +4,7 @@ body {
 
   color: #1a1a1a;
   line-height: 1.6;
+  font-size: 18px;
 }
 
 main {
@@ -97,7 +98,7 @@ img {
 }
 
 .header__nav-link {
-  font-size: 16px;
+  font-size: 20px;
   color: #333;
   text-decoration: none;
   position: relative;
@@ -233,7 +234,7 @@ img {
 
 .footer__logo {
   display: block;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: bold;
   color: #fff;
   margin-bottom: 30px;
@@ -241,7 +242,7 @@ img {
 }
 
 .footer__address {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 
@@ -253,6 +254,7 @@ img {
 .footer__nav-item {
   margin-bottom: 10px;
   position: relative;
+  font-size: 20px;
 }
 
 .footer__nav-item:not(:last-child)::after {
@@ -280,7 +282,7 @@ img {
 .footer__nav-link {
   color: #fff;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .footer__copyright {
@@ -635,6 +637,10 @@ img {
 /* 768px以下 */
 @media screen and (max-width: 768px) {
   /* 最下部のパディング */
+
+  body {
+    font-size: 16px;
+  }
   main {
     padding-bottom: 60px;
   }
