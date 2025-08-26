@@ -155,7 +155,7 @@
 .panel__head {
   color: #b5d4e8;
   font-weight: 400;
-  font-size: clamp(18px, 6.4vw, 64px);
+  font-size: clamp(18px, 6.4vw, 72px);
   line-height: 1;
   margin-top: 10px;
   transition: color 0.4s ease, transform 0.3s ease;
@@ -164,7 +164,7 @@
 .panel__title {
   color: #076fb3;
   font-weight: 500;
-  font-size: clamp(18px, 2.8vw, 28px);
+  font-size: clamp(18px, 2.4svw, 36px);
   margin-top: 5px;
   line-height: 1;
   margin-bottom: 0.8em;
@@ -371,6 +371,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1em;
+  font-size: 20px;
 }
 
 .top-button::after {
@@ -425,8 +426,8 @@
 }
 
 .top-button--panel {
-  width: 36%;
-  min-width: 200px;
+  display: inline-flex;
+  min-width: 300px;
   margin-top: 2em;
 }
 
@@ -507,9 +508,10 @@
   border: 1px solid #fff;
   color: #fff;
   writing-mode: vertical-rl;
-  padding: 5em 1em;
+  padding: 4em 0.8em;
   text-decoration: none;
   transition: all 0.3s ease;
+  font-size: 20px;
 }
 
 .main__btn:hover {
@@ -556,6 +558,9 @@
 .hero--office {
   background-image: url(../images/service/kv_office.jpg);
 }
+.hero--recruit {
+  background-image: url(../images/top/kv_recruit.png);
+}
 
 .hero__inner {
   max-width: 1700px;
@@ -580,7 +585,7 @@
 }
 
 .hero__title {
-  font-size: clamp(28px, 7.4vw, 56px);
+  font-size: clamp(28px, 7.8vw, 64px);
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho",
     "MS Mincho", serif;
   letter-spacing: 0.1em;
@@ -601,12 +606,12 @@
 .hero__btn {
   display: inline-flex;
   color: #fff;
-  font-size: 20px;
   align-items: center;
   gap: 0.3em;
   text-decoration: none;
   transition: color 0.3s ease;
   position: relative;
+  font-size: 26px;
 }
 
 .hero__btn::after {
@@ -635,6 +640,11 @@
 
 .hero__btn:hover::before {
   transform: scale(1, 1);
+}
+
+.hero__bottom-text {
+  font-size: 32px;
+  letter-spacing: 0.1em;
 }
 
 /* インジケーター */
