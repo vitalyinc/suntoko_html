@@ -17,6 +17,14 @@
   text-align: justify;
 }
 
+/* 経営理念 */
+.corp-philosophy {
+  border: 1px solid #076fb3;
+  outline: 1px solid #076fb3;
+  outline-offset: -10px;
+  padding: 5em 0;
+}
+
 .corp-philosophy__text {
   text-align: center;
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho",
@@ -51,12 +59,13 @@
 /* 会社概要 */
 .company-info {
   font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .company-info__row {
   display: flex;
-  border-bottom: 1px solid #808080;
-  padding: 10px 0;
   gap: 10px;
 }
 
@@ -65,6 +74,10 @@
   min-width: 110px;
   font-weight: 500;
   box-sizing: border-box;
+  background-color: #076fb3;
+  color: #fff;
+  text-align: center;
+  padding: 0.5em 0;
 }
 
 .company-info__data {

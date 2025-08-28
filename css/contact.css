@@ -22,6 +22,10 @@
 }
 
 /* フォーム */
+.form {
+  padding-bottom: 80px;
+}
+
 .contact-form {
   color: #1a1a1a;
 }
