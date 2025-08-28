@@ -15,15 +15,14 @@
     <link rel="stylesheet" href="css/top.css" />
   </head>
   <body>
-    <header class="header header--top">
+    <header class="header">
       <div class="header__inner">
         <!-- TODO: リンク設定 -->
-        <a class="header__logo header__logo--top" href="/">
+        <a class="header__logo" href="/">
           <img
-            src="images/logo/logo-white.png"
-            data-src-white="/images/logo/logo-white.png"
-            data-src-color="/images/logo/logo.png"
+            src="images/logo/logo.png"
             alt="株式会社サントーコーENEOSグループ"
+            class="site-header__logo"
           />
         </a>
         <button class="header__toggle" aria-label="メニューを開閉">
@@ -33,35 +32,25 @@
         </button>
         <nav class="header__nav-wrapper">
           <ul class="header__nav">
-            <li class="header__nav-item header__nav-item--top">
+            <li class="header__nav-item">
               <!-- TODO: リンク設定 -->
-              <a class="header__nav-link header__nav-link--top" href="#"
-                >トップページ</a
-              >
+              <a class="header__nav-link" href="/">トップページ</a>
             </li>
-            <li class="header__nav-item header__nav-item--top">
+            <li class="header__nav-item">
               <!-- TODO: リンク設定 -->
-              <a class="header__nav-link header__nav-link--top" href="#"
-                >事業内容</a
-              >
+              <a class="header__nav-link" href="/service/">事業内容</a>
             </li>
-            <li class="header__nav-item header__nav-item--top">
+            <li class="header__nav-item">
               <!-- TODO: リンク設定 -->
-              <a class="header__nav-link header__nav-link--top" href="#"
-                >会社情報</a
-              >
+              <a class="header__nav-link" href="/company/">会社情報</a>
             </li>
-            <li class="header__nav-item header__nav-item--top">
+            <li class="header__nav-item">
               <!-- TODO: リンク設定 -->
-              <a class="header__nav-link header__nav-link--top" href="#"
-                >事業所一覧</a
-              >
+              <a class="header__nav-link" href="/office-list/">事業所一覧</a>
             </li>
-            <li class="header__nav-item header__nav-item--top">
+            <li class="header__nav-item">
               <!-- TODO: リンク設定 -->
-              <a class="header__nav-link header__nav-link--top" href="#"
-                >採用情報</a
-              >
+              <a class="header__nav-link" href="/recruit/">採用情報</a>
             </li>
           </ul>
         </nav>
@@ -160,8 +149,8 @@
       </section>
 
       <section class="section--solution">
-        <div class="section__head section__body--gray"></div>
-        <div class="section__body section__body--gray">
+        <div class="section__head section__head--blue"></div>
+        <div class="section__body section__body--blue">
           <div class="section__inner--top">
             <h2 class="section__title--top">事業内容</h2>
           </div>
@@ -352,7 +341,7 @@
         <div class="footer__box">
           <div class="footer__left">
             <!-- TODO: リンク設定 -->
-            <a class="footer__logo" href="#">株式会社サントーコー</a>
+            <a class="footer__logo" href="/">株式会社サントーコー</a>
             <div class="footer__address">
               <p>〒221-0835</p>
               <p>神奈川県横浜市神奈川区鶴屋町 ニ丁目21-1</p>
@@ -371,23 +360,25 @@
                 <ul class="footer__nav">
                   <li class="footer__nav-item">
                     <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="#">トップページ</a>
+                    <a class="footer__nav-link" href="/">トップページ</a>
                   </li>
                   <li class="footer__nav-item">
                     <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="#">事業内容</a>
+                    <a class="footer__nav-link" href="/service/">事業内容</a>
                   </li>
                   <li class="footer__nav-item">
                     <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="#">会社情報</a>
+                    <a class="footer__nav-link" href="/company/">会社情報</a>
                   </li>
                   <li class="footer__nav-item">
                     <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="#">事業所一覧</a>
+                    <a class="footer__nav-link" href="/office-list/"
+                      >事業所一覧</a
+                    >
                   </li>
                   <li class="footer__nav-item">
                     <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="#">採用情報</a>
+                    <a class="footer__nav-link" href="/recruit/">採用情報</a>
                   </li>
                 </ul>
               </nav>
@@ -397,17 +388,21 @@
                 <ul class="footer__nav">
                   <li class="footer__nav-item fotoer__nav-item--policy">
                     <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="#">ご利用にあたって</a>
+                    <a class="footer__nav-link" href="/guide/"
+                      >ご利用にあたって</a
+                    >
                   </li>
                   <li class="footer__nav-item fotoer__nav-item--policy">
                     <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="#"
+                    <a class="footer__nav-link" href="/privacy-policy/"
                       >プライバシーポリシー</a
                     >
                   </li>
                   <li class="footer__nav-item fotoer__nav-item--policy">
                     <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="#">サイトマップ</a>
+                    <a class="footer__nav-link" href="/sitemap/"
+                      >サイトマップ</a
+                    >
                   </li>
                 </ul>
               </nav>
