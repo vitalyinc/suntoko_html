@@ -66,46 +66,10 @@
   );
 }
 
-/* トップセクションの基本スタイル */
-.section__head {
-  width: 42%;
-  height: 80px;
-  background-color: #fff;
-  border-radius: 20px 20px 0 0;
-  position: relative;
-  z-index: 10;
-  box-shadow: 0px -3px 4px 0px rgba(0, 0, 0, 0.2);
-}
-
-.section__head::before {
-  content: "";
-  position: absolute;
-  top: 6px;
-  right: -45px;
-  background-color: #fff;
-  width: 50px;
-  height: 80px;
-  clip-path: polygon(0 0, 0 0, 75% 100%, 0% 100%);
-}
-
-.section__body {
-  width: 100%;
-  background-color: #fff;
-  border-radius: 0 20px 0 0;
-  padding: 0 80px 0;
-  box-shadow: 0px -3px 4px 0px rgba(0, 0, 0, 0.2);
-}
-
-.section__body--gray {
-  background-color: #b5d4e8;
-}
-.section__body--gray::before {
-  background-color: #b5d4e8;
-}
-
 .section__inner--top {
   max-width: 1700px;
   margin: 0 auto;
+  padding: 0 80px;
 }
 
 .section__title--top {
@@ -120,7 +84,7 @@
 }
 
 .solutions {
-  background-color: #b5d4e8;
+  background-color: #dbeef8;
   padding-top: 120px;
 }
 
@@ -639,17 +603,6 @@
   }
   .hero__bottom-text {
     font-size: 16px;
-  }
-
-  /* section */
-  .section__body {
-    padding: 0 20px 0;
-  }
-  .section__head {
-    height: 40px;
-  }
-  .section__head::before {
-    height: 40px;
   }
 
   /* 事業内容 */
