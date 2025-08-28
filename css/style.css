@@ -295,7 +295,7 @@ img {
   font-size: 18px;
 }
 
-.footer__copyright {
+.footer__copyright p {
   font-size: 16px;
   text-align: center;
 }
