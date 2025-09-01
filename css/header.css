@@ -1,0 +1,205 @@
+/* ヘッダー */
+.header {
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.header__inner {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header__logo {
+  display: block;
+  width: 32%;
+  cursor: pointer;
+}
+
+.header__nav {
+  display: flex;
+  gap: 40px;
+  margin: 0;
+}
+
+.header__nav-item {
+  position: relative;
+}
+
+.header__nav-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 1.2em;
+  background-color: #1a1a1a;
+}
+
+.header__nav-link {
+  font-size: 20px;
+  color: #333;
+  text-decoration: none;
+  position: relative;
+}
+
+.header__nav-link::after {
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #076fb3;
+  bottom: -10px;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.3s;
+}
+
+.header__nav-link:hover::after {
+  transform: scale(1, 1);
+}
+
+.header__nav-link:hover {
+  color: #076fb3;
+}
+
+/* ヘッダー トップは背景を透明に設定 */
+.header--top {
+  background-color: transparent;
+  position: fixed;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.header--top:hover {
+  background-color: #fff;
+}
+
+.header--top:hover .header__nav-link--top {
+  color: #1a1a1a;
+}
+
+.header--top:hover .header__nav-link--top:hover {
+  color: #076fb3;
+}
+
+.header--top:hover .header__nav-link--top {
+  color: #1a1a1a;
+}
+
+.header--top:hover .header__nav-item--top:not(:last-child)::after {
+  background-color: #1a1a1a;
+}
+
+.header__nav-item--top:not(:last-child)::after {
+  background-color: #fff;
+}
+
+.header__nav-link--top {
+  color: #fff;
+}
+
+/* 300px超えたら白背景、colorをブラックに変更 */
+.header--top.is-solid {
+  background-color: #fff;
+}
+.header--top.is-solid .header__nav-link--top {
+  color: #333;
+}
+
+.header--top.is-solid .header__nav-item--top:not(:last-child)::after {
+  background-color: #1a1a1a;
+}
+
+/* ハンバーガーメニュー */
+.header__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header__toggle-bar {
+  display: block;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.header__toggle.is-active .header__toggle-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.header__toggle.is-active .header__toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.header__toggle.is-active .header__toggle-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ヘッダー980px以下 */
+@media (max-width: 980px) {
+  .header__inner {
+    padding: 20px;
+  }
+
+  .header__logo {
+    width: 60%;
+    max-width: 400px;
+  }
+
+  .header__nav-wrapper {
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    background: #fff;
+    width: 70%;
+    max-width: 340px;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.95);
+    transform-origin: top right;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .header__nav-wrapper.is-active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+
+  .header__nav {
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+  }
+
+  .header__nav-item {
+    margin-bottom: 12px;
+  }
+
+  .header__nav-item::after {
+    display: none;
+  }
+
+  .header__toggle {
+    display: flex;
+  }
+}
