@@ -2,10 +2,46 @@
 document.addEventListener("DOMContentLoaded", function () {
   const toggleBtn = document.querySelector(".header__toggle");
   const navWrapper = document.querySelector(".header__nav-wrapper");
+  const header = document.querySelector(".header");
+  const root = document.documentElement;
+
+  const setHeaderHeight = () => {
+    if (!header) return;
+    root.style.setProperty("--header-height", `${header.offsetHeight}px`);
+  };
+
+  setHeaderHeight();
+  window.addEventListener("resize", setHeaderHeight);
+
+  // 初期表示時にトランジションが走らないよう、準備完了後に付与
+  navWrapper.classList.add("is-ready");
+
+  const closeMenu = () => {
+    toggleBtn.classList.remove("is-active");
+    navWrapper.classList.remove("is-active");
+    navWrapper.classList.add("is-leaving");
+  };
+
+  const openMenu = () => {
+    navWrapper.classList.remove("is-leaving");
+    navWrapper.classList.add("is-active");
+    toggleBtn.classList.add("is-active");
+  };
 
   toggleBtn.addEventListener("click", function () {
-    toggleBtn.classList.toggle("is-active"); // ← ボタンにクラス追加
-    navWrapper.classList.toggle("is-active");
+    const isOpen = navWrapper.classList.contains("is-active");
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  navWrapper.addEventListener("transitionend", (e) => {
+    if (e.target !== navWrapper) return;
+    if (!navWrapper.classList.contains("is-active")) {
+      navWrapper.classList.remove("is-leaving");
+    }
   });
 });
 

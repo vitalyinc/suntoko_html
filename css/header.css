@@ -1,3 +1,8 @@
+/* 共通変数 */
+:root {
+  --header-height: 96px;
+}
+
 /* ヘッダー */
 .header {
   background-color: #fff;
@@ -8,9 +13,9 @@
 }
 
 .header__inner {
-  max-width: 1800px;
+  max-width: 1920px;
   margin: 0 auto;
-  padding: 20px 60px;
+  padding: 1.25rem 3.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,9 +28,15 @@
   cursor: pointer;
 }
 
+.header__nav-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
 .header__nav {
   display: flex;
-  gap: 40px;
+  gap: 2.5rem;
   margin: 0;
 }
 
@@ -36,7 +47,7 @@
 .header__nav-item:not(:last-child)::after {
   content: "";
   position: absolute;
-  right: -20px;
+  right: -1.25rem;
   top: 50%;
   transform: translateY(-50%);
   width: 1px;
@@ -45,7 +56,7 @@
 }
 
 .header__nav-link {
-  font-size: 20px;
+  font-size: 1.125rem;
   color: #333;
   text-decoration: none;
   position: relative;
@@ -72,6 +83,29 @@
   color: #076fb3;
 }
 
+.header__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  min-width: 8.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-black);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.2;
+  white-space: nowrap;
+  background-color: var(--color-black);
+  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header__cta:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
 /* ヘッダー トップは背景を透明に設定 */
 .header--top {
   background-color: transparent;
@@ -81,6 +115,18 @@
 
 .header--top:hover {
   background-color: #fff;
+}
+
+.header--top .header__cta {
+  background: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+
+.header--top:hover .header__cta {
+  background: #fff;
+  border-color: #076fb3;
+  color: #076fb3;
 }
 
 .header--top:hover .header__nav-link--top {
@@ -119,13 +165,19 @@
   background-color: #1a1a1a;
 }
 
+.header--top.is-solid .header__cta {
+  background: #fff;
+  border-color: #076fb3;
+  color: #076fb3;
+}
+
 /* ハンバーガーメニュー */
 .header__toggle {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 28px;
-  height: 20px;
+  width: 1.75rem;
+  height: 1.25rem;
   background: none;
   border: none;
   cursor: pointer;
@@ -152,10 +204,10 @@
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* ヘッダー980px以下 */
-@media (max-width: 980px) {
+/* ヘッダー1024px以下 */
+@media (max-width: 1024px) {
   .header__inner {
-    padding: 20px;
+    padding: 1.25rem;
   }
 
   .header__logo {
@@ -164,35 +216,53 @@
   }
 
   .header__nav-wrapper {
-    position: absolute;
-    top: 100%;
-    right: 20px;
+    position: fixed;
+    top: var(--header-height, 96px);
+    right: 0;
+    left: 0;
+    height: calc(100vh - var(--header-height, 96px));
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem 1.25rem 2rem;
     background: #fff;
-    width: 70%;
-    max-width: 340px;
-    text-align: center;
+    width: 100%;
+    max-width: none;
+    text-align: left;
     opacity: 0;
-    transform: scale(0.95);
-    transform-origin: top right;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(100%);
+    transition: none;
     pointer-events: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    z-index: 90;
+    visibility: hidden;
+  }
+
+  .header__nav-wrapper.is-ready {
+    transition: opacity 0.35s ease, transform 0.35s ease;
   }
 
   .header__nav-wrapper.is-active {
     opacity: 1;
-    transform: scale(1);
+    transform: translateX(0);
     pointer-events: auto;
+    visibility: visible;
+  }
+
+  .header__nav-wrapper.is-leaving {
+    opacity: 0;
+    transform: translateX(100%);
+    visibility: visible; /* 閉じるアニメ中は表示を維持 */
   }
 
   .header__nav {
     flex-direction: column;
-    gap: 0;
-    padding: 20px;
+    gap: 0.75rem;
+    padding: 0;
   }
 
   .header__nav-item {
-    margin-bottom: 12px;
+    margin: 0;
   }
 
   .header__nav-item::after {
@@ -201,5 +271,11 @@
 
   .header__toggle {
     display: flex;
+  }
+
+  .header__cta {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    box-shadow: none;
   }
 }
