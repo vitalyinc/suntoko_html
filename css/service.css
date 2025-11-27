@@ -1,0 +1,891 @@
+/* 下層ページ② 赤いページ */
+
+/* ------------------------------
+  基本設定
+------------------------------ */
+.oswald-bold {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.page-wrap {
+  max-width: 1920px;
+  display: grid;
+  grid-template-columns: clamp(180px, 14vw, 220px) minmax(0, 1fr);
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 5rem;
+}
+
+.m-auto {
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+/* ------------------------------
+  サイドアイコン
+------------------------------ */
+
+.page-side__inner {
+  padding: 2rem;
+  position: relative;
+}
+
+.side-icon {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  position: fixed;
+  z-index: 120;
+}
+.side-icon__top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-red);
+  border: 1px solid var(--color-red);
+  border-radius: 50%;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  aspect-ratio: 1;
+  font-size: clamp(0.625rem, 1vw, 1rem);
+}
+
+.side-icon__bottom {
+  color: var(--color-black);
+  font-weight: 700;
+  font-size: clamp(0.625rem, 1vw, 1rem);
+}
+
+/* ------------------------------
+  サービス メインコンテンツ
+------------------------------ */
+.page-main {
+  width: 100%;
+}
+
+.page-main__inner {
+  position: relative;
+}
+
+/* ------------------------------
+  サービス キービジュアル
+------------------------------ */
+
+.service-kv {
+  color: var(--color-white);
+  padding: 2rem 2rem 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.service-kv__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+
+.service-kv__box {
+  padding: calc((240 / 1920) * 100%) 0 calc((400 / 1920) * 100%);
+  position: relative;
+  z-index: 5;
+}
+
+.service-kv__lead {
+  font-size: clamp(0.875rem, 1.5vw, 2rem);
+  font-weight: 600;
+}
+
+.service-kv__title {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-kv__title > span {
+  font-size: clamp(2.6rem, 10.6vw, 13.4rem);
+  line-height: 1;
+  text-wrap: nowrap;
+}
+
+.service-kv__sub {
+  padding-top: 1rem;
+  font-size: clamp(1rem, -0.6rem + 3.33vw, 3rem);
+  font-weight: 700;
+}
+
+.service-kv__wrap {
+  position: relative;
+}
+
+.service-kv__img {
+  background-image: url(../images/common/kv_carlife.jpg);
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  width: clamp(23rem, 51vw, 63rem);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  filter: brightness(1.5);
+  position: absolute;
+  top: -14%;
+  left: -1%;
+}
+
+.kv-bottom-text {
+  font-size: clamp(0.875rem, 1.2vw, 1.5rem);
+  margin-bottom: 1rem;
+}
+
+/* ------------------------------
+  パンくずリスト
+------------------------------ */
+
+.breadcrumb {
+  font-size: 1rem;
+  padding: 2rem 0;
+}
+
+.breadcrumb__inner {
+  margin-left: 2rem;
+  border-top: 1px solid var(--color-red);
+}
+
+/* ------------------------------
+  セクションのロゴ入り見出し
+------------------------------ */
+
+.section-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  font-weight: 500;
+  border: 1px solid var(--color-red);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.section-icon__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.section-icon__img {
+  width: clamp(0.5625rem, 4.16vw, 2rem);
+  height: auto;
+}
+
+.section-icon__text {
+  font-size: clamp(1rem, 0.8rem + 0.72vw, 1.4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  gap: 0.3125rem;
+}
+
+/* ------------------------------
+  サービスステーションとは・サービス紹介のブロック
+------------------------------ */
+
+.section-wrap {
+  padding-left: calc((160 / 1440) * 100%);
+}
+
+.page-block {
+  border-radius: 12rem 0 0 12rem;
+  position: relative;
+  color: var(--color-white);
+}
+
+.page-block__wrap {
+  padding-left: 2rem;
+}
+
+.page-block__img {
+  position: absolute;
+  top: -10%;
+  left: -9%;
+  width: clamp(5rem, 18vw, 18rem);
+}
+
+.page-block__title {
+  font-size: clamp(2rem, 0.857rem + 2.38vw, 2.4rem);
+  font-weight: 600;
+  padding-bottom: 0.1em;
+}
+
+.page-block__inner {
+  padding-left: calc((200 / 1440) * 100%);
+  padding-top: 2.4rem;
+  padding-bottom: 2rem;
+}
+
+.page-block__text {
+  border-top: 1px solid var(--color-white);
+  padding-top: 1rem;
+  padding-right: calc((250 / 1440) * 100%);
+  padding-bottom: 3rem;
+  line-height: 1.6;
+  font-size: clamp(1rem, 1.2vw, 1.375rem);
+}
+
+/* サービスステーションとは */
+
+.page-block__title--intro {
+  font-size: clamp(1.4rem, 0.733rem + 1.39vw, 2.4rem);
+  display: flex;
+  align-items: center;
+}
+
+.page-block__title--intro::before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.5em;
+  background-image: url("../images/common/icon-1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.page-block--intro {
+  margin: 3rem 0 3rem clamp(1.4rem, 3.16vw, 6rem);
+  background-color: var(--color-red);
+}
+
+/* 取り扱い商品 共通 */
+
+.section-service {
+  padding: 8rem 0 6rem;
+}
+
+.section-icon--service {
+  margin-bottom: 10rem;
+}
+
+.section-wrap--service {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12rem;
+}
+
+.page-block__title--service {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: clamp(1.125rem, 0.533rem + 0.97vw, 1.7rem);
+  margin-bottom: 1rem;
+  width: 50%;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.page-block__lead {
+  font-size: clamp(2.4rem, 11.8vw, 11rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: absolute;
+  top: -1.15em;
+  color: var(--color-black);
+}
+
+.page-block__link {
+  padding-left: 2rem;
+}
+
+.page-block__button {
+  display: inline-block;
+  color: var(--color-red);
+  background-color: var(--color-white);
+  border-radius: 6rem;
+  padding: 0.25em 5em;
+  transition: all 0.3s ease;
+  font-size: clamp(1rem, 1.2vw, 1.375rem);
+  font-weight: 600;
+}
+
+.page-block__button:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* Car care */
+.page-block--care {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+}
+
+.page-block__text--care {
+  border-top: 1px solid var(--color-black);
+  position: relative;
+}
+
+.page-block__text--care::after {
+  content: "";
+  background-image: url(../images/common/icon-2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 9em;
+  height: 4em;
+  position: absolute;
+  top: -4.5em;
+  right: 9em;
+  display: inline-block;
+}
+
+/* Repair */
+.page-block--repair {
+  background-color: var(--color-green);
+}
+
+/* Tire */
+.page-block--tire {
+  background-color: var(--color-dark);
+}
+
+/* Car Sales */
+.page-block--sales {
+  background-color: var(--color-red);
+}
+
+/* Others */
+.page-block--others {
+  background-color: var(--color-gray);
+}
+
+/* ------------------------------
+  サントーコーの強み
+------------------------------ */
+
+.feature__inner {
+  padding: 2rem calc((40 / 1440) * 100%);
+}
+
+.feature__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: calc(40 / 1440 * 100%);
+  align-items: stretch;
+}
+
+.feature-item {
+  position: relative;
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    90deg,
+    rgba(230, 0, 18, 1),
+    rgba(182, 0, 5, 1)
+  );
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  font-weight: 600;
+  border-radius: 12em;
+  box-shadow: 0px 17px 25px 5px rgba(0, 0, 0, 0.48);
+  padding-top: calc(600 / 1440 * 100%);
+  padding-bottom: calc(500 / 1440 * 100%);
+  font-size: clamp(1rem, 0.467rem + 1.11vw, 1.4rem);
+}
+
+.feature__grid .feature-item:nth-child(1),
+.feature__grid .feature-item:nth-child(2) {
+  margin-top: 0;
+}
+
+.feature__grid .feature-item:nth-child(1) {
+  transform: translateY(6em);
+}
+
+.feature__grid .feature-item:nth-child(2) {
+  transform: translateY(3em);
+}
+
+.feature-item__img {
+  width: 55%;
+  height: auto;
+  margin-bottom: 1em;
+  position: absolute;
+  top: -12%;
+  left: -2%;
+}
+
+.feature-item__head {
+  font-size: 0.875em;
+  display: block;
+  border: 1px solid var(--color-white);
+  border-radius: 2em;
+  padding: 0 2em;
+}
+
+.feature-item__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: clamp(1.125rem, 1.8vw, 2em);
+  font-weight: 400;
+}
+
+.feature-item__num {
+  font-size: clamp(2.4rem, 11.8vw, 9em);
+  color: var(--color-black);
+  position: absolute;
+  bottom: -21%;
+  right: -2%;
+}
+
+/* ------------------------------
+  固定ボタン
+------------------------------ */
+
+.page-btn {
+  position: fixed;
+  bottom: 6rem;
+  right: max(4rem, calc((100vw - 1920px) / 2 + 4rem));
+  z-index: 100;
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  min-width: 8.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-red);
+  color: var(--color-red);
+  background-color: var(--color-white);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.page-btn__text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+}
+
+.page-btn__icon {
+  flex: 0 0 auto;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: var(--color-red);
+  color: var(--color-white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.page-btn:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+/* footer上のテキスト */
+.article-title {
+  text-align: right;
+  margin-top: 4rem;
+}
+
+.article-title__text {
+  font-size: clamp(2.4rem, 11.8vw, 11rem);
+  color: var(--color-black);
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ------------------------------
+  メディアクエリ - 768px以下
+------------------------------ */
+
+@media screen and (max-width: 768px) {
+  /* ------------------------------
+  ベース - 768px以下
+------------------------------ */
+  .section-wrap {
+    padding: 2rem 0 0;
+  }
+
+  /* ------------------------------
+  サービスページ KV - 768px以下
+------------------------------ */
+  .service-kv {
+    padding: 1.5rem 6rem 1.5rem;
+  }
+
+  .service-kv__inner {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+
+  .service-kv__title > span {
+    font-size: clamp(2rem, 16.6vw, 13.4rem);
+  }
+
+  .service-kv__sub {
+    font-size: clamp(1rem, 3.33vw, 3rem);
+  }
+
+  .service-kv__wrap {
+    grid-row: 1;
+    padding: 0 calc((40 / 768) * 100%);
+  }
+
+  .service-kv__box {
+    grid-row: 2;
+    padding: 0;
+  }
+
+  .kv-bottom-text {
+    grid-row: 3;
+    margin-bottom: 1rem;
+  }
+
+  .service-kv__img {
+    position: static;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* ------------------------------
+  サービスステーションとは - 768px以下
+------------------------------ */
+
+  .page-block--intro .page-block__inner {
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 6rem;
+  }
+
+  .page-block__wrap {
+    padding-left: 0;
+  }
+
+  .page-block--intro .page-block__title--intro {
+    order: 1;
+  }
+
+  .page-block--intro .page-block__text {
+    order: 2;
+    padding: 1rem 0;
+  }
+
+  .page-block--intro .page-block__img {
+    order: 3;
+    width: 80%;
+    margin: 0 auto;
+    position: static;
+  }
+  .page-block {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .page-block__inner {
+    padding: 0 1.5rem 2rem;
+  }
+
+  /* ------------------------------
+  サントーコーの強み - 768px以下
+------------------------------ */
+  .feature__inner {
+    padding: 0;
+  }
+
+  .feature__grid {
+    grid-template-columns: 1fr;
+    gap: 12rem;
+    padding: 0 6rem;
+  }
+
+  .feature-item {
+    border-radius: 18rem;
+  }
+
+  .feature-item__title {
+    font-size: clamp(1.25rem, 4.8vw, 3em);
+  }
+
+  .feature-item__num {
+    font-size: clamp(3rem, 24vw, 12em);
+    bottom: -15%;
+    right: -2%;
+  }
+
+  /* ------------------------------
+  取り扱い商品 - 768px以下
+------------------------------ */
+
+  .section-wrap--service {
+    gap: 0;
+  }
+
+  .section-icon--service {
+    margin-bottom: 1rem;
+  }
+
+  .page-block--service {
+    padding: 0 6rem;
+  }
+
+  .page-block--service .page-block__inner {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 2rem;
+  }
+
+  .page-block--service .page-block__wrap {
+    order: 1;
+  }
+
+  .page-block--service .page-block__lead {
+    position: static;
+    margin-bottom: 0.25rem;
+  }
+
+  .page-block--service .page-block__title--service {
+    width: 100%;
+    padding-left: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-block--service .page-block__text--service {
+    margin-top: 1rem;
+    border-top: 1px solid var(--color-black);
+    padding-top: 1rem;
+  }
+
+  .page-block--service .page-block__img {
+    order: 2;
+    position: static;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .page-block--service .page-block__link {
+    order: 3;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-left: 0;
+  }
+
+  .page-block--service .page-block__button {
+    display: block;
+    text-align: center;
+    padding: 1em 0;
+  }
+
+  .page-block__text--service {
+    padding-right: 0;
+  }
+
+  .article-title {
+    text-align: right;
+    margin-top: 0;
+  }
+
+  /* Car care */
+  .page-block__text--care::after {
+    width: 7em;
+    height: 2.8em;
+    position: absolute;
+    top: -7em;
+    right: -0.5em;
+    display: inline-block;
+  }
+}
+
+/* ------------------------------
+  メディアクエリ - 450px以下
+------------------------------ */
+
+@media screen and (max-width: 450px) {
+  /* ------------------------------
+  サービスページ kv - 768px以下
+------------------------------ */
+  .service-kv {
+    padding: 1rem;
+  }
+
+  .page-block--intro .page-block__inner {
+    padding: 3rem 1rem;
+  }
+
+  /* ------------------------------
+  サントーコーの強み - 450px以下
+------------------------------ */
+
+  .feature__grid {
+    padding: 0 2rem;
+  }
+
+  .feature-item__title {
+    font-size: clamp(1.25rem, 5.8vw, 2em);
+  }
+
+  .feature-item__num {
+    font-size: clamp(3rem, 32vw, 10em);
+    bottom: -16%;
+  }
+
+  .section-icon--service {
+    margin-bottom: 1rem;
+  }
+
+  /* ------------------------------
+  取り扱い商品 - 450px以下
+------------------------------ */
+  .page-block--service {
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .page-wrap {
+    grid-template-columns: 1fr;
+  }
+  .page-side {
+    display: none;
+  }
+}
+
+/* フッター */
+
+.footer {
+  width: 100%;
+  background-color: #076fb3;
+  color: #fff;
+  padding: 80px 0 40px;
+}
+
+.footer__inner {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.footer__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 60px;
+}
+
+.footer__logo {
+  display: block;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 30px;
+  text-decoration: none;
+}
+
+.footer__address {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 40px;
+}
+
+.footer__nav-item {
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 20px;
+}
+
+.footer__nav-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 1.2em;
+  background-image: linear-gradient(
+    to bottom,
+    #fff 0 calc(50% - 2px),
+    transparent calc(50% - 2px) calc(50% + 2px),
+    #fff calc(50% + 2px) 100%
+  );
+  background-repeat: no-repeat;
+}
+
+.fotoer__nav-item--policy:not(:last-child)::after {
+  background-image: none;
+  background-color: #fff;
+}
+
+.footer__nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.footer__copyright {
+  background-color: #002b60;
+  color: var(--color-white);
+  padding: 1.5rem 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+.footer__copyright p {
+  text-align: center;
+}
+
+/* フッター980px以下 */
+@media screen and (max-width: 980px) {
+  .footer__inner {
+    padding: 0 20px;
+  }
+  .footer__box {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .footer__logo {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .footer__address {
+    text-align: center;
+  }
+
+  .footer__box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .footer__nav-item::after {
+    display: none;
+  }
+}

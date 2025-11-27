@@ -2,13 +2,13 @@ body {
   font-family: "Noto Sans JP", "Yu Gothic", "YuGothic", "ヒラギノ角ゴ ProN",
     "Hiragino Kaku Gothic ProN", sans-serif;
 
-  color: #1a1a1a;
+  color: var(--color-black);
   line-height: 1.6;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 main {
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
 h1,
@@ -44,6 +44,10 @@ a:hover {
 img {
   width: 100%;
   height: auto;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .pc {
