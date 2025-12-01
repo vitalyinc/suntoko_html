@@ -267,7 +267,7 @@
 /* 取り扱い商品 共通 */
 
 .section-service {
-  padding: 8rem 0 6rem;
+  padding: 12rem 0 6rem;
 }
 
 .section-icon--service {
@@ -297,6 +297,14 @@
   position: absolute;
   top: -1.15em;
   color: var(--color-black);
+  opacity: 0;
+  transform: translateX(2rem);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.page-block__lead.is-visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .page-block__link {
@@ -399,6 +407,10 @@
   padding-top: calc(600 / 1440 * 100%);
   padding-bottom: calc(500 / 1440 * 100%);
   font-size: clamp(1rem, 0.467rem + 1.11vw, 1.4rem);
+
+  opacity: 0;
+  filter: blur(10px);
+  transition: opacity 0.6s ease-out, filter 0.6s ease-out;
 }
 
 .feature__grid .feature-item:nth-child(1),
@@ -412,6 +424,24 @@
 
 .feature__grid .feature-item:nth-child(2) {
   transform: translateY(3em);
+}
+
+/* ★ 表示状態（ふわっと出現） */
+.feature-item.is-visible {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.feature__grid .feature-item:nth-child(1) {
+  transition-delay: 0s;
+}
+
+.feature__grid .feature-item:nth-child(2) {
+  transition-delay: 0.25s;
+}
+
+.feature__grid .feature-item:nth-child(3) {
+  transition-delay: 0.45s;
 }
 
 .feature-item__img {
@@ -471,7 +501,18 @@
   text-decoration: none;
   line-height: 1.2;
   white-space: nowrap;
-  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.page-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-red);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: -1;
 }
 
 .page-btn__text {
@@ -496,12 +537,24 @@
   line-height: 1;
 }
 
-.page-btn:hover {
-  background-color: var(--color-red);
-  color: var(--color-white);
+.page-btn__icon span {
+  display: inline-block;
 }
 
-/* footer上のテキスト */
+.page-btn:hover {
+  color: var(--color-white);
+  border-color: var(--color-red);
+}
+
+.page-btn:hover::before {
+  transform: translateX(0);
+}
+
+.page-btn:hover .page-btn__icon {
+  background-color: var(--color-white);
+  color: var(--color-red);
+}
+
 .article-title {
   text-align: right;
   margin-top: 4rem;

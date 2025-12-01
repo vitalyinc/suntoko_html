@@ -338,3 +338,68 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 })();
+
+// ============== サンプル①red サントーコーの強み ===============
+document.addEventListener("DOMContentLoaded", function () {
+  const items = document.querySelectorAll(".feature-item");
+
+  // IntersectionObserver が使えない古いブラウザの場合は、
+  // とりあえずアニメなしで全部表示させる
+  if (!("IntersectionObserver" in window)) {
+    items.forEach(function (item) {
+      item.classList.add("is-visible");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          // 一度表示したら監視を解除（何回も発火させない）
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.3, // 要素が 30% くらい見えたら発火
+    }
+  );
+
+  items.forEach(function (item) {
+    observer.observe(item);
+  });
+});
+// ============== サンプル②red 取扱商品フェードイン ===============
+document.addEventListener("DOMContentLoaded", function () {
+  const leads = document.querySelectorAll(
+    ".page-block--service .page-block__lead"
+  );
+
+  // IntersectionObserver が使えない環境向けフォールバック
+  if (!("IntersectionObserver" in window)) {
+    leads.forEach(function (lead) {
+      lead.classList.add("is-visible");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          obs.unobserve(entry.target); // 一度表示したら監視解除
+        }
+      });
+    },
+    {
+      threshold: 0.3, // 要素が 30% くらい見えたときに発火
+    }
+  );
+
+  leads.forEach(function (lead) {
+    observer.observe(lead);
+  });
+});
