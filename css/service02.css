@@ -1,0 +1,622 @@
+/* ------------------------------
+  共通
+------------------------------ */
+.page-inner {
+  margin-top: 5rem;
+}
+
+.oswald-bold {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.noto-serif {
+  font-family: "Noto Serif", serif;
+  font-weight: 400;
+}
+
+/* ------------------------------
+  KV
+------------------------------ */
+
+.kv {
+  width: 100%;
+  background-image: url("../images/common/kv_carlife.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 75vh;
+  min-height: 43.75rem;
+}
+
+/* カーライフ */
+.kv--carlife {
+  background-position: 70% center;
+}
+
+.kv__inner {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 2rem calc((80 / 1440) * 100%);
+  color: var(--color-white);
+  height: 100%;
+}
+
+.kv__grid {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.kv__heading {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: clamp(1rem, 0.733rem + 0.56vw, 1.4rem);
+}
+
+.kv__title {
+  font-size: clamp(3.4rem, 6.8vw, 6.4rem);
+  line-height: 1.2;
+}
+
+.kv__catch {
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+/* ------------------------------
+  パンくずリスト
+------------------------------ */
+
+.breadcrumb {
+  font-size: 1rem;
+  padding: 2rem;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.breadcrumb__inner {
+  margin-left: 2rem;
+}
+
+/* ------------------------------
+  セクション 共通
+------------------------------ */
+
+.section {
+  width: 100%;
+}
+
+.section__inner {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.section__link {
+  display: block;
+}
+
+.section__link:hover {
+  opacity: 0.8;
+  transition: all ease 0.3s;
+}
+
+.section__card {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+}
+
+.section__content {
+  flex: 1 1 50%;
+  position: relative;
+}
+
+.section__img {
+  flex: 1 1 50%;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.section__img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 左右反転 */
+.section__card--reverse {
+  flex-direction: row-reverse;
+}
+
+.section__title {
+  display: flex;
+  align-items: center;
+  font-size: clamp(1.2rem, 0.467rem + 1.53vw, 2.3rem);
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-black);
+  line-height: 1;
+  color: var(--color-black);
+}
+
+.section__title::before {
+  content: "";
+  background-image: url(../images/common/icon-1.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 2em;
+  height: 2em;
+}
+
+.section__content--service {
+  background-image: linear-gradient(90deg, #005bac 30%, #00478b 75%);
+  color: var(--color-white);
+  position: relative;
+}
+
+.section__head {
+  padding: 3rem 3rem 1.8rem;
+}
+
+/* -----------------------------
+  サービスステーション
+------------------------------ */
+
+.about {
+  padding: calc((160 / 1920) * 100%);
+  padding-right: 0;
+}
+
+.section__title--about {
+  color: var(--color-white);
+  border-bottom: 1px solid var(--color-white);
+}
+
+.about__text {
+  font-size: clamp(0.875rem, 0.658rem + 0.45vw, 1.2rem);
+  padding: 1.4em 3em 1.4em 0;
+}
+
+.section__img--about {
+  min-height: 30rem;
+}
+
+.section__img--about img {
+  object-position: top;
+}
+
+/* -----------------------------
+  サントーコーの強み
+------------------------------ */
+
+.section__card--strengths {
+  opacity: 0;
+}
+
+.strengths__wrap {
+  text-align: center;
+  padding: calc((160 / 1440) * 100%) 0;
+  position: relative;
+  z-index: 5;
+}
+
+.strengths__head {
+  border: 1px solid var(--color-white);
+  border-radius: 999px;
+  padding: 1px 2em;
+  font-weight: 400;
+}
+
+.strengths__title {
+  font-size: clamp(1.2rem, 0.8rem + 0.83vw, 1.8rem);
+  font-weight: 400;
+  margin-top: 1em;
+}
+
+.strengths__num {
+  color: var(--color-secondary);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: clamp(8rem, 2.667rem + 11.11vw, 16rem);
+  line-height: 0.8;
+  z-index: 2;
+}
+
+/* 左右反転 */
+.section__wrap--reverse .strengths__num {
+  left: auto;
+  right: 0;
+}
+
+/* -----------------------------
+  サントーコー取り扱い商品
+------------------------------ */
+
+.section__group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  margin-bottom: 6rem;
+}
+
+.product__wrap {
+  padding: calc((60 / 1440) * 100%) calc((100 / 1440) * 100%);
+  padding-right: 0;
+}
+
+.product__title {
+  width: 60%;
+  background-color: var(--color-black);
+  padding: 0.2em 0.8em;
+  font-size: clamp(1.2rem, 0.8rem + 0.83vw, 1.6rem);
+  margin-bottom: 0.5em;
+  font-weight: 400;
+}
+
+.product__content {
+  border-top: 1px solid var(--color-white);
+  padding-top: 1.2em;
+  padding-right: 3em;
+  position: relative;
+  z-index: 5;
+}
+
+.product__text {
+  font-size: clamp(0.875rem, 0.658rem + 0.45vw, 1.2rem);
+  margin-bottom: 5em;
+}
+
+.product__button {
+  display: inline-block;
+  color: var(--color-red);
+  background-color: var(--color-white);
+  border-radius: 6rem;
+  padding: 0.25em 3em;
+  transition: all 0.3s ease;
+  font-size: clamp(1rem, 1.2vw, 1.375rem);
+  font-weight: 600;
+  border: none;
+}
+
+.product__catch {
+  color: var(--color-secondary);
+  font-size: clamp(5rem, 1.667rem + 6.94vw, 8rem);
+  position: absolute;
+  bottom: 14%;
+  line-height: 1;
+  z-index: 0;
+}
+
+/* カーケア */
+.product--car-care {
+  position: relative;
+}
+
+.product__keeper {
+  display: inline-block;
+  width: 30%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* ------------------------------
+  固定ボタン
+------------------------------ */
+
+.page-btn {
+  position: fixed;
+  bottom: 6rem;
+  left: max(4rem, calc((100vw - 1920px) / 2 + 4rem));
+  z-index: 100;
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  min-width: 8.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-red);
+  color: var(--color-red);
+  background-color: var(--color-white);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.page-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-red);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.page-btn__text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+}
+
+.page-btn__icon {
+  flex: 0 0 auto;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: var(--color-red);
+  color: var(--color-white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.page-btn__icon span {
+  display: inline-block;
+}
+
+.page-btn:hover {
+  color: var(--color-white);
+  border-color: var(--color-red);
+}
+
+.page-btn:hover::before {
+  transform: translateX(0);
+}
+
+.page-btn:hover .page-btn__icon {
+  background-color: var(--color-white);
+  color: var(--color-red);
+}
+
+/* -----------------------------
+  メディアクエリ 768px以下
+------------------------------ */
+
+@media screen and (max-width: 768px) {
+  .breadcrumb__inner {
+    margin-left: 0;
+  }
+
+  .section__card {
+    flex-direction: column;
+  }
+
+  .about {
+    padding: 2rem;
+  }
+
+  .about__text {
+    padding-right: 0;
+  }
+
+  .section__head {
+    padding: 2rem;
+  }
+
+  .section__img {
+    flex: 0 0 auto;
+    height: 15rem;
+  }
+
+  .section__img img {
+    position: static;
+    inset: auto;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .product__wrap {
+    padding: 2rem;
+    padding-right: 0;
+  }
+
+  .product__content {
+    padding-right: 2rem;
+  }
+
+  .page-btn {
+    left: 2rem;
+  }
+}
+
+/* フッター */
+
+.footer {
+  width: 100%;
+  background-color: #076fb3;
+  color: #fff;
+  padding: 80px 0 40px;
+}
+
+.footer__inner {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.footer__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 60px;
+}
+
+.footer__logo {
+  display: block;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 30px;
+  text-decoration: none;
+}
+
+.footer__address {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 40px;
+}
+
+.footer__nav-item {
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 20px;
+}
+
+.footer__nav-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 1.2em;
+  background-image: linear-gradient(
+    to bottom,
+    #fff 0 calc(50% - 2px),
+    transparent calc(50% - 2px) calc(50% + 2px),
+    #fff calc(50% + 2px) 100%
+  );
+  background-repeat: no-repeat;
+}
+
+.fotoer__nav-item--policy:not(:last-child)::after {
+  background-image: none;
+  background-color: #fff;
+}
+
+.footer__nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.footer__copyright {
+  background-color: #002b60;
+  color: var(--color-white);
+  padding: 1.5rem 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+.footer__copyright p {
+  text-align: center;
+  color: var(--color-white);
+}
+
+/* フッター980px以下 */
+@media screen and (max-width: 980px) {
+  .footer__inner {
+    padding: 0 20px;
+  }
+  .footer__box {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .footer__logo {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .footer__address {
+    text-align: center;
+  }
+
+  .footer__box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .footer__nav-item::after {
+    display: none;
+  }
+}
+
+/* -----------------------------
+  アニメーション class
+------------------------------ */
+
+/* KV */
+.fadeIn {
+  opacity: 0;
+  transform: translateY(1rem);
+  animation: fadeUpIn 1s ease-out 0.3s forwards;
+}
+
+@keyframes fadeUpIn {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* サントーコーの強み */
+
+.section__card--strengths {
+  opacity: 0;
+}
+
+@keyframes CardFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.strengths-list.is-active .section__card--strengths:nth-child(1) {
+  animation: CardFadeIn 0.6s ease-out 0s forwards;
+}
+
+.strengths-list.is-active .section__card--strengths:nth-child(2) {
+  animation: CardFadeIn 0.6s ease-out 0.3s forwards;
+}
+
+.strengths-list.is-active .section__card--strengths:nth-child(3) {
+  animation: CardFadeIn 0.6s ease-out 0.6s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section__card--strengths {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+  }
+}
