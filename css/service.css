@@ -689,6 +689,10 @@
   取り扱い商品 - 768px以下
 ------------------------------ */
 
+  .section-service {
+    padding: 6rem 0 6rem;
+  }
+
   .section-wrap--service {
     gap: 0;
   }
