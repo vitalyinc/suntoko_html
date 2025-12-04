@@ -7,8 +7,11 @@ body {
   font-size: 16px;
 }
 
-main {
+main,
+body {
   background-color: var(--color-white);
+  padding: 0;
+  margin: 0;
 }
 
 h1,

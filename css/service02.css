@@ -1,6 +1,12 @@
 /* ------------------------------
   共通
 ------------------------------ */
+
+.section {
+  margin: 0;
+  padding: 0;
+}
+
 .page-inner {
   margin-top: 5rem;
 }
@@ -103,6 +109,10 @@
 .section__link:hover {
   opacity: 0.8;
   transition: all ease 0.3s;
+}
+
+.section__link:hover .product__button {
+  opacity: 0.8;
 }
 
 .section__card {
@@ -233,7 +243,7 @@
 }
 
 /* 左右反転 */
-.section__wrap--reverse .strengths__num {
+.strengths-list .section__card:nth-child(2) .strengths__num {
   left: auto;
   right: 0;
 }
@@ -284,7 +294,7 @@
   border-radius: 6rem;
   padding: 0.25em 3em;
   transition: all 0.3s ease;
-  font-size: clamp(1rem, 1.2vw, 1.375rem);
+  font-size: clamp(1rem, 1.1vw, 1.2rem);
   font-weight: 600;
   border: none;
 }

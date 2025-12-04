@@ -9,6 +9,7 @@ body {
 
 main {
   background-color: #fff;
+  padding: 0;
 }
 
 h1,
@@ -409,10 +410,6 @@ img {
 }
 
 /* セクション・タイトル */
-.section {
-  width: 100%;
-  background-color: #fff;
-}
 .section-blue {
   background-color: #dbeef8;
 }
@@ -460,12 +457,6 @@ img {
 
 .section--nav {
   padding: 60px 0;
-}
-
-.section__inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 50px;
 }
 
 .section__content {
@@ -723,10 +714,6 @@ img {
   }
   .section__head::before {
     height: 40px;
-  }
-
-  .section__inner {
-    padding: 0 20px;
   }
 
   .section__line {
