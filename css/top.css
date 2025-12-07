@@ -2,6 +2,328 @@
 /* TOPページ */
 /* ===================================== */
 
+/* セクション・タイトル */
+.section-blue {
+  background-color: #dbeef8;
+}
+.section__head {
+  width: 48%;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  z-index: 10;
+  /* box-shadow: 0px -3px 4px 0px rgba(0, 0, 0, 0.2); */
+}
+
+.section__head::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: -45px;
+  background-color: #fff;
+  width: 50px;
+  height: 80px;
+  clip-path: polygon(0 0, 0 0, 75% 100%, 0% 100%);
+}
+
+.section__head--blue {
+  background-color: #dbeef8;
+}
+.section__head--blue::before {
+  background-color: #dbeef8;
+}
+
+.section__body {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0 20px 0 0;
+  /* box-shadow: 0px -3px 4px 0px rgba(0, 0, 0, 0.2); */
+}
+
+.section__body--blue {
+  background-color: #dbeef8;
+}
+.section__body--blue::before {
+  background-color: #dbeef8;
+}
+
+.section--nav {
+  padding: 60px 0;
+}
+
+.section__content {
+  padding-top: calc(100% * (100 / 1080));
+  padding-bottom: calc(100% * (120 / 1080));
+}
+
+.section__title {
+  font-size: clamp(18px, 3.4vw, 40px);
+  font-weight: 400;
+  padding-top: 1em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section__title::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 1em;
+  background-color: #076fb3;
+}
+
+.section__title--post {
+  font-size: clamp(18px, 2.8vw, 32px);
+  padding-top: 2em;
+}
+
+.section-blue {
+  background-color: #dbeef8;
+}
+
+.section__inner--top {
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.section__title--top {
+  font-weight: 500;
+  font-size: clamp(20px, 3.6vw, 40px);
+}
+
+/* News & Topics */
+.section-news {
+  width: 100%;
+  background-color: #b5d4e8;
+  padding-top: 100px;
+}
+.top-news {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10%;
+  padding: 2em 0 8em;
+}
+
+.top-news__list {
+  margin: 0;
+  flex: 0 0 250px;
+}
+
+.top-news__right {
+  flex: 1;
+}
+
+.top-news__item {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5em;
+  border-bottom: 1px solid#b3b3b3;
+  padding: 2em 0 2em 1em;
+}
+
+.top-news__date {
+  color: #808080;
+}
+
+/* トップページのボタン */
+
+.top-button {
+  border-radius: 50px;
+  padding: 10px 1.6em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  font-size: 20px;
+}
+
+.top-button::after {
+  content: "";
+  display: inline-block;
+  width: 1.6em;
+  height: 1.6em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.top-button:hover {
+  color: #fff;
+  background-color: #076fb3;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.top-button--blue:hover::after {
+  transition: all 0.3s ease;
+  background-image: url(/images/common/arrow-icon03.png);
+}
+
+.top-button--blue {
+  border: 1px solid #076fb3;
+  color: #076fb3;
+}
+
+.top-button--blue::after {
+  background-image: url(/images/common/arrow-icon02.png);
+}
+
+.top-button--white {
+  border: 1px solid #fff;
+  color: #fff;
+}
+.top-button--white:hover {
+  color: #076fb3;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.top-button--white:hover::after {
+  transition: all 0.3s ease;
+  background-image: url(/images/common/arrow-icon02.png);
+}
+
+.top-button--white::after {
+  background-image: url(/images/common/arrow-icon03.png);
+}
+
+.top-button--panel {
+  display: inline-flex;
+  min-width: 300px;
+  margin-top: 2em;
+}
+
+/* フッター */
+
+.footer {
+  width: 100%;
+  background-color: #076fb3;
+  color: #fff;
+  padding: 80px 0 0;
+}
+
+.footer__inner {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.footer__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 60px;
+}
+
+.footer__logo {
+  display: block;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 30px;
+  text-decoration: none;
+}
+
+.footer__address {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 40px;
+}
+
+.footer__nav-item {
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 20px;
+}
+
+.footer__nav-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 1.2em;
+  background-image: linear-gradient(
+    to bottom,
+    #fff 0 calc(50% - 2px),
+    transparent calc(50% - 2px) calc(50% + 2px),
+    #fff calc(50% + 2px) 100%
+  );
+  background-repeat: no-repeat;
+}
+
+.fotoer__nav-item--policy:not(:last-child)::after {
+  background-image: none;
+  background-color: #fff;
+}
+
+.footer__nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.footer__copyright {
+  background-color: #002b60;
+  color: var(--color-white);
+  padding: 1.5rem 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+.footer__copyright p {
+  text-align: center;
+}
+
+/* フッター980px以下 */
+@media screen and (max-width: 980px) {
+  .footer__inner {
+    padding: 0 20px;
+  }
+  .footer__box {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .footer__logo {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .footer__address {
+    text-align: center;
+  }
+
+  .footer__box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .footer__nav-item::after {
+    display: none;
+  }
+}
+
+/* 旧コード */
+
 .main__btn {
   position: absolute;
   right: 0;
@@ -93,6 +415,16 @@
   letter-spacing: 0.1em;
   line-height: 1.5;
   margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 0s;
+}
+
+.hero__title.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
 }
 
 .hero__btn {
@@ -264,9 +596,16 @@
   transition-delay: 0.8s; /* 3段目 */
 }
 
+/* アニメーション無効時でも常に表示させるフォールバック */
+.hero__btn,
+.hero__bottom-text {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 /* heroアニメーション */
 
-/* hero はオーバーレイを載せるため相対配置＆はみ出し隠し */
 .hero {
   position: relative;
   overflow: hidden;
@@ -279,35 +618,33 @@
   inset: 0;
   background: #fff;
   transform: translateX(100%); /* 右に抜けた状態=非表示 */
-  pointer-events: none; /* クリック阻害しない */
+  pointer-events: none;
   z-index: 1; /* テキストの上に被せる */
 }
 
 /* 入場：カバー状態(0%)から右へ抜ける(100%) → 背後のheroが露出 */
 .hero.is-activating::before {
-  animation: heroWipeEnter 0.7s ease forwards;
+  animation: heroWipeEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
-/* 退場：右から入り込み(100%→0%)で白く覆って去る（入場と逆向き）*/
 .hero.is-leaving::before {
-  animation: heroWipeLeave 0.7s ease forwards;
+  animation: heroWipeLeave 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes heroWipeEnter {
   from {
     transform: translateX(0%);
-  } /* まず全面を白で覆う */
+  }
   to {
     transform: translateX(100%);
-  } /* 右へ抜けて露出 */
+  }
 }
 @keyframes heroWipeLeave {
   from {
     transform: translateX(100%);
-  } /* 右外から入り */
+  }
   to {
     transform: translateX(0%);
-  } /* 全面を白で覆う */
+  }
 }
 
 /* 既存の段階表示（そのままでOK：.hero.is-active … で発火） */
