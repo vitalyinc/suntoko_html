@@ -442,3 +442,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
   observer.observe(strengthsList);
 });
+
+// ローディングアニメーション
+(function () {
+  const loader = document.getElementById("loading");
+  const body = document.body;
+  const logo = document.querySelector(".loading__logo"); // ロゴがフェードインする要素
+
+  let isPageLoaded = false; // ページ読み込み完了したか
+  let isAnimationDone = false; // ローディングアニメが終わったか
+
+  function hideLoader() {
+    // どちらも完了していなければ何もしない
+    if (!isPageLoaded || !isAnimationDone) return;
+
+    // ここまで来たらローディングを消す
+    body.classList.remove("is-loading");
+
+    if (loader) {
+      loader.classList.add("is-hidden");
+    }
+  }
+
+  // ページの読み込みが完了したらフラグを立てる
+  window.addEventListener("load", function () {
+    isPageLoaded = true;
+    hideLoader();
+  });
+
+  // ロゴのフェードインアニメーションが終わったらフラグを立てる
+  if (logo) {
+    logo.addEventListener("animationend", function (e) {
+      // 念のため、どのアニメーションかチェック
+      if (e.animationName === "logoFadeIn") {
+        isAnimationDone = true;
+        hideLoader();
+      }
+    });
+  }
+})();
