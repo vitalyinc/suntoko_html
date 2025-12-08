@@ -105,254 +105,243 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ================メインビジュアルのスライダー================
 
-// main-kv--------------------------------------
+// ============= main-kv（トップ専用） =============
+(function () {
+  // 要素取得
+  const mainArea = document.getElementById("main-area");
+  const mainWrap = document.getElementById("main-wrap");
+  const slides = document.querySelectorAll(".hero");
+  const dots = document.querySelectorAll(".kv-indicator__dot");
 
-// 要素取得
-const mainArea = document.getElementById("main-area");
-const mainWrap = document.getElementById("main-wrap");
-const slides = document.querySelectorAll(".hero");
-const dots = document.querySelectorAll(".kv-indicator__dot");
+  // ▼ トップ以外や、要素が揃っていないページでは一切動かさない
+  if (!mainArea || !mainWrap || slides.length === 0 || dots.length === 0) {
+    return;
+  }
 
-// スライド数に応じてmain-wrapの高さを動的設定
-if (mainWrap && slides.length > 0) {
+  // スライド数に応じてmain-wrapの高さを動的設定
   mainWrap.style.height = `${slides.length * 100}vh`;
-}
 
-let currentIndex = 0;
-let sum = 0;
-let isAnimating = false;
-let lastWheelTime = 0;
-let prevIndex = 0; // 直前のスライドを覚えておく
+  let currentIndex = 0;
+  let sum = 0;
+  let isAnimating = false;
+  let lastWheelTime = 0;
+  let prevIndex = 0; // 直前のスライドを覚えておく
 
-const MOVE_THRESHOLD = 12;
-const GESTURE_GAP = 1;
-const MAX = slides.length - 1; // スライド数に応じて動的設定
+  const MOVE_THRESHOLD = 12;
+  const GESTURE_GAP = 1;
+  const MAX = slides.length - 1; // スライド数に応じて動的設定
 
-// ----------------------------------
-// IntersectionObserver: 100%見えたらロック、外れたら解除
-// ----------------------------------
-const observer = new IntersectionObserver(onIntersect, {
-  root: null,
-  threshold: 1,
-});
-observer.observe(mainArea);
+  // ----------------------------------
+  // IntersectionObserver: 100%見えたらロック、外れたら解除
+  // ----------------------------------
+  const observer = new IntersectionObserver(onIntersect, {
+    root: null,
+    threshold: 1,
+  });
+  observer.observe(mainArea);
 
-function onIntersect(entries) {
-  if (!entries[0]) return;
+  function onIntersect(entries) {
+    if (!entries[0]) return;
 
-  if (entries[0].isIntersecting) {
-    // 見えているスライド位置を transform から復元して同期
-    syncIndexFromTransform();
-    // 状態初期化
-    sum = 0;
-    isAnimating = false;
-    lastWheelTime = 0;
+    if (entries[0].isIntersecting) {
+      // 見えているスライド位置を transform から復元して同期
+      syncIndexFromTransform();
+      // 状態初期化
+      sum = 0;
+      isAnimating = false;
+      lastWheelTime = 0;
 
-    // 外スクロール禁止 + 入力監視開始
-    document.body.style.overflow = "hidden";
-    window.addEventListener("wheel", onWheel, { passive: false });
-  } else {
-    // 外スクロール許可 + 入力監視停止
-    document.body.style.overflow = "auto";
-    window.removeEventListener("wheel", onWheel);
-  }
-}
-
-// ----------------------------------
-// ホイール入力（1ジェスチャー=必ず1枚）
-// ----------------------------------
-function onWheel(e) {
-  e.preventDefault();
-  if (isAnimating) return;
-
-  const now = e.timeStamp || performance.now();
-
-  // ジェスチャーが切れたら累積をゼロに
-  if (now - lastWheelTime > GESTURE_GAP) {
-    sum = 0;
-  }
-  lastWheelTime = now;
-
-  // 累積（サチュレートして多段進行を防ぐ）
-  sum += e.deltaY;
-  if (sum > MOVE_THRESHOLD) sum = MOVE_THRESHOLD;
-  if (sum < -MOVE_THRESHOLD) sum = -MOVE_THRESHOLD;
-
-  // 下方向（+）
-  if (sum === MOVE_THRESHOLD) {
-    if (currentIndex < MAX) {
-      currentIndex++;
-      moveSlide();
+      // 外スクロール禁止 + 入力監視開始
+      document.body.style.overflow = "hidden";
+      window.addEventListener("wheel", onWheel, { passive: false });
     } else {
-      // 最終スライドでさらに下 → ロック解除して外へ
-      unlockFromSection();
+      // 外スクロール許可 + 入力監視停止
+      document.body.style.overflow = "auto";
+      window.removeEventListener("wheel", onWheel);
     }
-    sum = 0; // 都度リセット
-    return;
   }
 
-  // 上方向（-）
-  if (sum === -MOVE_THRESHOLD) {
-    if (currentIndex > 0) {
-      currentIndex--;
-      moveSlide();
-    }
-    // 先頭でさらに上は今回は解除しない
-    sum = 0;
-  }
-}
-
-// ----------------------------------
-// スライド移動（100vh単位）
-// ----------------------------------
-function moveSlide() {
-  if (isAnimating) return;
-  isAnimating = true;
-  sum = 0;
-
-  const fromIndex = prevIndex; // さっきまで表示していたスライド
-  const toIndex = currentIndex; // これから表示するスライド
-
-  // まずは全スライドから「ワイプ用クラス」を外しておく
-  slides.forEach((slide) => {
-    slide.classList.remove("is-activating", "is-leaving");
-  });
-
-  // 退場するスライドに白ワイプ（右から入ってきて全面を白で覆う）
-  if (slides[fromIndex]) {
-    slides[fromIndex].classList.add("is-leaving");
-  }
-
-  // 入場するスライドにも白ワイプ（いったん白で覆ったあと右へ抜けていく）
-  if (slides[toIndex]) {
-    slides[toIndex].classList.add("is-activating");
-  }
-
-  // === スライドの縦移動（ease-out を強めに変更）===
-  // 0.8s はお好みで 0.7〜1.0 に調整してOK
-  mainWrap.style.transition = "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)";
-  mainWrap.style.transform = `translateY(${-100 * toIndex}vh)`;
-
-  // インジケーター & タイトルアニメも同期
-  updateIndicator(toIndex);
-  animateTitle(toIndex);
-
-  // 白ワイプのCSSアニメ（0.7s）終了後にクラス整理 & is-active付与
-  const OVERLAY_DURATION = 700; // heroWipeEnter / heroWipeLeave と揃える
-  setTimeout(() => {
-    // 次のスライドを「現在アクティブ」として扱う
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("is-active", i === toIndex);
-    });
-
-    // ワイプ用クラスをリセット
-    if (slides[toIndex]) {
-      slides[toIndex].classList.remove("is-activating");
-    }
-    if (slides[fromIndex]) {
-      slides[fromIndex].classList.remove("is-leaving");
-    }
-
-    prevIndex = toIndex; // 次回の「fromIndex」になる
-  }, OVERLAY_DURATION);
-}
-
-// アニメ完了で入力再開
-mainWrap.addEventListener("transitionend", () => {
-  isAnimating = false;
-  sum = 0;
-});
-
-// ----------------------------------
-// 解除（外へスクロール可能に戻す）
-// ----------------------------------
-function unlockFromSection() {
-  isAnimating = false;
-  sum = 0;
-  document.body.style.overflow = "auto";
-  window.removeEventListener("wheel", onWheel);
-
-  // 少しだけ押し出してIOが「領域外」を認識しやすく（任意）
-  requestAnimationFrame(() => window.scrollBy(0, 1));
-}
-
-// ----------------------------------
-// transform から currentIndex を復元（再入場時）
-// ----------------------------------
-function syncIndexFromTransform() {
-  const tf = getComputedStyle(mainWrap).transform;
-  if (tf === "none") {
-    currentIndex = 0;
-    updateIndicator(currentIndex);
-    animateTitle(currentIndex);
-    return;
-  }
-  const m = new DOMMatrixReadOnly(tf);
-  const ty = m.m42; // translateY(px)
-  const vh = window.innerHeight; // 100vh の px 値
-  currentIndex = Math.max(0, Math.min(MAX, Math.round(-ty / vh)));
-  updateIndicator(currentIndex);
-  animateTitle(currentIndex);
-}
-
-// ----------------------------------
-// インジケーター（クリックで移動 + 表示同期）
-// ----------------------------------
-function updateIndicator(i) {
-  dots.forEach((dot, idx) => {
-    dot.classList.toggle("is-active", idx === i);
-  });
-}
-
-dots.forEach((dot) => {
-  dot.addEventListener("click", (e) => {
+  // ----------------------------------
+  // ホイール入力（1ジェスチャー=必ず1枚）
+  // ----------------------------------
+  function onWheel(e) {
     e.preventDefault();
     if (isAnimating) return;
 
-    const i = Number(dot.dataset.index);
-    if (!Number.isFinite(i) || i === currentIndex) return;
+    const now = e.timeStamp || performance.now();
 
-    currentIndex = Math.max(0, Math.min(MAX, i));
-    moveSlide();
+    // ジェスチャーが切れたら累積をゼロに
+    if (now - lastWheelTime > GESTURE_GAP) {
+      sum = 0;
+    }
+    lastWheelTime = now;
+
+    // 累積（サチュレートして多段進行を防ぐ）
+    sum += e.deltaY;
+    if (sum > MOVE_THRESHOLD) sum = MOVE_THRESHOLD;
+    if (sum < -MOVE_THRESHOLD) sum = -MOVE_THRESHOLD;
+
+    // 下方向（+）
+    if (sum === MOVE_THRESHOLD) {
+      if (currentIndex < MAX) {
+        currentIndex++;
+        moveSlide();
+      } else {
+        // 最終スライドでさらに下 → ロック解除して外へ
+        unlockFromSection();
+      }
+      sum = 0;
+      return;
+    }
+
+    // 上方向（-）
+    if (sum === -MOVE_THRESHOLD) {
+      if (currentIndex > 0) {
+        currentIndex--;
+        moveSlide();
+      }
+      sum = 0;
+    }
+  }
+
+  // ----------------------------------
+  // スライド移動（100vh単位＋白ワイプ）
+  // ----------------------------------
+  function moveSlide() {
+    if (isAnimating) return;
+    isAnimating = true;
+    sum = 0;
+
+    const fromIndex = prevIndex; // さっきまで表示していたスライド
+    const toIndex = currentIndex; // これから表示するスライド
+
+    // まずは全スライドから「ワイプ用クラス」を外しておく
+    slides.forEach((slide) => {
+      slide.classList.remove("is-activating", "is-leaving");
+    });
+
+    if (slides[fromIndex]) {
+      slides[fromIndex].classList.add("is-leaving");
+    }
+    if (slides[toIndex]) {
+      slides[toIndex].classList.add("is-activating");
+    }
+
+    // 縦移動（強めの ease-out）
+    mainWrap.style.transition = "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)";
+    mainWrap.style.transform = `translateY(${-100 * toIndex}vh)`;
+
+    updateIndicator(toIndex);
+    animateTitle(toIndex);
+
+    const OVERLAY_DURATION = 700; // heroWipeEnter / heroWipeLeave と揃える
+    setTimeout(() => {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("is-active", i === toIndex);
+      });
+
+      if (slides[toIndex]) {
+        slides[toIndex].classList.remove("is-activating");
+      }
+      if (slides[fromIndex]) {
+        slides[fromIndex].classList.remove("is-leaving");
+      }
+
+      prevIndex = toIndex;
+    }, OVERLAY_DURATION);
+  }
+
+  // アニメ完了で入力再開
+  mainWrap.addEventListener("transitionend", () => {
+    isAnimating = false;
+    sum = 0;
   });
-});
 
-// ----------------------------------
-// 初期表示：インジケーターだけ同期しておく（任意）
-// ----------------------------------
-requestAnimationFrame(() => {
-  updateIndicator(currentIndex);
-});
+  // ----------------------------------
+  // 解除（外へスクロール可能に戻す）
+  // ----------------------------------
+  function unlockFromSection() {
+    isAnimating = false;
+    sum = 0;
+    document.body.style.overflow = "auto";
+    window.removeEventListener("wheel", onWheel);
+    requestAnimationFrame(() => window.scrollBy(0, 1));
+  }
 
-// ------------------------------
-// h1 フェードイン用の関数
-// ------------------------------
-function animateTitle(index) {
-  // すべての h1 から fade-in を外す（リセット）
-  slides.forEach((slide) => {
-    const title = slide.querySelector(".hero__title");
-    if (title) title.classList.remove("fade-in");
+  // ----------------------------------
+  // transform から currentIndex を復元（再入場時）
+  // ----------------------------------
+  function syncIndexFromTransform() {
+    const tf = getComputedStyle(mainWrap).transform;
+    if (tf === "none") {
+      currentIndex = 0;
+      updateIndicator(currentIndex);
+      animateTitle(currentIndex);
+      return;
+    }
+    const m = new DOMMatrixReadOnly(tf);
+    const ty = m.m42;
+    const vh = window.innerHeight;
+    currentIndex = Math.max(0, Math.min(MAX, Math.round(-ty / vh)));
+    updateIndicator(currentIndex);
+    animateTitle(currentIndex);
+  }
+
+  // ----------------------------------
+  // インジケーター
+  // ----------------------------------
+  function updateIndicator(i) {
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle("is-active", idx === i);
+    });
+  }
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (isAnimating) return;
+
+      const i = Number(dot.dataset.index);
+      if (!Number.isFinite(i) || i === currentIndex) return;
+
+      currentIndex = Math.max(0, Math.min(MAX, i));
+      moveSlide();
+    });
   });
 
-  // 対象スライドの h1 に fade-in を付与
-  const currentSlide = slides[index];
-  const title = currentSlide.querySelector(".hero__title");
-  if (title) {
-    // 一度リフローさせてから付け直すと確実に発火する
+  // ------------------------------
+  // h1 フェードイン用の関数（安全ガード付き）
+  // ------------------------------
+  function animateTitle(index) {
+    if (!slides.length) return;
+
+    slides.forEach((slide) => {
+      const title = slide.querySelector(".hero__title");
+      if (title) title.classList.remove("fade-in");
+    });
+
+    const currentSlide = slides[index];
+    if (!currentSlide) return;
+    const title = currentSlide.querySelector(".hero__title");
+    if (!title) return;
+
     void title.offsetWidth;
     title.classList.add("fade-in");
   }
-}
 
-// ページロード時に最初のタイトルをアニメーション
-window.addEventListener("load", () => {
-  animateTitle(currentIndex);
-
-  // 追加：初期スライドを is-active にしておく
-  slides.forEach((slide, i) => {
-    slide.classList.toggle("is-active", i === currentIndex);
+  // 初期表示
+  window.addEventListener("load", () => {
+    animateTitle(currentIndex);
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("is-active", i === currentIndex);
+    });
   });
-});
+
+  // 初期インジケーター
+  requestAnimationFrame(() => {
+    updateIndicator(currentIndex);
+  });
+})();
 
 // ============== サンプル①red サントーコーの強み ===============
 document.addEventListener("DOMContentLoaded", function () {
