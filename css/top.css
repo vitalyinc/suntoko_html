@@ -760,7 +760,7 @@ body.is-loading {
 }
 
 .loading__logo {
-  width: 50%;
+  width: 30%;
   opacity: 0;
   animation: logoFadeIn 0.8s ease-out forwards;
   animation-delay: var(--loading-duration); /* SVG終了後に表示 */

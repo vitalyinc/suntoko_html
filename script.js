@@ -52,8 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const THRESHOLD = 300; // 300pxで切替
   const img = header.querySelector(".header__logo img");
-  const SRC_WHITE = img?.dataset.srcWhite || "";
-  const SRC_COLOR = img?.dataset.srcColor || "";
+  const DEFAULT_COLOR = img?.getAttribute("src") || "";
+  const DEFAULT_WHITE = "images/logo/logo-white02.png";
+  const SRC_WHITE = img?.dataset.srcWhite || DEFAULT_WHITE;
+  const SRC_COLOR = img?.dataset.srcColor || DEFAULT_COLOR;
 
   [SRC_WHITE, SRC_COLOR].forEach((src) => {
     if (!src) return;
@@ -440,17 +442,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let isPageLoaded = false; // ページ読み込み完了したか
   let isAnimationDone = false; // ローディングアニメが終わったか
+  let isHideTimerStarted = false; // 二重実行防止
 
   function hideLoader() {
     // どちらも完了していなければ何もしない
-    if (!isPageLoaded || !isAnimationDone) return;
+    if (!isPageLoaded || !isAnimationDone || isHideTimerStarted) return;
 
-    // ここまで来たらローディングを消す
-    body.classList.remove("is-loading");
+    isHideTimerStarted = true;
 
-    if (loader) {
-      loader.classList.add("is-hidden");
-    }
+    // ★ ロゴアニメが終わってから待つ時間（ms）
+    const DELAY = 1500;
+
+    setTimeout(function () {
+      body.classList.remove("is-loading");
+
+      if (loader) {
+        loader.classList.add("is-hidden");
+      }
+    }, DELAY);
   }
 
   // ページの読み込みが完了したらフラグを立てる
@@ -462,7 +471,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // ロゴのフェードインアニメーションが終わったらフラグを立てる
   if (logo) {
     logo.addEventListener("animationend", function (e) {
-      // 念のため、どのアニメーションかチェック
       if (e.animationName === "logoFadeIn") {
         isAnimationDone = true;
         hideLoader();

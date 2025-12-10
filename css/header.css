@@ -117,18 +117,6 @@
   background-color: #fff;
 }
 
-.header--top .header__cta {
-  background: transparent;
-  border-color: #fff;
-  color: #fff;
-}
-
-.header--top:hover .header__cta {
-  background: #fff;
-  border-color: #076fb3;
-  color: #076fb3;
-}
-
 .header--top:hover .header__nav-link--top {
   color: #1a1a1a;
 }
@@ -138,11 +126,11 @@
 }
 
 .header--top:hover .header__nav-link--top {
-  color: #1a1a1a;
+  color: var(--color-black);
 }
 
 .header--top:hover .header__nav-item--top:not(:last-child)::after {
-  background-color: #1a1a1a;
+  background-color: var(--color-black);
 }
 
 .header__nav-item--top:not(:last-child)::after {
@@ -163,12 +151,6 @@
 
 .header--top.is-solid .header__nav-item--top:not(:last-child)::after {
   background-color: #1a1a1a;
-}
-
-.header--top.is-solid .header__cta {
-  background: #fff;
-  border-color: #076fb3;
-  color: #076fb3;
 }
 
 /* ハンバーガーメニュー */
