@@ -254,7 +254,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // アニメ完了で入力再開
-  mainWrap.addEventListener("transitionend", () => {
+  mainWrap.addEventListener("transitionend", (e) => {
+    if (e.target !== mainWrap || e.propertyName !== "transform") return;
+
     isAnimating = false;
     sum = 0;
   });
