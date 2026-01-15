@@ -395,6 +395,10 @@
   background-repeat: no-repeat;
 }
 
+.hero--top {
+  background-image: url(../images/top/kv_top.jpg);
+}
+
 .hero--carlife {
   background-image: url(../images/top/kv_carlife.jpg);
 }
