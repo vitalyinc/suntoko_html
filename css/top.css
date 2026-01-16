@@ -507,6 +507,22 @@
   transition-delay: 0.3s;
 }
 
+.hero__title.is-initial {
+  transition: none;
+  animation: heroTitleInitial 0.8s ease 0.3s both;
+}
+
+@keyframes heroTitleInitial {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero__btn {
   display: inline-flex;
   color: #fff;

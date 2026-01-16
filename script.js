@@ -333,8 +333,46 @@ document.addEventListener("DOMContentLoaded", function () {
     title.classList.add("fade-in");
   }
 
+  const topTitle = document.querySelector(".hero--top .hero__title");
+  let didInitialTopTitle = false;
+
+  function triggerInitialTopTitle() {
+    if (didInitialTopTitle || !topTitle) return;
+    didInitialTopTitle = true;
+
+    topTitle.classList.add("is-initial");
+    topTitle.addEventListener(
+      "animationend",
+      (e) => {
+        if (e.animationName !== "heroTitleInitial") return;
+        topTitle.classList.remove("is-initial");
+      },
+      { once: true }
+    );
+  }
+
+  function watchLoadingEnd() {
+    if (!document.body.classList.contains("is-loading")) {
+      triggerInitialTopTitle();
+      return;
+    }
+
+    const observer = new MutationObserver(() => {
+      if (!document.body.classList.contains("is-loading")) {
+        observer.disconnect();
+        triggerInitialTopTitle();
+      }
+    });
+
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
+
   // 初期表示
   window.addEventListener("load", () => {
+    watchLoadingEnd();
     animateTitle(currentIndex);
     slides.forEach((slide, i) => {
       slide.classList.toggle("is-active", i === currentIndex);
