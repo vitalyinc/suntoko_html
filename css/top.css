@@ -226,129 +226,6 @@
   margin-top: 2em;
 }
 
-/* フッター */
-
-.footer {
-  width: 100%;
-  background-color: #076fb3;
-  color: #fff;
-  padding: 80px 0 0;
-}
-
-.footer__inner {
-  max-width: 1800px;
-  margin: 0 auto;
-  padding: 0 60px;
-}
-
-.footer__box {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  margin-bottom: 60px;
-}
-
-.footer__logo {
-  display: block;
-  font-size: 36px;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 30px;
-  text-decoration: none;
-}
-
-.footer__address {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.footer__nav {
-  display: flex;
-  gap: 40px;
-}
-
-.footer__nav-item {
-  margin-bottom: 10px;
-  position: relative;
-  font-size: 20px;
-}
-
-.footer__nav-item:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: -20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 1.2em;
-  background-image: linear-gradient(
-    to bottom,
-    #fff 0 calc(50% - 2px),
-    transparent calc(50% - 2px) calc(50% + 2px),
-    #fff calc(50% + 2px) 100%
-  );
-  background-repeat: no-repeat;
-}
-
-.footer__nav-item--policy:not(:last-child)::after {
-  background-image: none;
-  background-color: #fff;
-}
-
-.footer__nav-link {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.footer__copyright {
-  background-color: #002b60;
-  color: var(--color-white);
-  padding: 1.5rem 0;
-  font-size: 16px;
-  text-align: center;
-}
-
-.footer__copyright p {
-  text-align: center;
-}
-
-/* フッター980px以下 */
-@media screen and (max-width: 980px) {
-  .footer__inner {
-    padding: 0 20px;
-  }
-  .footer__box {
-    flex-direction: column;
-    justify-content: center;
-  }
-  .footer__logo {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .footer__address {
-    text-align: center;
-  }
-
-  .footer__box {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer__nav {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .footer__nav-item::after {
-    display: none;
-  }
-}
-
-/* 旧コード */
-
 .main__btn {
   position: absolute;
   right: 0;
@@ -426,7 +303,9 @@
 .hero .hero__btn::after {
   opacity: 0;
   transform: translateX(-6px);
-  transition: opacity 0.2s ease, transform 0.1s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.1s ease;
 }
 
 .hero--top .hero__btn {
@@ -435,7 +314,9 @@
 }
 
 .hero .hero__btn {
-  transition: color 0.3s ease, transform 0.25s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.25s ease;
   transform-origin: left center;
 }
 
@@ -490,14 +371,17 @@
 
 .hero__title {
   font-size: clamp(28px, 7.8vw, 64px);
-  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho",
-    "MS Mincho", serif;
+  font-family:
+    "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho", "MS Mincho",
+    serif;
   letter-spacing: 0.1em;
   line-height: 1.5;
   margin-bottom: 40px;
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
   transition-delay: 0s;
 }
 
@@ -664,7 +548,9 @@
 .hero__bottom-text {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
   will-change: opacity, transform;
 }
 
@@ -803,7 +689,9 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
 }
 
 .loading.is-hidden {
