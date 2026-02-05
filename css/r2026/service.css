@@ -54,10 +54,13 @@
   padding: 0.5rem 1rem;
   font-weight: 700;
   aspect-ratio: 1;
+}
+
+.side-icon__top > p {
   font-size: clamp(0.625rem, 1vw, 1rem);
 }
 
-.side-icon__bottom {
+.side-icon__bottom > p {
   color: var(--color-black);
   font-weight: 700;
   font-size: clamp(0.625rem, 1vw, 1rem);
@@ -124,17 +127,19 @@
 }
 
 .service-kv__img {
-  background-image: url(../images/common/kv_carlife.jpg);
   background-size: cover;
-  background-position: right center;
   background-repeat: no-repeat;
   width: clamp(23rem, 51vw, 63rem);
   aspect-ratio: 1/1;
   border-radius: 50%;
-  filter: brightness(1.5);
   position: absolute;
   top: -14%;
   left: -1%;
+}
+
+.service-kv__img--carlife {
+  background-image: url(../../images/carlife/page-kv_carlife.jpg);
+  background-position: left center;
 }
 
 .kv-bottom-text {
@@ -177,6 +182,7 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  gap: 1rem;
 }
 
 .section-icon__img {
@@ -189,6 +195,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-weight: 400;
   line-height: 1;
   gap: 0.3125rem;
 }
@@ -202,9 +209,10 @@
 }
 
 .page-block {
-  border-radius: 12rem 0 0 12rem;
+  border-radius: 20rem 0 0 20rem;
   position: relative;
   color: var(--color-white);
+  min-height: 400px;
 }
 
 .page-block__wrap {
@@ -226,8 +234,12 @@
 
 .page-block__inner {
   padding-left: calc((200 / 1440) * 100%);
-  padding-top: 2.4rem;
+  padding-top: 4.4rem;
   padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .page-block__text {
@@ -235,7 +247,6 @@
   padding-top: 1rem;
   padding-right: calc((250 / 1440) * 100%);
   padding-bottom: 3rem;
-  line-height: 1.6;
   font-size: clamp(1rem, 1.2vw, 1.375rem);
 }
 
@@ -253,7 +264,7 @@
   width: 1.5em;
   height: 1.5em;
   margin-right: 0.5em;
-  background-image: url("../images/common/icon-1.svg");
+  background-image: url("../../images/common/icon-1.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -277,7 +288,7 @@
 .section-wrap--service {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12rem;
+  gap: 10rem;
 }
 
 .page-block__title--service {
@@ -291,15 +302,22 @@
 }
 
 .page-block__lead {
-  font-size: clamp(2.4rem, 11.8vw, 11rem);
+  font-size: clamp(2.4rem, 9vw, 11rem);
   font-weight: 700;
   margin-bottom: 1rem;
   position: absolute;
-  top: -1.15em;
+  top: -0.85em;
   color: var(--color-black);
   opacity: 0;
   transform: translateX(20rem);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+  line-height: 1;
+}
+
+.page-block__lead--small {
+  font-size: clamp(1.8rem, 5.5vw, 5rem);
 }
 
 .page-block__lead.is-visible {
@@ -327,20 +345,28 @@
   color: var(--color-white);
 }
 
-/* Car care */
-.page-block--care {
-  background-color: var(--color-yellow);
+/* Others */
+.page-block--others .page-block__button {
   color: var(--color-black);
 }
 
+.page-block--others .page-block__button:hover {
+  color: var(--color-white);
+}
+
+/* Car care */
+.page-block--care {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
 .page-block__text--care {
-  border-top: 1px solid var(--color-black);
   position: relative;
 }
 
 .page-block__text--care::after {
   content: "";
-  background-image: url(../images/common/icon-2.png);
+  background-image: url(../../images/common/icon-2.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -354,12 +380,17 @@
 
 /* Repair */
 .page-block--repair {
-  background-color: var(--color-green);
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+}
+
+.page-block--repair .page-block__text {
+  border-top: 1px solid var(--color-black);
 }
 
 /* Tire */
 .page-block--tire {
-  background-color: var(--color-dark);
+  background-color: var(--color-green);
 }
 
 /* Car Sales */
@@ -393,7 +424,7 @@
   gap: 1em;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-image: linear-gradient(
     90deg,
     rgba(230, 0, 18, 1),
@@ -404,13 +435,14 @@
   font-weight: 600;
   border-radius: 12em;
   box-shadow: 0px 17px 25px 5px rgba(0, 0, 0, 0.48);
-  padding-top: calc(600 / 1440 * 100%);
-  padding-bottom: calc(500 / 1440 * 100%);
+  padding-top: calc(180 / 1440 * 100vw);
+  padding-bottom: calc(180 / 1440 * 100vw);
   font-size: clamp(1rem, 0.467rem + 1.11vw, 1.4rem);
-
   opacity: 0;
   filter: blur(10px);
-  transition: opacity 0.6s ease-out, filter 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    filter 0.6s ease-out;
 }
 
 .feature__grid .feature-item:nth-child(1),
@@ -465,8 +497,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: clamp(1.125rem, 1.8vw, 2em);
-  font-weight: 400;
+  font-size: min(calc(20 / 1440 * 100vw), 1.25rem);
+  font-weight: 500;
+  line-height: 1.5;
+  gap: 0.5em;
+}
+
+.feature-item__title--large {
+  font-size: min(calc(32 / 1440 * 100vw), 2.4rem);
+  font-weight: 700;
 }
 
 .feature-item__num {
@@ -502,7 +541,10 @@
   line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
-  transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .page-btn::before {
@@ -671,12 +713,22 @@
     padding: 0 6rem;
   }
 
+  .feature-item__head {
+    font-size: clamp(0.875rem, 3.8vw, 1.25em);
+  }
+
   .feature-item {
     border-radius: 18rem;
+    padding-top: calc(270 / 768 * 100vw);
+    padding-bottom: calc(270 / 768 * 100vw);
   }
 
   .feature-item__title {
-    font-size: clamp(1.25rem, 4.8vw, 3em);
+    font-size: clamp(1.125rem, 1.3vw, 2rem);
+  }
+
+  .feature-item__title--large {
+    font-size: clamp(1.25rem, 4.8vw, 2.4rem);
   }
 
   .feature-item__num {
@@ -702,7 +754,7 @@
   }
 
   .page-block--service {
-    padding: 0 6rem;
+    padding: 2rem 6rem;
   }
 
   .page-block--service .page-block__inner {
@@ -813,7 +865,25 @@
   取り扱い商品 - 450px以下
 ------------------------------ */
   .page-block--service {
-    padding: 0 1rem;
+    padding: 1rem 1rem;
+  }
+
+  .feature-item__head {
+    font-size: clamp(0.875rem, 3.8vw, 1.25em);
+  }
+
+  .feature-item {
+    border-radius: 18rem;
+    padding-top: calc(180 / 450 * 100vw);
+    padding-bottom: calc(180 / 450 * 100vw);
+  }
+
+  .feature-item__title {
+    font-size: clamp(1.125rem, 1.3vw, 2rem);
+  }
+
+  .feature-item__title--large {
+    font-size: clamp(1.375rem, 5.8vw, 2rem);
   }
 }
 
@@ -822,127 +892,6 @@
     grid-template-columns: 1fr;
   }
   .page-side {
-    display: none;
-  }
-}
-
-/* フッター */
-
-.footer {
-  width: 100%;
-  background-color: #076fb3;
-  color: #fff;
-  padding: 80px 0 40px;
-}
-
-.footer__inner {
-  max-width: 1800px;
-  margin: 0 auto;
-  padding: 0 60px;
-}
-
-.footer__box {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  margin-bottom: 60px;
-}
-
-.footer__logo {
-  display: block;
-  font-size: 36px;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 30px;
-  text-decoration: none;
-}
-
-.footer__address {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.footer__nav {
-  display: flex;
-  gap: 40px;
-}
-
-.footer__nav-item {
-  margin-bottom: 10px;
-  position: relative;
-  font-size: 20px;
-}
-
-.footer__nav-item:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: -20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 1.2em;
-  background-image: linear-gradient(
-    to bottom,
-    #fff 0 calc(50% - 2px),
-    transparent calc(50% - 2px) calc(50% + 2px),
-    #fff calc(50% + 2px) 100%
-  );
-  background-repeat: no-repeat;
-}
-
-.fotoer__nav-item--policy:not(:last-child)::after {
-  background-image: none;
-  background-color: #fff;
-}
-
-.footer__nav-link {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.footer__copyright {
-  background-color: #002b60;
-  color: var(--color-white);
-  padding: 1.5rem 0;
-  font-size: 16px;
-  text-align: center;
-}
-
-.footer__copyright p {
-  text-align: center;
-}
-
-/* フッター980px以下 */
-@media screen and (max-width: 980px) {
-  .footer__inner {
-    padding: 0 20px;
-  }
-  .footer__box {
-    flex-direction: column;
-    justify-content: center;
-  }
-  .footer__logo {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .footer__address {
-    text-align: center;
-  }
-
-  .footer__box {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer__nav {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .footer__nav-item::after {
     display: none;
   }
 }
