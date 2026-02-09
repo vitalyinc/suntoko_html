@@ -273,23 +273,23 @@
 }
 
 .hero--top {
-  background-image: url(../images/top/kv_top.jpg);
+  background-image: url(../../images/top/kv_top.jpg);
 }
 
 .hero--carlife {
-  background-image: url(../images/top/kv_carlife.jpg);
+  background-image: url(../../images/top/kv_carlife.jpg);
 }
 .hero--livinglife {
-  background-image: url(../images/top/kv_livinglife.jpg);
+  background-image: url(../../images/top/kv_livinglife.jpg);
 }
 .hero--consulting {
-  background-image: url(../images/top/kv_consulting.jpg);
+  background-image: url(../../images/top/kv_consulting.jpg);
 }
 .hero--office {
-  background-image: url(../images/top/kv_office.jpg);
+  background-image: url(../../images/top/kv_office.jpg);
 }
 .hero--recruit {
-  background-image: url(../images/top/kv_recruit.png);
+  background-image: url(../../images/top/kv_recruit.png);
 }
 
 .hero .hero__btn-group {
