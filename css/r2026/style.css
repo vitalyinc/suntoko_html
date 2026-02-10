@@ -75,8 +75,12 @@ p {
   セクションタイトル（全ページ共通）
 ------------------------------ */
 
-.section__inner--page-top {
+.section__title-wrap-top {
   padding-left: 4rem;
+
+  @media (max-width: 768px) {
+    padding-left: 1.125rem;
+  }
 }
 
 .section__title {
@@ -98,4 +102,12 @@ p {
   margin-right: 1rem;
   width: 2em;
   height: 2em;
+}
+
+.section__body--top {
+  padding: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1.125rem;
+  }
 }

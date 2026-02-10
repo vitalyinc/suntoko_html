@@ -7,13 +7,15 @@
   /* Color カーライフ */
   --color-red: #d7000f;
   --color-yellow: #fff100;
-  --color-green: #6ba429;
   --color-dark: #59504c;
   --color-gray: #59504c;
   --color-blue: #000cb3;
 
   /* Color リビングライフ */
   --color-orange: #ef7c00;
+
+  /* Color コンサルティング */
+  --color-green: #6ba429;
 
   /* Typography */
   --font-main: "Noto Sans JP", sans-serif;
