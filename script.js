@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const THRESHOLD = 300; // 300pxで切替
   const img = header.querySelector(".header__logo img");
   const DEFAULT_COLOR = img?.getAttribute("src") || "";
-  const DEFAULT_WHITE = "images/logo/logo-white02.png";
+  const DEFAULT_WHITE = "images/r2026/logo/logo-white02.png";
   const SRC_WHITE = img?.dataset.srcWhite || DEFAULT_WHITE;
   const SRC_COLOR = img?.dataset.srcColor || DEFAULT_COLOR;
 

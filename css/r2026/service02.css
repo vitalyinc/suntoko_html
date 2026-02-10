@@ -29,7 +29,7 @@
 
 .kv {
   width: 100%;
-  background-image: url("../images/common/kv_carlife.jpg");
+  background-image: url("../../images/r2026/common/kv_carlife.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -157,7 +157,7 @@
 
 .section__title::before {
   content: "";
-  background-image: url(../images/common/icon-1.svg);
+  background-image: url(../../images/r2026/common/icon-1.svg);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
