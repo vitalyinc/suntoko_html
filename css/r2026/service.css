@@ -156,7 +156,7 @@
 }
 
 .service-kv__img--carlife {
-  background-image: url(../../images/carlife/page-kv_carlife.jpg);
+  background-image: url(../../images/r2026/carlife/page-kv_carlife.jpg);
   background-position: left center;
 }
 
@@ -297,7 +297,7 @@
   width: 1.5em;
   height: 1.5em;
   margin-right: 0.5em;
-  background-image: url("../../images/common/icon-1.svg");
+  background-image: url("../../images/r2026/common/icon-1.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -411,7 +411,7 @@
 
 .page-block__text--care::after {
   content: "";
-  background-image: url(../../images/common/icon-2.png);
+  background-image: url(../../images/r2026/common/icon-2.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
