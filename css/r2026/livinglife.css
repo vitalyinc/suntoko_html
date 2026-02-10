@@ -69,10 +69,30 @@
   gap: 2.5rem;
 }
 
+.livinglife-grid-wrap {
+  padding: 1rem clamp(1rem, calc((40 / 1440) * 100vw), 2rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem 4rem;
+  }
+
+  @media (max-width: 450px) {
+    padding: 1rem;
+  }
+}
+
 .livinglife-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
 }
 
 .livinglife-grid__item {
@@ -98,7 +118,7 @@
 }
 
 .livinglife-grid__item-text {
-  font-size: 1.375rem;
+  font-size: clamp(1rem, calc((20 / 768) * 100vw), 1.25rem);
   margin: 0;
   line-height: 1.6;
   text-align: center;
@@ -121,11 +141,20 @@
   transition:
     background-color 0.3s ease,
     transform 0.2s ease;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .livinglife-grid__link-media {
   overflow: hidden;
   height: 16.5rem;
+
+  @media (max-width: 768px) {
+    height: 12rem;
+  }
 }
 
 .livinglife-grid__link-img {
@@ -140,24 +169,29 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding: 1rem;
 }
 
 .livinglife-grid__link-title {
   color: var(--color-orange);
   font-weight: 700;
   font-size: 2rem;
-  line-height: 2.1875rem;
-  letter-spacing: -0.12rem;
   transition: color 0.3s ease;
+
+  @media (max-width: 768px) {
+    font-size: clamp(1.25rem, calc((24 / 768) * 100vw), 2rem);
+  }
 }
 
 .livinglife-grid__link-text {
   color: var(--color-black);
   font-weight: 400;
   font-size: 1.25rem;
-  line-height: 2.1875rem;
-  letter-spacing: -0.075rem;
   transition: color 0.3s ease;
+
+  @media (max-width: 768px) {
+    font-size: clamp(1rem, calc((20 / 768) * 100vw), 1.25rem);
+  }
 }
 
 .livinglife-grid__link:hover {
@@ -168,6 +202,11 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .livinglife-grid__button-link {
@@ -191,6 +230,11 @@
     background-color 0.3s ease,
     color 0.3s ease,
     border-color 0.3s ease;
+
+  @media (max-width: 768px) {
+    font-size: clamp(0.875rem, calc((16 / 768) * 100vw), 1.1875rem);
+    padding: 0.5rem 1rem;
+  }
 }
 
 .livinglife-grid__button-link--filled {
@@ -229,12 +273,16 @@
 
 .livinglife-grid__button-icon {
   position: relative;
-  flex: 0 0 68px;
   width: 68px;
   height: 68px;
   border-radius: 50%;
   background-color: var(--color-orange);
   transition: background-color 0.3s ease;
+
+  @media (max-width: 768px) {
+    width: clamp(1.25rem, calc((64 / 768) * 100vw), 3rem);
+    height: clamp(1.25rem, calc((64 / 768) * 100vw), 3rem);
+  }
 }
 
 .livinglife-grid__button-icon::before {
@@ -249,6 +297,11 @@
   transform: translate(-50%, -50%) rotate(45deg);
   box-sizing: border-box;
   transition: border-color 0.3s ease;
+
+  @media (max-width: 768px) {
+    width: clamp(0.5rem, calc((16 / 768) * 100vw), 0.875rem);
+    height: clamp(0.5rem, calc((16 / 768) * 100vw), 0.875rem);
+  }
 }
 
 .livinglife-grid__button-link:hover {
