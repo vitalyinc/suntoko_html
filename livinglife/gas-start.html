@@ -176,14 +176,19 @@
               新規ご利用は下記のお問い合わせフォームにてお気軽にお問い合わせください。
             </p>
 
-            <form class="gas-form">
+            <form class="gas-form" action="/contact/" method="post">
               <div class="gas-form__row">
-                <label class="gas-form__label">
+                <label class="gas-form__label" for="inquiry-type">
                   <span class="gas-form__label-text">お問い合わせ項目</span>
                   <span class="gas-form__required">※</span>
                 </label>
                 <div class="gas-form__input-wrap">
-                  <select class="gas-form__select" required>
+                  <select
+                    id="inquiry-type"
+                    name="inquiry_type"
+                    class="gas-form__select"
+                    required
+                  >
                     <option value="">選択してください</option>
                     <option value="new">新規お申し込み</option>
                     <option value="other">その他</option>
@@ -192,12 +197,14 @@
               </div>
 
               <div class="gas-form__row">
-                <label class="gas-form__label">
+                <label class="gas-form__label" for="full-name">
                   <span class="gas-form__label-text">氏名</span>
                   <span class="gas-form__required">※</span>
                 </label>
                 <div class="gas-form__input-wrap">
                   <input
+                    id="full-name"
+                    name="full_name"
                     type="text"
                     class="gas-form__input"
                     placeholder="例) 山田 太郎"
@@ -207,12 +214,14 @@
               </div>
 
               <div class="gas-form__row">
-                <label class="gas-form__label">
+                <label class="gas-form__label" for="address">
                   <span class="gas-form__label-text">住所</span>
                   <span class="gas-form__required">※</span>
                 </label>
                 <div class="gas-form__input-wrap">
                   <input
+                    id="address"
+                    name="address"
                     type="text"
                     class="gas-form__input"
                     placeholder="例) 神奈川県横浜市..."
@@ -222,12 +231,14 @@
               </div>
 
               <div class="gas-form__row">
-                <label class="gas-form__label">
+                <label class="gas-form__label" for="phone-number">
                   <span class="gas-form__label-text">電話番号</span>
                   <span class="gas-form__required">※</span>
                 </label>
                 <div class="gas-form__input-wrap">
                   <input
+                    id="phone-number"
+                    name="phone_number"
                     type="tel"
                     class="gas-form__input"
                     placeholder="例) 045-000-0000"
@@ -237,12 +248,14 @@
               </div>
 
               <div class="gas-form__row">
-                <label class="gas-form__label">
+                <label class="gas-form__label" for="email-address">
                   <span class="gas-form__label-text">メールアドレス</span>
                   <span class="gas-form__required">※</span>
                 </label>
                 <div class="gas-form__input-wrap">
                   <input
+                    id="email-address"
+                    name="email"
                     type="email"
                     class="gas-form__input"
                     placeholder="例) sample@suntoko.co.jp"
@@ -252,12 +265,14 @@
               </div>
 
               <div class="gas-form__row gas-form__row--textarea">
-                <label class="gas-form__label">
+                <label class="gas-form__label" for="inquiry-message">
                   <span class="gas-form__label-text">お問い合わせ内容</span>
                   <span class="gas-form__required">※</span>
                 </label>
                 <div class="gas-form__input-wrap">
                   <textarea
+                    id="inquiry-message"
+                    name="message"
                     class="gas-form__textarea"
                     placeholder="お問い合わせ内容をご入力ください。"
                     required
@@ -266,8 +281,8 @@
               </div>
 
               <div class="gas-form__submit">
-                <label class="gas-form__checkbox">
-                  <input type="checkbox" required />
+                <label class="gas-form__checkbox" for="inquiry-consent">
+                  <input id="inquiry-consent" name="consent" type="checkbox" required />
                   <span class="gas-form__checkbox-text">
                     お問い合わせの内容について<br />
                     お間違いなければチェックを入れて送信してください。
