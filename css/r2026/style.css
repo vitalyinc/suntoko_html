@@ -4,7 +4,7 @@ body {
     "Hiragino Kaku Gothic ProN", sans-serif;
 
   color: #1a1a1a;
-  line-height: 2;
+  line-height: 1.8;
   font-size: 16px;
 }
 
@@ -32,7 +32,7 @@ li {
 }
 
 p {
-  text-align: justify;
+  text-align: left;
 }
 
 a {
@@ -64,11 +64,18 @@ body {
 }
 
 p {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
 
   @media (max-width: 768px) {
     font-size: 1rem;
+    line-height: 1.85;
   }
+}
+
+:where(main p, main li) {
+  text-wrap: pretty;
 }
 
 /* ------------------------------
@@ -109,5 +116,48 @@ p {
 
   @media (max-width: 768px) {
     padding: 1.125rem;
+  }
+}
+
+/* ------------------------------
+  汎用モーション
+------------------------------ */
+
+@media (prefers-reduced-motion: no-preference) {
+  body.js-motion-ready .js-motion-fade-up {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--motion-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  body.js-motion-ready .js-motion-fade-up.is-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .js-motion-hover-lift {
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+    will-change: transform;
+  }
+
+  @media (hover: hover) {
+    .js-motion-hover-lift:hover,
+    .js-motion-hover-lift:focus-visible {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-motion-fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

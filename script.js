@@ -559,3 +559,73 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// ============== 汎用スクロールリビール + ボタンホバー ===============
+document.addEventListener("DOMContentLoaded", function () {
+  const hoverTargets = document.querySelectorAll(
+    ".top-button, .page-block__button, .page-btn, .station-search__area-button"
+  );
+  hoverTargets.forEach((el) => el.classList.add("js-motion-hover-lift"));
+
+  const revealCandidates = document.querySelectorAll(
+    "main section, main .section-wrap, main .section-icon, main .section__title-wrap-top, main .top-news, main .section__head, main .section__body"
+  );
+
+  if (!revealCandidates.length) return;
+
+  const revealTargets = Array.from(new Set(revealCandidates)).filter((el) => {
+    if (!(el instanceof HTMLElement)) return false;
+    if (
+      el.matches(
+        ".main-area, .breadcrumb, .feature-item, .page-block__lead, .strengths-list, .hero"
+      )
+    ) {
+      return false;
+    }
+    if (el.closest("#loading, .main-area")) return false;
+    return true;
+  });
+
+  if (!revealTargets.length) return;
+
+  revealTargets.forEach((el, index) => {
+    el.classList.add("js-motion-fade-up");
+    el.style.setProperty("--motion-delay", `${(index % 3) * 80}ms`);
+
+    // 初期表示領域は最初から見せて、ちらつきを回避
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.92) {
+      el.classList.add("is-revealed");
+    }
+  });
+
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealTargets.forEach((el) => el.classList.add("is-revealed"));
+  } else {
+    document.body.classList.add("js-motion-ready");
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-revealed");
+          obs.unobserve(entry.target);
+        });
+      },
+      {
+        root: null,
+        threshold: 0.18,
+        rootMargin: "0px 0px -10% 0px",
+      }
+    );
+
+    revealTargets.forEach((el) => {
+      if (el.classList.contains("is-revealed")) return;
+      observer.observe(el);
+    });
+  }
+});

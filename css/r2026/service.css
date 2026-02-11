@@ -136,6 +136,7 @@
   padding-top: 1rem;
   font-size: clamp(1rem, -0.6rem + 3.33vw, 3rem);
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .service-kv__wrap {

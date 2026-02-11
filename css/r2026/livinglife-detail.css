@@ -23,7 +23,11 @@ body.livinglife-detail [class$="-hero__inner"] {
   position: relative;
   max-width: 1512px;
   margin: 0 auto;
-  padding: 216px 65px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 216px 65px 60px;
   height: 100%;
 }
 
@@ -58,9 +62,7 @@ body.livinglife-detail [class$="-hero__sub"] {
 }
 
 body.livinglife-detail [class$="-hero__bottom"] {
-  position: absolute;
-  bottom: 60px;
-  left: 65px;
+  position: static;
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
   font-size: 1.3125rem;
@@ -105,6 +107,17 @@ body.livinglife-detail :is([class$="-content__inner"], .gas-steps__inner) {
   margin: 0 auto;
 }
 
+/* Dense detail pages look too wide at 1388px, so align them with 1180px content width */
+body.livinglife-detail
+  :is(
+    .equip-content__inner,
+    .emergency-content__inner,
+    .tips-content__inner,
+    .reform-content__inner
+  ) {
+  max-width: 1180px;
+}
+
 body.livinglife-detail :is([class$="-content__title"], .gas-steps__title) {
   display: flex;
   align-items: center;
@@ -129,23 +142,49 @@ body.livinglife-detail
   background-position: center;
 }
 
+/* Body text readability tune for detail pages */
+body.livinglife-detail
+  :where(
+    .equip-item__text,
+    .tips-item__list li,
+    .emergency-list__item,
+    .emergency-disaster__text,
+    .gas-step__description,
+    .gas-contact__intro,
+    .reform-section__text
+  ) {
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+  text-wrap: pretty;
+}
+
+/* Keep orange section labels from stretching edge-to-edge on dense pages */
+body.livinglife-detail
+  :is(
+    .equip-item__header,
+    .equip-makers__header,
+    .emergency-section__header,
+    .tips-item__header,
+    .reform-case__header,
+    .reform-section__header
+  ) {
+  display: inline-block;
+  align-self: flex-start;
+  max-width: 100%;
+}
+
 @media screen and (max-width: 1024px) {
   body.livinglife-detail [class$="-hero"] {
     height: 500px;
   }
 
   body.livinglife-detail [class$="-hero__inner"] {
-    padding: 120px 40px 0;
+    padding: 120px 40px 40px;
   }
 
   body.livinglife-detail [class$="-hero__title"] {
     font-size: 3rem;
     letter-spacing: 6px;
-  }
-
-  body.livinglife-detail [class$="-hero__bottom"] {
-    bottom: 40px;
-    left: 40px;
   }
 
   body.livinglife-detail [class$="-breadcrumb"] {
@@ -163,7 +202,7 @@ body.livinglife-detail
   }
 
   body.livinglife-detail [class$="-hero__inner"] {
-    padding: 80px 20px 0;
+    padding: 80px 20px 30px;
   }
 
   body.livinglife-detail :is([class$="-hero__lead"], [class$="-hero__sub"]) {
@@ -177,8 +216,6 @@ body.livinglife-detail
 
   body.livinglife-detail [class$="-hero__bottom"] {
     font-size: 0.875rem;
-    bottom: 30px;
-    left: 20px;
   }
 
   body.livinglife-detail [class$="-breadcrumb"] {
@@ -224,8 +261,9 @@ body.livinglife-detail
   display: flex;
   flex-direction: column;
   gap: 48px;
-  padding-top: 64px;
-  max-width: 1180px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 64px 96px 0;
   margin: 0 auto;
 }
 
@@ -392,7 +430,7 @@ body.livinglife-detail
 ------------------------------ */
 @media screen and (max-width: 1024px) {
   .equip-list {
-    padding-top: 40px;
+    padding: 40px 20px 0;
   }
 
   .equip-item__images--type1 {
@@ -432,7 +470,7 @@ body.livinglife-detail
 ------------------------------ */
 @media screen and (max-width: 768px) {
   .equip-list {
-    padding-top: 30px;
+    padding: 30px 0 0;
     gap: 32px;
   }
 
@@ -1425,8 +1463,9 @@ body.livinglife-detail
   display: flex;
   flex-direction: column;
   gap: 48px;
-  padding-top: 64px;
-  max-width: 1180px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 64px 96px 0;
   margin: 0 auto;
 }
 
@@ -1587,7 +1626,7 @@ body.livinglife-detail
 ------------------------------ */
 @media screen and (max-width: 1024px) {
   .reform-case {
-    padding-top: 40px;
+    padding: 40px 20px 0;
   }
 
   .reform-data__table th {
@@ -1605,7 +1644,7 @@ body.livinglife-detail
 ------------------------------ */
 @media screen and (max-width: 768px) {
   .reform-case {
-    padding-top: 30px;
+    padding: 30px 0 0;
     gap: 32px;
   }
 
