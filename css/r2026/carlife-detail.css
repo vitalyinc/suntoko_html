@@ -1,0 +1,789 @@
+/* ================================================
+   カーライフ下層ページ共通スタイル
+   ================================================ */
+
+body.carlife-detail {
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+/* ------------------------------
+   下層ページ共通 - ヒーローセクション
+------------------------------ */
+
+.carlife-hero {
+  position: relative;
+  min-height: 560px;
+  background-size: cover;
+  background-position: center;
+}
+
+.carlife-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carlife-hero__inner {
+  position: relative;
+  max-width: 1512px;
+  margin: 0 auto;
+  min-height: 560px;
+  padding: 190px 64px 72px;
+}
+
+.carlife-hero__content {
+  color: var(--color-white);
+}
+
+.carlife-hero__lead {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+.carlife-hero__title {
+  margin-top: 18px;
+  font-size: 4rem;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 500;
+  letter-spacing: 7px;
+  line-height: 1.2;
+}
+
+.carlife-hero__sub {
+  margin-top: 18px;
+  font-size: 1.375rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+.carlife-hero__bottom {
+  position: absolute;
+  left: 64px;
+  bottom: 48px;
+  color: var(--color-white);
+  font-size: 1.125rem;
+  letter-spacing: 1.8px;
+  line-height: 1.4;
+}
+
+/* ヒーロー背景画像バリエーション */
+.carlife-hero--station {
+  background-image: url("../../images/r2026/carlife/page-kv_carlife.jpg");
+}
+
+.carlife-hero--products {
+  background-image: url("../../images/r2026/carlife/page-kv_carlife.jpg");
+}
+
+/* ------------------------------
+   下層ページ共通 - パンくずリスト
+------------------------------ */
+
+.carlife-breadcrumb {
+  background-color: #f5f5f5;
+  padding: 30px 62px;
+}
+
+.carlife-breadcrumb__inner {
+  max-width: 1388px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.carlife-breadcrumb__inner a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.carlife-breadcrumb__inner a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------
+   下層ページ共通 - セクションタイトル
+------------------------------ */
+
+.carlife-section-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--color-black);
+  line-height: 1.4;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-black);
+  margin: 0;
+}
+
+.carlife-section-title__icon {
+  display: inline-block;
+  width: 36px;
+  height: 17px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-red),
+    var(--color-red) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+/* ------------------------------
+   下層ページ共通 - エリアタイトル
+------------------------------ */
+
+.carlife-area-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ================================================
+   サービスステーション検索ページ
+   ================================================ */
+
+.station-search {
+  background-color: var(--color-red);
+  padding: 54px 40px 72px;
+}
+
+.station-search__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.station-search__title {
+  color: var(--color-white);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  line-height: 1.4;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.station-search__panel {
+  margin-top: 24px;
+  background-color: var(--color-white);
+  padding: 20px 26px 24px;
+}
+
+.station-search__sub-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-dark);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.station-search__sub-title-icon {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+}
+
+.station-search__sub-title-icon--pin::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background-color: var(--color-primary);
+}
+
+.station-search__sub-title-icon--pin::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 4px;
+  left: 4px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+}
+
+.station-search__sub-title-icon--search::before {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  top: 0;
+  left: 0;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+}
+
+.station-search__sub-title-icon--search::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 2px;
+  right: 0;
+  bottom: 1px;
+  background-color: var(--color-primary);
+  transform: rotate(42deg);
+  transform-origin: center;
+}
+
+.station-search__area-buttons {
+  margin-top: 16px;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.station-search__area-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  border-radius: 20px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.station-search__area-button:hover {
+  opacity: 0.8;
+}
+
+.station-search__field-grid {
+  margin-top: 14px;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.station-search__field input {
+  width: 100%;
+  min-height: 38px;
+  border: 1px solid #f0a5a5;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.station-search__field input::placeholder {
+  color: #9d9d9d;
+}
+
+.station-search__options-grid {
+  margin-top: 14px;
+  display: grid;
+  gap: 8px 30px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.station-search__check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: var(--color-dark);
+  line-height: 1.4;
+}
+
+.station-search__check input {
+  margin: 0;
+}
+
+.station-search__submit-wrap {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.station-search__submit {
+  border: 0;
+  min-width: 92px;
+  min-height: 34px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-size: 0.875rem;
+  line-height: 1.3;
+  letter-spacing: 0.3em;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.station-search__submit:hover {
+  opacity: 0.82;
+}
+
+/* サービスステーション一覧 */
+
+.station-results {
+  background-color: #e5e5e5;
+  padding: 26px 40px 84px;
+}
+
+.station-results__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.station-area {
+  border-top: 1px solid #c9c9c9;
+  padding-top: 14px;
+  scroll-margin-top: calc(var(--header-height, 96px) + 12px);
+}
+
+.station-area + .station-area {
+  margin-top: 24px;
+}
+
+.station-prefecture {
+  margin-top: 12px;
+}
+
+.station-prefecture__title {
+  margin: 0 0 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.station-cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.station-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.station-card__link:hover {
+  opacity: 0.88;
+}
+
+.station-card__name {
+  margin: 0;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: left;
+  padding: 4px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.station-card__image {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.station-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+.station-card__tag {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 40px;
+  min-height: 18px;
+  padding: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.station-card__tag--self {
+  background-color: var(--color-primary);
+}
+
+.station-card__tag--full {
+  background-color: var(--color-orange);
+}
+
+/* ================================================
+   その他取り扱い商品ページ
+   ================================================ */
+
+.products-content {
+  background-color: var(--color-white);
+  padding: 60px 62px 80px;
+}
+
+.products-content__inner {
+  max-width: 1388px;
+  margin: 0 auto;
+}
+
+.products-list {
+  margin-top: 48px;
+  padding: 0 60px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.product-card {
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  gap: 48px;
+  padding: 32px;
+  background: linear-gradient(90deg, rgba(230, 0, 18, 0.2) 11%, rgba(182, 0, 5, 0.2) 74%),
+              linear-gradient(90deg, #d7000f 0%, #d7000f 100%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+.product-card__image {
+  aspect-ratio: 450 / 244;
+  overflow: hidden;
+}
+
+.product-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.product-card__header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.product-card__number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.2;
+}
+
+.product-card__divider {
+  width: 1px;
+  height: 36px;
+  background-color: var(--color-white);
+}
+
+.product-card__name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.product-card__description {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-white);
+  line-height: 1.75;
+  text-align: left;
+  margin: 0;
+}
+
+/* ================================================
+   ユーティリティ
+   ================================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ================================================
+   レスポンシブ - 1024px以下
+   ================================================ */
+
+@media screen and (max-width: 1024px) {
+  /* 共通ヒーロー */
+  .carlife-hero {
+    min-height: 460px;
+  }
+
+  .carlife-hero__inner {
+    min-height: 460px;
+    padding: 140px 40px 54px;
+  }
+
+  .carlife-hero__title {
+    font-size: 3rem;
+    letter-spacing: 4px;
+  }
+
+  .carlife-hero__bottom {
+    left: 40px;
+    bottom: 30px;
+  }
+
+  /* 共通パンくず */
+  .carlife-breadcrumb {
+    padding: 24px 40px;
+  }
+
+  /* サービスステーション検索 */
+  .station-search {
+    padding: 40px 20px 56px;
+  }
+
+  .station-search__panel {
+    padding: 18px;
+  }
+
+  .station-search__area-buttons,
+  .station-search__field-grid {
+    gap: 12px;
+  }
+
+  .station-results {
+    padding: 22px 20px 56px;
+  }
+
+  .station-cards {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* その他取り扱い商品 */
+  .products-content {
+    padding: 48px 40px 64px;
+  }
+
+  .products-list {
+    padding: 0;
+    margin-top: 32px;
+  }
+
+  .product-card {
+    grid-template-columns: 350px 1fr;
+    gap: 32px;
+    padding: 24px;
+  }
+
+  .product-card__number {
+    font-size: 2rem;
+  }
+
+  .product-card__name {
+    font-size: 1.5rem;
+  }
+}
+
+/* ================================================
+   レスポンシブ - 767px以下
+   ================================================ */
+
+@media screen and (max-width: 767px) {
+  /* 共通ヒーロー */
+  .carlife-hero {
+    min-height: 360px;
+  }
+
+  .carlife-hero__inner {
+    min-height: 360px;
+    padding: 100px 20px 40px;
+  }
+
+  .carlife-hero__lead,
+  .carlife-hero__sub {
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+  }
+
+  .carlife-hero__title {
+    margin-top: 12px;
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .carlife-hero__sub {
+    margin-top: 12px;
+  }
+
+  .carlife-hero__bottom {
+    left: 20px;
+    bottom: 20px;
+    font-size: 0.875rem;
+  }
+
+  /* 共通パンくず */
+  .carlife-breadcrumb {
+    padding: 14px 20px;
+    overflow-x: auto;
+  }
+
+  .carlife-breadcrumb__inner {
+    width: max-content;
+    font-size: 0.875rem;
+  }
+
+  /* 共通セクションタイトル */
+  .carlife-section-title {
+    font-size: 1.25rem;
+    gap: 12px;
+  }
+
+  .carlife-section-title__icon {
+    width: 24px;
+    height: 12px;
+  }
+
+  /* 共通エリアタイトル */
+  .carlife-area-title {
+    font-size: 0.875rem;
+  }
+
+  /* サービスステーション検索 */
+  .station-search {
+    padding: 28px 12px 40px;
+  }
+
+  .station-search__title {
+    font-size: 1.125rem;
+  }
+
+  .station-search__panel {
+    margin-top: 14px;
+    padding: 14px 12px;
+  }
+
+  .station-search__sub-title {
+    justify-content: flex-start;
+    font-size: 0.875rem;
+  }
+
+  .station-search__area-buttons,
+  .station-search__field-grid,
+  .station-search__options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .station-search__options-grid {
+    gap: 8px;
+  }
+
+  .station-search__area-button {
+    min-height: 36px;
+  }
+
+  .station-results {
+    padding: 18px 12px 42px;
+  }
+
+  .station-area + .station-area {
+    margin-top: 20px;
+  }
+
+  .station-prefecture__title {
+    font-size: 0.8125rem;
+  }
+
+  .station-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .station-card__name {
+    font-size: 0.625rem;
+  }
+
+  .station-card__tag {
+    min-width: 36px;
+    min-height: 16px;
+    padding: 0 7px;
+    font-size: 0.625rem;
+  }
+
+  /* その他取り扱い商品 */
+  .products-content {
+    padding: 32px 20px 48px;
+  }
+
+  .products-list {
+    margin-top: 24px;
+    gap: 20px;
+  }
+
+  .product-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .product-card__image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .product-card__body {
+    gap: 16px;
+  }
+
+  .product-card__header {
+    gap: 16px;
+  }
+
+  .product-card__number {
+    font-size: 1.5rem;
+  }
+
+  .product-card__divider {
+    height: 24px;
+  }
+
+  .product-card__name {
+    font-size: 1.25rem;
+  }
+
+  .product-card__description {
+    font-size: 0.875rem;
+  }
+}
