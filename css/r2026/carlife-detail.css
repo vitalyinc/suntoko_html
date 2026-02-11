@@ -41,6 +41,7 @@ body.carlife-detail {
   font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 2px;
+  line-height: 1.5;
 }
 
 .carlife-hero__title {
@@ -57,6 +58,7 @@ body.carlife-detail {
   font-size: 1.375rem;
   font-weight: 500;
   letter-spacing: 2px;
+  line-height: 1.5;
 }
 
 .carlife-hero__bottom {
@@ -66,15 +68,16 @@ body.carlife-detail {
   color: var(--color-white);
   font-size: 1.125rem;
   letter-spacing: 1.8px;
+  line-height: 1.4;
 }
 
 /* ヒーロー背景画像バリエーション */
 .carlife-hero--station {
-  background-image: url("../../images/r2026/carlife/page-kv_station-search.png");
+  background-image: url("../../images/r2026/carlife/page-kv_carlife.jpg");
 }
 
 .carlife-hero--products {
-  background-image: url("../../images/r2026/carlife/page-kv_other-products.jpg");
+  background-image: url("../../images/r2026/carlife/page-kv_carlife.jpg");
 }
 
 /* ------------------------------
@@ -93,6 +96,7 @@ body.carlife-detail {
   align-items: center;
   gap: 8px;
   font-size: 1rem;
+  line-height: 1.4;
 }
 
 .carlife-breadcrumb__inner a {
@@ -115,6 +119,7 @@ body.carlife-detail {
   font-size: 2rem;
   font-weight: 400;
   color: var(--color-black);
+  line-height: 1.4;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--color-black);
   margin: 0;
@@ -143,6 +148,7 @@ body.carlife-detail {
   gap: 8px;
   font-size: 1rem;
   font-weight: 700;
+  line-height: 1.4;
   margin: 0;
 }
 
@@ -165,6 +171,7 @@ body.carlife-detail {
   font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: 1.5px;
+  line-height: 1.4;
   padding-bottom: 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
 }
@@ -184,6 +191,7 @@ body.carlife-detail {
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 1px;
+  line-height: 1.4;
 }
 
 .station-search__sub-title-icon {
@@ -253,6 +261,7 @@ body.carlife-detail {
   color: var(--color-white);
   font-size: 0.875rem;
   font-weight: 500;
+  line-height: 1.4;
   letter-spacing: 1px;
   text-decoration: none;
   transition: opacity 0.2s ease;
@@ -271,11 +280,12 @@ body.carlife-detail {
 
 .station-search__field input {
   width: 100%;
-  min-height: 34px;
+  min-height: 38px;
   border: 1px solid #f0a5a5;
   border-radius: 6px;
   padding: 0 12px;
   font-size: 0.875rem;
+  line-height: 1.4;
 }
 
 .station-search__field input::placeholder {
@@ -295,6 +305,7 @@ body.carlife-detail {
   gap: 6px;
   font-size: 0.8125rem;
   color: var(--color-dark);
+  line-height: 1.4;
 }
 
 .station-search__check input {
@@ -310,10 +321,11 @@ body.carlife-detail {
 .station-search__submit {
   border: 0;
   min-width: 92px;
-  min-height: 30px;
+  min-height: 34px;
   background-color: var(--color-red);
   color: var(--color-white);
   font-size: 0.875rem;
+  line-height: 1.3;
   letter-spacing: 0.3em;
   cursor: pointer;
   transition: opacity 0.2s ease;
@@ -353,6 +365,7 @@ body.carlife-detail {
   margin: 0 0 8px;
   font-size: 0.875rem;
   font-weight: 500;
+  line-height: 1.4;
 }
 
 .station-cards {
@@ -361,7 +374,7 @@ body.carlife-detail {
   list-style: none;
   display: grid;
   gap: 8px;
-  grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .station-card__link {
@@ -378,10 +391,14 @@ body.carlife-detail {
   margin: 0;
   background-color: var(--color-red);
   color: var(--color-white);
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  line-height: 1.45;
-  padding: 3px 6px;
+  line-height: 1.4;
+  text-align: left;
+  padding: 4px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .station-card__image {
@@ -408,9 +425,9 @@ body.carlife-detail {
   align-items: center;
   justify-content: center;
   color: var(--color-white);
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.2;
   border-radius: 999px;
   letter-spacing: 0.02em;
 }
@@ -482,7 +499,7 @@ body.carlife-detail {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--color-white);
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .product-card__divider {
@@ -496,7 +513,7 @@ body.carlife-detail {
   font-weight: 700;
   color: var(--color-white);
   margin: 0;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .product-card__description {
@@ -504,6 +521,7 @@ body.carlife-detail {
   font-weight: 400;
   color: var(--color-white);
   line-height: 1.75;
+  text-align: left;
   margin: 0;
 }
 
@@ -569,6 +587,10 @@ body.carlife-detail {
 
   .station-results {
     padding: 22px 20px 56px;
+  }
+
+  .station-cards {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   /* その他取り扱い商品 */
@@ -711,14 +733,14 @@ body.carlife-detail {
   }
 
   .station-card__name {
-    font-size: 0.5625rem;
+    font-size: 0.625rem;
   }
 
   .station-card__tag {
     min-width: 36px;
     min-height: 16px;
     padding: 0 7px;
-    font-size: 0.5625rem;
+    font-size: 0.625rem;
   }
 
   /* その他取り扱い商品 */
