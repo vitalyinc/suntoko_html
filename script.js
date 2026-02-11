@@ -518,3 +518,44 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 })();
+
+// ============== サービスステーションページ: アンカー遷移 ===============
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll(
+    ".station-search__area-button[href^='#']"
+  );
+  if (!links.length) return;
+
+  const header = document.querySelector(".header");
+
+  const getOffset = () => {
+    const cssValue = getComputedStyle(document.documentElement)
+      .getPropertyValue("--header-height")
+      .trim();
+    const headerHeight = parseFloat(cssValue);
+    const fallback = header ? header.offsetHeight : 96;
+    return (Number.isNaN(headerHeight) ? fallback : headerHeight) + 12;
+  };
+
+  links.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const targetId = link.getAttribute("href");
+      if (!targetId || targetId === "#") return;
+
+      const target = document.querySelector(targetId);
+      if (!target) return;
+
+      e.preventDefault();
+
+      const top =
+        target.getBoundingClientRect().top + window.scrollY - getOffset();
+
+      window.scrollTo({
+        top,
+        behavior: "smooth",
+      });
+
+      history.replaceState(null, "", targetId);
+    });
+  });
+});
