@@ -471,11 +471,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-image: linear-gradient(
-    90deg,
-    rgba(230, 0, 18, 1),
-    rgba(182, 0, 5, 1)
-  );
+  background-image: linear-gradient(90deg, rgba(230, 0, 18, 1), rgba(182, 0, 5, 1));
   color: var(--color-white);
   border: 2px solid var(--color-white);
   font-weight: 600;
@@ -492,19 +488,11 @@
 }
 
 .feature-item--livinglife {
-  background-image: linear-gradient(
-    90deg,
-    rgba(230, 119, 0, 1),
-    rgba(204, 105, 0, 1)
-  );
+  background-image: linear-gradient(90deg, rgba(230, 119, 0, 1), rgba(204, 105, 0, 1));
 }
 
 .feature-item--riskconsulting {
-  background-image: linear-gradient(
-    90deg,
-    rgba(107, 164, 41, 1),
-    rgba(83, 128, 32, 1)
-  );
+  background-image: linear-gradient(90deg, rgba(107, 164, 41, 1), rgba(83, 128, 32, 1));
 }
 
 .feature__grid .feature-item:nth-child(1),

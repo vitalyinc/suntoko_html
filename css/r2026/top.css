@@ -1,25 +1,4 @@
 :root {
-  --color-primary: #005bac;
-  --color-red: #d7000f;
-  --color-yellow: #fff100;
-  --color-green: #6ba429;
-  --color-dark: #59504c;
-  --color-gray: #847f7c;
-
-  /* Base Colors */
-  --color-black: #231815;
-  --color-white: #fff;
-
-  /* Typography */
-  --font-main: "Noto Sans JP", sans-serif;
-
-  /* Spacing Unit（必要なら） */
-  --space-s: 0.8rem;
-  --space-m: 1.6rem;
-  --space-l: 3.2rem;
-}
-
-:root {
   --loading-duration: 3s; /* SVGの書きアニメ時間 */
 }
 
@@ -273,7 +252,7 @@
 }
 
 .hero--top {
-  background-image: url(../../images/r2026/common/kv_top.jpg);
+  background-image: url(../../images/r2026/common/kv_office.jpg);
 }
 
 .hero--carlife {
@@ -365,15 +344,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
   color: #fff;
 }
 
 .hero__title {
   font-size: clamp(28px, 7.8vw, 64px);
-  font-family:
-    "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho", "MS Mincho",
-    serif;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho", "MS Mincho", serif;
   letter-spacing: 0.1em;
   line-height: 1.5;
   margin-bottom: 40px;
@@ -676,11 +652,7 @@
 /* ローディングアニメーション */
 
 .loading {
-  background-image: radial-gradient(
-    circle,
-    rgba(0, 64, 152, 1),
-    rgba(0, 47, 123, 1) 90%
-  );
+  background-image: radial-gradient(circle, rgba(0, 64, 152, 1), rgba(0, 47, 123, 1) 90%);
   position: fixed; /* 画面に固定 */
   inset: 0; /* top/right/bottom/left: 0; と同じ */
   width: 100%;

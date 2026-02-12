@@ -347,7 +347,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (e.animationName !== "heroTitleInitial") return;
         topTitle.classList.remove("is-initial");
       },
-      { once: true }
+      { once: true },
     );
   }
 
@@ -410,7 +410,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       threshold: 0.3, // 要素が 30% くらい見えたら発火
-    }
+    },
   );
 
   items.forEach(function (item) {
@@ -419,9 +419,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // ============== サンプル①red 取扱商品フェードイン ===============
 document.addEventListener("DOMContentLoaded", function () {
-  const leads = document.querySelectorAll(
-    ".page-block--service .page-block__lead"
-  );
+  const leads = document.querySelectorAll(".page-block--service .page-block__lead");
 
   if (!("IntersectionObserver" in window)) {
     leads.forEach(function (lead) {
@@ -441,7 +439,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       threshold: 0.3,
-    }
+    },
   );
 
   leads.forEach(function (lead) {
@@ -468,7 +466,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       root: null,
       threshold: 0.3,
-    }
+    },
   );
 
   observer.observe(strengthsList);
@@ -521,9 +519,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ============== サービスステーションページ: アンカー遷移 ===============
 document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll(
-    ".station-search__area-button[href^='#']"
-  );
+  const links = document.querySelectorAll(".station-search__area-button[href^='#']");
   if (!links.length) return;
 
   const header = document.querySelector(".header");
@@ -547,8 +543,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const target = document.querySelector(targetId);
       if (!target) return;
 
-      const top =
-        target.getBoundingClientRect().top + window.scrollY - getOffset();
+      const top = target.getBoundingClientRect().top + window.scrollY - getOffset();
 
       window.scrollTo({
         top,
@@ -563,12 +558,12 @@ document.addEventListener("DOMContentLoaded", function () {
 // ============== 汎用スクロールリビール + ボタンホバー ===============
 document.addEventListener("DOMContentLoaded", function () {
   const hoverTargets = document.querySelectorAll(
-    ".top-button, .page-block__button, .page-btn, .station-search__area-button"
+    ".top-button, .page-block__button, .page-btn, .station-search__area-button",
   );
   hoverTargets.forEach((el) => el.classList.add("js-motion-hover-lift"));
 
   const revealCandidates = document.querySelectorAll(
-    "main section, main .section-wrap, main .section-icon, main .section__title-wrap-top, main .top-news, main .section__head, main .section__body"
+    "main section, main .section-wrap, main .section-icon, main .section__title-wrap-top, main .top-news, main .section__head, main .section__body",
   );
 
   if (!revealCandidates.length) return;
@@ -577,7 +572,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!(el instanceof HTMLElement)) return false;
     if (
       el.matches(
-        ".main-area, .breadcrumb, .feature-item, .page-block__lead, .strengths-list, .hero"
+        ".main-area, .breadcrumb, .feature-item, .page-block__lead, .strengths-list, .hero",
       )
     ) {
       return false;
@@ -599,9 +594,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if (prefersReducedMotion || !("IntersectionObserver" in window)) {
     revealTargets.forEach((el) => el.classList.add("is-revealed"));
@@ -620,7 +613,7 @@ document.addEventListener("DOMContentLoaded", function () {
         root: null,
         threshold: 0.18,
         rootMargin: "0px 0px -10% 0px",
-      }
+      },
     );
 
     revealTargets.forEach((el) => {

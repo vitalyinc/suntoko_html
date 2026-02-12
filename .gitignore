@@ -24,6 +24,7 @@ temp/
 *.tmp
 *.temp
 .cache/
+node_modules/
 
 # Logs
 *.log

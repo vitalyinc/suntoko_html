@@ -351,7 +351,10 @@
   line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
-  transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .page-btn::before {

@@ -448,9 +448,12 @@ body.carlife-detail {
   grid-template-columns: 450px 1fr;
   gap: 48px;
   padding: 32px;
-  background: linear-gradient(90deg, rgba(230, 0, 18, 0.2) 11%, rgba(182, 0, 5, 0.2) 74%),
-              linear-gradient(90deg, #d7000f 0%, #d7000f 100%);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+  background:
+    linear-gradient(90deg, rgba(230, 0, 18, 0.2) 11%, rgba(182, 0, 5, 0.2) 74%),
+    linear-gradient(90deg, #d7000f 0%, #d7000f 100%);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 1px 3px 1px rgba(0, 0, 0, 0.15);
 }
 
 .product-card__image {
@@ -508,11 +511,7 @@ body.carlife-detail {
 
 /* Body text readability tune for carlife detail pages */
 body.carlife-detail
-  :where(
-    .product-card__description,
-    .station-search__check,
-    .station-prefecture__title
-  ) {
+  :where(.product-card__description, .station-search__check, .station-prefecture__title) {
   letter-spacing: 0.01em;
   text-wrap: pretty;
 }

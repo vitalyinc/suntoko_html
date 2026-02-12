@@ -1,0 +1,6 @@
+.git/
+.codex/
+.claude/
+node_modules/
+images/
+old/

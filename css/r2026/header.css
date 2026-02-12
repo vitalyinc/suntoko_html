@@ -98,7 +98,10 @@
   line-height: 1.2;
   white-space: nowrap;
   background-color: var(--color-black);
-  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .header__cta:hover {
@@ -110,7 +113,9 @@
 .header--top {
   background-color: transparent;
   position: fixed;
-  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .header--top:hover {
@@ -171,7 +176,9 @@
   height: 3px;
   background-color: #333;
   border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .header__toggle.is-active .header__toggle-bar:nth-child(1) {
@@ -221,7 +228,9 @@
   }
 
   .header__nav-wrapper.is-ready {
-    transition: opacity 0.35s ease, transform 0.35s ease;
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
   }
 
   .header__nav-wrapper.is-active {
