@@ -5,7 +5,7 @@
     "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
     "format:check": "prettier --check \"**/*.{html,css,js,json,md}\"",
     "lint:html": "htmlhint \"**/*.html\"",
-    "lint:css": "stylelint \"css/**/*.css\"",
+    "lint:css": "stylelint \"assets/css/**/*.css\"",
     "lint": "npm run lint:html && npm run lint:css",
     "check": "npm run format:check && npm run lint"
   },

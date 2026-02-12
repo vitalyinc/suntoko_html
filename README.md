@@ -25,6 +25,10 @@ npm run check
 
 ## ディレクトリ構成ルール
 
+- 共通アセットは `assets/` 配下に配置
+  - CSS: `assets/css/`
+  - 画像: `assets/images/`
+  - JavaScript: `assets/js/`
 - ルートURLのページは `index.html`
 - 各ページは `ページ名/index.html` 形式で配置
 - 下層ページも `カテゴリ/ページ名/index.html` 形式で配置
