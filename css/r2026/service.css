@@ -41,7 +41,11 @@
   gap: 0.5rem;
   align-items: center;
   position: fixed;
+  top: 7rem;
+  left: 2%;
   z-index: 120;
+  max-width: calc(100vw - 2rem);
+  box-sizing: border-box;
 }
 .side-icon__top {
   display: flex;
@@ -102,6 +106,10 @@
 
 .service-kv--riskconsulting {
   background-color: var(--color-green);
+}
+
+.service-kv--office-residence {
+  background-color: var(--color-gray);
 }
 
 .service-kv__inner {
@@ -170,6 +178,11 @@
   background-position: center center;
 }
 
+.service-kv__img--office-residence {
+  background-image: url(../../images/r2026/office-residence/page-kv_office-residence.jpg);
+  background-position: center center;
+}
+
 .kv-bottom-text {
   font-size: clamp(0.875rem, 1.2vw, 1.5rem);
   position: absolute;
@@ -198,7 +211,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 2rem 0;
   font-weight: 500;
   border: 1px solid var(--color-red);
   aspect-ratio: 1/1;
@@ -210,11 +222,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem;
+  width: 15rem;
   gap: 1rem;
 
   @media screen and (max-width: 768px) {
-    padding: 1rem;
+    width: 10rem;
   }
 }
 
@@ -234,7 +246,7 @@
 }
 
 /* ------------------------------
-  サービスステーションとは・サービス紹介のブロック
+  サービス紹介
 ------------------------------ */
 
 .section-wrap {
@@ -283,10 +295,8 @@
   font-size: clamp(1rem, 1.2vw, 1.375rem);
 }
 
-/* サービスステーションとは */
-
 .page-block__title--intro {
-  font-size: clamp(1.4rem, 0.733rem + 1.39vw, 2.4rem);
+  font-size: clamp(1rem, 0.733rem + 1.39vw, 2.4rem);
   display: flex;
   align-items: center;
 }
@@ -316,20 +326,40 @@
   background-color: var(--color-green);
 }
 
-/* 取り扱い商品 共通 */
-
-.section-service {
-  padding: 12rem 0 6rem;
+.page-block--office-residence {
+  background-color: var(--color-gray);
 }
 
-.section-icon--service {
-  margin-bottom: 10rem;
+/* ------------------------------
+  サントーコーの強み
+------------------------------ */
+
+.service-feature {
+  margin: 6rem 0 12rem;
+}
+
+/* 取り扱い商品 共通 */
+
+.section-wrap {
+  padding-top: 6rem;
+}
+
+.section-top-about {
+  padding-bottom: 4rem;
 }
 
 .section-wrap--service {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10rem;
+}
+
+.section-wrap--large {
+  padding-top: min(8rem, calc((200 / 1440) * 100vw));
+}
+
+.section-wrap--mid {
+  padding-top: min(5rem, calc((120 / 1440) * 100vw));
 }
 
 .section-wrap--livinglife {
@@ -359,6 +389,10 @@
     opacity 0.6s ease-out,
     transform 0.6s ease-out;
   line-height: 1;
+}
+
+.page-block__lead--middle {
+  font-size: clamp(2rem, 8.5vw, 10rem);
 }
 
 .page-block__lead--small {
@@ -660,7 +694,7 @@
 
 .article-title {
   text-align: right;
-  margin-top: 4rem;
+  margin-top: 6rem;
 }
 
 .article-title__text {
@@ -677,16 +711,14 @@
 ------------------------------ */
 
 @media screen and (max-width: 768px) {
-  /* ------------------------------
-  ベース - 768px以下
------------------------------- */
   .section-wrap {
-    padding: 2rem 0 0;
+    padding: 0;
   }
 
-  /* ------------------------------
-  サービスページ KV - 768px以下
------------------------------- */
+  .section-wrap--service {
+    padding-top: 3rem;
+  }
+
   .service-kv {
     padding: 1.5rem 1rem 1.5rem;
   }
@@ -727,10 +759,6 @@
     width: 100%;
   }
 
-  /* ------------------------------
-  サービスステーションとは - 768px以下
------------------------------- */
-
   .page-block--intro .page-block__inner {
     display: flex;
     flex-direction: column;
@@ -765,9 +793,6 @@
     padding: 0 1.5rem 2rem;
   }
 
-  /* ------------------------------
-  サントーコーの強み - 768px以下
------------------------------- */
   .feature__inner {
     padding: 0;
   }
@@ -802,20 +827,12 @@
     right: -2%;
   }
 
-  /* ------------------------------
-  取り扱い商品 - 768px以下
------------------------------- */
-
   .section-service {
-    padding: 6rem 0 6rem;
+    padding: 6rem 0 3rem;
   }
 
   .section-wrap--service {
     gap: 0;
-  }
-
-  .section-icon--service {
-    margin-bottom: 1rem;
   }
 
   .page-block--service {
@@ -887,6 +904,10 @@
     right: -0.5em;
     display: inline-block;
   }
+
+  .service-feature {
+    margin: 3rem 0 0;
+  }
 }
 
 /* ------------------------------
@@ -894,20 +915,13 @@
 ------------------------------ */
 
 @media screen and (max-width: 450px) {
-  /* ------------------------------
-  サービスページ kv - 768px以下
------------------------------- */
   .service-kv {
-    padding: 1rem;
+    padding: 1rem 1.25rem;
   }
 
   .page-block--intro .page-block__inner {
     padding: 3rem 1rem;
   }
-
-  /* ------------------------------
-  サントーコーの強み - 450px以下
------------------------------- */
 
   .feature__grid {
     padding: 0 2rem;
@@ -922,13 +936,6 @@
     bottom: -16%;
   }
 
-  .section-icon--service {
-    margin-bottom: 1rem;
-  }
-
-  /* ------------------------------
-  取り扱い商品 - 450px以下
------------------------------- */
   .page-block--service {
     padding: 1rem 1rem;
   }
@@ -949,6 +956,12 @@
 
   .feature-item__title--large {
     font-size: clamp(1.375rem, 5.8vw, 2rem);
+  }
+
+  .page-btn {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1rem;
   }
 }
 
