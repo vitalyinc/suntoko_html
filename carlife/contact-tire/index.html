@@ -3,25 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>株式会社サントーコー</title>
+    <title>タイヤ販売・交換予約 | 株式会社サントーコー</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Maru+Gothic&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/r2026/sanitize.css" />
-    <link rel="stylesheet" href="../css/r2026/variables.css" />
-    <link rel="stylesheet" href="../css/r2026/style.css" />
-    <link rel="stylesheet" href="../css/r2026/header.css" />
-    <link rel="stylesheet" href="../css/r2026/footer.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/sanitize.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/variables.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/style.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/header.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/footer.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/carlife-detail.css" />
   </head>
-  <body>
+  <body class="carlife-detail">
     <header class="header">
       <div class="header__inner">
         <a class="header__logo" href="/">
           <img
-            src="../images/r2026/logo/logo.png"
+            src="../../assets/images/r2026/logo/logo.png"
             alt="株式会社サントーコーENEOSグループ"
             class="header__logo-img"
           />
@@ -37,36 +38,298 @@
               <a class="header__nav-link" href="/">トップページ</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="/service.html">事業内容</a>
+              <a class="header__nav-link" href="/service/">事業内容</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="/company.html">会社情報</a>
+              <a class="header__nav-link" href="/company/">会社情報</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="office-list.html">事業所一覧</a>
+              <a class="header__nav-link" href="/office-list/">事業所一覧</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="recruit.html">採用情報</a>
+              <a class="header__nav-link" href="/recruit/">採用情報</a>
             </li>
           </ul>
-          <a
-            class="header__cta"
-            href="contact.html"
-            aria-label="お問い合わせページへ"
-            >お問い合わせ</a
-          >
+          <a class="header__cta" href="/contact/">お問い合わせ</a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <p class="getting-ready">準備中</p>
+    <main class="main">
+      <section class="carlife-hero carlife-hero--station">
+        <div class="carlife-hero__inner">
+          <div class="carlife-hero__content">
+            <p class="carlife-hero__lead">くらしを支える、サントーコー</p>
+            <h1 class="carlife-hero__title">CarLife Solution</h1>
+            <p class="carlife-hero__sub">タイヤ販売・交換予約</p>
+          </div>
+          <p class="carlife-hero__bottom">Live well, feel good</p>
+        </div>
+      </section>
+
+      <nav class="carlife-breadcrumb" aria-label="パンくず">
+        <div class="carlife-breadcrumb__inner">
+          <a href="/">Top</a>
+          <span class="carlife-breadcrumb__sep">&gt;</span>
+          <a href="/carlife/">カーライフソリューション</a>
+          <span class="carlife-breadcrumb__sep">&gt;</span>
+          <span>タイヤ販売・交換予約</span>
+        </div>
+      </nav>
+
+      <section class="station-search" aria-labelledby="station-search-title">
+        <div class="station-search__inner">
+          <h2 id="station-search-title" class="station-search__title">タイヤ販売・交換 対応店舗</h2>
+          <p class="station-search__description">
+            タイヤ販売・交換は、車種や走行スタイルに合わせた商品提案と取付に対応します。気になる店舗名のリンクから予約サイトへ進み、希望日時をご予約ください。
+          </p>
+
+          <div class="station-search__panel">
+            <h3 class="station-search__sub-title">
+              <span class="station-search__sub-title-icon" aria-hidden="true"></span>
+              エリアから探す
+            </h3>
+            <div class="station-search__area-buttons">
+              <a class="station-search__area-button" href="#area-kansai">関西エリア</a>
+              <a class="station-search__area-button" href="#area-chugoku">中国エリア</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="station-results" aria-label="対応店舗一覧">
+        <div class="station-results__inner">
+          <section class="station-area" id="area-kansai">
+            <h2 class="carlife-area-title">関西エリア</h2>
+            <section class="station-prefecture">
+              <h3 class="station-prefecture__title">大阪府</h3>
+              <ul class="station-cards">
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/300/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅ我孫子西ＳＳ</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅ我孫子西ＳＳ"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/3/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅセルフ堺岩室店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅセルフ堺岩室店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/538/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅセルフ太子ＳＳ</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅセルフ太子ＳＳ"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/6/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅセルフ津々山台ＳＳ</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅセルフ津々山台ＳＳ"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/49/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅセルフ泉佐野ＳＳ</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅセルフ泉佐野ＳＳ"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/13/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅセルフ泉佐野西ＳＳ</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅセルフ泉佐野西ＳＳ"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/5/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅセルフ高石ＳＳ</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅセルフ高石ＳＳ"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </section>
+            <section class="station-prefecture">
+              <h3 class="station-prefecture__title">京都府</h3>
+              <ul class="station-cards">
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/4/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅセルフ京都南インターＳＳ</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅセルフ京都南インターＳＳ"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/2033/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅセルフ八幡ＳＳ</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅセルフ八幡ＳＳ"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </section>
+            <section class="station-prefecture">
+              <h3 class="station-prefecture__title">奈良県</h3>
+              <ul class="station-cards">
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/482/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅセルフ飛鳥ＳＳ</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅセルフ飛鳥ＳＳ"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </section>
+          <section class="station-area" id="area-chugoku">
+            <h2 class="carlife-area-title">中国エリア</h2>
+            <section class="station-prefecture">
+              <h3 class="station-prefecture__title">広島県</h3>
+              <ul class="station-cards">
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/931/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅセルフ富士見ＳＳ</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅセルフ富士見ＳＳ"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/932/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅセルフ呉駅前ＳＳ</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅセルフ呉駅前ＳＳ"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/930/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅセルフ昭和町ＳＳ</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅセルフ昭和町ＳＳ"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/934/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅセルフ石内ＳＳ</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅセルフ石内ＳＳ"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/935/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅセルフ桜尾ＳＳ</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅセルフ桜尾ＳＳ"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </section>
+            <section class="station-prefecture">
+              <h3 class="station-prefecture__title">山口県</h3>
+              <ul class="station-cards">
+                <li class="station-card">
+                  <a href="https://car.rakuten.co.jp/tireexchange/shop/937/" class="station-card__link" target="_blank" rel="noopener noreferrer">
+                    <p class="station-card__name">Ｄｒ．Ｄｒｉｖｅポートサイド岩国ＳＳ</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="Ｄｒ．Ｄｒｉｖｅポートサイド岩国ＳＳ"
+                      />
+                      <span class="station-card__tag station-card__tag--self">タイヤ</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </section>
+        </div>
+      </section>
     </main>
+
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__box">
           <div class="footer__left">
-            <!-- TODO: リンク設定 -->
             <a class="footer__logo" href="/">株式会社サントーコー</a>
             <div class="footer__address">
               <p>〒221-0835</p>
@@ -85,25 +348,19 @@
               <nav>
                 <ul class="footer__nav">
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
                     <a class="footer__nav-link" href="/">トップページ</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="service.html">事業内容</a>
+                    <a class="footer__nav-link" href="/service/">事業内容</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="company.html">会社情報</a>
+                    <a class="footer__nav-link" href="/company/">会社情報</a>
                   </li>
                   <li class="footer__nav-item">
-                    <a class="footer__nav-link" href="/office-list.html"
-                      >事業所一覧</a
-                    >
+                    <a class="footer__nav-link" href="/office-list/">事業所一覧</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="recruit.html">採用情報</a>
+                    <a class="footer__nav-link" href="/recruit/">採用情報</a>
                   </li>
                 </ul>
               </nav>
@@ -111,23 +368,14 @@
             <div>
               <nav>
                 <ul class="footer__nav">
-                  <li class="footer__nav-item fotoer__nav-item--policy">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="guide.html"
-                      >ご利用にあたって</a
-                    >
+                  <li class="footer__nav-item footer__nav-item--policy">
+                    <a class="footer__nav-link" href="/guide/">ご利用にあたって</a>
                   </li>
-                  <li class="footer__nav-item fotoer__nav-item--policy">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="privacy-policy.html"
-                      >プライバシーポリシー</a
-                    >
+                  <li class="footer__nav-item footer__nav-item--policy">
+                    <a class="footer__nav-link" href="/privacy-policy/">プライバシーポリシー</a>
                   </li>
-                  <li class="footer__nav-item fotoer__nav-item--policy">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="sitemap.html"
-                      >サイトマップ</a
-                    >
+                  <li class="footer__nav-item footer__nav-item--policy">
+                    <a class="footer__nav-link" href="/sitemap/">サイトマップ</a>
                   </li>
                 </ul>
               </nav>
@@ -139,6 +387,7 @@
         <p>&copy; 株式会社サントーコー All Rights Reserved.</p>
       </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="../../assets/js/script.js"></script>
   </body>
 </html>
