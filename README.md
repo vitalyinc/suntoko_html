@@ -64,7 +64,7 @@ HTMLファイルの更新時は、以下のコマンドでS3に同期してCloud
 
 ```bash
 # S3に同期
-aws s3 sync ./ s3://suntoko-production-application/ --exclude ".git/*" --exclude ".*" --exclude "Makefile" --exclude "templates/*" --exclude "README.md" --delete
+aws s3 sync ./ s3://suntoko-production-application/ --exclude ".git/*" --exclude "*/.git/*" --exclude ".*" --exclude "Makefile" --exclude "templates/*" --exclude "README.md" --delete
 
 # CloudFrontキャッシュ無効化
 aws cloudfront create-invalidation --distribution-id E2FYRV95ORCFM --paths '/*'
