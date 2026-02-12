@@ -92,8 +92,8 @@ body.carlife-detail {
 ------------------------------ */
 
 .carlife-breadcrumb {
-  background-color: #f5f5f5;
-  padding: 30px 62px;
+  background-color: #fff;
+  padding: 31px 62px;
 }
 
 .carlife-breadcrumb__inner {
@@ -102,7 +102,7 @@ body.carlife-detail {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 1rem;
+  font-size: 1.1875rem;
   line-height: 1.4;
 }
 
