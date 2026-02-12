@@ -1,0 +1,119 @@
+/* 準備中 */
+.getting-ready {
+  margin: 20rem 0;
+  text-align: center;
+}
+
+body {
+  font-family:
+    "Noto Sans JP", "Yu Gothic", "YuGothic", "ヒラギノ角ゴ ProN",
+    "Hiragino Kaku Gothic ProN", sans-serif;
+
+  color: #1a1a1a;
+  line-height: 2;
+  font-size: 16px;
+}
+
+main,
+body {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+p {
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.pc {
+  display: block;
+}
+@media screen and (max-width: 480px) {
+  .pc {
+    display: none;
+  }
+}
+
+p {
+  font-size: 1.25rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+/* ------------------------------
+  セクションタイトル（全ページ共通）
+------------------------------ */
+
+.section__title-wrap-top {
+  padding-left: 4rem;
+
+  @media (max-width: 768px) {
+    padding-left: 1.125rem;
+  }
+}
+
+.section__title {
+  display: flex;
+  align-items: center;
+  font-size: clamp(1.2rem, 0.467rem + 1.53vw, 2.3rem);
+  font-weight: 400;
+  border-bottom: 1px solid var(--color-black);
+  line-height: 1.5;
+  color: var(--color-black);
+}
+
+.section__title::before {
+  content: "";
+  background-image: url(../../images/r2026/common/icon-1.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 1rem;
+  width: 2em;
+  height: 2em;
+}
+
+.section__body--top {
+  padding: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1.125rem;
+  }
+}

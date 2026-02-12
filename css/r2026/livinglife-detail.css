@@ -1,0 +1,1671 @@
+/* LivingLife detail pages unified styles */
+
+/* ===== Common ===== */
+/* LivingLife detail pages common styles */
+
+body.livinglife-detail [class$="-hero"] {
+  position: relative;
+  width: 100%;
+  height: 653px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+body.livinglife-detail [class$="-hero"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+body.livinglife-detail [class$="-hero__inner"] {
+  position: relative;
+  max-width: 1512px;
+  margin: 0 auto;
+  padding: 216px 65px 0;
+  height: 100%;
+}
+
+body.livinglife-detail [class$="-hero__content"] {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  color: var(--color-white);
+  max-width: 825px;
+}
+
+body.livinglife-detail [class$="-hero__lead"] {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+}
+
+body.livinglife-detail [class$="-hero__title"] {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 500;
+  font-size: 4rem;
+  letter-spacing: 10.88px;
+  line-height: 1.2;
+}
+
+body.livinglife-detail [class$="-hero__sub"] {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+}
+
+body.livinglife-detail [class$="-hero__bottom"] {
+  position: absolute;
+  bottom: 60px;
+  left: 65px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  font-size: 1.3125rem;
+  letter-spacing: 2.1px;
+  color: var(--color-white);
+}
+
+body.livinglife-detail [class$="-breadcrumb"] {
+  background-color: #f5f5f5;
+  padding: 31px 62px;
+}
+
+body.livinglife-detail [class$="-breadcrumb__inner"] {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.1875rem;
+  color: var(--color-black);
+}
+
+body.livinglife-detail [class$="-breadcrumb__inner"] a {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+body.livinglife-detail [class$="-breadcrumb__inner"] a:hover {
+  text-decoration: underline;
+}
+
+body.livinglife-detail [class$="-breadcrumb__sep"] {
+  color: var(--color-black);
+}
+
+body.livinglife-detail :is([class$="-content"], .gas-steps) {
+  background-color: var(--color-white);
+  padding: 60px 62px 80px;
+}
+
+body.livinglife-detail :is([class$="-content__inner"], .gas-steps__inner) {
+  max-width: 1388px;
+  margin: 0 auto;
+}
+
+body.livinglife-detail :is([class$="-content__title"], .gas-steps__title) {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: var(--color-black);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-black);
+  margin-bottom: 0;
+}
+
+body.livinglife-detail
+  :is([class$="-content__title-icon"], .gas-steps__title-icon) {
+  display: inline-block;
+  width: 36px;
+  height: 17.229px;
+  background-image: url("../../images/r2026/common/icon-1.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (max-width: 1024px) {
+  body.livinglife-detail [class$="-hero"] {
+    height: 500px;
+  }
+
+  body.livinglife-detail [class$="-hero__inner"] {
+    padding: 120px 40px 0;
+  }
+
+  body.livinglife-detail [class$="-hero__title"] {
+    font-size: 3rem;
+    letter-spacing: 6px;
+  }
+
+  body.livinglife-detail [class$="-hero__bottom"] {
+    bottom: 40px;
+    left: 40px;
+  }
+
+  body.livinglife-detail [class$="-breadcrumb"] {
+    padding: 20px 40px;
+  }
+
+  body.livinglife-detail :is([class$="-content"], .gas-steps) {
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body.livinglife-detail [class$="-hero"] {
+    height: 400px;
+  }
+
+  body.livinglife-detail [class$="-hero__inner"] {
+    padding: 80px 20px 0;
+  }
+
+  body.livinglife-detail :is([class$="-hero__lead"], [class$="-hero__sub"]) {
+    font-size: 0.875rem;
+  }
+
+  body.livinglife-detail [class$="-hero__title"] {
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+
+  body.livinglife-detail [class$="-hero__bottom"] {
+    font-size: 0.875rem;
+    bottom: 30px;
+    left: 20px;
+  }
+
+  body.livinglife-detail [class$="-breadcrumb"] {
+    padding: 15px 20px;
+    overflow-x: auto;
+  }
+
+  body.livinglife-detail [class$="-breadcrumb__inner"] {
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  body.livinglife-detail :is([class$="-content"], .gas-steps) {
+    padding: 30px 20px 50px;
+  }
+
+  body.livinglife-detail :is([class$="-content__title"], .gas-steps__title) {
+    font-size: 1.5rem;
+    gap: 12px;
+  }
+
+  body.livinglife-detail
+    :is([class$="-content__title-icon"], .gas-steps__title-icon) {
+    width: 28px;
+    height: 13px;
+  }
+}
+
+/* ===== Equipment ===== */
+/* ガス機器・住宅設備機器などの販売ページ */
+
+/* ------------------------------
+  Hero Section
+------------------------------ */
+.equip-hero {
+  background-image: url("../../images/r2026/livinglife/equipment/hero-bg.jpg");
+}
+
+/* ------------------------------
+  Equipment List
+------------------------------ */
+.equip-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-top: 64px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.equip-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.equip-item__header {
+  background-color: var(--color-orange);
+  padding: 8px 16px;
+}
+
+.equip-item__heading {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-white);
+  margin: 0;
+}
+
+.equip-item__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.equip-item__text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.equip-item__text a {
+  color: var(--color-black);
+}
+
+/* Images Layout - Type 1 (1 large + 2 stacked) */
+.equip-item__images--type1 {
+  display: flex;
+  gap: 8px;
+  height: 567px;
+}
+
+.equip-item__images--type1 .equip-item__image--large {
+  flex: 1;
+  height: 100%;
+}
+
+.equip-item__images--type1 .equip-item__image--large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.equip-item__image-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 385px;
+}
+
+.equip-item__image-stack .equip-item__image {
+  flex: 1;
+  height: calc((567px - 8px) / 2);
+}
+
+.equip-item__image-stack .equip-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Images Layout - Grid 2 columns */
+.equip-item__images--grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.equip-item__images--grid2 .equip-item__image {
+  height: 450px;
+}
+
+.equip-item__images--grid2 .equip-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Images Layout - Single */
+.equip-item__images--single .equip-item__image {
+  height: 450px;
+}
+
+.equip-item__images--single .equip-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ------------------------------
+  Makers Section
+------------------------------ */
+.equip-makers {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 99px 57px;
+}
+
+.equip-makers__header {
+  background-color: rgba(239, 124, 0, 0.1);
+  padding: 4px 8px;
+  margin-bottom: 8px;
+}
+
+.equip-makers__title {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1.1875rem;
+  line-height: 1.75;
+  color: var(--color-orange);
+  margin: 0;
+}
+
+.equip-makers__body {
+  padding: 4px 8px;
+}
+
+.equip-makers__links {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 1.1875rem;
+  line-height: 2.1;
+  letter-spacing: 0.95px;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.equip-makers__links a {
+  color: var(--color-black);
+}
+
+.equip-makers__note {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 1.1875rem;
+  line-height: 2.1;
+  letter-spacing: 0.95px;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.equip-makers__note a {
+  color: var(--color-black);
+}
+
+/* ------------------------------
+  Responsive - Tablet
+------------------------------ */
+@media screen and (max-width: 1024px) {
+  .equip-list {
+    padding-top: 40px;
+  }
+
+  .equip-item__images--type1 {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .equip-item__images--type1 .equip-item__image--large {
+    height: 350px;
+  }
+
+  .equip-item__image-stack {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .equip-item__image-stack .equip-item__image {
+    flex: 1;
+    height: 250px;
+  }
+
+  .equip-item__images--grid2 .equip-item__image {
+    height: 350px;
+  }
+
+  .equip-item__images--single .equip-item__image {
+    height: 350px;
+  }
+
+  .equip-makers {
+    padding: 0 20px 40px;
+  }
+}
+
+/* ------------------------------
+  Responsive - Mobile
+------------------------------ */
+@media screen and (max-width: 768px) {
+  .equip-list {
+    padding-top: 30px;
+    gap: 32px;
+  }
+
+  .equip-item__heading {
+    font-size: 1rem;
+  }
+
+  .equip-item__text {
+    font-size: 0.875rem;
+  }
+
+  .equip-item__images--type1 .equip-item__image--large {
+    height: 250px;
+  }
+
+  .equip-item__image-stack {
+    flex-direction: column;
+  }
+
+  .equip-item__image-stack .equip-item__image {
+    height: 200px;
+  }
+
+  .equip-item__images--grid2 {
+    grid-template-columns: 1fr;
+  }
+
+  .equip-item__images--grid2 .equip-item__image {
+    height: 250px;
+  }
+
+  .equip-item__images--single .equip-item__image {
+    height: 250px;
+  }
+
+  .equip-makers {
+    padding: 0 0 30px;
+  }
+
+  .equip-makers__title {
+    font-size: 1rem;
+  }
+
+  .equip-makers__links,
+  .equip-makers__note {
+    font-size: 0.875rem;
+    line-height: 1.8;
+  }
+}
+
+/* ===== Emergency ===== */
+/* 非常時の対応ページ */
+
+/* ------------------------------
+  Hero Section
+------------------------------ */
+.emergency-hero {
+  background-image: url("../../images/r2026/livinglife/emergency/hero-bg.jpg");
+}
+
+/* ------------------------------
+  Section Common
+------------------------------ */
+.emergency-section {
+  padding: 64px 96px;
+}
+
+.emergency-section__header {
+  background-color: var(--color-orange);
+  padding: 8px 16px;
+  margin-bottom: 16px;
+}
+
+.emergency-section__header-text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-white);
+  margin: 0;
+}
+
+.emergency-section__body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-black);
+}
+
+.emergency-section__intro {
+  margin-bottom: 48px;
+}
+
+.emergency-section__link {
+  text-align: center;
+  margin: 16px 0;
+}
+
+.emergency-section__link a {
+  color: var(--color-black);
+}
+
+.emergency-section__notice {
+  background-color: rgba(239, 124, 0, 0.1);
+  padding: 32px;
+  margin-top: 48px;
+}
+
+.emergency-section__notice p {
+  margin: 0;
+}
+
+.emergency-section__notice a {
+  color: var(--color-black);
+}
+
+/* ------------------------------
+  Numbered List (火がつかない)
+------------------------------ */
+.emergency-list {
+  margin: 0;
+  padding-left: 1.5em;
+}
+
+.emergency-list__item {
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+.emergency-list__item a {
+  color: var(--color-black);
+}
+
+/* ------------------------------
+  Disaster Steps (地震・災害)
+------------------------------ */
+.emergency-disaster {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.emergency-disaster__item {
+  width: 100%;
+}
+
+.emergency-disaster__header {
+  background-color: rgba(239, 124, 0, 0.1);
+  padding: 4px 8px;
+  margin-bottom: 8px;
+}
+
+.emergency-disaster__header-text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-orange);
+  margin: 0;
+}
+
+.emergency-disaster__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.emergency-disaster__text {
+  margin: 0;
+  line-height: 1.75;
+}
+
+.emergency-disaster__text a {
+  color: var(--color-black);
+}
+
+.emergency-disaster__image {
+  width: 160px;
+  overflow: hidden;
+}
+
+.emergency-disaster__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.emergency-disaster__images {
+  display: flex;
+  gap: 16px;
+}
+
+/* ------------------------------
+  Gas Leak Grid (ガス漏れ)
+------------------------------ */
+.emergency-gasleak__intro {
+  margin-bottom: 16px;
+}
+
+.emergency-gasleak__warning {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #e60013;
+  margin: 0;
+}
+
+.emergency-gasleak__note {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.emergency-gasleak__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.emergency-gasleak__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--color-orange);
+  overflow: hidden;
+}
+
+.emergency-gasleak__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-white);
+}
+
+.emergency-gasleak__image {
+  width: 100%;
+  height: 194px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emergency-gasleak__image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.emergency-gasleak__text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-black);
+  text-align: center;
+  margin: 0;
+}
+
+.emergency-gasleak__text--warning {
+  color: #d7000f;
+}
+
+/* ------------------------------
+  Responsive - Tablet
+------------------------------ */
+@media screen and (max-width: 1024px) {
+  .emergency-section {
+    padding: 40px 20px;
+  }
+
+  .emergency-gasleak__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ------------------------------
+  Responsive - Mobile
+------------------------------ */
+@media screen and (max-width: 768px) {
+  .emergency-section {
+    padding: 30px 0;
+  }
+
+  .emergency-section__header-text {
+    font-size: 1rem;
+  }
+
+  .emergency-section__notice {
+    padding: 20px;
+  }
+
+  .emergency-disaster__image {
+    width: 120px;
+  }
+
+  .emergency-gasleak__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .emergency-gasleak__image {
+    height: 150px;
+  }
+
+  .emergency-gasleak__text {
+    font-size: 0.875rem;
+  }
+}
+
+/* ===== Gas Start ===== */
+/* ガスのご利用開始ページ */
+
+/* ------------------------------
+  Hero Section
+------------------------------ */
+.gas-hero {
+  background-image: url("../../images/r2026/livinglife/gas-start/hero-bg.png");
+}
+
+/* ------------------------------
+  Steps Section
+------------------------------ */
+.gas-steps__title {
+  margin-bottom: 48px;
+}
+
+.gas-steps__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 64px 96px;
+}
+
+/* Step Item */
+.gas-step {
+  width: 100%;
+  max-width: 988px;
+  background-color: var(--color-white);
+  border: 1px solid #999;
+  border-radius: 32px;
+  padding: 48px 32px;
+}
+
+.gas-step__inner {
+  display: flex;
+  align-items: center;
+}
+
+.gas-step__number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px;
+  color: var(--color-orange);
+  text-align: center;
+}
+
+.gas-step__number-label {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.gas-step__number-value {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.075;
+}
+
+.gas-step__content {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex: 1;
+  padding-left: 32px;
+  border-left: 1px solid #999;
+}
+
+.gas-step__image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.gas-step__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gas-step__text {
+  flex: 1;
+}
+
+.gas-step__heading {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 2;
+  color: var(--color-black);
+  margin-bottom: 8px;
+}
+
+.gas-step__description {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.857;
+  color: var(--color-black);
+}
+
+.gas-step__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  margin-left: auto;
+  padding: 8px 16px;
+  background-color: #347f9b;
+  color: var(--color-white);
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: -0.42px;
+  transition: background-color 0.3s ease;
+  float: right;
+}
+
+.gas-step__button:hover {
+  background-color: #2a6880;
+}
+
+.gas-step__button-arrow {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-white);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+/* Arrow between steps */
+.gas-step__arrow {
+  width: 70px;
+  height: 25px;
+  background-color: var(--color-orange);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 25'%3E%3Cpath d='M35 25L0 0h70L35 25z'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 25'%3E%3Cpath d='M35 25L0 0h70L35 25z'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+/* ------------------------------
+  Contact Section
+------------------------------ */
+.gas-contact {
+  position: relative;
+}
+
+.gas-contact__header {
+  position: relative;
+  height: 364px;
+  background-image: url("../../images/r2026/livinglife/gas-start/contact-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.gas-contact__header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(239, 124, 0, 0.6);
+}
+
+.gas-contact__header-label {
+  position: relative;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-white);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.gas-contact__header-title {
+  position: relative;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--color-white);
+}
+
+.gas-contact__body {
+  background-color: rgba(239, 124, 0, 0.1);
+  padding: 0 0 80px;
+}
+
+.gas-contact__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  padding: 145px 140px 72px;
+  margin-top: -145px;
+  position: relative;
+}
+
+.gas-contact__intro {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.75;
+  text-align: center;
+  color: var(--color-black);
+  margin-bottom: 76px;
+}
+
+/* ------------------------------
+  Contact Form
+------------------------------ */
+.gas-form {
+  background-color: rgba(239, 124, 0, 0.1);
+  padding: 64px 96px;
+}
+
+.gas-form__row {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  margin-bottom: 24px;
+}
+
+.gas-form__row--textarea {
+  align-items: flex-start;
+}
+
+.gas-form__row--textarea .gas-form__label {
+  padding-top: 12px;
+}
+
+.gas-form__label {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 140px;
+  flex-shrink: 0;
+}
+
+.gas-form__label-text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--color-black);
+}
+
+.gas-form__required {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  font-size: 0.5rem;
+  line-height: 1.5;
+  color: #fe284c;
+}
+
+.gas-form__input-wrap {
+  flex: 1;
+}
+
+.gas-form__input,
+.gas-form__select,
+.gas-form__textarea {
+  width: 100%;
+  padding: 16px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  border: 1px solid #d1d1d6;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.gas-form__input::placeholder,
+.gas-form__textarea::placeholder {
+  color: #999;
+}
+
+.gas-form__input:focus-visible,
+.gas-form__select:focus-visible,
+.gas-form__textarea:focus-visible {
+  border-color: var(--color-orange);
+  outline: 2px solid var(--color-orange);
+  outline-offset: 2px;
+}
+
+.gas-form__select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24'%3E%3Cpath fill='%23999' d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 48px;
+  max-width: 318px;
+}
+
+.gas-form__textarea {
+  min-height: 148px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.gas-form__submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.gas-form__checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.gas-form__checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.gas-form__checkbox-text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-black);
+}
+
+.gas-form__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 112px;
+  background-color: #347f9b;
+  color: var(--color-white);
+  border: none;
+  border-radius: 999px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: -0.42px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.gas-form__button:hover {
+  background-color: #2a6880;
+}
+
+/* ------------------------------
+  Responsive - Tablet
+------------------------------ */
+@media screen and (max-width: 1024px) {
+  .gas-steps__list {
+    padding: 40px 20px;
+  }
+
+  .gas-step {
+    padding: 32px 24px;
+  }
+
+  .gas-step__content {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .gas-contact__inner {
+    padding: 100px 60px 50px;
+    margin-top: -100px;
+  }
+
+  .gas-form {
+    padding: 40px;
+  }
+
+  .gas-form__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .gas-form__label {
+    min-width: auto;
+  }
+
+  .gas-form__select {
+    max-width: 100%;
+  }
+}
+
+/* ------------------------------
+  Responsive - Mobile
+------------------------------ */
+@media screen and (max-width: 768px) {
+  .gas-steps__list {
+    padding: 30px 0;
+  }
+
+  .gas-step {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+
+  .gas-step__inner {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .gas-step__number {
+    flex-direction: row;
+    gap: 8px;
+    padding: 0;
+  }
+
+  .gas-step__number-label {
+    font-size: 0.875rem;
+  }
+
+  .gas-step__number-value {
+    font-size: 1.5rem;
+  }
+
+  .gas-step__content {
+    padding-left: 0;
+    padding-top: 16px;
+    border-left: none;
+    border-top: 1px solid #999;
+    width: 100%;
+  }
+
+  .gas-step__image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .gas-step__heading {
+    font-size: 1rem;
+  }
+
+  .gas-step__description {
+    font-size: 0.8125rem;
+  }
+
+  .gas-step__button {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+    margin-top: 12px;
+    float: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .gas-step__arrow {
+    width: 50px;
+    height: 18px;
+  }
+
+  .gas-contact__header {
+    height: 250px;
+    padding-top: 40px;
+  }
+
+  .gas-contact__header-label {
+    font-size: 0.875rem;
+  }
+
+  .gas-contact__header-title {
+    font-size: 1.75rem;
+  }
+
+  .gas-contact__body {
+    padding: 0 0 50px;
+  }
+
+  .gas-contact__inner {
+    padding: 80px 20px 40px;
+    margin-top: -80px;
+  }
+
+  .gas-contact__intro {
+    font-size: 0.875rem;
+    margin-bottom: 40px;
+  }
+
+  .gas-form {
+    padding: 24px 16px;
+  }
+
+  .gas-form__row {
+    margin-bottom: 16px;
+  }
+
+  .gas-form__label-text {
+    font-size: 0.875rem;
+  }
+
+  .gas-form__input,
+  .gas-form__select,
+  .gas-form__textarea {
+    padding: 12px;
+    font-size: 0.875rem;
+  }
+
+  .gas-form__textarea {
+    min-height: 120px;
+  }
+
+  .gas-form__submit {
+    margin-top: 32px;
+  }
+
+  .gas-form__checkbox-text {
+    font-size: 0.875rem;
+  }
+
+  .gas-form__button {
+    padding: 14px 60px;
+    font-size: 0.875rem;
+    width: 100%;
+  }
+}
+
+/* ===== Gas Tips ===== */
+/* LPガスの豆知識ページ */
+
+/* ------------------------------
+  Hero Section
+------------------------------ */
+.tips-hero {
+  background-image: url("../../images/r2026/livinglife/gas-tips/hero-bg.jpg");
+}
+
+/* ------------------------------
+  Tips List
+------------------------------ */
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 64px 96px;
+}
+
+.tips-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tips-item__header {
+  background-color: var(--color-orange);
+  padding: 8px 16px;
+}
+
+.tips-item__question {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-white);
+  margin: 0;
+}
+
+.tips-item__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tips-item__image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.tips-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tips-item__list {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-black);
+  margin: 0;
+  padding-left: 24px;
+}
+
+.tips-item__list li {
+  margin-bottom: 0;
+}
+
+/* ------------------------------
+  Responsive - Tablet
+------------------------------ */
+@media screen and (max-width: 1024px) {
+  .tips-list {
+    padding: 40px 20px;
+  }
+}
+
+/* ------------------------------
+  Responsive - Mobile
+------------------------------ */
+@media screen and (max-width: 768px) {
+  .tips-list {
+    padding: 30px 0;
+    gap: 32px;
+  }
+
+  .tips-item__question {
+    font-size: 1rem;
+  }
+
+  .tips-item__image {
+    height: 200px;
+  }
+
+  .tips-item__list {
+    font-size: 0.875rem;
+    padding-left: 20px;
+  }
+}
+
+/* ===== Reform Case ===== */
+/* リフォーム事例ページ */
+
+/* ------------------------------
+  Hero Section
+------------------------------ */
+.reform-hero {
+  background-image: url("../../images/r2026/livinglife/reform-case/hero-bg.jpg");
+}
+
+/* ------------------------------
+  Reform Case
+------------------------------ */
+.reform-case {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-top: 64px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.reform-case__header {
+  background-color: var(--color-orange);
+  padding: 8px 16px;
+}
+
+.reform-case__header-text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-white);
+  margin: 0;
+}
+
+/* ------------------------------
+  Property Data Table
+------------------------------ */
+.reform-data {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reform-data__title {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-black);
+  text-align: center;
+  margin: 0;
+  padding: 4px 8px;
+}
+
+.reform-data__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.reform-data__table th,
+.reform-data__table td {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.1875rem;
+  line-height: 2.1;
+  letter-spacing: 0.95px;
+  color: var(--color-black);
+  padding: 16px 8px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 2px solid;
+}
+
+.reform-data__table th {
+  font-weight: 700;
+  width: 250px;
+  border-bottom-color: var(--color-orange);
+  text-align: center;
+}
+
+.reform-data__table td {
+  font-weight: 400;
+  border-bottom-color: #999;
+}
+
+/* ------------------------------
+  Reform Sections
+------------------------------ */
+.reform-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reform-section__header {
+  background-color: var(--color-orange);
+  padding: 8px 16px;
+}
+
+.reform-section__header-text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-white);
+  margin: 0;
+}
+
+/* Gallery Grid */
+.reform-section__gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.reform-section__gallery--2col {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 784px;
+}
+
+.reform-section__gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.reform-section__image {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.reform-section__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reform-section__caption {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--color-black);
+  margin: 0;
+}
+
+/* Text Content */
+.reform-section__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.reform-section__subtitle {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-black);
+  margin: 0 0 0 0;
+}
+
+.reform-section__text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-black);
+  margin: 0 0 16px 0;
+}
+
+.reform-section__text:last-child {
+  margin-bottom: 0;
+}
+
+/* ------------------------------
+  Responsive - Tablet
+------------------------------ */
+@media screen and (max-width: 1024px) {
+  .reform-case {
+    padding-top: 40px;
+  }
+
+  .reform-data__table th {
+    width: 180px;
+  }
+
+  .reform-data__table th,
+  .reform-data__table td {
+    font-size: 1rem;
+  }
+}
+
+/* ------------------------------
+  Responsive - Mobile
+------------------------------ */
+@media screen and (max-width: 768px) {
+  .reform-case {
+    padding-top: 30px;
+    gap: 32px;
+  }
+
+  .reform-case__header-text,
+  .reform-section__header-text {
+    font-size: 1rem;
+  }
+
+  .reform-data__table {
+    display: block;
+  }
+
+  .reform-data__table tbody {
+    display: block;
+  }
+
+  .reform-data__table tr {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #999;
+    padding: 12px 0;
+  }
+
+  .reform-data__table th,
+  .reform-data__table td {
+    display: block;
+    width: 100%;
+    padding: 4px 0;
+    border-bottom: none;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .reform-data__table th {
+    text-align: left;
+    color: var(--color-orange);
+  }
+
+  .reform-section__gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .reform-section__gallery--2col {
+    max-width: none;
+  }
+
+  .reform-section__image {
+    max-width: 100%;
+  }
+
+  .reform-section__caption {
+    font-size: 1rem;
+  }
+
+  .reform-section__subtitle {
+    font-size: 0.875rem;
+  }
+
+  .reform-section__text {
+    font-size: 0.875rem;
+  }
+}

@@ -1,0 +1,30 @@
+:root {
+  /* Base Colors */
+  --color-primary: #005bac;
+  --color-black: #231815;
+  --color-white: #fff;
+
+  /* Color カーライフ */
+  --color-red: #d7000f;
+  --color-yellow: #fff100;
+  --color-dark: #59504c;
+  --color-gray: #59504c;
+  --color-blue: #000cb3;
+
+  /* Color リビングライフ */
+  --color-orange: #ef7c00;
+
+  /* Color リスクコンサルティング */
+  --color-green: #6ba429;
+
+  /* Color オフィス&レジデンス */
+  --color-gray: #837e7c;
+
+  /* Typography */
+  --font-main: "Noto Sans JP", sans-serif;
+
+  /* Spacing Unit（必要なら） */
+  --space-s: 0.8rem;
+  --space-m: 1.6rem;
+  --space-l: 3.2rem;
+}

@@ -1,0 +1,771 @@
+:root {
+  --color-primary: #005bac;
+  --color-red: #d7000f;
+  --color-yellow: #fff100;
+  --color-green: #6ba429;
+  --color-dark: #59504c;
+  --color-gray: #847f7c;
+
+  /* Base Colors */
+  --color-black: #231815;
+  --color-white: #fff;
+
+  /* Typography */
+  --font-main: "Noto Sans JP", sans-serif;
+
+  /* Spacing Unit（必要なら） */
+  --space-s: 0.8rem;
+  --space-m: 1.6rem;
+  --space-l: 3.2rem;
+}
+
+:root {
+  --loading-duration: 3s; /* SVGの書きアニメ時間 */
+}
+
+/* ===================================== */
+/* TOPページ */
+/* ===================================== */
+
+/* セクション・タイトル */
+.section-blue {
+  background-color: #dbeef8;
+}
+.section__head {
+  width: 48%;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  z-index: 10;
+  /* box-shadow: 0px -3px 4px 0px rgba(0, 0, 0, 0.2); */
+}
+
+.section__head::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: -45px;
+  background-color: #fff;
+  width: 50px;
+  height: 80px;
+  clip-path: polygon(0 0, 0 0, 75% 100%, 0% 100%);
+}
+
+.section__head--blue {
+  background-color: #dbeef8;
+}
+.section__head--blue::before {
+  background-color: #dbeef8;
+}
+
+.section__body {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0 20px 0 0;
+  /* box-shadow: 0px -3px 4px 0px rgba(0, 0, 0, 0.2); */
+}
+
+.section__body--blue {
+  background-color: #dbeef8;
+}
+.section__body--blue::before {
+  background-color: #dbeef8;
+}
+
+.section--nav {
+  padding: 60px 0;
+}
+
+.section__content {
+  padding-top: calc(100% * (100 / 1080));
+  padding-bottom: calc(100% * (120 / 1080));
+}
+
+.section__title {
+  font-size: clamp(18px, 3.4vw, 40px);
+  font-weight: 400;
+  padding-top: 1em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section__title::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 1em;
+  background-color: #076fb3;
+}
+
+.section__title--post {
+  font-size: clamp(18px, 2.8vw, 32px);
+  padding-top: 2em;
+}
+
+.section-blue {
+  background-color: #dbeef8;
+}
+
+.section__inner--top {
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.section__title--top {
+  font-weight: 500;
+  font-size: clamp(20px, 3.6vw, 40px);
+}
+
+/* News & Topics */
+.section-news {
+  width: 100%;
+  background-color: #b5d4e8;
+  padding-top: 100px;
+}
+.top-news {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10%;
+  padding: 2em 0 8em;
+}
+
+.top-news__list {
+  margin: 0;
+  flex: 0 0 250px;
+}
+
+.top-news__right {
+  flex: 1;
+}
+
+.top-news__item {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5em;
+  border-bottom: 1px solid#b3b3b3;
+  padding: 2em 0 2em 1em;
+}
+
+.top-news__date {
+  color: #808080;
+}
+
+/* トップページのボタン */
+
+.top-button {
+  border-radius: 50px;
+  padding: 10px 1.6em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  font-size: 20px;
+}
+
+.top-button::after {
+  content: "";
+  display: inline-block;
+  width: 1.6em;
+  height: 1.6em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.top-button:hover {
+  color: #fff;
+  background-color: #076fb3;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.top-button--blue:hover::after {
+  transition: all 0.3s ease;
+  background-image: url(/images/r2026/common/arrow-icon03.png);
+}
+
+.top-button--blue {
+  border: 1px solid #076fb3;
+  color: #076fb3;
+}
+
+.top-button--blue::after {
+  background-image: url(/images/r2026/common/arrow-icon02.png);
+}
+
+.top-button--white {
+  border: 1px solid #fff;
+  color: #fff;
+}
+.top-button--white:hover {
+  color: #076fb3;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.top-button--white:hover::after {
+  transition: all 0.3s ease;
+  background-image: url(/images/r2026/common/arrow-icon02.png);
+}
+
+.top-button--white::after {
+  background-image: url(/images/r2026/common/arrow-icon03.png);
+}
+
+.top-button--panel {
+  display: inline-flex;
+  min-width: 300px;
+  margin-top: 2em;
+}
+
+.main__btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  writing-mode: vertical-rl;
+  padding: 4em 0.8em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 20px;
+}
+
+.main__btn:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.main-area {
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  position: relative;
+  touch-action: none;
+}
+
+.main-area__wrap {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+
+.hero {
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero--top {
+  background-image: url(../../images/r2026/top/kv_top.jpg);
+}
+
+.hero--carlife {
+  background-image: url(../../images/r2026/common/kv_carlife.jpg);
+}
+.hero--livinglife {
+  background-image: url(../../images/r2026/common/kv_livinglife.jpg);
+}
+.hero--consulting {
+  background-image: url(../../images/r2026/common/kv_consulting.jpg);
+}
+.hero--office {
+  background-image: url(../../images/r2026/common/kv_office.jpg);
+}
+.hero--recruit {
+  background-image: url(../../images/r2026/common/kv_recruit.png);
+}
+
+.hero .hero__btn-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+  margin-top: 0;
+}
+
+.hero .hero__btn::after {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.1s ease;
+}
+
+.hero--top .hero__btn {
+  font-size: 1.25rem;
+  gap: 0.4em;
+}
+
+.hero .hero__btn {
+  transition:
+    color 0.3s ease,
+    transform 0.25s ease;
+  transform-origin: left center;
+}
+
+.hero .hero__btn:hover {
+  font-size: 1.4rem;
+  transform: scale(1.06);
+}
+
+.hero--carlife.is-active .hero__btn:nth-child(1),
+.hero--livinglife.is-active .hero__btn:nth-child(2),
+.hero--consulting.is-active .hero__btn:nth-child(3),
+.hero--office.is-active .hero__btn:nth-child(4),
+.hero--recruit.is-active .hero__btn:nth-child(5) {
+  font-size: 1.4rem;
+}
+
+.hero--carlife.is-active .hero__btn:nth-child(1)::after,
+.hero--livinglife.is-active .hero__btn:nth-child(2)::after,
+.hero--consulting.is-active .hero__btn:nth-child(3)::after,
+.hero--office.is-active .hero__btn:nth-child(4)::after,
+.hero--recruit.is-active .hero__btn:nth-child(5)::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero .hero__btn:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero__inner {
+  max-width: 1700px;
+  width: 100%;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 30vh;
+  padding-bottom: 3rem;
+  margin: 0 auto;
+}
+
+.hero__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  color: #fff;
+}
+
+.hero__title {
+  font-size: clamp(28px, 7.8vw, 64px);
+  font-family:
+    "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho", "MS Mincho",
+    serif;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  transition-delay: 0s;
+}
+
+.hero__title.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.hero__title.is-initial {
+  transition: none;
+  animation: heroTitleInitial 0.8s ease 0.3s both;
+}
+
+@keyframes heroTitleInitial {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__btn {
+  display: inline-flex;
+  color: #fff;
+  align-items: center;
+  gap: 0.3em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+  font-size: 1.25rem;
+}
+
+.hero__btn::after {
+  content: "";
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  background-image: url(/images/r2026/common/arrow-icon.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.hero__btn::before {
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  bottom: -10px;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.3s;
+}
+
+.hero__btn:hover::before {
+  transform: scale(1, 1);
+}
+
+.hero__bottom-text {
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+}
+
+/* インジケーター */
+.kv-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.kv-indicator__dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #d8d8d8;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.kv-indicator__dot.is-active {
+  background: #fff;
+}
+
+/* 980px以下 */
+@media screen and (max-width: 980px) {
+  /* news & Topics */
+  .top-news {
+    flex-direction: column-reverse;
+    gap: 2em;
+  }
+
+  .top-news__list,
+  .top-news__right {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* 768px以下 */
+@media screen and (max-width: 768px) {
+  /* kv */
+  .hero__carlife {
+    background-position: 70% center;
+  }
+  .hero__btn {
+    font-size: 16px;
+  }
+
+  .hero__inner {
+    padding: 200px 20px 100px;
+  }
+  .hero__bottom-text {
+    font-size: 16px;
+  }
+
+  /* 事業内容 */
+  .panel {
+    padding: 0 20px;
+  }
+
+  .panel__wrap {
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  /* 採用情報 */
+  .recruit__inner {
+    background-position: 20% center;
+  }
+  .recruit__inner {
+    padding: 100px 20px;
+  }
+
+  /* News & Topics */
+  .top-news__item,
+  .top-news__list {
+    padding-left: 0;
+  }
+
+  /* ボタン */
+  .top-button {
+    font-size: 16px;
+  }
+}
+
+/* アニメーション */
+
+/* === 初期状態（非アクティブ時）=== */
+.hero__title,
+.hero__btn,
+.hero__bottom-text {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+/* h1 だけ少し大きめに動かす（好みで） */
+.hero__title {
+  transform: translateY(40px);
+}
+
+/* === アクティブ時（.hero に付く）=== */
+.hero.is-active .hero__title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s; /* 1段目 */
+}
+
+.hero.is-active .hero__btn {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s; /* 2段目 */
+}
+
+.hero.is-active .hero__bottom-text {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s; /* 3段目 */
+}
+
+/* アニメーション無効時でも常に表示させるフォールバック */
+.hero__btn,
+.hero__bottom-text {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* heroアニメーション */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* オーバーレイ: 初期は右側へ退避（画面外） */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  transform: translateX(100%); /* 右に抜けた状態=非表示 */
+  pointer-events: none;
+  z-index: 1; /* テキストの上に被せる */
+}
+
+/* 入場：カバー状態(0%)から右へ抜ける(100%) → 背後のheroが露出 */
+.hero.is-activating::before {
+  animation: heroWipeEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero.is-leaving::before {
+  animation: heroWipeLeave 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroWipeEnter {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes heroWipeLeave {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* 既存の段階表示（そのままでOK：.hero.is-active … で発火） */
+/* 初期：少しズームさせておく */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: var(--kv); /* 各 .hero--* で --kv を指定 */
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+  transition: transform 0.8s ease; /* ←速度はお好みで */
+  will-change: transform;
+}
+
+/* 移動開始から 0.2s 後に発火（ズームアウト開始） */
+.hero.is-activating .hero__bg {
+  transition-delay: 0.8s; /* ←ここで“0.2秒後に発火” */
+  transform: scale(1);
+}
+
+/* 1回だけの左から流入アニメ用（既存の is-active 演出より優先） */
+.hero__title.is-from-left {
+  /* 既存の Y 方向トランジションと競合しないよう、アニメ中は移譲しない */
+  transition: none;
+  animation: heroTitleFromLeft 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  /* ↑ easeOutCubic。好みで 0.6–0.8s 程度に */
+}
+
+@keyframes heroTitleFromLeft {
+  from {
+    transform: translate3d(-40vw, 0, 0); /* 画面左外から */
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0); /* 最終位置 */
+    opacity: 1;
+  }
+}
+
+/* ローディングアニメーション */
+
+/* ローディングアニメーション */
+
+.loading {
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 64, 152, 1),
+    rgba(0, 47, 123, 1) 90%
+  );
+  position: fixed; /* 画面に固定 */
+  inset: 0; /* top/right/bottom/left: 0; と同じ */
+  width: 100%;
+  height: 100vh;
+  z-index: 9999; /* 一番前に出す */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+}
+
+html.is-first-visit body.is-loading .loading {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.loading.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ロード中はスクロール禁止 */
+html.is-first-visit body.is-loading {
+  overflow: hidden;
+}
+
+.loading__inner {
+  height: 100%;
+  padding: calc((80 / 1440) * 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading__svg {
+  width: 100%;
+}
+
+.loading__logo {
+  width: 30%;
+  opacity: 0;
+  animation: logoFadeIn 0.8s ease-out forwards;
+  animation-delay: var(--loading-duration); /* SVG終了後に表示 */
+  transform: translateY(10px);
+}
+
+.handwriting {
+  width: 100%;
+  height: auto;
+}
+
+.handwriting_text {
+  fill: #404040;
+}
+
+.handwriting_mask_line {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 30;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: handwriting var(--loading-duration) ease-out forwards;
+}
+
+/* すでに入れていればOK */
+@keyframes handwriting {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
