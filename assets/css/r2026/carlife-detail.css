@@ -29,9 +29,9 @@ body.carlife-detail {
 
 .carlife-hero__inner {
   position: relative;
-  max-width: 1512px;
+  max-width: var(--layout-section-width);
   margin: 0 auto;
-  padding: 216px 65px 0;
+  padding: 216px var(--layout-padding-desktop) 0;
   height: 100%;
 }
 
@@ -183,7 +183,7 @@ body.carlife-detail {
 }
 
 .station-search__inner {
-  max-width: 1080px;
+  max-width: var(--layout-content-width);
   margin: 0 auto;
 }
 
@@ -332,7 +332,7 @@ body.carlife-detail {
 }
 
 .station-results__inner {
-  max-width: 1080px;
+  max-width: var(--layout-content-width);
   margin: 0 auto;
 }
 
@@ -435,11 +435,11 @@ body.carlife-detail {
 
 .products-content {
   background-color: var(--color-white);
-  padding: 60px 62px 80px;
+  padding: 60px var(--layout-padding-desktop) 80px;
 }
 
 .products-content__inner {
-  max-width: 1180px;
+  max-width: var(--layout-content-width);
   margin: 0 auto;
 }
 
@@ -551,7 +551,7 @@ body.carlife-detail
   }
 
   .carlife-hero__inner {
-    padding: 120px 40px 0;
+    padding: 120px var(--layout-padding-tablet) 0;
   }
 
   .carlife-hero__title {
@@ -627,7 +627,7 @@ body.carlife-detail
   }
 
   .carlife-hero__inner {
-    padding: 80px 20px 0;
+    padding: 80px var(--layout-padding-mobile) 0;
   }
 
   .carlife-hero__lead,
@@ -755,7 +755,7 @@ body.carlife-detail
 
   /* その他取り扱い商品 */
   .products-content {
-    padding: 32px 20px 48px;
+    padding: 32px var(--layout-padding-mobile) 48px;
   }
 
   .products-list {

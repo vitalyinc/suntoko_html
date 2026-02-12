@@ -13,9 +13,9 @@
 }
 
 .header__inner {
-  max-width: 1920px;
+  max-width: var(--layout-section-width);
   margin: 0 auto;
-  padding: 1.25rem 3.75rem;
+  padding: 1.25rem var(--layout-padding-desktop);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -196,7 +196,7 @@
 /* ヘッダー1024px以下 */
 @media (max-width: 1024px) {
   .header__inner {
-    padding: 1.25rem;
+    padding: 1.25rem var(--layout-padding-mobile);
   }
 
   .header__logo {
