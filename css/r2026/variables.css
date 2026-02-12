@@ -3,6 +3,7 @@
   --color-primary: #005bac;
   --color-black: #231815;
   --color-white: #fff;
+  --color-surface-muted: #f5f5f5;
 
   /* Color カーライフ */
   --color-red: #d7000f;
@@ -27,4 +28,15 @@
   --space-s: 0.8rem;
   --space-m: 1.6rem;
   --space-l: 3.2rem;
+
+  /* Breadcrumb */
+  --breadcrumb-bg-color: var(--color-surface-muted);
+  --breadcrumb-text-color: var(--color-black);
+  --breadcrumb-padding-desktop: 31px 62px;
+  --breadcrumb-padding-tablet: 20px 40px;
+  --breadcrumb-padding-mobile: 15px 20px;
+  --breadcrumb-gap: 7px;
+  --breadcrumb-font-size: 1rem;
+  --breadcrumb-line-height: 1.4;
+  --breadcrumb-max-width: 1388px;
 }

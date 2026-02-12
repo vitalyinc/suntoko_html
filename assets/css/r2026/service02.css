@@ -81,14 +81,32 @@
 ------------------------------ */
 
 .breadcrumb {
-  font-size: 1rem;
-  padding: 2rem;
-  max-width: 1920px;
-  margin: 0 auto;
+  font-size: var(--breadcrumb-font-size);
+  background-color: var(--breadcrumb-bg-color);
+  padding: var(--breadcrumb-padding-desktop);
 }
 
 .breadcrumb__inner {
-  margin-left: 2rem;
+  max-width: var(--breadcrumb-max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--breadcrumb-gap);
+  color: var(--breadcrumb-text-color);
+  line-height: var(--breadcrumb-line-height);
+}
+
+.breadcrumb__inner a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb__inner a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb__sep {
+  color: inherit;
 }
 
 /* ------------------------------
@@ -412,8 +430,13 @@
 ------------------------------ */
 
 @media screen and (max-width: 768px) {
+  .breadcrumb {
+    padding: var(--breadcrumb-padding-mobile);
+    overflow-x: auto;
+  }
+
   .breadcrumb__inner {
-    margin-left: 0;
+    width: max-content;
   }
 
   .section__card {

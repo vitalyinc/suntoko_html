@@ -3,25 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>株式会社サントーコー</title>
+    <title>ボディリペア予約 | 株式会社サントーコー</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Maru+Gothic&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/r2026/sanitize.css" />
-    <link rel="stylesheet" href="../css/r2026/variables.css" />
-    <link rel="stylesheet" href="../css/r2026/style.css" />
-    <link rel="stylesheet" href="../css/r2026/header.css" />
-    <link rel="stylesheet" href="../css/r2026/footer.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/sanitize.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/variables.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/style.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/header.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/footer.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/carlife-detail.css" />
   </head>
-  <body>
+  <body class="carlife-detail">
     <header class="header">
       <div class="header__inner">
         <a class="header__logo" href="/">
           <img
-            src="../images/r2026/logo/logo.png"
+            src="../../assets/images/r2026/logo/logo.png"
             alt="株式会社サントーコーENEOSグループ"
             class="header__logo-img"
           />
@@ -37,36 +38,432 @@
               <a class="header__nav-link" href="/">トップページ</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="/service.html">事業内容</a>
+              <a class="header__nav-link" href="/service/">事業内容</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="/company.html">会社情報</a>
+              <a class="header__nav-link" href="/company/">会社情報</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="office-list.html">事業所一覧</a>
+              <a class="header__nav-link" href="/office-list/">事業所一覧</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="recruit.html">採用情報</a>
+              <a class="header__nav-link" href="/recruit/">採用情報</a>
             </li>
           </ul>
-          <a
-            class="header__cta"
-            href="contact.html"
-            aria-label="お問い合わせページへ"
-            >お問い合わせ</a
-          >
+          <a class="header__cta" href="/contact/">お問い合わせ</a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <p class="getting-ready">準備中</p>
+    <main class="main">
+      <section class="carlife-hero carlife-hero--station">
+        <div class="carlife-hero__inner">
+          <div class="carlife-hero__content">
+            <p class="carlife-hero__lead">くらしを支える、サントーコー</p>
+            <h1 class="carlife-hero__title">CarLife Solution</h1>
+            <p class="carlife-hero__sub">ボディリペア予約</p>
+          </div>
+          <p class="carlife-hero__bottom">Live well, feel good</p>
+        </div>
+      </section>
+
+      <nav class="carlife-breadcrumb" aria-label="パンくず">
+        <div class="carlife-breadcrumb__inner">
+          <a href="/">Top</a>
+          <span class="carlife-breadcrumb__sep">&gt;</span>
+          <a href="/carlife/">カーライフソリューション</a>
+          <span class="carlife-breadcrumb__sep">&gt;</span>
+          <span>ボディリペア予約</span>
+        </div>
+      </nav>
+
+      <section class="station-search" aria-labelledby="station-search-title">
+        <div class="station-search__inner">
+          <h2 id="station-search-title" class="station-search__title">ボディリペア 対応店舗</h2>
+          <p class="station-search__description">
+            取扱い商品【リペア】の説明文が入ります。各店舗名のリンクから予約サイトへお進みください。
+          </p>
+
+          <div class="station-search__panel">
+            <h3 class="station-search__sub-title">
+              <span class="station-search__sub-title-icon" aria-hidden="true"></span>
+              エリアから探す
+            </h3>
+            <div class="station-search__area-buttons">
+              <a class="station-search__area-button" href="#area-kanto">関東エリア</a>
+              <a class="station-search__area-button" href="#area-kansai">関西エリア</a>
+              <a class="station-search__area-button" href="#area-chugoku">中国エリア</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="station-results" aria-label="対応店舗一覧">
+        <div class="station-results__inner">
+          <section class="station-area" id="area-kanto">
+            <h2 class="carlife-area-title">関東エリア</h2>
+            <section class="station-prefecture">
+              <h3 class="station-prefecture__title">東京都</h3>
+              <ul class="station-cards">
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/345" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ芝公園店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ芝公園店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/346" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ西芝浦店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ西芝浦店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/347" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Drive五反田大崎店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Drive五反田大崎店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/349" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Drive池袋店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Drive池袋店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </section>
+            <section class="station-prefecture">
+              <h3 class="station-prefecture__title">神奈川県</h3>
+              <ul class="station-cards">
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/350" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズ横浜西口店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズ横浜西口店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/351" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Drive横浜本町店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Drive横浜本町店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/352" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ大磯インター店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ大磯インター店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/354" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ座間店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ座間店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/355" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズセルフ厚木及川店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズセルフ厚木及川店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/356" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ南原店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ南原店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </section>
+          <section class="station-area" id="area-kansai">
+            <h2 class="carlife-area-title">関西エリア</h2>
+            <section class="station-prefecture">
+              <h3 class="station-prefecture__title">大阪府</h3>
+              <ul class="station-cards">
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/596" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Drive我孫子西店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Drive我孫子西店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/598" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ堺岩室店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ堺岩室店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/599" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ太子店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ太子店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/600" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ津々山台店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ津々山台店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/602" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ泉佐野店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ泉佐野店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/605" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ泉佐野西店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ泉佐野西店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/606" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ高石店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ高石店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </section>
+            <section class="station-prefecture">
+              <h3 class="station-prefecture__title">京都府</h3>
+              <ul class="station-cards">
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/597" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ京都南インター店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ京都南インター店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/1902" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ八幡店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ八幡店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </section>
+            <section class="station-prefecture">
+              <h3 class="station-prefecture__title">奈良県</h3>
+              <ul class="station-cards">
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/601" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ飛鳥店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ飛鳥店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </section>
+          <section class="station-area" id="area-chugoku">
+            <h2 class="carlife-area-title">中国エリア</h2>
+            <section class="station-prefecture">
+              <h3 class="station-prefecture__title">広島県</h3>
+              <ul class="station-cards">
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/338" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ富士見店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ富士見店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/388" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ呉駅前店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ呉駅前店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/340" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Drive昭和町店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Drive昭和町店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/341" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ石内店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ石内店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/342" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveセルフ桜尾店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveセルフ桜尾店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </section>
+            <section class="station-prefecture">
+              <h3 class="station-prefecture__title">山口県</h3>
+              <ul class="station-cards">
+                <li class="station-card">
+                  <a href="https://www.picars.jp/detail/344" class="station-card__link" target="blank" rel="noopener">
+                    <p class="station-card__name">ピッカーズDr.Driveポートサイド岩国店</p>
+                    <div class="station-card__image">
+                      <img
+                        src="../../assets/images/r2026/common/self-ss_pixta_70695376.jpg"
+                        alt="ピッカーズDr.Driveポートサイド岩国店"
+                      />
+                      <span class="station-card__tag station-card__tag--self">リペア</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </section>
+        </div>
+      </section>
     </main>
+
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__box">
           <div class="footer__left">
-            <!-- TODO: リンク設定 -->
             <a class="footer__logo" href="/">株式会社サントーコー</a>
             <div class="footer__address">
               <p>〒221-0835</p>
@@ -85,26 +482,19 @@
               <nav>
                 <ul class="footer__nav">
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
                     <a class="footer__nav-link" href="/">トップページ</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="service.html">事業内容</a>
+                    <a class="footer__nav-link" href="/service/">事業内容</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="company.html">会社情報</a>
+                    <a class="footer__nav-link" href="/company/">会社情報</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="office-list.html"
-                      >事業所一覧</a
-                    >
+                    <a class="footer__nav-link" href="/office-list/">事業所一覧</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="recruit.html">採用情報</a>
+                    <a class="footer__nav-link" href="/recruit/">採用情報</a>
                   </li>
                 </ul>
               </nav>
@@ -113,22 +503,13 @@
               <nav>
                 <ul class="footer__nav">
                   <li class="footer__nav-item fotoer__nav-item--policy">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="guide.html"
-                      >ご利用にあたって</a
-                    >
+                    <a class="footer__nav-link" href="/guide/">ご利用にあたって</a>
                   </li>
                   <li class="footer__nav-item fotoer__nav-item--policy">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="privacy-policy.html"
-                      >プライバシーポリシー</a
-                    >
+                    <a class="footer__nav-link" href="/privacy-policy/">プライバシーポリシー</a>
                   </li>
                   <li class="footer__nav-item fotoer__nav-item--policy">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="sitemap.html"
-                      >サイトマップ</a
-                    >
+                    <a class="footer__nav-link" href="/sitemap/">サイトマップ</a>
                   </li>
                 </ul>
               </nav>
@@ -136,10 +517,11 @@
           </div>
         </div>
       </div>
-      <div class="footer__copyright">
-        <p>&copy; 株式会社サントーコー All Rights Reserved.</p>
-      </div>
     </footer>
-    <script src="script.js"></script>
+    <div class="footer__copyright">
+      <p>&copy; 株式会社サントーコー All Rights Reserved.</p>
+    </div>
+
+    <script src="../../assets/js/script.js"></script>
   </body>
 </html>
