@@ -1,3 +1,9 @@
+/* 準備中 */
+.getting-ready {
+  margin: 20rem 0;
+  text-align: center;
+}
+
 body {
   font-family:
     "Noto Sans JP", "Yu Gothic", "YuGothic", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN",
@@ -54,6 +60,13 @@ body {
   overflow-x: hidden;
 }
 
+.br-sp {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
 .pc {
   display: block;
 }
@@ -93,11 +106,12 @@ p {
 .section__title {
   display: flex;
   align-items: center;
-  font-size: clamp(1.2rem, 0.467rem + 1.53vw, 2.3rem);
-  font-weight: 600;
+  font-size: clamp(1rem, 0.467rem + 1.53vw, 2.3rem);
+  font-weight: 400;
   border-bottom: 1px solid var(--color-black);
-  line-height: 1;
+  line-height: 1.5;
   color: var(--color-black);
+  padding: 0.25em;
 }
 
 .section__title::before {

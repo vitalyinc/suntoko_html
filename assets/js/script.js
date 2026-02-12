@@ -477,6 +477,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const loader = document.getElementById("loading");
   const body = document.body;
   const logo = document.querySelector(".loading__logo"); // ロゴがフェードインする要素
+  const isTopLoadingPage = Boolean(loader && body.classList.contains("is-loading"));
+  const isFirstVisitTop =
+    isTopLoadingPage && document.documentElement.classList.contains("is-first-visit");
+
+  // 初回TOP以外は既存ローディング処理を実行しない
+  if (!isFirstVisitTop) {
+    if (isTopLoadingPage) {
+      body.classList.remove("is-loading");
+      loader.classList.add("is-hidden");
+    }
+    return;
+  }
 
   let isPageLoaded = false; // ページ読み込み完了したか
   let isAnimationDone = false; // ローディングアニメが終わったか
@@ -517,108 +529,53 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 })();
 
-// ============== サービスステーションページ: アンカー遷移 ===============
+// ============== リスクコンサルティング画像ポップアップ ===============
 document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll(".station-search__area-button[href^='#']");
-  if (!links.length) return;
+  const targetImages = document.querySelectorAll(".riskconsulting-graph__popup-target");
+  const popup = document.querySelector(".riskconsulting-popup");
+  const popupImage = document.querySelector(".riskconsulting-popup__image");
+  const mobileMedia = window.matchMedia("(max-width: 768px)");
 
-  const header = document.querySelector(".header");
+  if (!targetImages.length || !popup || !popupImage) return;
 
-  const getOffset = () => {
-    const cssValue = getComputedStyle(document.documentElement)
-      .getPropertyValue("--header-height")
-      .trim();
-    const headerHeight = parseFloat(cssValue);
-    const fallback = header ? header.offsetHeight : 96;
-    return (Number.isNaN(headerHeight) ? fallback : headerHeight) + 12;
+  const closePopup = () => {
+    popup.classList.remove("is-open");
+    popup.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("is-riskconsulting-popup-open");
+    popupImage.setAttribute("src", "");
   };
 
-  links.forEach((link) => {
-    link.addEventListener("click", function (e) {
+  const openPopup = (img) => {
+    popupImage.setAttribute("src", img.currentSrc || img.src);
+    popupImage.setAttribute("alt", img.alt || "");
+    popup.classList.add("is-open");
+    popup.setAttribute("aria-hidden", "false");
+    document.body.classList.add("is-riskconsulting-popup-open");
+  };
+
+  targetImages.forEach((img) => {
+    img.addEventListener("click", (e) => {
+      if (!mobileMedia.matches) return;
       e.preventDefault();
-
-      const targetId = link.getAttribute("href");
-      if (!targetId || targetId === "#") return;
-
-      const target = document.querySelector(targetId);
-      if (!target) return;
-
-      const top = target.getBoundingClientRect().top + window.scrollY - getOffset();
-
-      window.scrollTo({
-        top,
-        behavior: "smooth",
-      });
-
-      history.replaceState(null, "", targetId);
+      openPopup(img);
     });
   });
-});
 
-// ============== 汎用スクロールリビール + ボタンホバー ===============
-document.addEventListener("DOMContentLoaded", function () {
-  const hoverTargets = document.querySelectorAll(
-    ".top-button, .page-block__button, .page-btn, .station-search__area-button",
-  );
-  hoverTargets.forEach((el) => el.classList.add("js-motion-hover-lift"));
+  popup.addEventListener("click", closePopup);
 
-  const revealCandidates = document.querySelectorAll(
-    "main section, main .section-wrap, main .section-icon, main .section__title-wrap-top, main .top-news, main .section__head, main .section__body",
-  );
-
-  if (!revealCandidates.length) return;
-
-  const revealTargets = Array.from(new Set(revealCandidates)).filter((el) => {
-    if (!(el instanceof HTMLElement)) return false;
-    if (
-      el.matches(
-        ".main-area, .breadcrumb, .feature-item, .page-block__lead, .strengths-list, .hero",
-      )
-    ) {
-      return false;
-    }
-    if (el.closest("#loading, .main-area")) return false;
-    return true;
-  });
-
-  if (!revealTargets.length) return;
-
-  revealTargets.forEach((el, index) => {
-    el.classList.add("js-motion-fade-up");
-    el.style.setProperty("--motion-delay", `${(index % 3) * 80}ms`);
-
-    // 初期表示領域は最初から見せて、ちらつきを回避
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.92) {
-      el.classList.add("is-revealed");
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && popup.classList.contains("is-open")) {
+      closePopup();
     }
   });
 
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-    revealTargets.forEach((el) => el.classList.add("is-revealed"));
-  } else {
-    document.body.classList.add("js-motion-ready");
-
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-revealed");
-          obs.unobserve(entry.target);
-        });
-      },
-      {
-        root: null,
-        threshold: 0.18,
-        rootMargin: "0px 0px -10% 0px",
-      },
-    );
-
-    revealTargets.forEach((el) => {
-      if (el.classList.contains("is-revealed")) return;
-      observer.observe(el);
+  if (mobileMedia.addEventListener) {
+    mobileMedia.addEventListener("change", (e) => {
+      if (!e.matches) closePopup();
+    });
+  } else if (mobileMedia.addListener) {
+    mobileMedia.addListener((e) => {
+      if (!e.matches) closePopup();
     });
   }
 });

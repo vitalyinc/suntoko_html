@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;
-  padding: 12rem 0 2rem;
 
   @media (max-width: 768px) {
     padding: 2rem 0 2rem;
@@ -60,11 +59,7 @@
   justify-content: center;
   gap: 0.5rem;
   color: var(--color-white);
-  background-image: linear-gradient(
-    90deg,
-    rgba(107, 164, 41, 1),
-    rgba(83, 128, 32, 1)
-  );
+  background-image: linear-gradient(90deg, rgba(107, 164, 41, 1), rgba(83, 128, 32, 1));
   border-radius: 50%;
   width: 100%;
   aspect-ratio: 1;
@@ -144,8 +139,7 @@
   background-color: var(--color-white);
 }
 
-.riskconsulting-grid__button-link--filled
-  .riskconsulting-grid__button-icon::before {
+.riskconsulting-grid__button-link--filled .riskconsulting-grid__button-icon::before {
   border-top-color: var(--color-green);
   border-right-color: var(--color-green);
 }
@@ -155,13 +149,11 @@
   color: var(--color-green);
 }
 
-.riskconsulting-grid__button-link--filled:hover
-  .riskconsulting-grid__button-icon {
+.riskconsulting-grid__button-link--filled:hover .riskconsulting-grid__button-icon {
   background-color: var(--color-green);
 }
 
-.riskconsulting-grid__button-link--filled:hover
-  .riskconsulting-grid__button-icon::before {
+.riskconsulting-grid__button-link--filled:hover .riskconsulting-grid__button-icon::before {
   border-top-color: var(--color-white);
   border-right-color: var(--color-white);
 }
@@ -214,8 +206,7 @@
   background-color: var(--color-white);
 }
 
-.riskconsulting-grid__button-link:hover
-  .riskconsulting-grid__button-icon::before {
+.riskconsulting-grid__button-link:hover .riskconsulting-grid__button-icon::before {
   border-top-color: var(--color-green);
   border-right-color: var(--color-green);
 }
