@@ -194,7 +194,7 @@
   }
 
   .news-article {
-    padding: var(--layout-padding-tablet);
+    padding: 40px var(--layout-padding-tablet);
   }
 }
 

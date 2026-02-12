@@ -121,8 +121,7 @@ body.livinglife-detail :is([class$="-content__title"], .gas-steps__title) {
   margin-bottom: 0;
 }
 
-body.livinglife-detail
-  :is([class$="-content__title-icon"], .gas-steps__title-icon) {
+body.livinglife-detail :is([class$="-content__title-icon"], .gas-steps__title-icon) {
   display: inline-block;
   width: 36px;
   height: 17.229px;
@@ -203,8 +202,7 @@ body.livinglife-detail
     gap: 12px;
   }
 
-  body.livinglife-detail
-    :is([class$="-content__title-icon"], .gas-steps__title-icon) {
+  body.livinglife-detail :is([class$="-content__title-icon"], .gas-steps__title-icon) {
     width: 28px;
     height: 13px;
   }

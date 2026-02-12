@@ -419,9 +419,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // ============== サンプル①red 取扱商品フェードイン ===============
 document.addEventListener("DOMContentLoaded", function () {
-  const leads = document.querySelectorAll(
-    ".page-block--service .page-block__lead",
-  );
+  const leads = document.querySelectorAll(".page-block--service .page-block__lead");
 
   if (!("IntersectionObserver" in window)) {
     leads.forEach(function (lead) {
@@ -543,9 +541,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ============== リスクコンサルティング画像ポップアップ ===============
 document.addEventListener("DOMContentLoaded", function () {
-  const targetImages = document.querySelectorAll(
-    ".riskconsulting-graph__popup-target",
-  );
+  const targetImages = document.querySelectorAll(".riskconsulting-graph__popup-target");
   const popup = document.querySelector(".riskconsulting-popup");
   const popupImage = document.querySelector(".riskconsulting-popup__image");
   const mobileMedia = window.matchMedia("(max-width: 768px)");

@@ -371,9 +371,7 @@
 
 .hero__title {
   font-size: clamp(28px, 7.8vw, 64px);
-  font-family:
-    "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho", "MS Mincho",
-    serif;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho", "MS Mincho", serif;
   letter-spacing: 0.1em;
   line-height: 1.5;
   margin-bottom: 40px;
@@ -676,11 +674,7 @@
 /* ローディングアニメーション */
 
 .loading {
-  background-image: radial-gradient(
-    circle,
-    rgba(0, 64, 152, 1),
-    rgba(0, 47, 123, 1) 90%
-  );
+  background-image: radial-gradient(circle, rgba(0, 64, 152, 1), rgba(0, 47, 123, 1) 90%);
   position: fixed; /* 画面に固定 */
   inset: 0; /* top/right/bottom/left: 0; と同じ */
   width: 100%;
