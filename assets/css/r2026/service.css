@@ -11,7 +11,7 @@
 }
 
 .page-wrap {
-  max-width: var(--layout-section-width);
+  max-width: var(--layout-section-width-full);
   display: grid;
   grid-template-columns: clamp(180px, 14vw, 220px) minmax(0, 1fr);
   margin: 0 auto;
@@ -203,7 +203,7 @@
 }
 
 .breadcrumb__inner {
-  max-width: var(--breadcrumb-max-width);
+  max-width: var(--breadcrumb-max-width--full);
   margin: 0 auto;
   display: flex;
   align-items: center;

@@ -44,6 +44,9 @@
   /* セクション外枠の最大幅（ヒーロー等の広いエリア） */
   --layout-section-width: 1440px;
 
+  /* セクション外枠の最大幅（サービスページ等フル表示） */
+  --layout-section-width-full: 1920px;
+
   /* コンテンツエリアの最大幅（テキスト・カード等） */
   --layout-content-width: 1180px;
 
