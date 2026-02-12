@@ -1,0 +1,200 @@
+/* News & Topics 一覧ページ用スタイル */
+
+/* ------------------------------
+  キービジュアル（青色）
+------------------------------ */
+.service-kv--news {
+  background-color: var(--color-primary);
+}
+
+.service-kv__img--news {
+  background-image: url(../../images/r2026/carlife/page-kv_carlife.jpg);
+  background-position: center center;
+}
+
+/* ------------------------------
+  パンくず（青色ボーダー）
+------------------------------ */
+.breadcrumb--news .breadcrumb__inner {
+  border-top: 1px solid var(--color-primary);
+}
+
+/* ------------------------------
+  ニュースコンテンツ
+------------------------------ */
+.news-content {
+  padding: 60px 0 80px;
+}
+
+.news-content__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.news-content__title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: var(--color-black);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-black);
+  margin-bottom: 40px;
+}
+
+.news-content__title-icon {
+  display: inline-block;
+  width: 36px;
+  height: 17.229px;
+  background-image: url("../../images/r2026/common/icon-1.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ------------------------------
+  ニュースリスト
+------------------------------ */
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.news-item:first-child {
+  border-top: 1px solid #ddd;
+}
+
+.news-item__link {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 24px 16px;
+  text-decoration: none;
+  color: var(--color-black);
+  transition: background-color 0.3s ease;
+}
+
+.news-item__link:hover {
+  background-color: rgba(0, 91, 172, 0.05);
+}
+
+.news-item__date {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #666;
+  flex-shrink: 0;
+  min-width: 120px;
+}
+
+.news-item__title {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-black);
+}
+
+.news-item__link:hover .news-item__title {
+  color: var(--color-primary);
+}
+
+/* ------------------------------
+  固定ボタン（青色）
+------------------------------ */
+.page-btn--news {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.page-btn--news::before {
+  background-color: var(--color-primary);
+}
+
+.page-btn--news .page-btn__icon {
+  background-color: var(--color-primary);
+}
+
+.page-btn--news:hover {
+  border-color: var(--color-primary);
+}
+
+.page-btn--news:hover .page-btn__icon {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+/* ------------------------------
+  サイドアイコン（青色）
+------------------------------ */
+.page-wrap--news .side-icon__top {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* ------------------------------
+  セクションアイコン（青色）
+------------------------------ */
+.section-icon--news {
+  border-color: var(--color-primary);
+}
+
+/* ------------------------------
+  記事タイトル
+------------------------------ */
+.article-title--news .article-title__text {
+  color: var(--color-primary);
+}
+
+/* ------------------------------
+  メディアクエリ - 1024px以下
+------------------------------ */
+@media screen and (max-width: 1024px) {
+  .news-content__inner {
+    padding: 0 20px;
+  }
+}
+
+/* ------------------------------
+  メディアクエリ - 768px以下
+------------------------------ */
+@media screen and (max-width: 768px) {
+  .news-content {
+    padding: 40px 0 60px;
+  }
+
+  .news-content__title {
+    font-size: 1.5rem;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+
+  .news-content__title-icon {
+    width: 28px;
+    height: 13px;
+  }
+
+  .news-item__link {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 16px;
+  }
+
+  .news-item__date {
+    font-size: 0.875rem;
+    min-width: auto;
+  }
+
+  .news-item__title {
+    font-size: 0.9375rem;
+  }
+}
