@@ -283,8 +283,9 @@
   opacity: 0;
   transform: translateX(-6px);
   transition:
-    opacity 0.2s ease,
-    transform 0.1s ease;
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  will-change: opacity, transform;
 }
 
 .hero--top .hero__btn {
@@ -297,11 +298,12 @@
     color 0.3s ease,
     transform 0.25s ease;
   transform-origin: left center;
+  will-change: transform;
 }
 
-.hero .hero__btn:hover {
-  font-size: 1.4rem;
-  transform: scale(1.06);
+.hero .hero__btn:hover,
+.hero.is-active .hero__btn:hover {
+  transform: translateY(0) scale(1.06);
 }
 
 .hero--carlife.is-active .hero__btn:nth-child(1),
@@ -309,7 +311,7 @@
 .hero--consulting.is-active .hero__btn:nth-child(3),
 .hero--office.is-active .hero__btn:nth-child(4),
 .hero--recruit.is-active .hero__btn:nth-child(5) {
-  font-size: 1.4rem;
+  transform: translateY(0) scale(1.06);
 }
 
 .hero--carlife.is-active .hero__btn:nth-child(1)::after,

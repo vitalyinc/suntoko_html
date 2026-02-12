@@ -37,8 +37,33 @@
             <li class="header__nav-item">
               <a class="header__nav-link" href="/">トップページ</a>
             </li>
-            <li class="header__nav-item">
-              <a class="header__nav-link" href="/service/">事業内容</a>
+            <li class="header__nav-item header__nav-item--has-submenu">
+              <button
+                class="header__nav-link header__nav-trigger"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                事業内容
+              </button>
+              <ul class="header__submenu">
+                <li class="header__submenu-item">
+                  <a class="header__submenu-link" href="/carlife/">カーライフソリューション</a>
+                </li>
+                <li class="header__submenu-item">
+                  <a class="header__submenu-link" href="/livinglife/"
+                    >リビングライフソリューション</a
+                  >
+                </li>
+                <li class="header__submenu-item">
+                  <a class="header__submenu-link" href="/riskconsulting/">リスクコンサルティング</a>
+                </li>
+                <li class="header__submenu-item">
+                  <a class="header__submenu-link" href="/office-residence/"
+                    >オフィス&amp;レジデンス</a
+                  >
+                </li>
+              </ul>
             </li>
             <li class="header__nav-item">
               <a class="header__nav-link" href="/company/">会社情報</a>
@@ -97,7 +122,10 @@
                 </div>
                 <div class="gas-step__content">
                   <div class="gas-step__image">
-                    <img src="../images/r2026/livinglife/gas-start/step-01.jpg" alt="お問い合わせ" />
+                    <img
+                      src="../images/r2026/livinglife/gas-start/step-01.jpg"
+                      alt="お問い合わせ"
+                    />
                   </div>
                   <div class="gas-step__text">
                     <h3 class="gas-step__heading">お問い合わせ</h3>
@@ -183,12 +211,7 @@
                   <span class="gas-form__required">※</span>
                 </label>
                 <div class="gas-form__input-wrap">
-                  <select
-                    id="inquiry-type"
-                    name="inquiry_type"
-                    class="gas-form__select"
-                    required
-                  >
+                  <select id="inquiry-type" name="inquiry_type" class="gas-form__select" required>
                     <option value="">選択してください</option>
                     <option value="new">新規お申し込み</option>
                     <option value="other">その他</option>
