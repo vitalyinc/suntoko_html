@@ -6,13 +6,13 @@
     <title>株式会社サントーコー</title>
     <script>
       (function () {
-        const VISIT_KEY = "suntoko-site-visited";
+        const TOP_VISIT_KEY = "suntoko-top-visited";
         let shouldRunLoading = false;
 
         try {
-          shouldRunLoading = sessionStorage.getItem(VISIT_KEY) !== "1";
+          shouldRunLoading = sessionStorage.getItem(TOP_VISIT_KEY) !== "1";
           if (shouldRunLoading) {
-            sessionStorage.setItem(VISIT_KEY, "1");
+            sessionStorage.setItem(TOP_VISIT_KEY, "1");
           }
         } catch (e) {
           shouldRunLoading = true;
@@ -177,11 +177,7 @@
                 />
               </g>
             </g>
-            <mask
-              id="handwriting-mask"
-              class="handwriting_mask"
-              maskUnits="userSpaceOnUse"
-            >
+            <mask id="handwriting-mask" class="handwriting_mask" maskUnits="userSpaceOnUse">
               <path
                 class="handwriting_mask_line"
                 pathLength="1"
@@ -214,49 +210,28 @@
           <ul class="header__nav">
             <li class="header__nav-item header__nav-item--top">
               <!-- TODO: リンク設定 -->
-              <a class="header__nav-link header__nav-link--top" href="/"
-                >トップページ</a
-              >
+              <a class="header__nav-link header__nav-link--top" href="/">トップページ</a>
             </li>
             <li class="header__nav-item header__nav-item--top">
               <!-- TODO: リンク設定 -->
-              <a
-                class="header__nav-link header__nav-link--top"
-                href="/service/"
-                >事業内容</a
-              >
+              <a class="header__nav-link header__nav-link--top" href="/service/">事業内容</a>
             </li>
             <li class="header__nav-item header__nav-item--top">
               <!-- TODO: リンク設定 -->
-              <a
-                class="header__nav-link header__nav-link--top"
-                href="/company/"
-                >会社情報</a
-              >
+              <a class="header__nav-link header__nav-link--top" href="/company/">会社情報</a>
             </li>
             <li class="header__nav-item header__nav-item--top">
               <!-- TODO: リンク設定 -->
-              <a
-                class="header__nav-link header__nav-link--top"
-                href="/office/list/"
+              <a class="header__nav-link header__nav-link--top" href="/office-residence/list/"
                 >事業所一覧</a
               >
             </li>
             <li class="header__nav-item header__nav-item--top">
               <!-- TODO: リンク設定 -->
-              <a
-                class="header__nav-link header__nav-link--top"
-                href="/recruit/"
-                >採用情報</a
-              >
+              <a class="header__nav-link header__nav-link--top" href="/recruit/">採用情報</a>
             </li>
           </ul>
-          <a
-            class="header__cta"
-            href="/contact/"
-            aria-label="お問い合わせページへ"
-            >お問い合わせ</a
-          >
+          <a class="header__cta" href="/contact/" aria-label="お問い合わせページへ">お問い合わせ</a>
         </nav>
       </div>
     </header>
@@ -268,25 +243,19 @@
             <div class="hero__inner">
               <div class="hero__content">
                 <div class="hero__wrap">
-                  <h1 class="hero__title">
-                    くらしを支える、<br />サントーコー
-                  </h1>
+                  <h1 class="hero__title">くらしを支える、<br />サントーコー</h1>
                   <!-- TODO: リンク設定 -->
                   <div class="hero__btn-group">
                     <a class="hero__btn" href="/carlife/">
-                      <span class="hero__btn-text"
-                        >カーライフソリューション</span
-                      >
+                      <span class="hero__btn-text">カーライフソリューション</span>
                     </a>
                     <a class="hero__btn" href="/livinglife/">
-                      <span class="hero__btn-text"
-                        >リビングライフソリューション</span
-                      >
+                      <span class="hero__btn-text">リビングライフソリューション</span>
                     </a>
                     <a class="hero__btn" href="/riskconsulting/">
                       <span class="hero__btn-text">リスクコンサルティング</span>
                     </a>
-                    <a class="hero__btn" href="/office/residence/">
+                    <a class="hero__btn" href="/office-residence/">
                       <span class="hero__btn-text">オフィス&レジデンス</span>
                     </a>
                     <a class="hero__btn" href="/recruit/">
@@ -304,19 +273,13 @@
             <div class="hero__inner">
               <div class="hero__content">
                 <div class="hero__wrap">
-                  <h1 class="hero__title">
-                    くらしを支える、<br />サントーコー
-                  </h1>
+                  <h1 class="hero__title">くらしを支える、<br />サントーコー</h1>
                   <div class="hero__btn-group">
                     <a class="hero__btn" href="/carlife/">
-                      <span class="hero__btn-text"
-                        >カーライフソリューション</span
-                      >
+                      <span class="hero__btn-text">カーライフソリューション</span>
                     </a>
                     <a class="hero__btn" href="/livinglife/">
-                      <span class="hero__btn-text"
-                        >リビングライフソリューション</span
-                      >
+                      <span class="hero__btn-text">リビングライフソリューション</span>
                     </a>
                     <a class="hero__btn" href="/riskconsulting/">
                       <span class="hero__btn-text">リスクコンサルティング</span>
@@ -339,20 +302,14 @@
             <div class="hero__inner">
               <div class="hero__content">
                 <div class="hero__wrap">
-                  <h1 class="hero__title">
-                    くらしを支える、<br />サントーコー
-                  </h1>
+                  <h1 class="hero__title">くらしを支える、<br />サントーコー</h1>
                   <!-- TODO: リンク設定 -->
                   <div class="hero__btn-group">
                     <a class="hero__btn" href="/carlife/">
-                      <span class="hero__btn-text"
-                        >カーライフソリューション</span
-                      >
+                      <span class="hero__btn-text">カーライフソリューション</span>
                     </a>
                     <a class="hero__btn" href="/livinglife/">
-                      <span class="hero__btn-text"
-                        >リビングライフソリューション</span
-                      >
+                      <span class="hero__btn-text">リビングライフソリューション</span>
                     </a>
                     <a class="hero__btn" href="/riskconsulting/">
                       <span class="hero__btn-text">リスクコンサルティング</span>
@@ -375,20 +332,14 @@
             <div class="hero__inner">
               <div class="hero__content">
                 <div class="hero__wrap">
-                  <h1 class="hero__title">
-                    くらしを支える、<br />サントーコー
-                  </h1>
+                  <h1 class="hero__title">くらしを支える、<br />サントーコー</h1>
                   <!-- TODO: リンク設定 -->
                   <div class="hero__btn-group">
                     <a class="hero__btn" href="/carlife/">
-                      <span class="hero__btn-text"
-                        >カーライフソリューション</span
-                      >
+                      <span class="hero__btn-text">カーライフソリューション</span>
                     </a>
                     <a class="hero__btn" href="/livinglife/">
-                      <span class="hero__btn-text"
-                        >リビングライフソリューション</span
-                      >
+                      <span class="hero__btn-text">リビングライフソリューション</span>
                     </a>
                     <a class="hero__btn" href="/riskconsulting/">
                       <span class="hero__btn-text">リスクコンサルティング</span>
@@ -411,20 +362,14 @@
             <div class="hero__inner">
               <div class="hero__content">
                 <div class="hero__wrap">
-                  <h1 class="hero__title">
-                    くらしを支える、<br />サントーコー
-                  </h1>
+                  <h1 class="hero__title">くらしを支える、<br />サントーコー</h1>
                   <!-- TODO: リンク設定 -->
                   <div class="hero__btn-group">
                     <a class="hero__btn" href="/carlife/">
-                      <span class="hero__btn-text"
-                        >カーライフソリューション</span
-                      >
+                      <span class="hero__btn-text">カーライフソリューション</span>
                     </a>
                     <a class="hero__btn" href="/livinglife/">
-                      <span class="hero__btn-text"
-                        >リビングライフソリューション</span
-                      >
+                      <span class="hero__btn-text">リビングライフソリューション</span>
                     </a>
                     <a class="hero__btn" href="/riskconsulting/">
                       <span class="hero__btn-text">リスクコンサルティング</span>
@@ -447,20 +392,14 @@
             <div class="hero__inner">
               <div class="hero__content">
                 <div class="hero__wrap">
-                  <h1 class="hero__title">
-                    くらしを支える、<br />サントーコー
-                  </h1>
+                  <h1 class="hero__title">くらしを支える、<br />サントーコー</h1>
                   <!-- TODO: リンク設定 -->
                   <div class="hero__btn-group">
                     <a class="hero__btn" href="/carlife/">
-                      <span class="hero__btn-text"
-                        >カーライフソリューション</span
-                      >
+                      <span class="hero__btn-text">カーライフソリューション</span>
                     </a>
                     <a class="hero__btn" href="/livinglife/">
-                      <span class="hero__btn-text"
-                        >リビングライフソリューション</span
-                      >
+                      <span class="hero__btn-text">リビングライフソリューション</span>
                     </a>
                     <a class="hero__btn" href="/riskconsulting/">
                       <span class="hero__btn-text">リスクコンサルティング</span>
@@ -497,9 +436,7 @@
             <div class="top-news">
               <div class="top-news__left">
                 <!-- TODO: リンク設定 -->
-                <a class="top-button top-button--blue" href="/news/"
-                  >News & Topic一覧</a
-                >
+                <a class="top-button top-button--blue" href="/news/">News & Topic一覧</a>
               </div>
               <div class="top-news__right">
                 <ul class="top-news__list">
@@ -567,9 +504,7 @@
                   </li>
                   <li class="footer__nav-item">
                     <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="/office/list/"
-                      >事業所一覧</a
-                    >
+                    <a class="footer__nav-link" href="/office/list/">事業所一覧</a>
                   </li>
                   <li class="footer__nav-item">
                     <!-- TODO: リンク設定 -->
@@ -583,21 +518,15 @@
                 <ul class="footer__nav">
                   <li class="footer__nav-item fotoer__nav-item--policy">
                     <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="/guide/"
-                      >ご利用にあたって</a
-                    >
+                    <a class="footer__nav-link" href="/guide/">ご利用にあたって</a>
                   </li>
                   <li class="footer__nav-item fotoer__nav-item--policy">
                     <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="/privacy-policy/"
-                      >プライバシーポリシー</a
-                    >
+                    <a class="footer__nav-link" href="/privacy-policy/">プライバシーポリシー</a>
                   </li>
                   <li class="footer__nav-item fotoer__nav-item--policy">
                     <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="/sitemap/"
-                      >サイトマップ</a
-                    >
+                    <a class="footer__nav-link" href="/sitemap/">サイトマップ</a>
                   </li>
                 </ul>
               </nav>
@@ -609,6 +538,6 @@
         <p>&copy; 株式会社サントーコー All Rights Reserved.</p>
       </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

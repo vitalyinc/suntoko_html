@@ -87,9 +87,10 @@
 
 .service-kv {
   color: var(--color-white);
-  padding: 2rem 2rem 0;
   width: 100%;
   overflow: hidden;
+  padding-bottom: calc((40 / 1440) * 100vw);
+  padding-left: 2rem;
 }
 
 /* ------------------------------
@@ -119,24 +120,27 @@
 }
 
 .service-kv__box {
-  padding: calc((240 / 1920) * 100%) 0 calc((500 / 1920) * 100%);
   position: relative;
   z-index: 5;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-kv__lead {
   font-size: clamp(0.875rem, 1.5vw, 2rem);
   font-weight: 600;
+  margin-top: calc((120 / 1440) * 100vw);
 }
 
 .service-kv__title {
   display: flex;
   flex-direction: column;
+  line-height: 1;
+  height: calc((250 / 1440) * 100vw);
 }
 
 .service-kv__title > span {
   font-size: clamp(2.6rem, 10.6vw, 13.4rem);
-  line-height: 1;
   text-wrap: nowrap;
 }
 
@@ -144,18 +148,19 @@
   padding-top: 1rem;
   font-size: clamp(1rem, -0.6rem + 3.33vw, 3rem);
   font-weight: 700;
+  margin-top: calc((40 / 1440) * 100vw);
 }
 
 .service-kv__wrap {
   position: absolute;
-  top: -14%;
+  top: -4%;
   right: 53%;
 }
 
 .service-kv__img {
   background-size: cover;
   background-repeat: no-repeat;
-  width: clamp(23rem, 51vw, 63rem);
+  width: clamp(23rem, 53vw, 63rem);
   aspect-ratio: 1/1;
   border-radius: 50%;
   position: absolute;
@@ -179,15 +184,13 @@
 }
 
 .service-kv__img--office-residence {
-  background-image: url(../../images/r2026/office-residence/page-kv_office-residence.jpg);
+  background-image: url(/assets/images/r2026/office-residence/page-kv_office-residence.jpg);
   background-position: center center;
 }
 
 .kv-bottom-text {
   font-size: clamp(0.875rem, 1.2vw, 1.5rem);
-  position: absolute;
-  left: 0;
-  bottom: 4%;
+  margin-top: calc((120 / 1440) * 100vw);
 }
 /* ------------------------------
   パンくずリスト
@@ -245,11 +248,15 @@
   gap: 0.3125rem;
 }
 
+.section-base {
+  padding: 5rem 0 0 0;
+}
+
 /* ------------------------------
   サービス紹介
 ------------------------------ */
 
-.section-wrap {
+.section-intro {
   padding-left: calc((160 / 1440) * 100%);
 }
 
@@ -318,6 +325,10 @@
   background-color: var(--color-red);
 }
 
+.page-intro--livinglife {
+  background-color: var(--color-orange);
+}
+
 .page-block--livinglife {
   background-color: var(--color-orange);
 }
@@ -342,6 +353,7 @@
 
 .section-wrap {
   padding-top: 6rem;
+  padding-left: calc((160 / 1440) * 100%);
 }
 
 .section-top-about {
@@ -504,11 +516,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-image: linear-gradient(
-    90deg,
-    rgba(230, 0, 18, 1),
-    rgba(182, 0, 5, 1)
-  );
+  background-image: linear-gradient(90deg, rgba(230, 0, 18, 1), rgba(182, 0, 5, 1));
   color: var(--color-white);
   border: 2px solid var(--color-white);
   font-weight: 600;
@@ -525,19 +533,11 @@
 }
 
 .feature-item--livinglife {
-  background-image: linear-gradient(
-    90deg,
-    rgba(230, 119, 0, 1),
-    rgba(204, 105, 0, 1)
-  );
+  background-image: linear-gradient(90deg, rgba(230, 119, 0, 1), rgba(204, 105, 0, 1));
 }
 
 .feature-item--riskconsulting {
-  background-image: linear-gradient(
-    90deg,
-    rgba(107, 164, 41, 1),
-    rgba(83, 128, 32, 1)
-  );
+  background-image: linear-gradient(90deg, rgba(107, 164, 41, 1), rgba(83, 128, 32, 1));
 }
 
 .feature__grid .feature-item:nth-child(1),
@@ -715,12 +715,20 @@
     padding: 0;
   }
 
+  .section-intro {
+    padding: 0;
+  }
+
   .section-wrap--service {
     padding-top: 3rem;
   }
 
+  .section-base {
+    padding: 2rem 0 0 0;
+  }
+
   .service-kv {
-    padding: 1.5rem 1rem 1.5rem;
+    padding: 1.5rem 1.125rem 1.5rem;
   }
 
   .service-kv__inner {
@@ -747,10 +755,14 @@
     padding: 0;
   }
 
+  .service-kv__title {
+    height: calc((450 / 1440) * 100vw);
+  }
+
   .kv-bottom-text {
     grid-row: 3;
     position: static;
-    margin-top: 1rem;
+    margin-top: 4rem;
   }
 
   .service-kv__img {
