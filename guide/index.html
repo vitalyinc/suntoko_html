@@ -3,25 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>株式会社サントーコー</title>
+    <title>ご利用にあたって | 株式会社サントーコー</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Maru+Gothic&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/r2026/sanitize.css" />
-    <link rel="stylesheet" href="css/r2026/style.css" />
-    <link rel="stylesheet" href="css/r2026/top.css" />
-    <link rel="stylesheet" href="css/r2026/header.css" />
-    <link rel="stylesheet" href="css/r2026/footer.css" />
+    <link rel="stylesheet" href="../assets/css/r2026/sanitize.css" />
+    <link rel="stylesheet" href="../assets/css/r2026/variables.css" />
+    <link rel="stylesheet" href="../assets/css/r2026/style.css" />
+    <link rel="stylesheet" href="../assets/css/r2026/header.css" />
+    <link rel="stylesheet" href="../assets/css/r2026/footer.css" />
+    <link rel="stylesheet" href="../assets/css/r2026/legal.css" />
   </head>
   <body>
     <header class="header">
       <div class="header__inner">
         <a class="header__logo" href="/">
           <img
-            src="images/r2026/logo/logo.png"
+            src="../assets/images/r2026/logo/logo.png"
             alt="株式会社サントーコーENEOSグループ"
             class="header__logo-img"
           />
@@ -37,33 +38,132 @@
               <a class="header__nav-link" href="/">トップページ</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="/service.html">事業内容</a>
+              <a class="header__nav-link" href="/service/">事業内容</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="/company.html">会社情報</a>
+              <a class="header__nav-link" href="/company/">会社情報</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="office-list.html">事業所一覧</a>
+              <a class="header__nav-link" href="/office/list/">事業所一覧</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="recruit.html">採用情報</a>
+              <a class="header__nav-link" href="/recruit/">採用情報</a>
             </li>
           </ul>
-          <a class="header__cta" href="contact.html" aria-label="お問い合わせページへ"
-            >お問い合わせ</a
-          >
+          <a class="header__cta" href="/contact/" aria-label="お問い合わせページへ">お問い合わせ</a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <p class="getting-ready">準備中</p>
+    <main class="main">
+      <section class="legal-hero">
+        <div class="legal-hero__inner">
+          <h1 class="legal-hero__title">ご利用にあたって</h1>
+          <p class="legal-hero__subtitle">サイトご利用条件</p>
+        </div>
+      </section>
+
+      <nav class="legal-breadcrumb" aria-label="パンくず">
+        <div class="legal-breadcrumb__inner">
+          <a href="/">Top</a>
+          <span class="legal-breadcrumb__sep">&gt;</span>
+          <span>ご利用にあたって</span>
+        </div>
+      </nav>
+
+      <article class="legal-main">
+        <div class="legal-main__inner">
+          <p class="legal-lead">
+            このウェブサイト
+            <a href="https://www.suntoko.co.jp" target="_blank" rel="noopener noreferrer"
+              >https://www.suntoko.co.jp</a
+            >（以下「当ウェブサイト」といいます）は、株式会社サントーコー（以下「当社」といいます）が管理・運営するウェブサイトです。当ウェブサイトのご利用にあたっては、下記の事項についてご確認ください。なお、当ウェブサイトをご利用された場合には、この「サイトご利用条件」に同意いただいたものとさせていただきます。
+          </p>
+
+          <section class="legal-section">
+            <h2 class="legal-section__title">著作権について</h2>
+            <p>
+              当ウェブサイト内のコンテンツ（情報・資料・画像・音声・文章など）の著作権は、当社、関連会社またはコンテンツの供給者に帰属しております。個人的な利用または著作権法により認められた利用を行う場合を除き、営利、非営利を問わず、またいかなる媒体においても、事前に当社の許諾を得ることなしに、複製、転用、改変、公衆送信、販売などの行為を行うことはできません。
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2 class="legal-section__title">商標について</h2>
+            <p>
+              当ウェブサイト上に記載・掲載されている商標・ロゴマーク・商号は、当社または各社の登録商標または商標です。商標法またはその他の法律により認められている場合を除き、当社または各社の事前の承諾なしに、これらを使用等することはできません。
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2 class="legal-section__title">当サイトへのリンクについて</h2>
+            <p>
+              当サイトへのリンクは、次の条件を満たしている限り、原則として自由（リンクフリー）です。申請の必要はございませんが、当社の趣旨に合わない場合や当社の事業や信用を害するおそれがある場合は、事後においてもリンク自体をお断りいたします。
+            </p>
+            <ul class="legal-list">
+              <li>リンクを設定する箇所には、当サイトへのリンクである旨を明記してください。</li>
+              <li>
+                いわゆるフレームリンクなど、当サイトの内容を他のコンテンツと組み合わせて表示するリンク、またはリンク元のホームページの一部として表示される形のリンクはお断りします。
+              </li>
+              <li>その他、一般に当社の信用にかかわるようなリンクの仕方はご遠慮ください。</li>
+            </ul>
+          </section>
+
+          <section class="legal-section">
+            <h2 class="legal-section__title">リンク先のウェブサイトについて</h2>
+            <p>
+              当社は、当ウェブサイトにリンクを設定している他の事業者または個人のウェブサイトの内容、あるいは安全性等について保証するものではなく、このようなリンクを設定したことにより、当該リンク先の事業者または個人のウェブサイトを推奨することを意図しておりません。当該リンク先へのアクセスにあたっては、リンク先のウェブサイトの内容および利用条件等をよくご確認いただいた上で、閲覧または利用を行ってください。
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2 class="legal-section__title">ご利用環境</h2>
+            <p>当ウェブサイトを快適にご利用いただくため、以下の環境を推奨いたします。</p>
+            <ul class="legal-list">
+              <li>Windows OS：Windows 7 以上</li>
+              <li>Macintosh：Mac OS X バージョン 10.5 以上</li>
+              <li>
+                対象ブラウザ（Windows）：Internet Explorer 10.0 以降、Firefox、Google Chrome
+                最新バージョン
+              </li>
+              <li>
+                対象ブラウザ（Macintosh）：Safari 5.0x 以降、Firefox、Google Chrome 最新バージョン
+              </li>
+              <li>PDF の閲覧：Adobe Reader</li>
+            </ul>
+            <p class="legal-note">
+              上記以外の旧ブラウザおよびプラグインをご使用の場合は、バージョンアップのご対応をお願いいたします。
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2 class="legal-section__title">免責事項</h2>
+            <ul class="legal-list">
+              <li>
+                当社は、当ウェブサイト上のコンテンツ内容の妥当性や正確性について保証するものではなく、一切の責任を負いません。
+              </li>
+              <li>
+                当ウェブサイト上のコンテンツや URL
+                は、予告なしに変更または中止されることがあります。
+              </li>
+              <li>
+                理由の如何にかかわらず、情報の変更および当ウェブサイトの運用の中断または中止によって生じるいかなる損害についても、当社は責任を負いません。
+              </li>
+              <li>
+                当ウェブサイトから外部のウェブサイトにリンクされている場合は、当該リンク先の利用条件をご確認ください。当社は、外部リンク先の情報について一切の責任を負いかねます。
+              </li>
+              <li>
+                当ウェブサイトは、日本国に居住されるお客様を対象としております。日本国外の国または地域からの利用に関して、当社は何ら責任を負いません。
+              </li>
+            </ul>
+          </section>
+        </div>
+      </article>
     </main>
+
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__box">
           <div class="footer__left">
-            <!-- TODO: リンク設定 -->
             <a class="footer__logo" href="/">株式会社サントーコー</a>
             <div class="footer__address">
               <p>〒221-0835</p>
@@ -82,24 +182,19 @@
               <nav>
                 <ul class="footer__nav">
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
                     <a class="footer__nav-link" href="/">トップページ</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="service.html">事業内容</a>
+                    <a class="footer__nav-link" href="/service/">事業内容</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="company.html">会社情報</a>
+                    <a class="footer__nav-link" href="/company/">会社情報</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="office-list.html">事業所一覧</a>
+                    <a class="footer__nav-link" href="/office/list/">事業所一覧</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="recruit.html">採用情報</a>
+                    <a class="footer__nav-link" href="/recruit/">採用情報</a>
                   </li>
                 </ul>
               </nav>
@@ -107,17 +202,14 @@
             <div>
               <nav>
                 <ul class="footer__nav">
-                  <li class="footer__nav-item fotoer__nav-item--policy">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="guide.html">ご利用にあたって</a>
+                  <li class="footer__nav-item footer__nav-item--policy">
+                    <a class="footer__nav-link" href="/guide/">ご利用にあたって</a>
                   </li>
-                  <li class="footer__nav-item fotoer__nav-item--policy">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="privacy-policy.html">プライバシーポリシー</a>
+                  <li class="footer__nav-item footer__nav-item--policy">
+                    <a class="footer__nav-link" href="/privacy-policy/">プライバシーポリシー</a>
                   </li>
-                  <li class="footer__nav-item fotoer__nav-item--policy">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="sitemap.html">サイトマップ</a>
+                  <li class="footer__nav-item footer__nav-item--policy">
+                    <a class="footer__nav-link" href="/sitemap/">サイトマップ</a>
                   </li>
                 </ul>
               </nav>
@@ -125,10 +217,11 @@
           </div>
         </div>
       </div>
-      <div class="footer__copyright">
-        <p>&copy; 株式会社サントーコー All Rights Reserved.</p>
-      </div>
     </footer>
-    <script src="script.js"></script>
+    <div class="footer__copyright">
+      <p>&copy; 株式会社サントーコー All Rights Reserved.</p>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
   </body>
 </html>
