@@ -35,5 +35,25 @@
   --breadcrumb-gap: 7px;
   --breadcrumb-font-size: 1rem;
   --breadcrumb-line-height: 1.4;
-  --breadcrumb-max-width: 1388px;
+  --breadcrumb-max-width: var(--layout-content-width);
+
+  /* ==============================================
+     Layout - サイト全体で統一するコンテンツ幅
+     ============================================== */
+
+  /* セクション外枠の最大幅（ヒーロー等の広いエリア） */
+  --layout-section-width: 1440px;
+
+  /* コンテンツエリアの最大幅（テキスト・カード等） */
+  --layout-content-width: 1180px;
+
+  /* 左右の余白 */
+  --layout-padding-desktop: 60px;
+  --layout-padding-tablet: 40px;
+  --layout-padding-mobile: 20px;
+
+  /* セクション上下の余白 */
+  --layout-section-padding-y-desktop: 80px;
+  --layout-section-padding-y-tablet: 60px;
+  --layout-section-padding-y-mobile: 40px;
 }

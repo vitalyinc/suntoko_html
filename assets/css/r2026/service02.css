@@ -43,9 +43,9 @@
 }
 
 .kv__inner {
-  max-width: 1920px;
+  max-width: var(--layout-section-width);
   margin: 0 auto;
-  padding: 2rem calc((80 / 1440) * 100%);
+  padding: 2rem var(--layout-padding-desktop);
   color: var(--color-white);
   height: 100%;
 }
@@ -118,7 +118,7 @@
 }
 
 .section__inner {
-  max-width: 1920px;
+  max-width: var(--layout-section-width);
   margin: 0 auto;
 }
 
@@ -492,9 +492,9 @@
 }
 
 .footer__inner {
-  max-width: 1800px;
+  max-width: var(--layout-section-width);
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 var(--layout-padding-desktop);
 }
 
 .footer__box {

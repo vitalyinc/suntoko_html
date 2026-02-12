@@ -3,26 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>株式会社サントーコー</title>
+    <title>ガス料金について | 株式会社サントーコー</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Maru+Gothic&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@500&family=Zen+Maru+Gothic&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/r2026/sanitize.css" />
-    <link rel="stylesheet" href="../css/r2026/variables.css" />
-    <link rel="stylesheet" href="../css/r2026/style.css" />
-    <link rel="stylesheet" href="../css/r2026/livinglife-detail.css" />
-    <link rel="stylesheet" href="../css/r2026/header.css" />
-    <link rel="stylesheet" href="../css/r2026/footer.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/sanitize.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/variables.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/style.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/livinglife-detail.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/header.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/footer.css" />
   </head>
-  <body>
+  <body class="livinglife-detail">
     <header class="header">
       <div class="header__inner">
         <a class="header__logo" href="/">
           <img
-            src="../images/r2026/logo/logo.png"
+            src="../../assets/images/r2026/logo/logo.png"
             alt="株式会社サントーコーENEOSグループ"
             class="header__logo-img"
           />
@@ -38,36 +38,134 @@
               <a class="header__nav-link" href="/">トップページ</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="/service.html">事業内容</a>
+              <a class="header__nav-link" href="/service/">事業内容</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="/company.html">会社情報</a>
+              <a class="header__nav-link" href="/company/">会社情報</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="office-list.html">事業所一覧</a>
+              <a class="header__nav-link" href="/office-list/">事業所一覧</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="recruit.html">採用情報</a>
+              <a class="header__nav-link" href="/recruit/">採用情報</a>
             </li>
           </ul>
-          <a
-            class="header__cta"
-            href="contact.html"
-            aria-label="お問い合わせページへ"
-            >お問い合わせ</a
-          >
+          <a class="header__cta" href="/contact/">お問い合わせ</a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <p class="getting-ready">準備中</p>
+    <main class="main">
+      <section class="rates-hero">
+        <div class="rates-hero__inner">
+          <div class="rates-hero__content">
+            <p class="rates-hero__lead">くらしを支える、サントーコー</p>
+            <h1 class="rates-hero__title">Living Life Solution</h1>
+            <p class="rates-hero__sub">ガス料金について</p>
+          </div>
+          <p class="rates-hero__bottom">Live well, feel good</p>
+        </div>
+      </section>
+
+      <nav class="rates-breadcrumb" aria-label="パンくず">
+        <div class="rates-breadcrumb__inner">
+          <a href="/">Top</a>
+          <span class="rates-breadcrumb__sep">&gt;</span>
+          <a href="../">リビングライフソリューション</a>
+          <span class="rates-breadcrumb__sep">&gt;</span>
+          <span>ガス料金について</span>
+        </div>
+      </nav>
+
+      <section class="rates-content">
+        <div class="rates-content__inner">
+          <h2 class="rates-content__title">
+            <span class="rates-content__title-icon"></span>
+            ガス料金について
+          </h2>
+
+          <div class="rates-guide">
+            <p class="rates-guide__heading">当社のプロパンガス料金の計算についてご案内いたします。</p>
+
+            <section class="rates-guide__card">
+              <h3 class="rates-guide__label">家庭用プロパンガス料金の計算のしかた</h3>
+
+              <div class="rates-guide__formula" aria-label="ガス料金の計算式">
+                <div class="rates-guide__term rates-guide__term--base">基本料金</div>
+                <div class="rates-guide__operator" aria-hidden="true">＋</div>
+                <div class="rates-guide__term rates-guide__term--unit">
+                  <span class="rates-guide__term-main">従量料金</span>
+                  <span class="rates-guide__term-sub">（従量単価 × 使用量m³）</span>
+                </div>
+                <div class="rates-guide__operator" aria-hidden="true">＋</div>
+                <div class="rates-guide__term rates-guide__term--tax">消費税</div>
+                <div class="rates-guide__operator" aria-hidden="true">＝</div>
+                <div class="rates-guide__term rates-guide__term--total">ガス料金</div>
+              </div>
+
+              <ul class="rates-guide__notes">
+                <li>
+                  基本料金は、供給設備、保安維持、検針・集金費用及びその他固定的に生じる管理費用でLPガスを使用していなくても毎月定額でお支払いいただく料金です。
+                </li>
+                <li>
+                  従量料金は、原料費・販売経費等の費用で、LPガスの使用量に応じてお支払いいただく料金です。
+                </li>
+              </ul>
+
+              <h3 class="rates-guide__label">当社の標準料金　※価格は全て税込み金額です</h3>
+
+              <div class="rates-guide__price-wrap">
+                <table class="rates-guide__price-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">基本料金</th>
+                      <th scope="col" colspan="2">従量単価</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="rates-guide__base-fee">2,530円／月</td>
+                      <td>0～10.0 m³</td>
+                      <td>847 円／m³</td>
+                    </tr>
+                    <tr>
+                      <td>10.1～20.0 m³</td>
+                      <td>759 円／m³</td>
+                    </tr>
+                    <tr>
+                      <td>20.1 m³～</td>
+                      <td>671 円／m³</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <ul class="rates-guide__notes rates-guide__notes--detail">
+                <li>2024年10月現在の標準料金です。（原料価格の変動により、料金を変更する場合がございます）</li>
+                <li>戸建て物件および集合物件のお客様に適用する料金です。</li>
+                <li>設備の無償貸与契約を締結している場合は別料金となります。</li>
+                <li>地域や市況に応じて料金が異なる場合がございます。</li>
+              </ul>
+
+              <p class="rates-guide__cta">
+                <a
+                  class="rates-guide__button"
+                  href="https://www.suntoko.co.jp/wp/wp-content/uploads/2024/10/pricelist20241011.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >料金表はこちら</a
+                >
+              </p>
+            </section>
+          </div>
+        </div>
+      </section>
     </main>
+
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__box">
           <div class="footer__left">
-            <!-- TODO: リンク設定 -->
             <a class="footer__logo" href="/">株式会社サントーコー</a>
             <div class="footer__address">
               <p>〒221-0835</p>
@@ -86,26 +184,19 @@
               <nav>
                 <ul class="footer__nav">
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
                     <a class="footer__nav-link" href="/">トップページ</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="service.html">事業内容</a>
+                    <a class="footer__nav-link" href="/service/">事業内容</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="company.html">会社情報</a>
+                    <a class="footer__nav-link" href="/company/">会社情報</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="office-list.html"
-                      >事業所一覧</a
-                    >
+                    <a class="footer__nav-link" href="/office-list/">事業所一覧</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="recruit.html">採用情報</a>
+                    <a class="footer__nav-link" href="/recruit/">採用情報</a>
                   </li>
                 </ul>
               </nav>
@@ -114,22 +205,13 @@
               <nav>
                 <ul class="footer__nav">
                   <li class="footer__nav-item fotoer__nav-item--policy">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="guide.html"
-                      >ご利用にあたって</a
-                    >
+                    <a class="footer__nav-link" href="/guide/">ご利用にあたって</a>
                   </li>
                   <li class="footer__nav-item fotoer__nav-item--policy">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="privacy-policy.html"
-                      >プライバシーポリシー</a
-                    >
+                    <a class="footer__nav-link" href="/privacy-policy/">プライバシーポリシー</a>
                   </li>
                   <li class="footer__nav-item fotoer__nav-item--policy">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="sitemap.html"
-                      >サイトマップ</a
-                    >
+                    <a class="footer__nav-link" href="/sitemap/">サイトマップ</a>
                   </li>
                 </ul>
               </nav>
@@ -137,10 +219,10 @@
           </div>
         </div>
       </div>
-      <div class="footer__copyright">
-        <p>&copy; 株式会社サントーコー All Rights Reserved.</p>
-      </div>
     </footer>
-    <script src="script.js"></script>
+    <div class="footer__copyright">
+      <p>&copy; 株式会社サントーコー All Rights Reserved.</p>
+    </div>
+    <script src="../../assets/js/script.js"></script>
   </body>
 </html>

@@ -21,13 +21,13 @@ body.livinglife-detail [class$="-hero"]::before {
 
 body.livinglife-detail [class$="-hero__inner"] {
   position: relative;
-  max-width: 1512px;
+  max-width: var(--layout-section-width);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 216px 65px 60px;
+  padding: 216px var(--layout-padding-desktop) 60px;
   height: 100%;
 }
 
@@ -102,24 +102,15 @@ body.livinglife-detail [class$="-breadcrumb__sep"] {
 
 body.livinglife-detail :is([class$="-content"], .gas-steps) {
   background-color: var(--color-white);
-  padding: 60px 62px 80px;
+  padding: 60px var(--layout-padding-desktop) 80px;
 }
 
 body.livinglife-detail :is([class$="-content__inner"], .gas-steps__inner) {
-  max-width: 1388px;
+  max-width: var(--layout-content-width);
   margin: 0 auto;
 }
 
-/* Dense detail pages look too wide at 1388px, so align them with 1180px content width */
-body.livinglife-detail
-  :is(
-    .equip-content__inner,
-    .emergency-content__inner,
-    .tips-content__inner,
-    .reform-content__inner
-  ) {
-  max-width: 1180px;
-}
+/* All detail page content uses the standard content width */
 
 body.livinglife-detail :is([class$="-content__title"], .gas-steps__title) {
   display: flex;
@@ -153,7 +144,8 @@ body.livinglife-detail
     .emergency-disaster__text,
     .gas-step__description,
     .gas-contact__intro,
-    .reform-section__text
+    .reform-section__text,
+    .license-section__text
   ) {
   line-height: 1.9;
   letter-spacing: 0.01em;
@@ -168,7 +160,8 @@ body.livinglife-detail
     .emergency-section__header,
     .tips-item__header,
     .reform-case__header,
-    .reform-section__header
+    .reform-section__header,
+    .license-section__header
   ) {
   display: inline-block;
   align-self: flex-start;
@@ -181,7 +174,7 @@ body.livinglife-detail
   }
 
   body.livinglife-detail [class$="-hero__inner"] {
-    padding: 120px 40px 40px;
+    padding: 120px var(--layout-padding-tablet) 40px;
   }
 
   body.livinglife-detail [class$="-hero__title"] {
@@ -194,7 +187,7 @@ body.livinglife-detail
   }
 
   body.livinglife-detail :is([class$="-content"], .gas-steps) {
-    padding: 40px;
+    padding: 40px var(--layout-padding-tablet);
   }
 }
 
@@ -204,7 +197,7 @@ body.livinglife-detail
   }
 
   body.livinglife-detail [class$="-hero__inner"] {
-    padding: 80px 20px 30px;
+    padding: 80px var(--layout-padding-mobile) 30px;
   }
 
   body.livinglife-detail :is([class$="-hero__lead"], [class$="-hero__sub"]) {
@@ -231,7 +224,7 @@ body.livinglife-detail
   }
 
   body.livinglife-detail :is([class$="-content"], .gas-steps) {
-    padding: 30px 20px 50px;
+    padding: 30px var(--layout-padding-mobile) 50px;
   }
 
   body.livinglife-detail :is([class$="-content__title"], .gas-steps__title) {
@@ -247,6 +240,471 @@ body.livinglife-detail
 
 /* ===== Equipment ===== */
 /* ガス機器・住宅設備機器などの販売ページ */
+
+/* ===== Gas Rates / Gas License ===== */
+.rates-hero {
+  background-image: url("../../images/r2026/livinglife/page-kv_livinglife.jpg");
+}
+
+.license-hero {
+  background-image: url("../../images/r2026/livinglife/page-kv_livinglife.jpg");
+}
+
+/* ------------------------------
+  Rates Guide
+------------------------------ */
+.rates-content__title,
+.license-content__title {
+  margin-bottom: 48px;
+}
+
+.rates-guide,
+.license-certificate {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 64px 0 80px;
+  margin: 0 auto;
+}
+
+.rates-guide__heading,
+.license-certificate__heading {
+  display: inline-block;
+  background-color: var(--color-orange);
+  padding: 8px 16px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: var(--color-white);
+  margin: 0;
+}
+
+.rates-guide__card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.rates-guide__label {
+  display: inline-block;
+  background-color: var(--color-orange);
+  padding: 8px 16px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: var(--color-white);
+  margin: 0;
+}
+
+.rates-guide__formula {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1.3fr)
+    auto
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr);
+  align-items: stretch;
+  gap: 10px;
+  margin: 2px 0 4px;
+}
+
+.rates-guide__term {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 84px;
+  padding: 12px 10px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.35;
+  text-align: center;
+  color: var(--color-black);
+  border: 1px solid rgba(35, 24, 21, 0.15);
+  border-radius: 8px;
+}
+
+.rates-guide__term--base {
+  background-color: #fff5d8;
+}
+
+.rates-guide__term--unit {
+  background-color: #e8f2ff;
+}
+
+.rates-guide__term--tax {
+  background-color: #eaf9e8;
+}
+
+.rates-guide__term--total {
+  background-color: #fff0df;
+}
+
+.rates-guide__term-sub {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.rates-guide__operator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--color-black);
+  min-width: 20px;
+}
+
+.rates-guide__notes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rates-guide__notes li {
+  position: relative;
+  padding-left: 1.1em;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--color-black);
+}
+
+.rates-guide__notes li::before {
+  content: "○";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.rates-guide__price-wrap {
+  margin: 6px 0 4px;
+  overflow-x: auto;
+}
+
+.rates-guide__price-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid rgba(35, 24, 21, 0.15);
+  overflow: hidden;
+  background-color: var(--color-white);
+}
+
+.rates-guide__price-table th,
+.rates-guide__price-table td {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-black);
+  border-right: 1px solid rgba(35, 24, 21, 0.15);
+  border-bottom: 1px solid rgba(35, 24, 21, 0.15);
+  padding: 12px 10px;
+  line-height: 1.5;
+}
+
+.rates-guide__price-table tr:last-child td {
+  border-bottom: none;
+}
+
+.rates-guide__price-table tr td:last-child,
+.rates-guide__price-table tr th:last-child {
+  border-right: none;
+}
+
+.rates-guide__price-table thead th {
+  font-size: 1.375rem;
+}
+
+.rates-guide__price-table thead th:first-child {
+  width: 26%;
+  background-color: #fff5d8;
+}
+
+.rates-guide__price-table thead th:last-child {
+  background-color: #e8f2ff;
+}
+
+.rates-guide__price-table tbody td {
+  font-size: 1.125rem;
+}
+
+.rates-guide__price-table tbody td:nth-child(2),
+.rates-guide__price-table tbody td:nth-child(3) {
+  background-color: #f2f7ff;
+}
+
+.rates-guide__base-fee {
+  background-color: #fff5d8;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  white-space: nowrap;
+}
+
+.rates-guide__notes--detail {
+  margin-top: 4px;
+}
+
+.rates-guide__cta {
+  margin: 0;
+}
+
+.rates-guide__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 32px;
+  border-radius: 999px;
+  border: none;
+  background-color: var(--color-orange);
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: var(--color-white);
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.rates-guide__button:hover {
+  background-color: #d86200;
+  transform: translateY(-2px);
+}
+
+/* ------------------------------
+  License Certificate
+------------------------------ */
+.license-certificate__table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.license-certificate__table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid rgba(35, 24, 21, 0.16);
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: var(--color-white);
+}
+
+.license-certificate__table th,
+.license-certificate__table td {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  color: var(--color-black);
+  padding: 14px 16px;
+  text-align: left;
+  vertical-align: middle;
+  border-right: 1px solid rgba(35, 24, 21, 0.15);
+  border-bottom: 1px solid rgba(35, 24, 21, 0.15);
+}
+
+.license-certificate__table tr:last-child th,
+.license-certificate__table tr:last-child td {
+  border-bottom: none;
+}
+
+.license-certificate__table tr th:last-child,
+.license-certificate__table tr td:last-child {
+  border-right: none;
+}
+
+.license-certificate__table-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  text-align: center;
+  padding: 16px;
+  background-color: rgba(239, 124, 0, 0.16);
+}
+
+.license-certificate__table th[scope="row"] {
+  width: 32%;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  text-align: center;
+  background-color: rgba(239, 124, 0, 0.08);
+}
+
+.license-certificate__table td {
+  font-weight: 400;
+  background-color: var(--color-white);
+}
+
+.license-certificate__office-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .rates-content__title,
+  .license-content__title {
+    margin-bottom: 32px;
+  }
+
+  .rates-guide,
+  .license-certificate {
+    padding: 40px 0 60px;
+  }
+
+  .rates-guide__card {
+    gap: 20px;
+  }
+
+  .rates-guide__label {
+    font-size: 1rem;
+  }
+
+  .rates-guide__term {
+    min-height: 76px;
+    font-size: 1.25rem;
+  }
+
+  .rates-guide__notes li {
+    font-size: 0.9375rem;
+  }
+
+  .rates-guide__price-table thead th {
+    font-size: 1.125rem;
+  }
+
+  .rates-guide__price-table tbody td {
+    font-size: 1rem;
+  }
+
+  .rates-guide__base-fee {
+    font-size: 1.125rem;
+  }
+
+  .license-certificate__table {
+    min-width: 700px;
+  }
+
+  .license-certificate__table th,
+  .license-certificate__table td {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .rates-guide,
+  .license-certificate {
+    padding: 30px 0;
+    gap: 18px;
+  }
+
+  .rates-guide__heading,
+  .license-certificate__heading {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+
+  .rates-guide__card {
+    gap: 18px;
+  }
+
+  .rates-guide__label {
+    font-size: 0.9375rem;
+    padding: 6px 12px;
+  }
+
+  .rates-guide__formula {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .rates-guide__term {
+    width: 100%;
+    min-height: 64px;
+    font-size: 1.25rem;
+  }
+
+  .rates-guide__term-sub {
+    font-size: 0.875rem;
+  }
+
+  .rates-guide__operator {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .rates-guide__notes li {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+  }
+
+  .rates-guide__price-table {
+    min-width: 560px;
+  }
+
+  .rates-guide__price-table thead th {
+    font-size: 0.9375rem;
+  }
+
+  .rates-guide__price-table tbody td {
+    font-size: 0.9375rem;
+  }
+
+  .rates-guide__base-fee {
+    font-size: 1rem;
+  }
+
+  .rates-guide__button {
+    min-height: 46px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 320px;
+    padding: 8px 16px;
+  }
+
+  .license-certificate__table {
+    min-width: 620px;
+  }
+
+  .license-certificate__table-title {
+    font-size: 1.125rem;
+  }
+
+  .license-certificate__table th,
+  .license-certificate__table td {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .license-certificate__table th[scope="row"] {
+    letter-spacing: 0.03em;
+  }
+
+  .license-certificate__office-list {
+    gap: 8px;
+  }
+}
 
 /* ------------------------------
   Hero Section
@@ -374,7 +832,7 @@ body.livinglife-detail
   Makers Section
 ------------------------------ */
 .equip-makers {
-  max-width: 1180px;
+  max-width: var(--layout-content-width);
   margin: 0 auto;
   padding: 0 99px 57px;
 }
@@ -1002,7 +1460,7 @@ body.livinglife-detail
 }
 
 .gas-contact__inner {
-  max-width: 1180px;
+  max-width: var(--layout-content-width);
   margin: 0 auto;
   background-color: var(--color-white);
   padding: 145px 140px 72px;

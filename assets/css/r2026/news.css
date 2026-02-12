@@ -27,9 +27,9 @@
 }
 
 .news-content__inner {
-  max-width: 1180px;
+  max-width: var(--layout-content-width);
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 var(--layout-padding-tablet);
 }
 
 .news-content__title {
@@ -159,7 +159,7 @@
 ------------------------------ */
 @media screen and (max-width: 1024px) {
   .news-content__inner {
-    padding: 0 20px;
+    padding: 0 var(--layout-padding-mobile);
   }
 }
 

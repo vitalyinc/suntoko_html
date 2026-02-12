@@ -11,7 +11,7 @@
 }
 
 .page-wrap {
-  max-width: 1920px;
+  max-width: var(--layout-section-width);
   display: grid;
   grid-template-columns: clamp(180px, 14vw, 220px) minmax(0, 1fr);
   margin: 0 auto;

@@ -9,9 +9,9 @@
 }
 
 .footer__inner {
-  max-width: 1800px;
+  max-width: var(--layout-section-width);
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 var(--layout-padding-desktop);
 }
 
 .footer__box {
@@ -89,7 +89,7 @@
 /* フッター980px以下 */
 @media screen and (max-width: 980px) {
   .footer__inner {
-    padding: 0 20px;
+    padding: 0 var(--layout-padding-mobile);
   }
   .footer__box {
     flex-direction: column;
