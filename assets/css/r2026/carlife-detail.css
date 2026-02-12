@@ -92,18 +92,19 @@ body.carlife-detail {
 ------------------------------ */
 
 .carlife-breadcrumb {
-  background-color: #fff;
-  padding: 31px 62px;
+  background-color: var(--breadcrumb-bg-color);
+  padding: var(--breadcrumb-padding-desktop);
 }
 
 .carlife-breadcrumb__inner {
-  max-width: 1388px;
+  max-width: var(--breadcrumb-max-width);
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 1.1875rem;
-  line-height: 1.4;
+  gap: var(--breadcrumb-gap);
+  font-size: var(--breadcrumb-font-size);
+  line-height: var(--breadcrumb-line-height);
+  color: var(--breadcrumb-text-color);
 }
 
 .carlife-breadcrumb__inner a {
@@ -194,6 +195,13 @@ body.carlife-detail {
   line-height: 1.4;
   padding-bottom: 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.station-search__description {
+  margin-top: 14px;
+  color: var(--color-white);
+  font-size: 0.9375rem;
+  line-height: 1.7;
 }
 
 .station-search__panel {
@@ -558,7 +566,7 @@ body.carlife-detail
 
   /* 共通パンくず */
   .carlife-breadcrumb {
-    padding: 24px 40px;
+    padding: var(--breadcrumb-padding-tablet);
   }
 
   /* サービスステーション検索 */
@@ -645,7 +653,7 @@ body.carlife-detail
 
   /* 共通パンくず */
   .carlife-breadcrumb {
-    padding: 14px 20px;
+    padding: var(--breadcrumb-padding-mobile);
     overflow-x: auto;
   }
 
@@ -682,6 +690,10 @@ body.carlife-detail
 
   .station-search__title {
     font-size: 1.125rem;
+  }
+
+  .station-search__description {
+    font-size: 0.8125rem;
   }
 
   .station-search__panel {

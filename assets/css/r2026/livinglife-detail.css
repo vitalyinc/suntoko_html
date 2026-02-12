@@ -71,21 +71,24 @@ body.livinglife-detail [class$="-hero__bottom"] {
 }
 
 body.livinglife-detail [class$="-breadcrumb"] {
-  background-color: #fff;
-  padding: 31px 62px;
+  background-color: var(--breadcrumb-bg-color);
+  padding: var(--breadcrumb-padding-desktop);
 }
 
 body.livinglife-detail [class$="-breadcrumb__inner"] {
+  max-width: var(--breadcrumb-max-width);
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: var(--breadcrumb-gap);
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 1.1875rem;
-  color: var(--color-black);
+  font-size: var(--breadcrumb-font-size);
+  line-height: var(--breadcrumb-line-height);
+  color: var(--breadcrumb-text-color);
 }
 
 body.livinglife-detail [class$="-breadcrumb__inner"] a {
-  color: var(--color-black);
+  color: inherit;
   text-decoration: none;
 }
 
@@ -94,7 +97,7 @@ body.livinglife-detail [class$="-breadcrumb__inner"] a:hover {
 }
 
 body.livinglife-detail [class$="-breadcrumb__sep"] {
-  color: var(--color-black);
+  color: inherit;
 }
 
 body.livinglife-detail :is([class$="-content"], .gas-steps) {
@@ -187,7 +190,7 @@ body.livinglife-detail
   }
 
   body.livinglife-detail [class$="-breadcrumb"] {
-    padding: 20px 40px;
+    padding: var(--breadcrumb-padding-tablet);
   }
 
   body.livinglife-detail :is([class$="-content"], .gas-steps) {
@@ -218,13 +221,13 @@ body.livinglife-detail
   }
 
   body.livinglife-detail [class$="-breadcrumb"] {
-    padding: 15px 20px;
+    padding: var(--breadcrumb-padding-mobile);
     overflow-x: auto;
   }
 
   body.livinglife-detail [class$="-breadcrumb__inner"] {
+    width: max-content;
     font-size: 0.875rem;
-    white-space: nowrap;
   }
 
   body.livinglife-detail :is([class$="-content"], .gas-steps) {
