@@ -38,9 +38,34 @@
               <!-- TODO: リンク設定 -->
               <a class="header__nav-link header__nav-link--top" href="/">トップページ</a>
             </li>
-            <li class="header__nav-item header__nav-item--top">
+            <li class="header__nav-item header__nav-item--top header__nav-item--has-submenu">
               <!-- TODO: リンク設定 -->
-              <a class="header__nav-link header__nav-link--top" href="/service.html">事業内容</a>
+              <button
+                class="header__nav-link header__nav-link--top header__nav-trigger"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                事業内容
+              </button>
+              <ul class="header__submenu">
+                <li class="header__submenu-item">
+                  <a class="header__submenu-link" href="/carlife/">カーライフソリューション</a>
+                </li>
+                <li class="header__submenu-item">
+                  <a class="header__submenu-link" href="/livinglife/"
+                    >リビングライフソリューション</a
+                  >
+                </li>
+                <li class="header__submenu-item">
+                  <a class="header__submenu-link" href="/riskconsulting/">リスクコンサルティング</a>
+                </li>
+                <li class="header__submenu-item">
+                  <a class="header__submenu-link" href="/office-residence/"
+                    >オフィス&amp;レジデンス</a
+                  >
+                </li>
+              </ul>
             </li>
             <li class="header__nav-item header__nav-item--top">
               <!-- TODO: リンク設定 -->
