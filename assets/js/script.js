@@ -79,6 +79,9 @@ document.addEventListener("DOMContentLoaded", function () {
     submenuTriggers.forEach((trigger) => {
       const navItem = trigger.closest(".header__nav-item--has-submenu");
       if (!navItem || navItem.contains(e.target)) return;
+      if (navItem.contains(document.activeElement)) {
+        document.activeElement.blur();
+      }
       setExpanded(trigger, false);
     });
   });
