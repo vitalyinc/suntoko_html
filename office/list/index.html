@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>株式会社サントーコー</title>
+    <title>事業所一覧 | 株式会社サントーコー</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="../../assets/css/r2026/top.css" />
     <link rel="stylesheet" href="../../assets/css/r2026/header.css" />
     <link rel="stylesheet" href="../../assets/css/r2026/footer.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/legal.css" />
+    <link rel="stylesheet" href="../../assets/css/r2026/office-list.css" />
   </head>
   <body>
     <header class="header">
@@ -69,7 +71,7 @@
               <a class="header__nav-link" href="/company">会社情報</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="/office-residence/list">事業所一覧</a>
+              <a class="header__nav-link" href="/office/list/">事業所一覧</a>
             </li>
             <li class="header__nav-item">
               <a class="header__nav-link" href="/recruit">採用情報</a>
@@ -80,14 +82,758 @@
       </div>
     </header>
 
-    <main>
-      <p class="getting-ready">準備中</p>
+    <main class="main office-list-page">
+      <section class="legal-hero">
+        <div class="legal-hero__inner">
+          <h1 class="legal-hero__title">事業所一覧</h1>
+          <p class="legal-hero__subtitle">Office List</p>
+        </div>
+      </section>
+
+      <nav class="legal-breadcrumb" aria-label="パンくず">
+        <div class="legal-breadcrumb__inner">
+          <a href="/">Top</a>
+          <span class="legal-breadcrumb__sep">&gt;</span>
+          <span>事業所一覧</span>
+        </div>
+      </nav>
+
+      <article class="legal-main">
+        <div class="legal-main__inner">
+          <section class="office-list-table">
+            <div class="office-list-table__wrap">
+              <table class="corplist">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>サービスステーション・営業所名</th>
+                    <th>〒</th>
+                    <th>住所</th>
+                    <th>電話番号</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="main" rowspan="4">本社</th>
+                    <td><a title="本社" href="/mainoffice/">総務部</a></td>
+                    <td>221-0835</td>
+                    <td>神奈川県横浜市神奈川区鶴屋町 2-21-1 ダイヤビル9F</td>
+                    <td>045-323-5500</td>
+                  </tr>
+                  <tr>
+                    <td><a title="本社" href="/mainoffice/">経理部</a></td>
+                    <td>221-0835</td>
+                    <td>同上</td>
+                    <td>045-323-5500</td>
+                  </tr>
+                  <tr>
+                    <td><a title="本社" href="/mainoffice/">石油部</a></td>
+                    <td>221-0835</td>
+                    <td>同上</td>
+                    <td>045-323-5500</td>
+                  </tr>
+                  <!--
+                <tr>
+                  <td><a title="本社" href="/mainoffice/">ガス部</a></td>
+                  <td>221-0835</td>
+                  <td>同上</td>
+                  <td>045-323-5501</td>
+                </tr>
+                <tr>
+                  <td><a title="本社" href="/mainoffice/">自動車関連事業部</a></td>
+                  <td>221-0835</td>
+                  <td>同上</td>
+                  <td>045-323-5500</td>
+                </tr>
+                -->
+                  <tr>
+                    <td><a title="本社" href="/mainoffice/">不動産グループ</a></td>
+                    <td>221-0835</td>
+                    <td>同上</td>
+                    <td>045-311-1627</td>
+                  </tr>
+                  <tr>
+                    <th class="tokyo" rowspan="19">東京支店</th>
+                    <td><a title="本社" href="/mainoffice/">支店</a></td>
+                    <td>141-0022</td>
+                    <td>東京都品川区東五反田 3-20-12</td>
+                    <td>03-5791-3661</td>
+                  </tr>
+                  <tr>
+                    <td><a title="販売第2グループ" href="/mainoffice/">販売第2グループ</a></td>
+                    <td>141-0022</td>
+                    <td>同上</td>
+                    <td>03-5791-3661</td>
+                  </tr>
+                  <tr>
+                    <td>車販グループ</td>
+                    <td>252-0003</td>
+                    <td>神奈川県座間市ひばりが丘 4-15-1</td>
+                    <td>046-266-5113</td>
+                  </tr>
+                  <tr>
+                    <td><a title="本社" href="/mainoffice/">保険グループ</a></td>
+                    <td>221-0835</td>
+                    <td>神奈川県横浜市神奈川区鶴屋町 2-21-1 ダイヤビル9F</td>
+                    <td>045-323-5502</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=300031"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ芝公園ＳＳ</a
+                      >
+                    </td>
+                    <td>105-0011</td>
+                    <td>東京都港区芝公園 4-6-13</td>
+                    <td>03-3431-1964</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=300032"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ西芝浦ＳＳ</a
+                      >
+                    </td>
+                    <td>108-0023</td>
+                    <td>東京都港区芝浦 3-14-10</td>
+                    <td>03-3451-0638</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=300030"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄrive五反田大崎ＳＳ</a
+                      >
+                    </td>
+                    <td>141-0022</td>
+                    <td>東京都品川区東五反田 3-20-12</td>
+                    <td>03-3442-5867</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=013404"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄrive池袋ＳＳ</a
+                      >
+                    </td>
+                    <td>171-0022</td>
+                    <td>東京都豊島区南池袋 2-49-7</td>
+                    <td>03-3971-1038</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=014022"
+                        target="_blank"
+                        rel="noopener"
+                        >横浜西口ＳＳ</a
+                      >
+                    </td>
+                    <td>221-0835</td>
+                    <td>神奈川県横浜市神奈川区鶴屋町 2-21-1</td>
+                    <td>045-311-2208</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=014039"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄrive横浜本町ＳＳ</a
+                      >
+                    </td>
+                    <td>231-0005</td>
+                    <td>神奈川県横浜市中区本町 3-29</td>
+                    <td>045-201-1828</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=014730"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ大磯インターＳＳ</a
+                      >
+                    </td>
+                    <td>259-0112</td>
+                    <td>神奈川県中郡大磯町国府新宿 518-1</td>
+                    <td>0463-73-3912</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=014529"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ座間ＳＳ</a
+                      >
+                    </td>
+                    <td>252-0003</td>
+                    <td>神奈川県座間市ひばりが丘 4-15-1</td>
+                    <td>046-266-5113</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=310699"
+                        target="_blank"
+                        rel="noopener"
+                        >セルフ厚木及川ＳＳ</a
+                      >
+                    </td>
+                    <td>243-0212</td>
+                    <td>神奈川県厚木市及川 523-1</td>
+                    <td>046-243-1711</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=311322"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ南原ＳＳ</a
+                      >
+                    </td>
+                    <td>213-0034</td>
+                    <td>神奈川県川崎市高津区上作延 3-14-3</td>
+                    <td>044-870-6661</td>
+                  </tr>
+                  <tr>
+                    <td><a href="/yumoto/">湯本ターミナル</a></td>
+                    <td>250-0311</td>
+                    <td>神奈川県足柄下郡箱根町湯本山崎下 100-1</td>
+                    <td>0460-86-4380</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://www.2525r.com/kanagawa/kawasaki/takatsu/store-01008-001.html"
+                        target="_blank"
+                        rel="noopener"
+                        >ニコニコレンタカー 川崎上作延店</a
+                      >
+                    </td>
+                    <td>213-0034</td>
+                    <td>神奈川県川崎市高津区上作延 732-5</td>
+                    <td>044-870-6661</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://www.2525r.com/kanagawa/zama/store-01008-003.html"
+                        target="_blank"
+                        rel="noopener"
+                        >ニコニコレンタカー 座間ひばりが丘店</a
+                      >
+                    </td>
+                    <td>252-0003</td>
+                    <td>神奈川県座間市ひばりが丘 4-15-1</td>
+                    <td>046-266-5113</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://www.2525r.com/kanagawa/nakagunoiso/store-01008-007.html"
+                        target="_blank"
+                        rel="noopener"
+                        >ニコニコレンタカー 大磯国府新宿店</a
+                      >
+                    </td>
+                    <td>259-0112</td>
+                    <td>神奈川県中郡大磯町国府新宿 518-1</td>
+                    <td>0463-73-3912</td>
+                  </tr>
+                  <tr>
+                    <td>都筑リペアセンター</td>
+                    <td>223-0056</td>
+                    <td>神奈川県横浜市港北区新吉田町 4357</td>
+                    <td>045-565-9955</td>
+                  </tr>
+                  <!--
+                <tr>
+                  <td><a href="https://www.suntoko.co.jp/corplist/mainoffice/komaoka">駒岡カーセンター</a></td>
+                  <td>230-0071</td>
+                  <td>神奈川県横浜市鶴見区駒岡1-28‐40</td>
+                  <td>045-834-8433</td>
+                </tr>
+                -->
+                  <tr>
+                    <th class="osaka" rowspan="19">大阪支店</th>
+                    <td><a href="/osaka/">支店</a></td>
+                    <td>550-0015</td>
+                    <td>大阪府大阪市西区南堀江 4-17-4</td>
+                    <td>06-4391-9681</td>
+                  </tr>
+                  <tr>
+                    <td><a href="/osaka/">車販グループ</a></td>
+                    <td>550-0015</td>
+                    <td>同上</td>
+                    <td>06-4391-9681</td>
+                  </tr>
+                  <tr>
+                    <td><a href="/osaka/">保険グループ</a></td>
+                    <td>550-0015</td>
+                    <td>同上</td>
+                    <td>06-4391-7991</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=600808"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ高石ＳＳ</a
+                      >
+                    </td>
+                    <td>592-0012</td>
+                    <td>大阪府高石市西取石 6-6-70</td>
+                    <td>072-263-4492</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=600163"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄrive我孫子西ＳＳ</a
+                      >
+                    </td>
+                    <td>558-0041</td>
+                    <td>大阪府大阪市住吉区南住吉 3-1-1</td>
+                    <td>06-6693-9510</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=600828"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ塚本ＳＳ</a
+                      >
+                    </td>
+                    <td>555-0021</td>
+                    <td>大阪府大阪市西淀川区歌島 1-2-2</td>
+                    <td>06-6476-7812</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=600714"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ堺岩室ＳＳ</a
+                      >
+                    </td>
+                    <td>590-0112</td>
+                    <td>大阪府堺市南区岩室 201-1</td>
+                    <td>072-230-7175</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=600824"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ鳳ＳＳ</a
+                      >
+                    </td>
+                    <td>593-8327</td>
+                    <td>大阪府堺市西区鳳中町 9-1-6</td>
+                    <td>072-263-0605</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=600757"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ太子ＳＳ</a
+                      >
+                    </td>
+                    <td>583-0995</td>
+                    <td>大阪府南河内郡太子町太子 519</td>
+                    <td>0721-98-3747</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=600768"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ津々山台ＳＳ</a
+                      >
+                    </td>
+                    <td>584-0086</td>
+                    <td>大阪府富田林市津々山台 5-1-16</td>
+                    <td>0721-28-5218</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=640106"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ飛鳥ＳＳ</a
+                      >
+                    </td>
+                    <td>634-0064</td>
+                    <td>奈良県橿原市見瀬町 641-1</td>
+                    <td>0744-28-3033</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=600766"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ泉佐野ＳＳ</a
+                      >
+                    </td>
+                    <td>598-0007</td>
+                    <td>大阪府泉佐野市上町 1-1-45</td>
+                    <td>072-469-5651</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=600790"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ泉佐野西ＳＳ</a
+                      >
+                    </td>
+                    <td>598-0044</td>
+                    <td>大阪府泉佐野市笠松 1-1-15</td>
+                    <td>072-458-1911</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=600765"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ和泉中央ＳＳ</a
+                      >
+                    </td>
+                    <td>594-1104</td>
+                    <td>大阪府和泉市万町 1034-1</td>
+                    <td>0725-56-6381</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=620157"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ京都南インターＳＳ</a
+                      >
+                    </td>
+                    <td>601-8139</td>
+                    <td>京都府京都市南区上鳥羽南岩ノ本町 64</td>
+                    <td>075-661-0520</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=620133"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ八幡ＳＳ</a
+                      >
+                    </td>
+                    <td>614-8287</td>
+                    <td>京都府八幡市美濃山出口 4-5</td>
+                    <td>075-983-7198</td>
+                  </tr>
+                  <!--
+                <tr>
+                  <td>
+                    <a
+                      href="https://www.2525r.com/osaka/osaka/nishiyodogawa/store-01008-005.html"
+                      target="_blank"
+                      rel="noopener"
+                      >ニコニコレンタカー 西淀川歌島店</a
+                    >
+                  </td>
+                  <td>555-0021</td>
+                  <td>大阪府大阪市西淀川区歌島 1-2-2</td>
+                  <td>06-6476-7812</td>
+                </tr>
+                -->
+                  <tr>
+                    <td>
+                      <a
+                        href="https://www.2525r.com/osaka/izumisano/store-01008-009.html"
+                        target="_blank"
+                        rel="noopener"
+                        >ニコニコレンタカー 泉佐野上町店</a
+                      >
+                    </td>
+                    <td>598-0007</td>
+                    <td>大阪府泉佐野市上町 1-1-45</td>
+                    <td>072-469-5651</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://www.2525r.com/osaka/tondabayashi/store-01008-010.html"
+                        target="_blank"
+                        rel="noopener"
+                        >ニコニコレンタカー 津々山台公園店</a
+                      >
+                    </td>
+                    <td>584-0086</td>
+                    <td>大阪府富田林市津々山台 5-1-16</td>
+                    <td>0721-28-5218</td>
+                  </tr>
+                  <tr>
+                    <td>高石リペアセンター</td>
+                    <td>592-0006</td>
+                    <td>大阪府高石市高師浜丁 4-4</td>
+                    <td>072-264-8030</td>
+                  </tr>
+                  <tr>
+                    <th class="hiroshima" rowspan="14">広島支店</th>
+                    <td><a title="広島支店" href="/hiroshima/">支店</a></td>
+                    <td>730-0043</td>
+                    <td>広島県広島市中区富士見町 16-17 大和興産富士見町ビル501</td>
+                    <td>082-247-1301</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a title="広島支店" href="/hiroshima/#hirosimahoken">販売第２グループ</a>
+                    </td>
+                    <td>740-0002</td>
+                    <td>山口県岩国市新港町 4-18-13</td>
+                    <td>0827-21-1265</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a title="車販グループ" href="/hiroshima/#hirosimahoken">車販グループ</a>
+                    </td>
+                    <td>730-0043</td>
+                    <td>広島県広島市中区富士見町 16-17 大和興産富士見町ビル501</td>
+                    <td>082-247-1301</td>
+                  </tr>
+                  <tr>
+                    <td><a title="広島支店" href="/hiroshima/#hirosimahoken">保険グループ</a></td>
+                    <td>740-0002</td>
+                    <td>山口県岩国市新港町 4-18-13</td>
+                    <td>0827-22-5120</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=810109"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ富士見ＳＳ</a
+                      >
+                    </td>
+                    <td>730-0044</td>
+                    <td>広島県広島市中区宝町 10-1</td>
+                    <td>082-241-4070</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=810110"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ呉駅前ＳＳ</a
+                      >
+                    </td>
+                    <td>737-0051</td>
+                    <td>広島県呉市中央 1-2-17</td>
+                    <td>0823-21-6474</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=810174"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ昭和町ＳＳ</a
+                      >
+                    </td>
+                    <td>730-0046</td>
+                    <td>広島県広島市中区昭和町 11-10</td>
+                    <td>082-243-1429</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=810399"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ石内ＳＳ</a
+                      >
+                    </td>
+                    <td>731-5102</td>
+                    <td>広島県広島市佐伯区五日市町石内 445-1</td>
+                    <td>082-927-9090</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=810403"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveセルフ桜尾ＳＳ</a
+                      >
+                    </td>
+                    <td>738-0004</td>
+                    <td>広島県廿日市市桜尾 3-1-12</td>
+                    <td>0829-32-1664</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="http://eneos-ss.com/search/ss/pc/detail.php?SCODE=840003"
+                        target="_blank"
+                        rel="noopener"
+                        >Ｄｒ．Ｄriveポートサイド岩国ＳＳ</a
+                      >
+                    </td>
+                    <td>740-0002</td>
+                    <td>山口県岩国市新港町 4-18-13</td>
+                    <td>0827-24-1875</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://www.2525r.com/hiroshima/hiroshima/naka/store-01008-002.html"
+                        target="_blank"
+                        rel="noopener"
+                        >ニコニコレンタカー 広島宝町店</a
+                      >
+                    </td>
+                    <td>730-0044</td>
+                    <td>広島県広島市中区宝町 10-1</td>
+                    <td>082-241-4070</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://www.2525r.com/hiroshima/kure/store-01008-006.html"
+                        target="_blank"
+                        rel="noopener"
+                        >ニコニコレンタカー 呉駅前店</a
+                      >
+                    </td>
+                    <td>737-0051</td>
+                    <td>広島県呉市中央 1-2-17</td>
+                    <td>0823-21-6474</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://www.2525r.com/hiroshima/hatsukaichi/store-01008-004.html"
+                        target="_blank"
+                        rel="noopener"
+                        >ニコニコレンタカー 廿日市桜尾店</a
+                      >
+                    </td>
+                    <td>738-0004</td>
+                    <td>広島県廿日市市桜尾 3-1-12</td>
+                    <td>0829-32-1664</td>
+                  </tr>
+                  <tr>
+                    <td>石内リペアセンター</td>
+                    <td>731-5102</td>
+                    <td>広島県広島市佐伯区五日市町石内 445-1</td>
+                    <td>082-961-4877</td>
+                  </tr>
+                  <tr>
+                    <th class="gas" rowspan="7">ガス部</th>
+                    <td><a title="ガス部" href="/gas/">販売グループ</a></td>
+                    <td>252-0003</td>
+                    <td>神奈川県座間市ひばりが丘 5-11-9</td>
+                    <td>046-266-5550</td>
+                  </tr>
+                  <tr>
+                    <td><a title="ガス部" href="/gas/">ガス管理グループ</a></td>
+                    <td>252-0003</td>
+                    <td>同上</td>
+                    <td>046-266-5550</td>
+                  </tr>
+                  <tr>
+                    <td><a title="ガス部" href="/gas/">リフォームグループ</a></td>
+                    <td>252-0003</td>
+                    <td>同上</td>
+                    <td>046-266-5550</td>
+                  </tr>
+                  <tr>
+                    <td><a title="ガス部" href="/gas/">相模営業所</a></td>
+                    <td>252-0003</td>
+                    <td>同上</td>
+                    <td>046-266-5550</td>
+                  </tr>
+                  <tr>
+                    <td><a title="ガス部" href="/gas/#ogasawara">小田原営業所</a></td>
+                    <td>250-0311</td>
+                    <td>神奈川県足柄下郡箱根町湯本山崎下 100-1</td>
+                    <td>0460-85-5965</td>
+                  </tr>
+                  <tr>
+                    <td><a title="ガス部" href="/gas/#kamifukuooka">上福岡営業所</a></td>
+                    <td>356-0033</td>
+                    <td>埼玉県ふじみ野市新田 1-1-22</td>
+                    <td>049-261-3532</td>
+                  </tr>
+                  <tr>
+                    <td><a title="ガス部" href="/gas/#honjyou">本庄営業所</a></td>
+                    <td>367-0004</td>
+                    <td>埼玉県本庄市本町 1002-5</td>
+                    <td>0495-22-2610</td>
+                  </tr>
+                  <!--
+                  <tr>
+                    <th class="hoken" rowspan="2">自動車関連事業部</th>
+                    <td>
+                      <a href="https://www.suntoko.co.jp/corplist/mainoffice/komaoka"
+                        >駒岡カーセンター</a
+                      >
+                    </td>
+                    <td>230-0071</td>
+                    <td>神奈川県横浜市鶴見区駒岡 1-28-40</td>
+                    <td>045-834-8433</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        href="https://www.2525r.com/kanagawa/yokohama/tsurumi/store-01008-008.html"
+                        target="_blank"
+                        rel="noopener"
+                        >ニコニコレンタカー 鶴見駒岡店</a
+                      >
+                    </td>
+                    <td>230-0071</td>
+                    <td>同上</td>
+                    <td>045-834-8433</td>
+                  </tr>
+                  -->
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </article>
     </main>
+
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__box">
           <div class="footer__left">
-            <!-- TODO: リンク設定 -->
             <a class="footer__logo" href="/">株式会社サントーコー</a>
             <div class="footer__address">
               <p>〒221-0835</p>
@@ -106,23 +852,18 @@
               <nav>
                 <ul class="footer__nav">
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
                     <a class="footer__nav-link" href="/">トップページ</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
                     <a class="footer__nav-link" href="/service">事業内容</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
                     <a class="footer__nav-link" href="/company">会社情報</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="/office-list">事業所一覧</a>
+                    <a class="footer__nav-link" href="/office/list/">事業所一覧</a>
                   </li>
                   <li class="footer__nav-item">
-                    <!-- TODO: リンク設定 -->
                     <a class="footer__nav-link" href="/recruit">採用情報</a>
                   </li>
                 </ul>
@@ -132,15 +873,12 @@
               <nav>
                 <ul class="footer__nav">
                   <li class="footer__nav-item fotoer__nav-item--policy">
-                    <!-- TODO: リンク設定 -->
                     <a class="footer__nav-link" href="/guide">ご利用にあたって</a>
                   </li>
                   <li class="footer__nav-item fotoer__nav-item--policy">
-                    <!-- TODO: リンク設定 -->
                     <a class="footer__nav-link" href="/privacy-policy">プライバシーポリシー</a>
                   </li>
                   <li class="footer__nav-item fotoer__nav-item--policy">
-                    <!-- TODO: リンク設定 -->
                     <a class="footer__nav-link" href="/sitemap">サイトマップ</a>
                   </li>
                 </ul>
@@ -153,6 +891,6 @@
         <p>&copy; 株式会社サントーコー All Rights Reserved.</p>
       </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="../../assets/js/script.js"></script>
   </body>
 </html>
