@@ -43,6 +43,58 @@ document.addEventListener("DOMContentLoaded", function () {
       navWrapper.classList.remove("is-leaving");
     }
   });
+
+  const submenuTriggers = document.querySelectorAll(
+    ".header__nav-item--has-submenu .header__nav-trigger",
+  );
+
+  const setExpanded = (trigger, expanded) => {
+    trigger.setAttribute("aria-expanded", expanded ? "true" : "false");
+  };
+
+  submenuTriggers.forEach((trigger) => {
+    const navItem = trigger.closest(".header__nav-item--has-submenu");
+    if (!navItem) return;
+
+    setExpanded(trigger, false);
+
+    navItem.addEventListener("mouseenter", () => setExpanded(trigger, true));
+    navItem.addEventListener("mouseleave", () => setExpanded(trigger, false));
+
+    trigger.addEventListener("focus", () => setExpanded(trigger, true));
+    navItem.addEventListener("focusout", (e) => {
+      if (navItem.contains(e.relatedTarget)) return;
+      setExpanded(trigger, false);
+    });
+
+    trigger.addEventListener("click", () => {
+      requestAnimationFrame(() => {
+        const isOpen = navItem.matches(":hover") || navItem.matches(":focus-within");
+        setExpanded(trigger, isOpen);
+      });
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    submenuTriggers.forEach((trigger) => {
+      const navItem = trigger.closest(".header__nav-item--has-submenu");
+      if (!navItem || navItem.contains(e.target)) return;
+      setExpanded(trigger, false);
+    });
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+
+    submenuTriggers.forEach((trigger) => {
+      const navItem = trigger.closest(".header__nav-item--has-submenu");
+      if (!navItem) return;
+      if (navItem.contains(document.activeElement)) {
+        document.activeElement.blur();
+      }
+      setExpanded(trigger, false);
+    });
+  });
 });
 
 // ============== トップページのヘッダー背景の制御 ===============
