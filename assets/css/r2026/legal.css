@@ -49,6 +49,16 @@
   margin: 0 auto;
 }
 
+.legal-main a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.legal-main a:hover {
+  opacity: 0.8;
+}
+
 .legal-lead {
   margin-bottom: 40px;
 }
@@ -105,6 +115,18 @@
   color: #4d4d4d;
 }
 
+.legal-lead--center {
+  text-align: center;
+}
+
+.privacy-policy-page .legal-section__title {
+  font-weight: 700;
+}
+
+.privacy-policy-page .legal-contact-heading {
+  font-weight: 700;
+}
+
 @media screen and (max-width: 1024px) {
   .legal-hero__inner {
     padding: 130px var(--layout-padding-tablet) 52px;
@@ -149,5 +171,96 @@
 
   .legal-section__title {
     margin-bottom: 16px;
+  }
+}
+
+/* Solicitation policy page */
+.solicitation-content {
+  background-color: var(--color-white);
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.solicitation-panel {
+  margin-top: 10px;
+  border-radius: 16px;
+  border: 1px solid #7bb8d6;
+  background: linear-gradient(180deg, #7fc0e2 0%, #a8d5ee 100%);
+  padding: 14px 16px;
+}
+
+.solicitation-panel p {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.6;
+  color: inherit;
+}
+
+.solicitation-panel p + p {
+  margin-top: 4px;
+}
+
+.solicitation-panel--law {
+  margin-top: 24px;
+}
+
+.solicitation-separator {
+  margin: 24px 0 8px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: 0.2em;
+}
+
+.solicitation-summary {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.solicitation-contact {
+  margin-top: 16px;
+  border: 2px solid #b8b8b8;
+  border-radius: 8px;
+  background-color: var(--color-white);
+  padding: 14px 16px;
+}
+
+.solicitation-contact p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 700;
+}
+
+.solicitation-contact p + p {
+  margin-top: 2px;
+}
+
+.solicitation-contact .legal-section__title {
+  margin-bottom: 8px;
+}
+
+.solicitation-revision {
+  margin: 12px 0 0;
+  text-align: right;
+  color: #4d4d4d;
+}
+
+@media screen and (max-width: 1024px) {
+  .solicitation-content {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .solicitation-content {
+    padding: 16px 14px;
+  }
+
+  .solicitation-panel {
+    border-radius: 12px;
+    padding: 10px 8px;
   }
 }

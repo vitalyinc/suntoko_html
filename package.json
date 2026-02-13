@@ -2,6 +2,7 @@
   "name": "suntoko-html",
   "private": true,
   "scripts": {
+    "dev": "python3 -m http.server 8000",
     "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
     "format:check": "prettier --check \"**/*.{html,css,js,json,md}\"",
     "lint:html": "htmlhint \"**/*.html\"",

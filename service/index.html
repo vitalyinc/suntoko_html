@@ -37,14 +37,39 @@
             <li class="header__nav-item">
               <a class="header__nav-link" href="/">トップページ</a>
             </li>
-            <li class="header__nav-item">
-              <a class="header__nav-link" href="/service">事業内容</a>
+            <li class="header__nav-item header__nav-item--has-submenu">
+              <button
+                class="header__nav-link header__nav-trigger"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                事業内容
+              </button>
+              <ul class="header__submenu">
+                <li class="header__submenu-item">
+                  <a class="header__submenu-link" href="/carlife/">カーライフソリューション</a>
+                </li>
+                <li class="header__submenu-item">
+                  <a class="header__submenu-link" href="/livinglife/"
+                    >リビングライフソリューション</a
+                  >
+                </li>
+                <li class="header__submenu-item">
+                  <a class="header__submenu-link" href="/riskconsulting/">リスクコンサルティング</a>
+                </li>
+                <li class="header__submenu-item">
+                  <a class="header__submenu-link" href="/office-residence/"
+                    >オフィス&amp;レジデンス</a
+                  >
+                </li>
+              </ul>
             </li>
             <li class="header__nav-item">
               <a class="header__nav-link" href="/company">会社情報</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="/office/list">事業所一覧</a>
+              <a class="header__nav-link" href="/office/list/">事業所一覧</a>
             </li>
             <li class="header__nav-item">
               <a class="header__nav-link" href="/recruit">採用情報</a>
@@ -94,7 +119,7 @@
                   </li>
                   <li class="footer__nav-item">
                     <!-- TODO: リンク設定 -->
-                    <a class="footer__nav-link" href="/office/list">事業所一覧</a>
+                    <a class="footer__nav-link" href="/office/list/">事業所一覧</a>
                   </li>
                   <li class="footer__nav-item">
                     <!-- TODO: リンク設定 -->

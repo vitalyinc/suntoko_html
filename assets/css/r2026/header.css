@@ -24,7 +24,8 @@
 
 .header__logo {
   display: block;
-  width: 32%;
+  width: 28%;
+  max-width: 21rem;
   cursor: pointer;
 }
 
@@ -36,6 +37,7 @@
 
 .header__nav {
   display: flex;
+  align-items: center;
   gap: 2.5rem;
   margin: 0;
 }
@@ -56,7 +58,10 @@
 }
 
 .header__nav-link {
-  font-size: 1.125rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.4;
   color: #333;
   text-decoration: none;
   position: relative;
@@ -84,17 +89,23 @@
 }
 
 .header__nav-trigger {
+  display: inline-flex;
+  align-items: center;
+  appearance: none;
+  -webkit-appearance: none;
   padding: 0;
   border: 0;
   background: transparent;
-  font: inherit;
-  line-height: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
   cursor: pointer;
 }
 
 .header__submenu {
   position: absolute;
-  top: calc(100% + 0.6rem);
+  top: 100%;
   left: 0;
   transform: translateY(6px);
   min-width: 19.5rem;

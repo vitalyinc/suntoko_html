@@ -1,0 +1,65 @@
+.office-list-page .legal-main__inner {
+  max-width: var(--layout-content-width);
+}
+
+.office-list-page .legal-hero__subtitle {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.office-list-table__wrap {
+  background-color: var(--color-white);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.corplist {
+  width: 100%;
+  min-width: 1020px;
+  border-collapse: collapse;
+}
+
+.corplist th,
+.corplist td {
+  border: 1px solid #dcdcdc;
+  color: var(--color-black);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  padding: 12px 14px;
+  vertical-align: top;
+}
+
+.corplist thead th {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 700;
+  text-align: left;
+  border-top: 0;
+}
+
+.corplist tbody > tr > th {
+  min-width: 96px;
+  background-color: var(--color-surface-muted);
+  color: var(--color-primary);
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.corplist a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+@media screen and (max-width: 768px) {
+  .corplist {
+    min-width: 920px;
+  }
+
+  .corplist th,
+  .corplist td {
+    font-size: 0.875rem;
+    padding: 10px 12px;
+  }
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ご利用にあたって | 株式会社サントーコー</title>
+    <title>勧誘方針 | 株式会社サントーコー</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -43,10 +43,16 @@
                 type="button"
                 aria-haspopup="true"
                 aria-expanded="false"
+                aria-controls="header-submenu-business"
+                id="header-nav-business-trigger"
               >
                 事業内容
               </button>
-              <ul class="header__submenu">
+              <ul
+                class="header__submenu"
+                id="header-submenu-business"
+                aria-labelledby="header-nav-business-trigger"
+              >
                 <li class="header__submenu-item">
                   <a class="header__submenu-link" href="/carlife/">カーライフソリューション</a>
                 </li>
@@ -83,8 +89,8 @@
     <main class="main">
       <section class="legal-hero">
         <div class="legal-hero__inner">
-          <h1 class="legal-hero__title">ご利用にあたって</h1>
-          <p class="legal-hero__subtitle">サイトご利用条件</p>
+          <h1 class="legal-hero__title">勧誘方針</h1>
+          <p class="legal-hero__subtitle">お客様への販売・勧誘にあたって</p>
         </div>
       </section>
 
@@ -92,95 +98,79 @@
         <div class="legal-breadcrumb__inner">
           <a href="/">Top</a>
           <span class="legal-breadcrumb__sep">&gt;</span>
-          <span>ご利用にあたって</span>
+          <span>勧誘方針</span>
         </div>
       </nav>
 
       <article class="legal-main">
-        <div class="legal-main__inner">
-          <p class="legal-lead">
-            このウェブサイト
-            <a href="https://www.suntoko.co.jp" target="_blank" rel="noopener noreferrer"
-              >https://www.suntoko.co.jp</a
-            >（以下「当ウェブサイト」といいます）は、株式会社サントーコー（以下「当社」といいます）が管理・運営するウェブサイトです。当ウェブサイトのご利用にあたっては、下記の事項についてご確認ください。なお、当ウェブサイトをご利用された場合には、この「サイトご利用条件」に同意いただいたものとさせていただきます。
+        <div class="legal-main__inner solicitation-content">
+          <p class="legal-lead">お客様への販売・勧誘にあたって</p>
+
+          <section class="solicitation-panel" aria-label="基本方針">
+            <p>お客様の視点に立って</p>
+            <p>ご満足いただけるように努めます。</p>
+          </section>
+
+          <section class="legal-section">
+            <h2 class="legal-section__title">◆保険その他の金融商品の販売にあたって</h2>
+            <ul class="legal-list legal-sublist">
+              <li>
+                ・お客様の商品に関する知識、購入経験、購入目的、財産状況など、商品の特性に応じた必要な事項を総合的に勘案し、お客様のご意向と実情に沿った商品の説明および提供に努めます。
+              </li>
+              <li>
+                ・特に市場リスクを伴う投資性商品については、そのリスクの内容について適切な説明に努めます。
+              </li>
+              <li>・お客様にご迷惑をおかけする時間帯や場所、方法での勧誘はいたしません。</li>
+              <li>
+                ・お客様に商品についての重要事項を正しくご理解いただけるように努めます。また、販売形態に応じて適切な説明に努めます。
+              </li>
+            </ul>
+          </section>
+
+          <section class="legal-section">
+            <h2 class="legal-section__title">◆各種の対応にあたって</h2>
+            <ul class="legal-list legal-sublist">
+              <li>・お客様からのお問い合わせには、迅速・適切・丁寧な対応に努めます。</li>
+              <li>・保険金等のご請求手続きにあたりましては、迅速・適切・丁寧な対応に努めます。</li>
+              <li>・お客様のご意見・ご要望を販売活動に生かしてまいります。</li>
+            </ul>
+          </section>
+
+          <section class="solicitation-panel solicitation-panel--law" aria-label="法令遵守">
+            <p>各種法令を遵守し、保険その他の</p>
+            <p>金融商品の適正な販売に努めます。</p>
+          </section>
+
+          <section class="legal-section">
+            <ul class="legal-list legal-sublist">
+              <li>
+                ・保険業法、金融サービスの提供及び利用環境の整備等に関する法律、消費者契約法、金融商品取引法、個人情報の保護に関する法律、その他の関係法令等を遵守します。
+              </li>
+              <li>
+                ・適正な販売を行うために、事務管理体制の整備や販売にあたる者の研修に取り組みます。
+              </li>
+              <li>
+                ・お客様のプライバシーを尊重するとともに、お客様に関する情報については、適正な取扱いおよび厳正な管理をいたします。
+              </li>
+              <li>
+                ・未成年の方、特に満15歳未満の方を被保険者とする保険契約等については、保険金の不正取得を防止する観点から適切な募集に努めます。
+              </li>
+            </ul>
+          </section>
+
+          <p class="solicitation-separator">＊＊＊</p>
+          <p class="solicitation-summary">
+            以上の方針は「金融サービスの提供及び利用環境の整備等に関する法律」（平成12年法律第101号）に基づく弊店の「勧誘方針」です。
           </p>
 
-          <section class="legal-section">
-            <h2 class="legal-section__title">著作権について</h2>
-            <p>
-              当ウェブサイト内のコンテンツ（情報・資料・画像・音声・文章など）の著作権は、当社、関連会社またはコンテンツの供給者に帰属しております。個人的な利用または著作権法により認められた利用を行う場合を除き、営利、非営利を問わず、またいかなる媒体においても、事前に当社の許諾を得ることなしに、複製、転用、改変、公衆送信、販売などの行為を行うことはできません。
-            </p>
+          <section class="solicitation-contact">
+            <h2 class="legal-section__title">＜代理店名・各種ご相談、お問い合わせ窓口＞</h2>
+            <p>株式会社サントーコー　保険グループ</p>
+            <p>住所：神奈川県横浜市神奈川区鶴屋町２－２１－１ ダイヤビル９Ｆ</p>
+            <p>電話：０４５－３２３－５５０２</p>
           </section>
 
-          <section class="legal-section">
-            <h2 class="legal-section__title">商標について</h2>
-            <p>
-              当ウェブサイト上に記載・掲載されている商標・ロゴマーク・商号は、当社または各社の登録商標または商標です。商標法またはその他の法律により認められている場合を除き、当社または各社の事前の承諾なしに、これらを使用等することはできません。
-            </p>
-          </section>
-
-          <section class="legal-section">
-            <h2 class="legal-section__title">当サイトへのリンクについて</h2>
-            <p>
-              当サイトへのリンクは、次の条件を満たしている限り、原則として自由（リンクフリー）です。申請の必要はございませんが、当社の趣旨に合わない場合や当社の事業や信用を害するおそれがある場合は、事後においてもリンク自体をお断りいたします。
-            </p>
-            <ul class="legal-list">
-              <li>リンクを設定する箇所には、当サイトへのリンクである旨を明記してください。</li>
-              <li>
-                いわゆるフレームリンクなど、当サイトの内容を他のコンテンツと組み合わせて表示するリンク、またはリンク元のホームページの一部として表示される形のリンクはお断りします。
-              </li>
-              <li>その他、一般に当社の信用にかかわるようなリンクの仕方はご遠慮ください。</li>
-            </ul>
-          </section>
-
-          <section class="legal-section">
-            <h2 class="legal-section__title">リンク先のウェブサイトについて</h2>
-            <p>
-              当社は、当ウェブサイトにリンクを設定している他の事業者または個人のウェブサイトの内容、あるいは安全性等について保証するものではなく、このようなリンクを設定したことにより、当該リンク先の事業者または個人のウェブサイトを推奨することを意図しておりません。当該リンク先へのアクセスにあたっては、リンク先のウェブサイトの内容および利用条件等をよくご確認いただいた上で、閲覧または利用を行ってください。
-            </p>
-          </section>
-
-          <section class="legal-section">
-            <h2 class="legal-section__title">ご利用環境</h2>
-            <p>当ウェブサイトを快適にご利用いただくため、以下の環境を推奨いたします。</p>
-            <ul class="legal-list">
-              <li>Windows OS：Windows 7 以上</li>
-              <li>Macintosh：Mac OS X バージョン 10.5 以上</li>
-              <li>
-                対象ブラウザ（Windows）：Internet Explorer 10.0 以降、Firefox、Google Chrome
-                最新バージョン
-              </li>
-              <li>
-                対象ブラウザ（Macintosh）：Safari 5.0x 以降、Firefox、Google Chrome 最新バージョン
-              </li>
-              <li>PDF の閲覧：Adobe Reader</li>
-            </ul>
-            <p class="legal-note">
-              上記以外の旧ブラウザおよびプラグインをご使用の場合は、バージョンアップのご対応をお願いいたします。
-            </p>
-          </section>
-
-          <section class="legal-section">
-            <h2 class="legal-section__title">免責事項</h2>
-            <ul class="legal-list">
-              <li>
-                当社は、当ウェブサイト上のコンテンツ内容の妥当性や正確性について保証するものではなく、一切の責任を負いません。
-              </li>
-              <li>
-                当ウェブサイト上のコンテンツや URL
-                は、予告なしに変更または中止されることがあります。
-              </li>
-              <li>
-                理由の如何にかかわらず、情報の変更および当ウェブサイトの運用の中断または中止によって生じるいかなる損害についても、当社は責任を負いません。
-              </li>
-              <li>
-                当ウェブサイトから外部のウェブサイトにリンクされている場合は、当該リンク先の利用条件をご確認ください。当社は、外部リンク先の情報について一切の責任を負いかねます。
-              </li>
-              <li>
-                当ウェブサイトは、日本国に居住されるお客様を対象としております。日本国外の国または地域からの利用に関して、当社は何ら責任を負いません。
-              </li>
-            </ul>
-          </section>
+          <p class="legal-note solicitation-revision">C08-03603(4)　'24.03 改定</p>
         </div>
       </article>
     </main>
@@ -234,6 +224,9 @@
                     <a class="footer__nav-link" href="/privacy-policy/">プライバシーポリシー</a>
                   </li>
                   <li class="footer__nav-item footer__nav-item--policy">
+                    <a class="footer__nav-link" href="/solicitation-policy/">勧誘方針</a>
+                  </li>
+                  <li class="footer__nav-item footer__nav-item--policy">
                     <a class="footer__nav-link" href="/sitemap/">サイトマップ</a>
                   </li>
                 </ul>
@@ -242,10 +235,10 @@
           </div>
         </div>
       </div>
+      <div class="footer__copyright">
+        <p>&copy; 株式会社サントーコー All Rights Reserved.</p>
+      </div>
     </footer>
-    <div class="footer__copyright">
-      <p>&copy; 株式会社サントーコー All Rights Reserved.</p>
-    </div>
 
     <script src="../assets/js/script.js"></script>
   </body>
